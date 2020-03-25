@@ -21,6 +21,9 @@ import sphinx_rtd_theme
 project = 'Tedee-docs'
 copyright = '2020, Tedee'
 author = 'Tedee'
+clientId = '02106b82-0524-4fd3-ac57-af774f340979'
+apiUrl = 'https://api.tedee.com'
+authApiUrl = 'https://tedee.b2clogin.com/tedee.onmicrosoft.com'
 
 
 # -- General configuration ---------------------------------------------------
@@ -53,5 +56,21 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+def ultimateReplace(app, docname, source):
+    result = source[0]
+    for key in app.config.ultimate_replacements:
+        result = result.replace(key, app.config.ultimate_replacements[key])
+    source[0] = result
+
+ultimate_replacements = {
+    "|clientId|" : clientId,
+    "|apiUrl|" : apiUrl,
+    "|authApiUrl|" : authApiUrl
+}
+
+def setup(app):
+   app.add_config_value('ultimate_replacements', {}, True)
+   app.connect('source-read', ultimateReplace)
 
 master_doc = 'index'

@@ -23,8 +23,8 @@ There are two ways to get the JWT:
 Use portal
 ----------
 
-The easiest way to get the JWT is to go to the api's `swagger description <https://api.tedee.com/swagger/index.html>`_ and click the **Azure B2C Login Page** link.
-This will redirect you to the user's login page. Or you can just go directly to this `page <https://tedee.b2clogin.com/tedee.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_Signup_Signin_With_Kmsi&client_id=02106b82-0524-4fd3-ac57-af774f340979&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_.
+The easiest way to get the JWT is to go to the api's `swagger description <|apiUrl|/swagger/index.html>`_ and click the **Azure B2C Login Page** link.
+This will redirect you to the user's login page. Or you can just go directly to this `page <|authApiUrl|/oauth2/v2.0/authorize?p=B2C_1A_Signup_Signin_With_Kmsi&client_id=|clientId|&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_.
 
 You should see the login form like below:
 
@@ -52,15 +52,15 @@ To do that you should send a POST request to the url below.
 
 .. code-block::
 
-    https://tedee.b2clogin.com/tedee.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc
+    |authApiUrl|/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc
 
 The request's should contain below parameters:
 
 * grant_type - :code:`password`
 * username - provide you user name/email
 * password - provide you password
-* scope - :code:`openid 02106b82-0524-4fd3-ac57-af774f340979`
-* client_id - :code:`02106b82-0524-4fd3-ac57-af774f340979`
+* scope - :code:`openid |clientId|`
+* client_id - :code:`|clientId|`
 * response_type - :code:`token id_token`
 
 and headers:
@@ -70,7 +70,7 @@ and headers:
 .. code-block:: sh
     :caption: curl
 
-    curl -d "grant_type=password&username=[username]&password=[password]$&scope=openid 02106b82-0524-4fd3-ac57-af774f340979&client_id=02106b82-0524-4fd3-ac57-af774f340979&response_type=token id_token" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://tedee.b2clogin.com/tedee.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc
+    curl -d "grant_type=password&username=[username]&password=[password]$&scope=openid |clientId|&client_id=|clientId|&response_type=token id_token" -H "Content-Type: application/x-www-form-urlencoded" -X POST |authApiUrl|/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc
 
 .. code-block:: csharp
     :caption: C#
@@ -84,12 +84,12 @@ and headers:
                 { "grant_type", "password" },
                 { "username", "<<user_name>>" },
                 { "password", "<<password>>" },
-                { "scope", "openid 02106b82-0524-4fd3-ac57-af774f340979" },
-                { "client_id", "02106b82-0524-4fd3-ac57-af774f340979" },
+                { "scope", "openid |clientId|" },
+                { "client_id", "|clientId|" },
                 { "response_type", "token id_token" }
             };
 
-            var authApiUrl = "https://tedee.b2clogin.com/tedee.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc";
+            var authApiUrl = "|authApiUrl|/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc";
 
             // FormUrlEncodedContent adds "application/x-www-form-urlencoded" Content-Type by default
             using (var content = new FormUrlEncodedContent(parameters))
@@ -147,7 +147,7 @@ Let's see it on the below examples where we want to get information about all ou
 .. code-block:: sh
     :caption: curl
 
-    curl -H "Authorization: Bearer <<access_token>>" https://api.tedee.com/api/v1.12/my/device
+    curl -H "Authorization: Bearer <<access_token>>" |apiUrl|/api/v1.12/my/device
 
 .. code-block:: csharp
     :caption: C#
@@ -159,7 +159,7 @@ Let's see it on the below examples where we want to get information about all ou
         {
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
 
-            var response = await client.GetAsync("https://api.tedee.com/api/v1.12/my/device");
+            var response = await client.GetAsync("|apiUrl|/api/v1.12/my/device");
             var devices = await response.Content.ReadAsStringAsync();
 
             Console.WriteLine("My devices: " + devices);
