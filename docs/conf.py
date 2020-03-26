@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'Tedee api docs'
+project = 'Tedee API documentation'
 copyright = '2020, Tedee'
 author = 'Tedee'
 clientId = '02106b82-0524-4fd3-ac57-af774f340979'
