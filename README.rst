@@ -64,13 +64,19 @@ Build and test
   As it was mentioned earlier you can preview your changes in the IDE. However, to get the full documentaion running locally, you'll have to generate it.
 
 1. Open terminal and go to ``docs`` directory
-2. Build the documentaion by executing this command
+2. Install all required dependencies from ``requirements.txt`` file.
+
+    .. code-block:: py
+
+        pip install -r requirements.txt
+
+3. Build the documentaion by executing this command
 
     .. code-block:: py
 
         .\make.bat html
 
-3. After a while you should get the ``_build`` folder created where you can find there ``html`` catalog with ``index.html`` file inside. Open it.
+4. After a while you should get the ``_build`` folder created where you can find there ``html`` catalog with ``index.html`` file inside. Open it.
 
 | Sometimes you may notice that after running ``make html`` command, the files won't get updated.
   In such case we recommand to run ``make clean`` command or just remove ``_build`` catalog and try again.
