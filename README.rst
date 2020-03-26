@@ -6,11 +6,12 @@ Tedee Api docs
     :target: https://tedee-tedee-api-doc.readthedocs-hosted.com/en/latest/?badge=latest
     :alt: Documentation Status
 
-This repository contains a documentation of the **Tedee's api**.
+This repository contains a documentation of the `Tedee's api <https://api.tedee.com/>`_.
 It aims to help users to integrate with the api by providing guides and code samples.
+
+You can find a compiled version of this documentation `here <https://tedee-tedee-api-doc.readthedocs-hosted.com/en/latest/>`_.
 
 If you think that there are some areas that should be improved or extended please let us know.
 However, we also highly encourage you to contribute to this repo, wheather you want to add some description, guide or provide a sample code.
 
-You can find a compiled version of this documentation `here <https://tedee-tedee-api-doc.readthedocs-hosted.com/en/latest/>`_.
-
+Sign in to `Tedee.com <https://tedee.com>`_.
