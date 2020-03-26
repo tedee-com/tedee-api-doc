@@ -53,9 +53,19 @@ Prepare the infrastructure
 Prepare your environment
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-We find the `Visual Studio Code <https://code.visualstudio.com/>`_ to be a great IDE to work on this documentation.
+We find the `Visual Studio Code <https://code.visualstudio.com/>`_ to be a great IDE to work on this documentation and we configure some automation for it.
 Since it's written in **RST** markup, we recommend to install `RST Preview <https://marketplace.visualstudio.com/items?itemName=tht13.rst-vscode>`_ extension
 to highlight the syntax. It also allows you to immediately preview the document in the IDE using ``ctrl+shiht+v`` combination or ``ctrl+k v`` to  open preview to the side.
+
+Regardles of IDE used, please do following:
+
+#. Clone the repository
+#. Install all required dependencies from ``\docs\requirements.txt`` file.
+
+    .. code-block:: py
+
+        pip install -r requirements.txt
+
 
 Build and test
 ^^^^^^^^^^^^^^
@@ -63,22 +73,18 @@ Build and test
 | Once you install all the required components, setup the environment and clone the repo, you're ready to make some changes.
   As it was mentioned earlier you can preview your changes in the IDE. However, to get the full documentaion running locally, you'll have to generate it.
 
-1. Open terminal and go to ``docs`` directory
-2. Install all required dependencies from ``requirements.txt`` file.
+To build the documentation:
 
-    .. code-block:: py
-
-        pip install -r requirements.txt
-
-3. Build the documentaion by executing this command
+#. If you use `Visual Studio Code` press `ctrl+shiht+b`
+#. OR if you use terminal then go to ``docs`` directory and executing this command
 
     .. code-block:: py
 
         .\make.bat html
 
-4. After a while you should get the ``_build`` folder created where you can find there ``html`` catalog with ``index.html`` file inside. Open it.
+#. After a while you should get the ``_build`` folder created where you can find there ``html`` catalog with ``index.html`` file inside. Open it.
 
-| Sometimes you may notice that after running ``make html`` command, the files won't get updated.
+| Sometimes you may notice that after building, the files won't get updated.
   In such case we recommand to run ``make clean`` command or just remove ``_build`` catalog and try again.
 
 Pushing changes
