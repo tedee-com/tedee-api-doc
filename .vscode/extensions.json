@@ -5,7 +5,10 @@
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
 		"tht13.rst-vscode",
-		"ms-python.python"
+		"ms-python.python",
+		"github.vscode-pull-request-github",
+		"eamodio.gitlens",
+		"donjayamanne.githistory"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
