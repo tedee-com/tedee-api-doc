@@ -24,9 +24,9 @@ However, we also highly encourage you to contribute to this repo, wheather you w
 Documentation specification
 ---------------------------
 
-The documentation is
+The documentation is:
 
-- Written in `RST markup <https://docutils.sourceforge.io/docs/user/rst/quickstart.html>`_
+- Written in `RST markup <https://docutils.sourceforge.io/docs/user/rst/quickref.html>`_
 - Generated using `Sphinx <https://www.sphinx-doc.org/en/master/>`_
 - Hosted on `ReadTheDocs <https://readthedocs.org/>`_
 
@@ -42,8 +42,7 @@ Prepare the infrastructure
 * Install `Python <https://www.python.org/downloads/>`_
 
     .. note::
-        In some situations **pip** may not install automatically.
-        If that's your case, you can follow this `instructions <https://pip.pypa.io/en/stable/installing/>`_ to get it installed.
+        In the Python installation wizard check the "Add Python to environment variables" option
 
 * Install `Sphinx <https://www.sphinx-doc.org/en/master/>`_
 
@@ -62,13 +61,22 @@ Build and test
 ^^^^^^^^^^^^^^
 
 | Once you install all the required components, setup the environment and clone the repo, you're ready to make some changes.
-  As it was mentioned earlier you can preview your changes in the IDE.
-  However, to get the full documentaion running locally, you'll have to generate it.
-| Run ``make html`` command in the ``docs`` directory and after a while you should get the ``_build`` folder created.
-  You can find there ``html`` catalog with ``index.html`` file inside.
-  Open this file in the browser and you should be able to see the whole documentation.
+  As it was mentioned earlier you can preview your changes in the IDE. However, to get the full documentaion running locally, you'll have to generate it.
+
+1. Open terminal and go to ``docs`` directory
+2. Build the documentaion by executing this command
+
+    .. code-block:: py
+
+        .\make.bat html
+
+3. After a while you should get the ``_build`` folder created where you can find there ``html`` catalog with ``index.html`` file inside. Open it.
+
 | Sometimes you may notice that after running ``make html`` command, the files won't get updated.
   In such case we recommand to run ``make clean`` command or just remove ``_build`` catalog and try again.
+
+Pushing changes
+^^^^^^^^^^^^^^^
 
 Please make your changes in feature branches starting from master branch, using naming convention presented below:
 
