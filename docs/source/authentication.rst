@@ -5,8 +5,7 @@ Each endpoint of this API requires authentication. The Tedee Api utilizes JWT to
 
 .. note::
 
-    You can find an example implementation of `AuthApiClient <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/AuthApiClient.cs>`_ to get **JWT** in our repo,
-    as well as example of `ApiHttpClient <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/ApiHttpClient.cs>`_ class which consumes it.
+    You can find an example of how to authenticate in our `code samples <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/Tedee.Api.CodeSamples/Actions/01_Authenticate_Using_JWT.cs>`_.
 
 To authenticate you must follow the below steps:
 
