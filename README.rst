@@ -75,7 +75,7 @@ Build and test
 
 To build the documentation:
 
-#. If you use `Visual Studio Code` press `ctrl+shiht+b`
+#. If you use `Visual Studio Code` run the build task (`ctrl+shiht+b`)
 #. OR if you use terminal then go to ``docs`` directory and executing this command
 
     .. code-block:: py
