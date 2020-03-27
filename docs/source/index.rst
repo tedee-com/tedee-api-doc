@@ -13,3 +13,9 @@ Tedee's documentation
 
    overview
    authentication
+
+Code samples
+------------
+
+.. note::
+   Before you run any sample, provide user name and password in the **appsettings.json** file to authenticate.
