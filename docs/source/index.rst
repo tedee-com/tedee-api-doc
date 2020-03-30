@@ -19,7 +19,9 @@ Tedee's documentation
    Authenticate<authentication>
 
 **Tedee** is a system which allows you to manipulate your doors lock with a smartphone.
-This documentation aims to help you to automate your lock's actions or to intergrate your solutions with Tedee's api.
+
+This site contains a documentation for Tedee's REST API.
+It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee's api.
 You can find here guides and code samples which should help you to work with the api.
 
 Here are some helpfull links:
