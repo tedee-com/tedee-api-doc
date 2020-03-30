@@ -17,15 +17,15 @@ To authenticate you must follow the below steps:
 Get the access token (JWT)
 ==========================
 
-There are two ways to get the JWT:
+There are two policies that can be used to get the JWT:
 
 - :ref:`use-portal`
 - :ref:`call-auth-api`
 
 .. _use-portal:
 
-Use portal
-----------
+Use portal - KMSI policy
+------------------------
 
 The easiest way to get the JWT is to go to the api's `swagger description <|apiUrl|/swagger/index.html>`_ and click the **Azure B2C Login Page** link.
 This will redirect you to the user's login page. Or you can just go directly to this `page <|authApiUrl|/oauth2/v2.0/authorize?p=B2C_1A_Signup_Signin_With_Kmsi&client_id=|clientId|&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_.
@@ -44,11 +44,12 @@ Provide your credentials and click **Log in** button. After that you should be r
 
 This long string in the frame is your access token. You can use it now to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the api.
 
+This way is recommended for applications where interaction with user is possible and where users are able to sign in.
 
 .. _call-auth-api:
 
-Call the auth api
------------------
+Call the auth api - ROPC policy
+-------------------------------
 
 Sometimes the manual way of getting the access token, described :ref:`previously <use-portal>` is not enough. 
 If you want to automate this process, you can call the auth api and fetch the JWT from the response.
@@ -136,6 +137,8 @@ The value of the :code:`access_token` property is your **JWT** that should be us
 
     Please remember to protect the access token and store it in a secure place.
     If someone else can capture your JWT, they can pretend to be you and invoke some actions in your behalf.
+
+We recommend this approach in any kind of automations and scenarios without user's interaction.
 
 .. _add-jwt-to-the-headers:
 
