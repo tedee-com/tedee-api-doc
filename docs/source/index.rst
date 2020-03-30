@@ -11,11 +11,21 @@ Tedee's documentation
    :caption: Getting Started
    :hidden:
 
-   overview
-
 .. toctree::
    :maxdepth: 2
    :caption: How to ...
    :hidden:
 
    Authenticate<authentication>
+
+**Tedee** is a system which allows you to manipulate your doors lock with a smartphone.
+This documentation aims to help you to automate your lock's actions or to intergrate your solutions with Tedee's api.
+You can find here guides and code samples which should help you to work with the api.
+
+Here are some helpfull links:
+
+- `Tedee.com <https://tedee.com>`_ - our website,
+- `Tedee's api <https://api.tedee.com/>`_ - link to our api,
+- `Docs repo <https://github.com/tedee-com/tedee-api-doc>`_ - link to the documentation's repository.
+
+Please feel free to chime in on any subject related to the api. We encourage you to join a discussion or start a new one under github `issues <https://github.com/tedee-com/tedee-api-doc/issues>`_.
