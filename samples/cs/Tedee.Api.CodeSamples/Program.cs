@@ -20,7 +20,6 @@ namespace Tedee.Api.CodeSamples
             Console.WriteLine("What would you like to do now?");
             Console.WriteLine("0. Exit.");
             Console.WriteLine("1. Authenticate with JWT.");
-            Console.WriteLine("2. Get all devices.");
             var action = Console.ReadLine();
 
             switch (action)
@@ -29,9 +28,6 @@ namespace Tedee.Api.CodeSamples
                     return;
                 case "1":
                     await _01_Authenticate_Using_JWT.Authenticate();
-                    break;
-                case "2":
-                    await _02_Get_Devices.GetDevices();
                     break;
                 default:
                     Console.WriteLine("Provided action is incorrect. Please provide the action number.");
