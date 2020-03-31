@@ -9,11 +9,11 @@ namespace Tedee.Api.CodeSamples.Helpers
         {
             return GetConfiguration().GetSection("appConfig").Get<AppConfig>();
         }
-        public static ApiCredentials GetApiCredentials()
+        public static UserCredentials GetUserCredentials()
         {
             var config = GetConfiguration();
 
-            return GetConfiguration().GetSection("apiCredentials").Get<ApiCredentials>();
+            return GetConfiguration().GetSection("userCredentials").Get<UserCredentials>();
         }
 
         private static IConfiguration GetConfiguration()
