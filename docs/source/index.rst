@@ -12,4 +12,10 @@ Tedee's documentation
    :hidden:
 
    overview
-   authentication
+
+.. toctree::
+   :maxdepth: 2
+   :caption: How to ...
+   :hidden:
+
+   Authenticate<authentication>
