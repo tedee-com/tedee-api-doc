@@ -36,6 +36,25 @@ Put the below address in the `url` input like in the screen above and click **Se
 
 You should receive response with all your devices.
 
+Response structure
+------------------
+
+Each endpoint return data in the same format:
+
+.. code-block:: js
+
+  {
+    "result": object,
+    "success": boolean,
+    "errorMessages": array,
+    "statusCode": number
+  }
+
+* **result** - represents actual data that user requests for,
+* **success** - describes weather the request has been processed successfully or not,
+* **errorMessages** - is an array of eventual errors that occured while processing the request,
+* **statusCode** - represents Http status code of the response.
+
 What's next?
 ------------
 
