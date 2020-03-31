@@ -48,4 +48,4 @@ Here's a list of example actions that you can do using the API:
 * Read device activities,
 * Lock, unlock or pull spring
 
-We encourage you to visit our `How To ...` section to find detailed instructions for some of the actions.
+We encourage you to visit our "**HOW TO ...**" section to find detailed instructions for some of the actions.
