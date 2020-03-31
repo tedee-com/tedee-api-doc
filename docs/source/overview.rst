@@ -1,9 +1,7 @@
-Overview
-========
+Get started
+===========
 
-Tedee's API exposes resources that enable you to work with your devices.
-By calling relevant endpoint user is able, among others, to manipulate lock, get battery level or read it's activities.
-This guide aims to help you to get started with Tedee's API.
+Tedee's API exposes resources that enable you to work with your devices. By calling relevant endpoint user is able, among others, to manipulate lock, get battery level or read it's activities. This guide aims to help you to get started with Tedee's API.
 
 What you need?
 --------------
@@ -11,15 +9,12 @@ What you need?
 Starting working with the API doesn't require much prerequisites.
 You'll need:
 
-* Account assosiated with your devices
 * REST API client - `Postman <https://www.postman.com/>`_ is a great example here
 
-How to start?
--------------
+Registration and authentication
+-------------------------------
 
-Since every action exposed on this API is related to user's devices or account, it's required to authenticate all requests.
-The process of authentication is described in dedicated :doc:`section <authentication>`, however for now we'll just need to `get JWT`.
-Once we've got our access token we can use Postman to make authenticated request to Tedee's API.
+Since every action exposed on this API is related to user's devices or account, it's required to authenticate all requests. The process of authentication is described in dedicated :doc:`section <authentication>`, however for now we'll just need to `get JWT` (described in mentioned section). Once we've got our access token we can use Postman to make authenticated request to the API.
 
 To do this open Postman and go to Authorization tab. 
 
@@ -29,6 +24,36 @@ To do this open Postman and go to Authorization tab.
 In ``TYPE`` dropdown select **Bearer Token** and in ``Token`` input field put your access token.
 From now on, our requests should be authenticated.
 
+REST API request
+----------------
+
+To interact with the Tedee REST API, you send HTTP requests that use a supported method: GET, POST, PATCH, or DELETE. POST and PATCH request bodies and server responses are sent in JSON payloads.
+
+The path URL resource names and query parameters are case insensitive. However, values you assign, entity IDs, and other base64 encoded values are case sensitive.
+
+Request message URI
+^^^^^^^^^^^^^^^^^^^
+
+All Tedee REST API requests use the following URL format:
+
+``https://api.tedee.com/api/{version}/{resource}``
+
+* **version** - TODO
+* **resource** - TODO
+
+Request message headers
+^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+User context
+^^^^^^^^^^^^
+
+TODO
+
+Example request
+^^^^^^^^^^^^^^^^
+
 Let's get some information about our devices now.
 Put the below address in the `url` input like in the screen above and click **Send**.
 
@@ -36,8 +61,16 @@ Put the below address in the `url` input like in the screen above and click **Se
 
 You should receive response with all your devices.
 
-Response structure
-------------------
+REST API Response
+-----------------
+
+Response HTTP code
+^^^^^^^^^^^^^^^^^^
+
+TODO
+
+Response message body
+^^^^^^^^^^^^^^^^^^^^^
 
 Each endpoint return data in the same format:
 
@@ -55,6 +88,16 @@ Each endpoint return data in the same format:
 * **errorMessages** - is an array of eventual errors that occured while processing the request,
 * **statusCode** - represents Http status code of the response.
 
+Response message headers
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+Example response
+^^^^^^^^^^^^^^^^
+
+TODO
+
 What's next?
 ------------
 
@@ -66,5 +109,3 @@ Here's a list of example actions that you can do using the API:
 * Read lock state,
 * Read device activities,
 * Lock, unlock or pull spring
-
-We encourage you to visit our "**HOW TO ...**" section to find detailed instructions for some of the actions.
