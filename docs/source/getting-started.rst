@@ -14,7 +14,7 @@ You'll need:
 Registration and authentication
 -------------------------------
 
-Since every action exposed on this API is related to user's devices or account, it's required to authenticate all requests. The process of authentication is described in dedicated :doc:`section <authentication>`, however for now we'll just need to `get JWT` (described in mentioned section). Once we've got our access token we can use Postman to make authenticated request to the API.
+Before you can use the API you must create an account first. This can be done using the mobile tedee app or using the `registration page <https://tedee.b2clogin.com/tedee.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_Signup&client_id=02106b82-0524-4fd3-ac57-af774f340979&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_. Every request requires authentication token. The process of authentication is described in dedicated :doc:`section <authentication>`, however for now we'll just need to `get JWT` (described in mentioned section). Once we've got our access token we can use Postman to make authenticated request.
 
 To do this open Postman and go to Authorization tab. 
 
@@ -41,7 +41,7 @@ All Tedee REST API requests use the following URL format:
 ``|apiUrl|/{version}/{resource}``
 
 * **version** - we use :doc:`API versioning <api-versioning>` to deliver new functionalities more easily, keeping backwards compatibility
-* **resource** - type of data to be returned or modified
+* **resource** - path to the resource you want to manipulate
 
 Request message headers
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,7 +50,7 @@ Requests require additional meta data sent in headers, which help to process the
 
 .. _`authorization-header`:
 
-* **Authorization** - each request should include this header containing the access token in ``Bearer <<access token>>`` format.
+* **Authorization** - contains JWT to authorize the request (:doc:`read more <authentication>`)
 * **Content-Type** - ``application/json`` value is required in this header for POST, PUT and PATCH requests
 
 User context
@@ -59,15 +59,19 @@ User context
 Tedee API is based on REST architecture. This implies that the application does not store any state.
 Hence, the client session can not be handled on the server side and every request should provide the information about the user.
 This is handled by JWT included in :ref:`authorization <authorization-header>` header. The access token contains an information that allows to identify the user.
-Based on that, all the requests that starts with ``/my/`` are being processed in the user context. This allows, for example, to verify access to the resources that request aims to.
+All the requests that starts with ``/my/`` referes to resources directly assigned to the current user for example asking for ``/my/devices`` will return only devices to which authenticated user has access.
 
 Example request
 ^^^^^^^^^^^^^^^^
 
 Let's get some information about our devices now.
-Put the below address in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
+Put this address ``|apiUrl|/api/v1.13/my/device`` in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
 
-``|apiUrl|/api/v1.13/my/device``
+.. code-block::
+
+ GET |apiUrl|/api/v1.9/my/device HTTP/1.1
+ Accept: application/json
+ Authorization: Bearer <<your-jwt>>
 
 You should receive response with all your devices.
 
@@ -137,12 +141,9 @@ Below is an example response for the battery level request:
         content-encoding: gzip 
         content-length: 220 
         content-type: application/json; charset=utf-8 
-        date: Wed, 01 Apr 2020 12:19:31 GMT 
-        request-context: appId=cid-v1:9d6624fe-8554-4b90-b549-c2982e773951 
         status: 200 
-        strict-transport-security: max-age=2592000 
-        vary: Accept-Encoding 
-        x-correlation-id: 800003f6-0400-1600-d63f-84710c7967bb 
+        x-correlation-id: 800003f6-0400-1600-d63f-84710c7967bb
+        Date: Wed, 01 Apr 2020 14:17:21 GMT 
 
 What's next?
 ------------
