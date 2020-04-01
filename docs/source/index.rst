@@ -18,16 +18,16 @@ Tedee's documentation
 
    Authenticate<authentication>
 
-**Tedee** is a system which allows you to manipulate your doors lock with a smartphone.
-
 This site contains a documentation for Tedee's REST API.
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee's api.
 You can find here guides and code samples which should help you to work with the api.
 
+**Tedee** is smart home system which allows you control access to your home directly from phone.
+
 Here are some helpfull links:
 
-- `Tedee.com <https://tedee.com>`_ - our website,
-- `Tedee's api <https://api.tedee.com/>`_ - link to our api,
-- `Docs repo <https://github.com/tedee-com/tedee-api-doc>`_ - link to the documentation's repository.
+- `Tedee.com <https://tedee.com>`_ - our website
+- `Tedee's api <https://api.tedee.com/>`_
+- `Documentation repository <https://github.com/tedee-com/tedee-api-doc>`_
 
 Please feel free to chime in on any subject related to the api. We encourage you to join a discussion or start a new one under github `issues <https://github.com/tedee-com/tedee-api-doc/issues>`_.
