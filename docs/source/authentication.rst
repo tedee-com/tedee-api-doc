@@ -19,6 +19,8 @@ Get the access token (JWT)
 
 There are two policies that can be used to get the JWT:
 
+TODO put a table here and describe when to use which
+
 - :ref:`use-portal`
 - :ref:`call-auth-api`
 
@@ -172,3 +174,9 @@ Let's see it on the below examples where we want to get information about all ou
             Console.WriteLine("My devices: " + devices);
         }
     }
+
+JWT token details
+=================
+
+<TODO describe whot the JWT token contains (focus mostly on our custom fields + link to https://jwt.io/introduction/), how to use this site https://jwt.io/ to debug it
+and how long it is valid>
