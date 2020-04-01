@@ -40,7 +40,7 @@ All Tedee REST API requests use the following URL format:
 
 ``|apiUrl|/{version}/{resource}``
 
-* **version** - we use :doc:`api versioning <api-versioning>` to deliver new functionalities more easily, keeping backwards compatibility
+* **version** - we use :doc:`API versioning <api-versioning>` to deliver new functionalities more easily, keeping backwards compatibility
 * **resource** - type of data to be returned or modified
 
 Request message headers
@@ -101,17 +101,18 @@ Each endpoint returns data in the same format:
 Response message headers
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here's a list of most important headers returned in Tedee API's responses:
+Here's a list of most important headers returned in Tedee API responses:
 
 * **Content-Length** - size of the response body
 * **Content-Type** - indicates the media type of the resource, ``application/json`` in most cases
 * **X-Correlation-ID** - corralates subsequent requests
 * **Date** - includes date and time when the messages was sent
+* **API-Supported-Versions** - lists all available API versions for that endpoint
 
 Example response
 ^^^^^^^^^^^^^^^^
 
-Below is an example response of the battery level request:
+Below is an example response for the battery level request:
 
 * HTTP status code - ``200``
 * Response body:
