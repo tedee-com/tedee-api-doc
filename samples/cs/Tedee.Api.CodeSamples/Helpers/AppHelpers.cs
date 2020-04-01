@@ -11,9 +11,9 @@ namespace Tedee.Api.CodeSamples.Helpers
     {
         public static async Task<HttpClient> CreateAndAuthenticateClient()
         {
-            var apiCredentials = ConfigHelpers.GetApiCredentials();
+            var userCredentials = ConfigHelpers.GetUserCredentials();
             var appConfig = ConfigHelpers.GetAppConfig();
-            var jwt = await GetJwt(apiCredentials, appConfig);
+            var jwt = await GetJwt(userCredentials, appConfig);
 
             var client = new HttpClient
             {
@@ -23,15 +23,15 @@ namespace Tedee.Api.CodeSamples.Helpers
             return client;
         }
 
-        private static async Task<string> GetJwt(ApiCredentials apiCredentials, AppConfig appConfig)
+        private static async Task<string> GetJwt(UserCredentials userCredentials, AppConfig appConfig)
         {
             using (var client = new HttpClient())
             {
                 var parameters = new Dictionary<string, string>
                 {
                     { "grant_type", "password" },
-                    { "username", apiCredentials.UserName },
-                    { "password", apiCredentials.Password },
+                    { "username", userCredentials.UserName },
+                    { "password", userCredentials.Password },
                     { "scope", $"openid {appConfig.ClientId}" },
                     { "client_id", appConfig.ClientId },
                     { "response_type", "token id_token" }
