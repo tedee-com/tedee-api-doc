@@ -1,16 +1,16 @@
 Authentication
 **************
 
-Each endpoint of this API requires authentication. The Tedee Api utilizes JWT to identify the user.
+Each request of this API requires authentication. We utilizes JSON Web Token (JWT) to identify the user.
 
 .. note::
 
     You can find an example of how to authenticate in our `code samples <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/Tedee.Api.CodeSamples/Actions/01_Authenticate_Using_JWT.cs>`_.
 
-To authenticate you must follow the below steps:
+To authenticate you must:
 
-- :ref:`get-the-jwt`
-- :ref:`add-jwt-to-the-headers`
+#. :ref:`get-the-jwt`
+#. :ref:`add-jwt-to-the-headers`
 
 .. _get-the-jwt:
 
@@ -19,16 +19,23 @@ Get the access token (JWT)
 
 There are two policies that can be used to get the JWT:
 
+TODO put a table here and describe when to use which
+
 - :ref:`use-portal`
 - :ref:`call-auth-api`
 
+.. warning::
+
+    Please remember to protect the access token and store it in a secure place.
+    If someone else can capture your JWT, they can pretend to be you and invoke some actions in your behalf.
+
+
 .. _use-portal:
 
-Use portal - KMSI policy
+KMSI policy
 ------------------------
 
-The easiest way to get the JWT is to go to the api's `swagger description <|apiUrl|/swagger/index.html>`_ and click the **Azure B2C Login Page** link.
-This will redirect you to the user's login page. Or you can just go directly to this `page <|authApiUrl|/oauth2/v2.0/authorize?p=B2C_1A_Signup_Signin_With_Kmsi&client_id=|clientId|&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_.
+This is the easiest way and recommended for applications where interaction with user is possible. To receive the JWT using the standard login flow first go to the `login page <|authApiUrl|/oauth2/v2.0/authorize?p=B2C_1A_Signup_Signin_With_Kmsi&client_id=|clientId|&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_.
 
 You should see the login form like below:
 
@@ -42,24 +49,22 @@ Provide your credentials and click **Log in** button. After that you should be r
     :align: center
     :alt: JWT
 
-This long string in the frame is your access token. You can use it now to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the api.
-
-This way is recommended for applications where interaction with user is possible and where users are able to sign in.
+This long string in the frame is your access token. You can use it now to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
 
 .. _call-auth-api:
 
-Call the auth api - ROPC policy
+ROPC policy
 -------------------------------
 
-Sometimes the manual way of getting the access token, described :ref:`previously <use-portal>` is not enough. 
-If you want to automate this process, you can call the auth api and fetch the JWT from the response.
-To do that you should send a POST request to the url below.
+We recommend this approach in any kind of automations. To receive the JWT without user interaction, you must send following POST request.
+
+**Request url:**
 
 .. code-block::
 
     |authApiUrl|/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc
 
-The request's should contain below parameters:
+**Request body:**
 
 * grant_type - :code:`password`
 * username - provide you user name/email
@@ -68,7 +73,7 @@ The request's should contain below parameters:
 * client_id - :code:`|clientId|`
 * response_type - :code:`token id_token`
 
-and headers:
+**Request headers:**
 
 * Content-Type - :code:`application/x-www-form-urlencoded`
 
@@ -131,24 +136,16 @@ If all the values are correct you should get response like below:
         "id_token": "<<id_token>>"
     }
 
-The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the Api.
-
-.. warning::
-
-    Please remember to protect the access token and store it in a secure place.
-    If someone else can capture your JWT, they can pretend to be you and invoke some actions in your behalf.
-
-We recommend this approach in any kind of automations and scenarios without user's interaction.
+The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
 
 .. _add-jwt-to-the-headers:
 
-Add JWT to request's headers
+Attach JWT to the request
 ============================
 
 Now, since we have our :ref:`JWT <get-the-jwt>`, we can use it to authenticate our calls.
-To achieve that, we just have to add an authorization header containing our access token.
+To achieve that, we just have to add an ``Authorization`` header containing our access token. This header value should look like ``Bearer <<access_token>>``, where **<<access_token>>** is our JWT. 
 
-Authorization header should look like ``Bearer <<access_token>>``, where **<<access_token>>** is our JWT. 
 Let's see it on the below examples where we want to get information about all our devices:
 
 .. code-block:: sh
@@ -172,3 +169,9 @@ Let's see it on the below examples where we want to get information about all ou
             Console.WriteLine("My devices: " + devices);
         }
     }
+
+JWT token details
+=================
+
+<TODO describe whot the JWT token contains (focus mostly on our custom fields + link to https://jwt.io/introduction/), how to use this site https://jwt.io/ to debug it
+and how long it is valid>
