@@ -18,6 +18,8 @@ Since every action exposed on this API is related to user's devices or account, 
 
 To do this open Postman and go to Authorization tab. 
 
+.. _`postman-screen`:
+
 .. image:: images/postman-auth.png
   :alt: Authentication with Postman
 
@@ -38,26 +40,34 @@ All Tedee REST API requests use the following URL format:
 
 ``|apiUrl|/{version}/{resource}``
 
-* **version** - TODO
-* **resource** - TODO
+* **version** - we use :doc:`api versioning <api-versioning>` to deliver new functionalities more easily, keeping backwards compatibility
+* **resource** - type of data to be returned or modified
 
 Request message headers
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Requests require additional meta data sent in headers, which help to process them correctly:
+
+.. _`authorization-header`:
+
+* **Authorization** - each request should include this header containing the access token in ``Bearer <<access token>>`` format.
+* **Content-Type** - ``application/json`` value is required in this header for POST, PUT and PATCH requests
 
 User context
 ^^^^^^^^^^^^
 
-TODO
+Tedee API is based on REST architecture. This implies that the application does not store any state.
+Hence, the client session can not be handled on the server side and every request should provide the information about the user.
+This is handled by JWT included in :ref:`authorization <authorization-header>` header. The access token contains an information that allows to identify the user.
+Based on that, all the requests that starts with ``/my/`` are being processed in the user context. This allows, for example, to verify access to the resources that request aims to.
 
 Example request
 ^^^^^^^^^^^^^^^^
 
 Let's get some information about our devices now.
-Put the below address in the `url` input like in the screen above and click **Send**.
+Put the below address in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
 
-``https://api.tedee.com/api/v1.13/my/device``
+``|apiUrl|/api/v1.13/my/device``
 
 You should receive response with all your devices.
 
@@ -67,12 +77,12 @@ REST API Response
 Response HTTP code
 ^^^^^^^^^^^^^^^^^^
 
-TODO
+Each response contains an HTTP code that informs about the status of the request processing. Tedee API uses standard `HTTP status codes <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>`_.
 
 Response message body
 ^^^^^^^^^^^^^^^^^^^^^
 
-Each endpoint return data in the same format:
+Each endpoint returns data in the same format:
 
 .. code-block:: js
 
@@ -91,12 +101,47 @@ Each endpoint return data in the same format:
 Response message headers
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Here's a list of most important headers returned in Tedee API's responses:
+
+* **Content-Length** - size of the response body
+* **Content-Type** - indicates the media type of the resource, ``application/json`` in most cases
+* **X-Correlation-ID** - corralates subsequent requests
+* **Date** - includes date and time when the messages was sent
 
 Example response
 ^^^^^^^^^^^^^^^^
 
-TODO
+Below is an example response of the battery level request:
+
+* HTTP status code - ``200``
+* Response body:
+
+    .. code-block:: js
+
+        {
+            "result": {
+                "level": 75,
+                "date": "2020-04-01T11:31:54.969"
+            },
+            "success": true,
+            "errorMessages": [],
+            "statusCode": 200
+        }
+
+* Response headers:
+
+    .. code-block::
+    
+        api-supported-versions: 1.9, 1.10, 1.11, 1.12, 1.13 
+        content-encoding: gzip 
+        content-length: 220 
+        content-type: application/json; charset=utf-8 
+        date: Wed, 01 Apr 2020 12:19:31 GMT 
+        request-context: appId=cid-v1:9d6624fe-8554-4b90-b549-c2982e773951 
+        status: 200 
+        strict-transport-security: max-age=2592000 
+        vary: Accept-Encoding 
+        x-correlation-id: 800003f6-0400-1600-d63f-84710c7967bb 
 
 What's next?
 ------------
