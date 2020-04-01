@@ -36,7 +36,7 @@ Request message URI
 
 All Tedee REST API requests use the following URL format:
 
-``https://api.tedee.com/api/{version}/{resource}``
+``|apiUrl|/{version}/{resource}``
 
 * **version** - TODO
 * **resource** - TODO
