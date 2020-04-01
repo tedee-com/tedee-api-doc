@@ -8,14 +8,15 @@ Tedee's documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Getting Started
+   :caption: Overview
    :hidden:
 
-   overview
+   getting-started
+   authentication
+   api-versioning
+   release-notes
 
 .. toctree::
    :maxdepth: 2
    :caption: How to ...
    :hidden:
-
-   Authenticate<authentication>

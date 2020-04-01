@@ -1,5 +1,5 @@
-Overview
-========
+Getting started
+===============
 
 Tedee's API exposes resources that enable you to work with your devices.
 By calling relevant endpoint user is able, among others, to manipulate lock, get battery level or read it's activities.
