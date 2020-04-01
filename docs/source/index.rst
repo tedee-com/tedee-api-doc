@@ -8,15 +8,18 @@ Tedee API documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Getting Started
+   :caption: Overview
    :hidden:
+
+   getting-started
+   authentication
+   api-versioning
+   release-notes
 
 .. toctree::
    :maxdepth: 2
    :caption: How to ...
    :hidden:
-
-   Authenticate<authentication>
 
 This site contains a documentation for Tedee REST API.
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.
