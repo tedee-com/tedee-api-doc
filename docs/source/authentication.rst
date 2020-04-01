@@ -19,10 +19,14 @@ Get the access token (JWT)
 
 There are two policies that can be used to get the JWT:
 
-TODO put a table here and describe when to use which
++---------------------------+------------------------------------------------------------------------------------------+
+| **Policy name**           | **When to use**                                                                          |
++---------------------------+------------------------------------------------------------------------------------------+
+| :ref:`KMSI <kmsi-policy>` | Should be used for applications where interaction with user is possible.                 |
++---------------------------+------------------------------------------------------------------------------------------+
+| :ref:`ROPC <ropc-policy>` | Should be used to handle any kind of automations without user's interaction.             |
++---------------------------+------------------------------------------------------------------------------------------+
 
-- :ref:`use-portal`
-- :ref:`call-auth-api`
 
 .. warning::
 
@@ -30,7 +34,7 @@ TODO put a table here and describe when to use which
     If someone else can capture your JWT, they can pretend to be you and invoke some actions in your behalf.
 
 
-.. _use-portal:
+.. _kmsi-policy:
 
 KMSI policy
 ------------------------
@@ -51,7 +55,7 @@ Provide your credentials and click **Log in** button. After that you should be r
 
 This long string in the frame is your access token. You can use it now to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
 
-.. _call-auth-api:
+.. _ropc-policy:
 
 ROPC policy
 -------------------------------
