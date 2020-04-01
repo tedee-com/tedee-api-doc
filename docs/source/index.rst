@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Tedee's documentation
-=====================
+Tedee API documentation
+=========================
 
 .. toctree::
    :maxdepth: 2
@@ -18,16 +18,22 @@ Tedee's documentation
 
    Authenticate<authentication>
 
-This site contains a documentation for Tedee's REST API.
-It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee's api.
-You can find here guides and code samples which should help you to work with the api.
+This site contains a documentation for Tedee REST API.
+It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.
+You can find here guides and code samples which should help you to work with the API.
 
-**Tedee** is smart home system which allows you control access to your home directly from phone.
+About Tedee
+-----------
 
-Here are some helpfull links:
+**Tedee** is smart home system which allows you control access to your home directly from phone. Please visit our site for more details https://tedee.com.
 
-- `Tedee.com <https://tedee.com>`_ - our website
-- `Tedee's api <https://api.tedee.com/>`_
+Useful links
+------------
+
+- `Tedee API <https://api.tedee.com/>`_
 - `Documentation repository <https://github.com/tedee-com/tedee-api-doc>`_
 
-Please feel free to chime in on any subject related to the api. We encourage you to join a discussion or start a new one under github `issues <https://github.com/tedee-com/tedee-api-doc/issues>`_.
+Need a help?
+------------
+
+We encourage you to join a discussion or start a new one under `github issues <https://github.com/tedee-com/tedee-api-doc/issues>`_.
