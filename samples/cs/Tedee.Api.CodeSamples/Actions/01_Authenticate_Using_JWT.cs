@@ -12,10 +12,10 @@ namespace Tedee.Api.CodeSamples.Actions
     {
         public static async Task Authenticate()
         {
-            var apiCredentials = ConfigHelpers.GetApiCredentials();
+            var userCredentials = ConfigHelpers.GetUserCredentials();
             var appConfig = ConfigHelpers.GetAppConfig();
 
-            var jwt = await GetJWT(apiCredentials, appConfig);
+            var jwt = await GetJWT(userCredentials, appConfig);
 
             Console.WriteLine($"Your access token: {jwt}");
 
@@ -31,15 +31,15 @@ namespace Tedee.Api.CodeSamples.Actions
 
         }
 
-        private static async Task<string> GetJWT(ApiCredentials apiCredentials, AppConfig appConfig)
+        private static async Task<string> GetJWT(UserCredentials userCredentials, AppConfig appConfig)
         {
             using (var client = new HttpClient())
             {
                 var parameters = new Dictionary<string, string>
                 {
                     { "grant_type", "password" },
-                    { "username", apiCredentials.UserName },
-                    { "password", apiCredentials.Password },
+                    { "username", userCredentials.UserName },
+                    { "password", userCredentials.Password },
                     { "scope", $"openid {appConfig.ClientId}" },
                     { "client_id", appConfig.ClientId },
                     { "response_type", "token id_token" }
