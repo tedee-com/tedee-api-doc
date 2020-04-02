@@ -14,7 +14,7 @@ You'll need:
 Registration and authentication
 -------------------------------
 
-Before you can use the API you must create an account first. This can be done using the mobile tedee app or using the `registration page <https://tedee.b2clogin.com/tedee.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_Signup&client_id=02106b82-0524-4fd3-ac57-af774f340979&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_. Every request requires authentication token. The process of authentication is described in dedicated :doc:`section <authentication>`, however for now we'll just need to `get JWT` (described in mentioned section). Once we've got our access token we can use Postman to make authenticated request.
+Before you can use the API you must create an account first. This can be done using the mobile tedee app or using the `registration page <https://tedee.b2clogin.com/tedee.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_Signup&client_id=02106b82-0524-4fd3-ac57-af774f340979&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_. Every request requires authentication token. The process of authentication is described in dedicated :doc:`section <authentication>`, however for now we'll just need to `get JWT <authentication.html#get-the-jwt>`_ (described in mentioned section). Once we've got our access token we can use Postman to make authenticated request.
 
 To do this open Postman and go to Authorization tab. 
 
