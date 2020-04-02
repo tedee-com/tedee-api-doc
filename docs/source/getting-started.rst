@@ -68,7 +68,7 @@ Example request
 Let's get some information about our devices now.
 Put this address ``|apiUrl|/api/|apiVersion|/my/device`` in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
 
-.. code-block::
+.. code-block:: yaml
 
  GET |apiUrl|/api/|apiVersion|/my/device HTTP/1.1
  Accept: application/json
@@ -136,7 +136,7 @@ Below is an example response for the battery level request:
 
 * Response headers:
 
-    .. code-block::
+    .. code-block:: yaml
     
         api-supported-versions: 1.9, 1.10, 1.11, 1.12, 1.13 
         content-encoding: gzip 
