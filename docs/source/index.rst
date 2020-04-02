@@ -36,14 +36,6 @@ Useful links
 - `Tedee API <https://api.tedee.com/>`_
 - `Documentation repository <https://github.com/tedee-com/tedee-api-doc>`_
 
-Code samples
-------------
-
-Documentation repository contains `code samples <https://github.com/tedee-com/tedee-api-doc/tree/master/samples>`_ for the most common scenarios.
-
-.. note::
-   Before you run any sample, provide user name and password in the **appsettings.json** file to authenticate.
-
 
 Need a help?
 ------------
