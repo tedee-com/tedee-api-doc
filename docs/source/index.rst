@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Tedee API documentation
-=========================
+=======================
 
 .. toctree::
    :maxdepth: 2
