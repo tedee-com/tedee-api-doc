@@ -20,8 +20,9 @@ To do this open Postman and go to Authorization tab.
 
 .. _`postman-screen`:
 
-.. image:: images/postman-auth.png
-  :alt: Authentication with Postman
+.. image:: images/postman_auth.png
+    :align: center
+    :alt: Authentication with Postman
 
 In ``TYPE`` dropdown select **Bearer Token** and in ``Token`` input field put your access token.
 From now on, our requests should be authenticated.
