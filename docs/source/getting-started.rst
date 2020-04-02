@@ -65,11 +65,11 @@ Example request
 ^^^^^^^^^^^^^^^^
 
 Let's get some information about our devices now.
-Put this address ``|apiUrl|/api/v1.13/my/device`` in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
+Put this address ``|apiUrl|/api/|apiVersion|/my/device`` in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
 
 .. code-block::
 
- GET |apiUrl|/api/v1.9/my/device HTTP/1.1
+ GET |apiUrl|/api/|apiVersion|/my/device HTTP/1.1
  Accept: application/json
  Authorization: Bearer <<your-jwt>>
 
