@@ -141,6 +141,7 @@ If all the values are correct you should get response like below:
     }
 
 The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
+The :code:`expires_in` property describes for how long the token will be valid (in seconds).
 
 .. _add-jwt-to-the-headers:
 
