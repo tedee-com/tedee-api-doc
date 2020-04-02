@@ -24,6 +24,7 @@ author = 'Tedee'
 clientId = '02106b82-0524-4fd3-ac57-af774f340979'
 apiUrl = 'https://api.tedee.com'
 authApiUrl = 'https://tedee.b2clogin.com/tedee.onmicrosoft.com'
+apiVersion = 'v1.13'
 
 
 # -- General configuration ---------------------------------------------------
@@ -67,7 +68,8 @@ ultimate_replacements = {
     "|project|" : project,
     "|clientId|" : clientId,
     "|apiUrl|" : apiUrl,
-    "|authApiUrl|" : authApiUrl
+    "|authApiUrl|" : authApiUrl,
+    "|apiVersion|" : apiVersion
 }
 
 def setup(app):
