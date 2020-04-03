@@ -148,7 +148,7 @@ Below is an example response for the battery level request:
 Code samples
 ------------
 
-The Tedee documentation also provides `code samples <https://github.com/tedee-com/tedee-api-doc/tree/master/samples>`_ which presents practical usage examples.
+Tedee API documentation also provides `code samples <https://github.com/tedee-com/tedee-api-doc/tree/master/samples>`_ which present practical usage examples.
 Currently you can find there samples written in C#.
 
 .. note::
