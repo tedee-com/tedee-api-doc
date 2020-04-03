@@ -185,7 +185,17 @@ Claims
 
 The JWT contains useful information which you can use and the table below describe the most important one:
 
-TODO: table with folowing claims: expiration, user email, user name, user id
++------------------+--------------------------------------------------------------------------------+
+| **Claim name**   | **Description**                                                                |
++------------------+--------------------------------------------------------------------------------+
+| exp              | Presents the expiration time on and after which the JWT will not be processed. |
++------------------+--------------------------------------------------------------------------------+
+| email            | Contains user's email address provided during registration process.            |
++------------------+--------------------------------------------------------------------------------+
+| name             | Contains user's name provided during registration process.                     |
++------------------+--------------------------------------------------------------------------------+
+| oid              | User's unique identifier assigned during registration process.                 |
++------------------+--------------------------------------------------------------------------------+
 
 You can read more about claims `here <https://tools.ietf.org/html/rfc7519#section-4.1>`_.
 
