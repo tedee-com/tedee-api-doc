@@ -17,3 +17,7 @@ Version supported features
 
 To verify which versions provide the feature that you want to utilize, we recommend to visit the `API Swagger documentation <|apiUrl|/swagger/index.html>`_.
 You should be able to select a version in top right corner and check if the desired endpoint is available and how the request body should look like.
+
+.. note::
+    We recommend to upgrade to the latest available version of the API as soon as possible.
+    We do not guarante how long older versions willl be available.
