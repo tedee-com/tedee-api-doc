@@ -146,6 +146,15 @@ Below is an example response for the battery level request:
         x-correlation-id: 800003f6-0400-1600-d63f-84710c7967bb
         Date: Wed, 01 Apr 2020 14:17:21 GMT 
 
+Code samples
+------------
+
+Tedee API documentation also provides `code samples <https://github.com/tedee-com/tedee-api-doc/tree/master/samples>`_ which present practical usage examples.
+Currently you can find there samples written in C#.
+
+.. note::
+   Before you run any sample, provide user name and password in the **appsettings.json** file to authenticate.
+
 What's next?
 ------------
 

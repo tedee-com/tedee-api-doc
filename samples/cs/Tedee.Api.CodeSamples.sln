@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tedee.Api.CodeSamples", "Tedee.Api.CodeSamples\Tedee.Api.CodeSamples.csproj", "{8719C801-4B43-4555-98BE-68195F5320FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tedee.Api.CodeSamples", "Tedee.Api.CodeSamples\Tedee.Api.CodeSamples.csproj", "{8719C801-4B43-4555-98BE-68195F5320FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94B84AB2-4CDF-42C6-9A25-5B90D68D2590}"
+	ProjectSection(SolutionItems) = preProject
+		README.rst = README.rst
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
