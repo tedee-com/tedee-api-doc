@@ -36,6 +36,7 @@ Useful links
 - `Tedee API <https://api.tedee.com/>`_
 - `Documentation repository <https://github.com/tedee-com/tedee-api-doc>`_
 
+
 Need a help?
 ------------
 
