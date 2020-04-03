@@ -68,7 +68,7 @@ Example request
 Let's get some information about our devices now.
 Put this address ``|apiUrl|/api/|apiVersion|/my/device`` in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
 
-.. code-block:: yaml
+.. code-block:: http
 
  GET |apiUrl|/api/|apiVersion|/my/device HTTP/1.1
  Accept: application/json
