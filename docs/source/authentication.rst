@@ -178,19 +178,27 @@ Let's see it on the below examples where we want to get information about all ou
 JWT token details
 =================
 
-`JSON Web Token (JWT) <https://jwt.io/introduction/>`_ is open standard of transferring data between services.
-JWT consits of three base64 encoded strings that are separated by dots.
-Anyone who has access to the token is able to decode it and read the information, so it's important to not store there any sensitive data.
+`JSON Web Token (JWT) <https://jwt.io/introduction/>`_ is open standard of securely transmitting information between parties. Anyone who has access to the token is able to decode it and read the information.
+
+Claims
+------
+
+The JWT contains useful information which you can use and the table below describe the most important one:
+
+TODO: table with folowing claims: expiration, user email, user name, user id
+
+You can read more about claims `here <https://tools.ietf.org/html/rfc7519#section-4.1>`_.
+
+Expiration date
+---------------
+
+Tedee API tokens are valid for 4 hours since the creation time.
 
 Debugger
 --------
 
-`https://jwt.io <https://jwt.io>`_ provides a very usefull online tool to work with JWT tokens. You can read, create or modify the token there.
-However, if you wanted to change the token and send it to the API, you'd have to know the key that it should be signed with.
-Wihtout that the token is treated as invalid and the request will not get processed.
-
-To read the data included in token you can scroll down to the **Debugger** section on the page `mentioned above <https://jwt.io>`_.
-Fill in the **Encoded** input field with your token.
+`https://jwt.io <https://jwt.io>`_ provides a very usefull online tool to work with JWT tokens. You can use it to decode and read data included in JWT. To do that go to `JWT debugger <https://jwt.io/#debugger-io>`_
+and fill in the **Encoded** input field with your token.
 
 .. image:: images/jwt_debugger.png
     :align: center
@@ -202,18 +210,3 @@ You should see the decoded data right away on the right side of the screen
     :align: center
     :alt: JWT decoded data
     :width: 500
-
-If you make any change in the sections on the right side, you'll immediately see that the adequate part of the token changes as well.
-
-Claims
-------
-
-The properties displayed in the payload section are called claims and they represent actual data.
-There's a bunch of `common claims <https://tools.ietf.org/html/rfc7519#section-4.1>`_ used in JWT. However, it can also be extended with custom ones.
-Tedee API mostly uses the commonly known claims.
-
-Expiration date
----------------
-
-It's also worth to mention that the tokens have expiration date represented by `exp <https://tools.ietf.org/html/rfc7519#section-4.1.4>`_ claim.
-Tedee API tokens are valid for 4 hours since the creation time.
