@@ -10,3 +10,6 @@ _build
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 **/.history
+
+### VisualStudio ###
+/.vs
