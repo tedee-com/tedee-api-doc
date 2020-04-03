@@ -20,8 +20,9 @@ To do this open Postman and go to Authorization tab.
 
 .. _`postman-screen`:
 
-.. image:: images/postman-auth.png
-  :alt: Authentication with Postman
+.. image:: images/postman_auth.png
+    :align: center
+    :alt: Authentication with Postman
 
 In ``TYPE`` dropdown select **Bearer Token** and in ``Token`` input field put your access token.
 From now on, our requests should be authenticated.
@@ -65,11 +66,11 @@ Example request
 ^^^^^^^^^^^^^^^^
 
 Let's get some information about our devices now.
-Put this address ``|apiUrl|/api/v1.13/my/device`` in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
+Put this address ``|apiUrl|/api/|apiVersion|/my/device`` in the `url` input like in the :ref:`screen above <postman-screen>` and click **Send**.
 
-.. code-block::
+.. code-block:: http
 
- GET |apiUrl|/api/v1.9/my/device HTTP/1.1
+ GET |apiUrl|/api/|apiVersion|/my/device HTTP/1.1
  Accept: application/json
  Authorization: Bearer <<your-jwt>>
 
@@ -135,7 +136,7 @@ Below is an example response for the battery level request:
 
 * Response headers:
 
-    .. code-block::
+    .. code-block:: yaml
     
         api-supported-versions: 1.9, 1.10, 1.11, 1.12, 1.13 
         content-encoding: gzip 
@@ -144,6 +145,15 @@ Below is an example response for the battery level request:
         status: 200 
         x-correlation-id: 800003f6-0400-1600-d63f-84710c7967bb
         Date: Wed, 01 Apr 2020 14:17:21 GMT 
+
+Code samples
+------------
+
+Tedee API documentation also provides `code samples <https://github.com/tedee-com/tedee-api-doc/tree/master/samples>`_ which present practical usage examples.
+Currently you can find there samples written in C#.
+
+.. note::
+   Before you run any sample, provide user name and password in the **appsettings.json** file to authenticate.
 
 What's next?
 ------------
