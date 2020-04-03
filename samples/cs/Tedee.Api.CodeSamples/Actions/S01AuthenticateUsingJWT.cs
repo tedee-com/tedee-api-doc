@@ -8,7 +8,7 @@ using Tedee.Api.CodeSamples.Models;
 
 namespace Tedee.Api.CodeSamples.Actions
 {
-    public static class _01_Authenticate_Using_JWT
+    public static class S01AuthenticateUsingJWT
     {
         public static async Task Authenticate()
         {

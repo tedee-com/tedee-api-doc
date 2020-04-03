@@ -27,7 +27,7 @@ namespace Tedee.Api.CodeSamples
                 case "0":
                     return;
                 case "1":
-                    await _01_Authenticate_Using_JWT.Authenticate();
+                    await S01AuthenticateUsingJWT.Authenticate();
                     break;
                 default:
                     Console.WriteLine("Provided action is incorrect. Please provide the action number.");
