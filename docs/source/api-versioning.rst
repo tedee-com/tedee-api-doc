@@ -20,4 +20,4 @@ You should be able to select a version in top right corner and check if the desi
 
 .. note::
     We recommend to upgrade to the latest available version of the API as soon as possible.
-    We do not guarante how long older versions willl be available.
+    We do not guarante how long older versions will be available.
