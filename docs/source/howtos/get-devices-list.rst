@@ -8,12 +8,12 @@ It includes device specific data as well as it's settings and share details.
 
 To get the list of the devices you will have to call the endpoint below:
 
-``|apiUrl|/api/|apiVersion|/my/device``
+``|apiUrl|/api/|apiVersion|/my/device/details``
 
 .. code-block:: sh
     :caption: curl
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/device" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device/details" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 .. note::
 
