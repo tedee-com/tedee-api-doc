@@ -53,7 +53,7 @@ There are three steps to get the JWT using Code Flow:
 
 The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
 
-.. code-block:: sh
+.. code-block::
 
     GET |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/authorize
     ?response_type=code
@@ -73,7 +73,7 @@ After the user sign-in, the authorization code will be sent to your application 
 
 A successful response that uses response_mode=query looks like this:
 
-.. code-block:: sh
+.. code-block::
 
     GET {redirect_uri}
     ?code={code}
@@ -87,7 +87,7 @@ A successful response that uses response_mode=query looks like this:
 
 After successfully receiving the authorization code, you can use it to request an access token by sending a POST request to the token endpoint.
 
-.. code-block:: sh
+.. code-block::
 
     POST |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/token
     Content-Type: application/x-www-form-urlencoded
@@ -131,7 +131,7 @@ The value of the :code:`access_token` property is your **JWT** that should be us
 
 Access tokens are short-lived. After they expire, you must refresh them to continue to access resources. To do this, submit another POST request to the token endpoint. This time, set **grant_type=refresh_token** and provide the refresh token instead of the authorization code.
 
-.. code-block:: sh
+.. code-block::
 
     POST |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/token
     Content-Type: application/x-www-form-urlencoded
@@ -156,7 +156,7 @@ Please contact us (support@tedee.com) to receive a client id for your applicatio
 
 The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
 
-.. code-block:: sh
+.. code-block::
 
     GET |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/authorize
     ?response_type=token
@@ -177,7 +177,7 @@ After the user sign-in, a response will be sent to your application to the addre
 
 A successful response looks like this:
 
-.. code-block:: sh
+.. code-block::
 
     GET {redirect_uri}/#
     access_token={access_token}
@@ -202,7 +202,7 @@ ROPC Flow
 
 We recommend this approach in any kind of automations. To receive the JWT without user interaction, you must send following POST request.
 
-.. code-block:: sh
+.. code-block::
 
     POST |authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token
     Content-Type: application/x-www-form-urlencoded
