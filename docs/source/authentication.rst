@@ -45,7 +45,7 @@ Code Flow
 
 This flow should be used for applications where interaction with user is possible.
 To receive the JWT using Code Flow you will need a client id and client secret issued by Tedee.
-Please contact with us (support@tedee.com) to receive a client id and client secret for your application (you must provide us redirect URI of your application, where authentication responses will be sent and received by your application).
+Please contact us (support@tedee.com) to receive a client id and client secret for your application (you must provide us redirect URI of your application, where authentication responses will be sent and received by your application).
 
 There are three steps to get the JWT using Code Flow:
 
@@ -152,7 +152,7 @@ Implicit Flow
 
 This flow should be used for applications where interaction with user is possible.
 To receive the JWT using Implicit Flow you will need a client id issued by Tedee.
-Please contact with us (support@tedee.com) to receive a client id for your application (you must provide us redirect URI of your application, where authentication responses will be sent and received by your application).
+Please contact us (support@tedee.com) to receive a client id for your application (you must provide us redirect URI of your application, where authentication responses will be sent and received by your application).
 
 The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
 
