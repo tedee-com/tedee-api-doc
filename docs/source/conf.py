@@ -22,6 +22,7 @@ project = 'Tedee API documentation'
 copyright = '2020, Tedee'
 author = 'Tedee'
 clientId = '02106b82-0524-4fd3-ac57-af774f340979'
+scopePrefix = 'https://tedee.onmicrosoft.com/api/'
 apiUrl = 'https://api.tedee.com'
 authApiUrl = 'https://tedee.b2clogin.com/tedee.onmicrosoft.com'
 apiVersion = 'v1.13'
@@ -67,6 +68,7 @@ def ultimateReplace(app, docname, source):
 ultimate_replacements = {
     "|project|" : project,
     "|clientId|" : clientId,
+    "|scopePrefix|" : scopePrefix,
     "|apiUrl|" : apiUrl,
     "|authApiUrl|" : authApiUrl,
     "|apiVersion|" : apiVersion
