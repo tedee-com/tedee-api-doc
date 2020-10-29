@@ -12,21 +12,24 @@ To authenticate you must:
 #. :ref:`get-the-jwt`
 #. :ref:`add-jwt-to-the-headers`
 
+
+
 .. _get-the-jwt:
 
 Get the access token (JWT)
 ==========================
 
-There are two policies that can be used to get the JWT:
+We support three OAuth 2.0 authorization flows to get the access token:
 
-+---------------------------+------------------------------------------------------------------------------------------+
-| **Policy name**           | **When to use**                                                                          |
-+---------------------------+------------------------------------------------------------------------------------------+
-| :ref:`KMSI <kmsi-policy>` | Should be used for applications where interaction with user is possible.                 |
-+---------------------------+------------------------------------------------------------------------------------------+
-| :ref:`ROPC <ropc-policy>` | Should be used to handle any kind of automations without user's interaction.             |
-+---------------------------+------------------------------------------------------------------------------------------+
-
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| **Flow name**                        | **When to use**                                                                                                                   |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Code Flow <code-flow>`         | Should be used for applications where interaction with user is possible. Dedicated client app with custom redirect URI is needed. |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Implicit Flow <implicit-flow>` | Should be used for applications where interaction with user is possible. Dedicated client app with custom redirect URI is needed. |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ROPC Flow <ropc-flow>`         | Should be used to handle any kind of automations without user's interaction.                                                      |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning::
 
@@ -34,57 +37,190 @@ There are two policies that can be used to get the JWT:
     If someone else can capture your JWT, they can pretend to be you and invoke some actions in your behalf.
 
 
-.. _kmsi-policy:
 
-KMSI policy
-------------------------
+.. _code-flow:
 
-This is the easiest way and recommended for applications where interaction with user is possible. To receive the JWT using the standard login flow first go to the `login page <|authApiUrl|/oauth2/v2.0/authorize?p=B2C_1A_Signup_Signin_With_Kmsi&client_id=|clientId|&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login>`_.
+Code Flow
+---------
 
-You should see the login form like below:
+This flow should be used for applications where interaction with user is possible.
+To receive the JWT using Code Flow you will need a client id and client secret issued by Tedee.
+Please contact with us (support@tedee.com) to receive a client id and client secret for your application (you must provide us redirect URI of your application, where authentication responses will be sent and received by your application).
 
-.. image:: images/login_page.png
-    :align: center
-    :alt: Login page
+There are three steps to get the JWT using Code Flow:
 
-Provide your credentials and click **Log in** button. After that you should be redirected to the page with your access token.
+**1) Get an authorization code**
 
-.. image:: images/jwt_ms.png
-    :align: center
-    :alt: JWT
-
-This long string in the frame is your access token. You can use it now to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
-
-.. _ropc-policy:
-
-ROPC policy
--------------------------------
-
-We recommend this approach in any kind of automations. To receive the JWT without user interaction, you must send following POST request.
-
-**Request url:**
+The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
 
 .. code-block::
 
-    |authApiUrl|/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc
+    GET |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/authorize
+    ?response_type=code
+    &client_id={client_id}
+    &redirect_uri={redirect_uri}
+    &response_mode={response_mode}
+    &scope={scope}
+    &state={state}
 
-**Request body:**
+* **client_id** - The client id assigned to your application.
+* **redirect_uri** - The redirect URI of your application, where authentication responses are sent and received by your application.
+* **response_mode** - The method that you use to send the resulting authorization code back to your application. It can be **query**, **form_post**, or **fragment**.
+* **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The **offline_access** scope indicates that your app needs a refresh token for long-lived access to resources. The "|scopePrefix|user_impersonation" scope is required (:ref:`list of available scopes <list-of-scopes>`).
+* **state** - A value included in the request that can be a string of any content that you want to use. Usually, a randomly generated unique value is used, to prevent cross-site request forgery attacks.
 
-* grant_type - :code:`password`
-* username - provide you user name/email
-* password - provide you password
-* scope - :code:`openid |clientId|`
-* client_id - :code:`|clientId|`
-* response_type - :code:`token id_token`
+After the user sign-in, the authorization code will be sent to your application to the address specified in the **redirect_uri** parameter (using the method specified in the **response_mode** parameter).
 
-**Request headers:**
+A successful response that uses response_mode=query looks like this:
 
-* Content-Type - :code:`application/x-www-form-urlencoded`
+.. code-block::
+
+    GET {redirect_uri}
+    ?code={code}
+    &state={state}
+
+* **redirect_uri** - The redirect URI of your application.
+* **code** - The authorization code that the application requested.
+* **state** - If a state parameter is included in the request, the same value should appear in the response. The application should verify that the state values in the request and response are identical.
+
+**2) Get a token**
+
+After successfully receiving the authorization code, you can use it to request an access token by sending a POST request to the token endpoint.
+
+.. code-block::
+
+    POST |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/token
+    Content-Type: application/x-www-form-urlencoded
+
+    grant_type=authorization_code
+    &client_id={client_id}
+    &client_secret={client_secret}
+    &scope={scope}
+    &code={code}
+    &redirect_uri={redirect_uri}
+
+* **client_id** - The client id assigned to your application.
+* **client_secret** - The application client secret.
+* **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The **offline_access** scope indicates that your app needs a refresh token for long-lived access to resources. The "|scopePrefix|user_impersonation" scope is required (:ref:`list of available scopes <list-of-scopes>`).
+* **code** - The authorization code that you acquired in the first step of the flow.
+* **redirect_uri** - The redirect URI of the application where you received the authorization code.
+
+A successful token response looks like this:
+
+.. code-block:: json
+
+    {
+        "not_before": "1442340812",
+        "token_type": "Bearer",
+        "access_token": "<<actual access token>>",
+        "expires_in": "3600",
+        "refresh_token": "<<actual refresh token>>",
+        "refresh_token_expires_in": 1209600
+    }
+
+* **not_before** - The time at which the token is considered valid, in epoch time.
+* **token_type** - The token type value (Bearer).
+* **access_token** - The signed JSON Web Token (JWT) that you requested.
+* **expires_in** - The length of time that the access token is valid (in seconds).
+* **refresh_token** - An OAuth 2.0 refresh token. The app can use this token to acquire additional tokens after the current token expires.
+* **refresh_token_expires_in** - The length of time that the refresh token is valid (in seconds).
+
+The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
+
+**3) Refresh the token**
+
+Access tokens are short-lived. After they expire, you must refresh them to continue to access resources. To do this, submit another POST request to the token endpoint. This time, set **grant_type=refresh_token** and provide the refresh token instead of the authorization code.
+
+.. code-block::
+
+    POST |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/token
+    Content-Type: application/x-www-form-urlencoded
+
+    grant_type=refresh_token
+    &client_id={client_id}
+    &client_secret={client_secret}
+    &scope={scope}
+    &refresh_token={refresh_token}
+    &redirect_uri={redirect_uri}
+
+
+
+.. _implicit-flow:
+
+Implicit Flow
+-------------
+
+This flow should be used for applications where interaction with user is possible.
+To receive the JWT using Implicit Flow you will need a client id issued by Tedee.
+Please contact with us (support@tedee.com) to receive a client id for your application (you must provide us redirect URI of your application, where authentication responses will be sent and received by your application).
+
+The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
+
+.. code-block::
+
+    GET |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/authorize
+    ?response_type=token
+    &client_id={client_id}
+    &redirect_uri={redirect_uri}
+    &response_mode=fragment
+    &scope={scope}
+    &state={state}
+    &nonce={nonce}
+
+* **client_id** - The client id assigned to your application.
+* **redirect_uri** - The redirect URI of your application, where authentication responses are sent and received by your application.
+* **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The "|scopePrefix|user_impersonation" scope is required (:ref:`list of available scopes <list-of-scopes>`).
+* **state** - A value included in the request that also is returned in the token response. It can be a string of any content that you want to use. Usually, a randomly generated unique value is used, to prevent cross-site request forgery attacks.
+* **nonce** - A value included in the request (generated by the app) that is included in the resulting token as a claim. The app can then verify this value to mitigate token replay attacks. Usually, the value is a randomized, unique string that can be used to identify the origin of the request.
+
+After the user sign-in, a response will be sent to your application to the address specified in the **redirect_uri** parameter.
+
+A successful response looks like this:
+
+.. code-block::
+
+    GET {redirect_uri}/#
+    access_token={access_token}
+    &token_type=Bearer
+    &expires_in=3600
+    &state={state}
+
+* **access_token** - The signed JSON Web Token (JWT) that you requested.
+* **token_type** - The token type value (Bearer).
+* **expires_in** - The length of time that the token is valid (in seconds).
+* **state** - If a state parameter is included in the request, the same value should appear in the response. The application should verify that the state values in the request and response are identical.
+
+The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
+Implicit Flow does not issue refresh tokens.
+
+
+
+.. _ropc-flow:
+
+ROPC Flow
+----------------------------------------------------
+
+We recommend this approach in any kind of automations. To receive the JWT without user interaction, you must send following POST request.
+
+.. code-block::
+
+    POST |authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token
+    Content-Type: application/x-www-form-urlencoded
+
+    grant_type=password
+    &client_id=|clientId|
+    &scope=openid |clientId|
+    &response_type=token
+    &username={username}
+    &password={password}
+
+* **username** - user name/email
+* **password** - user password
 
 .. code-block:: sh
     :caption: curl
 
-    curl -d "grant_type=password&username=[username]&password=[password]$&scope=openid |clientId|&client_id=|clientId|&response_type=token id_token" -H "Content-Type: application/x-www-form-urlencoded" -X POST |authApiUrl|/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc
+    curl -d "grant_type=password&username=[username]&password=[password]$&scope=openid |clientId|&client_id=|clientId|&response_type=token" -H "Content-Type: application/x-www-form-urlencoded" -X POST |authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token
 
 .. code-block:: csharp
     :caption: C#
@@ -100,10 +236,10 @@ We recommend this approach in any kind of automations. To receive the JWT withou
                 { "password", "<<password>>" },
                 { "scope", "openid |clientId|" },
                 { "client_id", "|clientId|" },
-                { "response_type", "token id_token" }
+                { "response_type", "token" }
             };
 
-            var authApiUrl = "|authApiUrl|/oauth2/v2.0/token?p=B2C_1_SignIn_Ropc";
+            var authApiUrl = "|authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token";
 
             // FormUrlEncodedContent adds "application/x-www-form-urlencoded" Content-Type by default
             using (var content = new FormUrlEncodedContent(parameters))
@@ -120,8 +256,6 @@ We recommend this approach in any kind of automations. To receive the JWT withou
     {
         [JsonProperty("access_token")]
         public string AccessToken { get; set; }
-        [JsonProperty("id_token")]
-        public string IdToken { get; set; }
         [JsonProperty("token_type")]
         public string TokenType { get; set; }
         [JsonProperty("expires_in")]
@@ -134,19 +268,20 @@ If all the values are correct you should get response like below:
 .. code-block:: json
 
     {
-        "access_token": "<<actual access_token>>",
+        "access_token": "<<actual access token>>",
         "token_type": "Bearer",
-        "expires_in": "10800",
-        "id_token": "<<id_token>>"
+        "expires_in": "10800"
     }
 
 The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
 The :code:`expires_in` property describes for how long the token will be valid (in seconds).
 
+
+
 .. _add-jwt-to-the-headers:
 
 Attach JWT to the request
-============================
+=========================
 
 Now, since we have our :ref:`JWT <get-the-jwt>`, we can use it to authenticate our calls.
 To achieve that, we just have to add an ``Authorization`` header containing our access token. This header value should look like ``Bearer <<access_token>>``, where **<<access_token>>** is our JWT. 
@@ -174,6 +309,8 @@ Let's see it on the below examples where we want to get information about all ou
             Console.WriteLine("My devices: " + devices);
         }
     }
+
+
 
 JWT token details
 =================
@@ -220,3 +357,24 @@ You should see the decoded data right away on the right side of the screen
     :align: center
     :alt: JWT decoded data
     :width: 500
+
+
+
+.. _list-of-scopes:
+
+Scopes
+======
+
+Scopes define the set of permissions that the application requests.
+Below is a list of available scopes that can be requested during the authorization process (a single scope value indicates the permissions that are being requested):
+
+* |scopePrefix|user_impersonation - Access tedee api on behalf of the signed-in user
+* |scopePrefix|Account.Read - View user account
+* |scopePrefix|Account.ReadWrite - View and edit user account
+* |scopePrefix|Device.Read - View devices
+* |scopePrefix|Device.ReadWrite - View and edit devices
+* |scopePrefix|DeviceShare.Read - View device shares
+* |scopePrefix|DeviceShare.ReadWrite - View and edit device shares
+* |scopePrefix|DeviceActivity.Read - View activity logs
+* |scopePrefix|Bridge.Operate - Operate bridges
+* |scopePrefix|Lock.Operate - Operate locks
