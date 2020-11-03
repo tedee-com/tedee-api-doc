@@ -21,7 +21,8 @@ Tedee API documentation
    :caption: How to ...
    :hidden:
 
-   Get and sync locks list<howtos/get-locks-list>
+   Begin integration<howtos/begin-integration>
+   Get and sync locks<howtos/get-and-sync-locks>
 
 This site contains a documentation for Tedee REST API.
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.

@@ -5,7 +5,7 @@ Each request of this API requires authentication. We utilizes JSON Web Token (JW
 
 .. note::
 
-    You can find an example of how to authenticate in our `code samples <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/Tedee.Api.CodeSamples/Actions/01_Authenticate_Using_JWT.cs>`_.
+    You can find an example of how to authenticate in our `code samples <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/Tedee.Api.CodeSamples/Actions/S01AuthenticateUsingJWT.cs>`_.
 
 To authenticate you must:
 
@@ -21,15 +21,15 @@ Get the access token (JWT)
 
 We support three OAuth 2.0 authorization flows to get the access token:
 
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| **Flow name**                        | **When to use**                                                                                                                   |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Code Flow <code-flow>`         | Should be used for applications where interaction with user is possible. Dedicated client app with custom redirect URI is needed. |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Implicit Flow <implicit-flow>` | Should be used for applications where interaction with user is possible. Dedicated client app with custom redirect URI is needed. |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ROPC Flow <ropc-flow>`         | Should be used to handle any kind of automations without user's interaction.                                                      |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| **Flow name**                        | **When to use**                                                                                             |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens.                         |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens. Interaction with the user is required to obtain access tokens.        |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                                             |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 .. warning::
 
@@ -43,9 +43,11 @@ We support three OAuth 2.0 authorization flows to get the access token:
 Code Flow
 ---------
 
-This flow should be used for applications where interaction with user is possible.
-To receive the JWT using Code Flow you will need a client id and client secret issued by Tedee.
-Please contact us (support@tedee.com) to receive a client id and client secret for your application (you must provide us redirect URI of your application, where authentication responses will be sent and received by your application).
+This flow should be used for applications that can store refresh tokens and periodically exchange them for access tokens after they expire. 
+
+.. note::
+    To receive the JWT using Code Flow you will need a **client id** and **client secret** issued for your application by Tedee.
+    You can find a guide to achieve that on :doc:`/howtos/begin-integration` page.
 
 There are three steps to get the JWT using Code Flow:
 
@@ -150,9 +152,11 @@ Access tokens are short-lived. After they expire, you must refresh them to conti
 Implicit Flow
 -------------
 
-This flow should be used for applications where interaction with user is possible.
-To receive the JWT using Implicit Flow you will need a client id issued by Tedee.
-Please contact us (support@tedee.com) to receive a client id for your application (you must provide us redirect URI of your application, where authentication responses will be sent and received by your application).
+This flow should be used for applications that cannot store refresh tokens. In this case, interaction with the user is required to obtain access tokens after they expire.
+
+.. note::
+    To receive the JWT using Implicit Flow you will need a **client id** issued for your application by Tedee.
+    You can find a guide to achieve that on :doc:`/howtos/begin-integration` page.
 
 The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
 
@@ -191,7 +195,7 @@ A successful response looks like this:
 * **state** - If a state parameter is included in the request, the same value should appear in the response. The application should verify that the state values in the request and response are identical.
 
 The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
-Implicit Flow does not issue refresh tokens.
+Implicit Flow does not issue refresh tokens. Interaction with the user is required to obtain a new access token after the current one has expired.
 
 
 
@@ -200,7 +204,8 @@ Implicit Flow does not issue refresh tokens.
 ROPC Flow
 ----------------------------------------------------
 
-We recommend this approach in any kind of automations. To receive the JWT without user interaction, you must send following POST request.
+This flow should be used when interaction with the user is not possible.
+To receive the JWT without user interaction, you must send following POST request.
 
 .. code-block:: sh
 
