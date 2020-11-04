@@ -47,7 +47,7 @@ This flow should be used for applications that can store refresh tokens and peri
 
 .. note::
     To receive the JWT using Code Flow you will need a **client id** and **client secret** issued for your application by Tedee.
-    You can find a guide to achieve that on :doc:`/howtos/begin-integration` page.
+    You can find a guide to achieve that on `How to begin integration <howtos/begin-integration.html#get-client-id>`_ page.
 
 There are three steps to get the JWT using Code Flow:
 
@@ -156,7 +156,7 @@ This flow should be used for applications that cannot store refresh tokens. In t
 
 .. note::
     To receive the JWT using Implicit Flow you will need a **client id** issued for your application by Tedee.
-    You can find a guide to achieve that on :doc:`/howtos/begin-integration` page.
+    You can find a guide to achieve that on `How to begin integration <howtos/begin-integration.html#get-client-id>`_ page.
 
 The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
 
