@@ -10,7 +10,7 @@ Client id for you application
 -----------------------------
 
 If you want to use Code Flow or Implicit Flow in the authorization process, you will need a **client id** issued for your application by Tedee.
-Please contact with us (support@tedee.com) to receive a **client id** and **client secret** for your application. 
+Please contact us (support@tedee.com) to receive a **client id** and **client secret** for your application. 
 Please provide the following information in your message:
 
 * name of your company / application
