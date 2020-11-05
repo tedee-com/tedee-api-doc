@@ -21,15 +21,15 @@ Get the access token (JWT)
 
 We support three OAuth 2.0 authorization flows to get the access token:
 
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| **Flow name**                        | **When to use**                                                                                             |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens.                         |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens. Interaction with the user is required to obtain access tokens.        |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                                             |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------+
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Flow name**                        | **When to use**                                                                                                                                               |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens. One time interaction with the user is needed to obtain the refresh token. |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens. Interaction with the user is needed to obtain access tokens after they expire.                                          |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                                                                                               |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning::
 
@@ -43,7 +43,9 @@ We support three OAuth 2.0 authorization flows to get the access token:
 Code Flow
 ---------
 
-This flow should be used for applications that can store refresh tokens and periodically exchange them for access tokens after they expire. 
+This flow should be used for applications that can store refresh tokens and periodically exchange them for access tokens after they expire.
+One time interaction with the user is needed to obtain the refresh token. Next, the refresh token can be used to automatically obtain the next refresh tokens and access tokens.
+Access token is valid for 4 hours. Refresh token is valid for 14 days.
 
 .. note::
     To receive the JWT using Code Flow you will need a **client id** and **client secret** issued for your application by Tedee.
@@ -152,7 +154,9 @@ Access tokens are short-lived. After they expire, you must refresh them to conti
 Implicit Flow
 -------------
 
-This flow should be used for applications that cannot store refresh tokens. In this case, interaction with the user is required to obtain access tokens after they expire.
+This flow should be used for applications that cannot store refresh tokens. 
+In this case, interaction with the user is needed to obtain access tokens after they expire.
+Access token is valid for 4 hours.
 
 .. note::
     To receive the JWT using Implicit Flow you will need a **client id** issued for your application by Tedee.
@@ -317,6 +321,27 @@ Let's see it on the below examples where we want to get information about all ou
 
 
 
+.. _list-of-scopes:
+
+Scopes
+======
+
+Scopes define the set of permissions that the application requests.
+Below is a list of available scopes that can be requested during the authorization process (a single scope value indicates the permissions that are being requested):
+
+* |scopePrefix|user_impersonation - Access tedee api on behalf of the signed-in user
+* |scopePrefix|Account.Read - View user account
+* |scopePrefix|Account.ReadWrite - View and edit user account
+* |scopePrefix|Device.Read - View devices
+* |scopePrefix|Device.ReadWrite - View and edit devices
+* |scopePrefix|DeviceShare.Read - View device shares
+* |scopePrefix|DeviceShare.ReadWrite - View and edit device shares
+* |scopePrefix|DeviceActivity.Read - View activity logs
+* |scopePrefix|Bridge.Operate - Operate bridges
+* |scopePrefix|Lock.Operate - Operate locks
+
+
+
 JWT token details
 =================
 
@@ -362,24 +387,3 @@ You should see the decoded data right away on the right side of the screen
     :align: center
     :alt: JWT decoded data
     :width: 500
-
-
-
-.. _list-of-scopes:
-
-Scopes
-======
-
-Scopes define the set of permissions that the application requests.
-Below is a list of available scopes that can be requested during the authorization process (a single scope value indicates the permissions that are being requested):
-
-* |scopePrefix|user_impersonation - Access tedee api on behalf of the signed-in user
-* |scopePrefix|Account.Read - View user account
-* |scopePrefix|Account.ReadWrite - View and edit user account
-* |scopePrefix|Device.Read - View devices
-* |scopePrefix|Device.ReadWrite - View and edit devices
-* |scopePrefix|DeviceShare.Read - View device shares
-* |scopePrefix|DeviceShare.ReadWrite - View and edit device shares
-* |scopePrefix|DeviceActivity.Read - View activity logs
-* |scopePrefix|Bridge.Operate - Operate bridges
-* |scopePrefix|Lock.Operate - Operate locks

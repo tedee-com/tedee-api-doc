@@ -17,6 +17,7 @@ Please provide the following information in your message:
 * general description of your application
 * scenarios in which your application will be used
 * operations that will be performed in the Tedee API by your application
+* scopes that will be requested by your application during the authorization process (`list of available scopes <../authentication.html#list-of-scopes>`_)
 * which authorization flow you want to use in your application
 * the redirect URI of your application, where authentication responses are sent and received by your application 
 * e-mail address of the person responsible for integration
@@ -36,6 +37,9 @@ Logo variations
 ^^^^^^^^^^^^^^^
 
 You can use tedee logo in two different variations: full logo - contain sign with full tedee symbol, second option is only a 't' symbol on blue background.
+
+| `Download tedee full logo <https://storage.googleapis.com/tedee-wp/2020/11/FullTedeeLogo.zip>`_
+| `Download tedee sign <https://storage.googleapis.com/tedee-wp/2020/11/TedeeSign.zip>`_
 
 .. image:: ../images/tedee-logo.png
     :align: center
