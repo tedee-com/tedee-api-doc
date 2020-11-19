@@ -340,6 +340,11 @@ Below is a list of available scopes that can be requested during the authorizati
 * |scopePrefix|Bridge.Operate - Operate bridges
 * |scopePrefix|Lock.Operate - Operate locks
 
+Example use of scopes in request :
+
+.. code-block:: sh
+
+    scope=https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FLock.Operate%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FDevice.Read%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2Fuser_impersonation
 
 
 JWT token details
