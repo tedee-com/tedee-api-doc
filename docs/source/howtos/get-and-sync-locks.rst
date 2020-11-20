@@ -34,7 +34,7 @@ These endpoints should be used to refresh locks statuses periodically.
     You shouldn't run these endpoints more than once every 10 seconds.
 
 
-**1) Endpoint to sync all your locks **
+**1) Endpoint to sync all your locks**
 
 ``GET |apiUrl|/api/|apiVersion|/my/lock/sync``
 
@@ -55,7 +55,7 @@ These endpoints should be used to refresh locks statuses periodically.
 
 
 
-**3) Endpoint to sync single lock by id **
+**3) Endpoint to sync single lock by id**
 
 ``GET |apiUrl|/api/|apiVersion|/my/lock/sync/<<deviceId>>``
 
