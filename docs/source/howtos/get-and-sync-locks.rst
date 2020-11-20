@@ -27,7 +27,7 @@ Refresh locks statuses
 ----------------------
 
 To get locks statuses you will have to call one of the endpoints below. 
-This endpoint shoulds be used to refresh locks statuses periodically.
+These endpoints should be used to refresh locks statuses periodically.
 
 1) Endpoint to sync all your locks
 
@@ -61,9 +61,9 @@ This endpoint shoulds be used to refresh locks statuses periodically.
 
 .. warning::
 
-    You shouldn't run this endpoints more than once every 10 seconds.
+    You shouldn't run these endpoints more than once every 10 seconds.
 
-The response from this endpoint contains the following information for each lock:
+The response from these endpoints contains the following information for each lock:
 
 * **id** - id of lock
 * **isConnected** - whether the lock is connected to the bridge
