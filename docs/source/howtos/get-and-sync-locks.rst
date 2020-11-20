@@ -4,9 +4,9 @@ How to get and sync locks
 .. include:: ../includes/how-to-header.txt
 
 Tedee's API allows you to get information about all of your locks.
-There are two endpoints to sync list of locks. 
-The first endpoint allows you to get a list of locks with specific data as well as their settings and sharing details. 
-The second endpoint should be used to retrieving locks statuses periodically.
+There are four endpoints to sync list of locks. 
+First you need to use ``my/lock`` endpoint  to get list of locks with specific data as well as their settings and sharing details.
+Then you should use one of three endpoints for retrieving locks statuses periodically
 
 
 Get the list of locks
