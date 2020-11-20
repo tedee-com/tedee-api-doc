@@ -340,7 +340,7 @@ Below is a list of available scopes that can be requested during the authorizati
 * |scopePrefix|Bridge.Operate - Operate bridges
 * |scopePrefix|Lock.Operate - Operate locks
 
-Example use of scopes in request :
+Example use of scopes in request:
 
 .. code-block:: sh
 
