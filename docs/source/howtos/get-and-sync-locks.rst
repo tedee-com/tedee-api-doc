@@ -44,7 +44,7 @@ These endpoints should be used to refresh locks statuses periodically.
     curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
-This endpoint also allows to sync only those locks that id is provder in query.
+This endpoint also allows to sync only those locks that id is provided in query.
 
 .. code-block:: sh
     :caption: curl
@@ -55,12 +55,12 @@ This endpoint also allows to sync only those locks that id is provder in query.
 
 **2) Endpoint to sync single lock by id**
 
-``GET |apiUrl|/api/|apiVersion|/my/lock/sync/<<deviceId>>``
+``GET |apiUrl|/api/|apiVersion|/my/lock/<<deviceId>>/sync``
 
 .. code-block:: sh
     :caption: curl
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/sync/<<deviceId>>" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<deviceId>>/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 The response from these endpoints contains the following information for each lock:
