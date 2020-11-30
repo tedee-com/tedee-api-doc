@@ -1,72 +1,25 @@
 How to get and sync locks
 =========================
 
-.. include:: ../includes/how-to-header.txt
-
-Tedee's API allows you to get information about all of your locks.
-There are three endpoints to sync list of locks. 
-First you need to use ``my/lock`` endpoint  to get list of locks with specific data as well as their settings and sharing details.
-Then you should use one of two endpoints for retrieving locks statuses periodically
-
-
-Get the list of locks
----------------------
-
-To get the list of locks with details you will have to call the endpoint below. 
-This endpoint should only be called to get the list of locks if necessary. Don't use this endpoint to refresh lock status frequently.
-
-``GET |apiUrl|/api/|apiVersion|/my/lock``
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
-
-Refresh locks statuses
+Sync multiple locks
 ----------------------
+For this tutorial let's consider that user have more then one lock and you need to get their data and then sync their states periodically.
 
-To get locks statuses you will have to call one of the endpoints below. 
-These endpoints should be used to refresh locks statuses periodically.
+First thing that you need to do is to use endpoint :doc:`Get all locks <../endpoints/lock/getall>`. This endpoint will return full data of all currently logged user locks.
+
+Then after you have succesfully downloaded locks data you can use endpoint :doc:`Sync locks <../endpoints/lock/sync>` to get only current state 
+of user locks.
+
+In that way you can save full data locally and only refresh fields that can often change also you will save yourself time for getting unecessary data from api.
 
 .. warning::
 
-    You shouldn't run these endpoints more than once every 10 seconds.
+    You shouldn't run sync endpoint more than once every 10 seconds.
 
 
-**1) Endpoint to sync all your locks**
+Sync single lock
+-----------------------------
+In this case let's consider that you want only to sync single lock that you already have full data.
 
-``GET |apiUrl|/api/|apiVersion|/my/lock/sync``
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
-
-This endpoint also allows to sync only those locks that id is provided in query.
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/sync?id=<<deviceId>>&id=<<deviceId>>" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
-
-
-**2) Endpoint to sync single lock by id**
-
-``GET |apiUrl|/api/|apiVersion|/my/lock/<<deviceId>>/sync``
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<deviceId>>/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
-
-The response from these endpoints contains the following information for each lock:
-
-* **id** - id of lock
-* **isConnected** - whether the lock is connected to the bridge
-* **state** - the current lock status
-* **isCharging** -  whether the lock is currently charging
-* **batteryLevel** - battery level of the lock
+Instead of calling :doc:`Sync locks <../endpoints/lock/sync>` you can call dedicated endpoint for syncing single lock by id :doc:`Sync single lock <../endpoints/lock/sync-single>`
+It's faster and allows you to call it every one second. For example you can call it every one second up to ten when users is locking/unlocking his lock.
