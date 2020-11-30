@@ -7,7 +7,7 @@ Tedee API documentation
 =======================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Overview
    :hidden:
 
@@ -17,12 +17,32 @@ Tedee API documentation
    release-notes
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: How to ...
    :hidden:
 
    Begin integration<howtos/begin-integration>
    Get and sync locks<howtos/get-and-sync-locks>
+
+.. toctree::
+   :maxdepth: 1
+   :includehidden:
+   :caption: Endpoints
+   :hidden:
+
+   endpoints/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Data structures
+   :hidden:
+
+   Lock<datastructures/lock>
+   Device settings<datastructures/device-settings>
+   Location<datastructures/location>
+   Lock properties<datastructures/lock-properties>
+   Software versions<datastructures/software-versions>
+   Lock sync<datastructures/lock-sync>
 
 This site contains a documentation for Tedee REST API.
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.
