@@ -17,7 +17,7 @@ Swagger Documentation : `Click <|apiUrl|/swagger/index.html#/Lock/GetLocksForSyn
 
     curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
-**Data structure:** :doc:`Lock <../../datastructures/lock-sync>`
+**Data structure:** :doc:`Lock sync <../../datastructures/lock-sync>`
 
 **Example response**
 
