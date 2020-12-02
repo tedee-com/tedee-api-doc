@@ -4,9 +4,9 @@ Lock properties
 +------------------------+------------+--------------------------------------------------------------+
 | Name                   | Type       | Description                                                  |
 +========================+============+==============================================================+
-| state                  | number     | represents current state of the lock                         |
+| batteryLevel           | number     | represents current battery level                             |
 +------------------------+------------+--------------------------------------------------------------+
 | isCharging             | boolean    | represents if lock is currently charging                     |
 +------------------------+------------+--------------------------------------------------------------+
-| batteryLevel           | number     | represents current battery level                             |
+| state                  | number     | represents current state of the lock                         |
 +------------------------+------------+--------------------------------------------------------------+

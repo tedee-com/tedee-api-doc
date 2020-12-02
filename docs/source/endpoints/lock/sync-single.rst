@@ -13,15 +13,33 @@ Endpoint that sync single lock by id.
 | DeviceId               | number    | id of lock to sync  |
 +------------------------+-----------+---------------------+
 
-Swagger Documentation : `Click <|apiUrl|/swagger/index.html#/Lock/GetSingleLockForSync>`_.
-
 .. code-block:: sh
     :caption: curl
 
     curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<deviceId>>/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
+Responses 
+-------------
 
-**Data structure:** :doc:`Lock sync <../../datastructures/lock-sync>`
++------------------------+---------------------------------------------------+--------------------------+
+| Name                   | Type                                              | Description              |
++========================+===================================================+==========================+
+| 200 OK                 | :doc:`Lock sync <../../datastructures/lock-sync>` | successful operation     |
++------------------------+---------------------------------------------------+--------------------------+
+
+Scopes
+-------------
+
++------------------------+-------------------------------------------------------------------------+
+| Name                   | Description                                                             |
++========================+=========================================================================+
+| Device.Read            | Grants user possibility to read data connected with devices             |
++------------------------+-------------------------------------------------------------------------+
+| Device.ReadWrite       | Grants user possibility to read and write data connected with devices   |
++------------------------+-------------------------------------------------------------------------+
+
+Examples
+-------------
 
 **Example response**
 
