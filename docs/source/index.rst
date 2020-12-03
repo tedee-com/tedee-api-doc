@@ -37,12 +37,22 @@ Tedee API documentation
    :caption: Data structures
    :hidden:
 
-   Lock<datastructures/lock>
    Device settings<datastructures/device-settings>
    Location<datastructures/location>
+   Lock<datastructures/lock>
+   Lock sync<datastructures/lock-sync>
    Lock properties<datastructures/lock-properties>
    Software versions<datastructures/software-versions>
-   Lock sync<datastructures/lock-sync>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Enumns
+   :hidden:
+
+   Access level<enums/access-level>
+   Device type<enums/device-type>
+   Lock state<enums/lock-state>
+   Software type<enums/software-type>
 
 This site contains a documentation for Tedee REST API.
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.
