@@ -46,7 +46,7 @@ Tedee API documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Enumns
+   :caption: Enums
    :hidden:
 
    Access level<enums/access-level>
