@@ -4,9 +4,9 @@ Software versions
 +------------------------+------------------------------------------------+--------------------------------------------------------------+
 | Name                   | Type                                           | Description                                                  |
 +========================+================================================+==============================================================+
-| softwareType           | number                                         | represents type of the current software                      |
+| softwareType           | :doc:`Software type <../enums/software-type>`  | represents type of the current software                      |
 +------------------------+------------------------------------------------+--------------------------------------------------------------+
 | updateAvailable        | boolean                                        | represents if software update is available                   |
 +------------------------+------------------------------------------------+--------------------------------------------------------------+
-| version                | :doc:`Software type <../enums/software-type>`  | current version of the software                              |
+| version                | string                                         | current version of the software                              |
 +------------------------+------------------------------------------------+--------------------------------------------------------------+
