@@ -3,20 +3,20 @@ Sync single lock
 
 Endpoint that sync single lock by id.
 
-``GET |apiUrl|/api/|apiVersion|/my/lock/<<deviceId>>/sync``
+``GET |apiUrl|/api/|apiVersion|/my/lock/<<id>>/sync``
 
 **Parameters**
 
 +------------------------+-----------+---------------------+
 | Name                   | Type      | Description         |
 +========================+===========+=====================+
-| DeviceId               | number    | id of lock to sync  |
+| id                     | number    | id of lock to sync  |
 +------------------------+-----------+---------------------+
 
 .. code-block:: sh
     :caption: curl
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<deviceId>>/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<id>>/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 Responses 
 -------------
