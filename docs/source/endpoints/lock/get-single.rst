@@ -1,7 +1,7 @@
-Get the list of locks
+Get lock by id
 =========================
 
-Endpoint that returns list of all currently logged user locks.
+Endpoint that returns lock by provided id.
 
 ``GET |apiUrl|/api/|apiVersion|/my/lock/<<id>>``
 
