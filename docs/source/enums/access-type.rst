@@ -1,7 +1,7 @@
 Access type
 ---------------------------------------
 
-This enum describes user access type to the device
+This enum describes user access type of the share to the device
 
 +-----------+-----------------------+
 | Number    | Name                  |
