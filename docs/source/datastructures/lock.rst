@@ -40,6 +40,8 @@ Lock
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | serialNumber           | string                                             | lock serial number                                |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
+| shareDetails           | :doc:`Share details <share-details>`               | represents share details object                   |
++------------------------+----------------------------------------------------+---------------------------------------------------+
 | softwareVersions       | :doc:`Software version <software-versions>`        | represents software versions object               |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | targetDeviceRevision   | number                                             | revision info that is sent to device from backend |

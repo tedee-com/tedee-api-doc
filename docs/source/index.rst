@@ -42,6 +42,8 @@ Tedee API documentation
    Lock<datastructures/lock>
    Lock sync<datastructures/lock-sync>
    Lock properties<datastructures/lock-properties>
+   Repeat event<datastructures/repeat-event>
+   Share details<datastructures/share-details>
    Software versions<datastructures/software-versions>
 
 .. toctree::
