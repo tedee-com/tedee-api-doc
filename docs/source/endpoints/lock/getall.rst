@@ -1,15 +1,9 @@
-Get the list of locks
+Locks - List
 =========================
 
 Endpoint that returns list of all currently logged user locks.
 
 ``GET |apiUrl|/api/|apiVersion|/my/lock``
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
 
 Responses 
 -------------
@@ -34,10 +28,19 @@ Scopes
 Examples
 -------------
 
-**Example response**
+Get list of locks
+^^^^^^^^^^^^^^^^^
+**Sample Request**
+""""""""""""""""""""
 
-* HTTP status code - ``200``
-* Response body:
+.. code-block:: sh
+    :caption: curl
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+**Sample Response**
+
+HTTP status code: ``200``
 
     .. code-block:: js
 
