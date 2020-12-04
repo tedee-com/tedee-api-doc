@@ -6,7 +6,7 @@ Share details
 +========================+=============================================+================================================+
 | accessLevel            | :doc:`Access level <../enums/access-level>` | represents access level of the share           |
 +------------------------+---------------------------------------------+------------------------------------------------+
-| accessType             | number                                      | represents access type of the share            |
+| accessType             | :doc:`Access type <../enums/access-type>`   | represents access type of the share            |
 +------------------------+---------------------------------------------+------------------------------------------------+
 | deviceId               | number                                      | id of the shared device                        |
 +------------------------+---------------------------------------------+------------------------------------------------+

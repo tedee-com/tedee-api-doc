@@ -52,6 +52,7 @@ Tedee API documentation
    :hidden:
 
    Access level<enums/access-level>
+   Access type<enums/access-type>
    Device type<enums/device-type>
    Lock state<enums/lock-state>
    Software type<enums/software-type>
