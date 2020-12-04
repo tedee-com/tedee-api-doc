@@ -42,6 +42,8 @@ Tedee API documentation
    Lock<datastructures/lock>
    Lock sync<datastructures/lock-sync>
    Lock properties<datastructures/lock-properties>
+   Repeat event<datastructures/repeat-event>
+   Share details<datastructures/share-details>
    Software versions<datastructures/software-versions>
 
 .. toctree::
@@ -50,6 +52,7 @@ Tedee API documentation
    :hidden:
 
    Access level<enums/access-level>
+   Access type<enums/access-type>
    Device type<enums/device-type>
    Lock state<enums/lock-state>
    Software type<enums/software-type>
