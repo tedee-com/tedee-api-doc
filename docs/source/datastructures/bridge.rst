@@ -6,39 +6,33 @@ Bridge
 +========================+====================================================+===================================================+
 | accessLevel            | :doc:`Access level <../enums/access-level>`        | represents current user access level              |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| autoUnlockEnabled      | boolean                                            | represents if auto unlock is enabled              |
+| beaconMajor            | number                                             | represents major beacon number                    |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| autoUnlockRangeIn      | number                                             | represents value of the in zone                   |
+| beaconMinor            | number                                             | represents minor beacon number                    |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| autoUnlockRangeOut     | number                                             | represents value of the out zone                  |
+| bridgeId               | number                                             | id of bridge                                      |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| autoUnlockTimeout      | number                                             | represents value of auto unlock timeout           |
+| connectedToId          | number                                             | id of bridge                                      |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| bridgeId               | number                                             | id of bridge that lock is connected to            |
+| created                | datetime                                           | represents when bridge was added to user account  |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| connectedToId          | number                                             | id of bridge that lock is connected to            |
+| deviceRevision         | number                                             | current bridge revision on the device             |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| created                | datetime                                           | represents when lock was added to user account    |
+| id                     | number                                             | bridge id                                         |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| deviceRevision         | number                                             | current lock revision on the device               |
+| iotDeviceName          | string                                             | represents bridge iot name                        |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| deviceSettings         | :doc:`Device settings <device-settings>`           | represents device settings object                 |
+| isConnected            | boolean                                            | represents if bridge is connected                 |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| id                     | number                                             | lock id                                           |
+| isUpdating             | boolean                                            | represents if bridge is isUpdating                |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| isConnected            | boolean                                            | represents if lock connected to bridge            |
+| macAddress             | string                                             | bridge mac address                                |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| location               | :doc:`Location <location>`                         | represents location object                        |
+| name                   | string                                             | bridge name                                       |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| lockProperties         | :doc:`Lock properties <lock-properties>`           | represents lockProperties object                  |
+| revision               | number                                             | current bridge revision in database               |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| macAddress             | string                                             | lock mac address                                  |
-+------------------------+----------------------------------------------------+---------------------------------------------------+
-| name                   | string                                             | lock name                                         |
-+------------------------+----------------------------------------------------+---------------------------------------------------+
-| revision               | number                                             | current lock revision in database                 |
-+------------------------+----------------------------------------------------+---------------------------------------------------+
-| serialNumber           | string                                             | lock serial number                                |
+| serialNumber           | string                                             | bridge serial number                              |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | shareDetails           | :doc:`Share details <share-details>`               | represents share details object                   |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
@@ -48,8 +42,9 @@ Bridge
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | type                   | :doc:`Device type <../enums/device-type>`          | represents device type                            |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| userIdentity           | string                                             | lock owner identity                               |
+| userIdentity           | string                                             | bridge owner identity                             |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-
-
-
+| voIPNumberId           | number                                             | represents voip number                            |
++------------------------+----------------------------------------------------+---------------------------------------------------+
+| wasConfigured          | boolean                                            | represents if wifi was configured on bridge       |
++------------------------+----------------------------------------------------+---------------------------------------------------+
