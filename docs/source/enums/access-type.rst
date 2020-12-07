@@ -10,5 +10,5 @@ This enum describes user access type of the share to the device
 +-----------+-----------------------+
 | 1         | TimeRestricted        |
 +-----------+-----------------------+
-| 2         | Recurring             |
+| 2         | Custom                |
 +-----------+-----------------------+
