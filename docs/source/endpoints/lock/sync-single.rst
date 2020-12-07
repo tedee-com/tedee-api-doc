@@ -1,4 +1,4 @@
-Sync single lock
+Lock - Sync single
 =========================
 
 Endpoint that sync single lock by id.

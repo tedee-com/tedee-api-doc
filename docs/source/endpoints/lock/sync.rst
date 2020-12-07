@@ -1,4 +1,4 @@
-Sync locks
+Lock - Sync
 =========================
 
 Endpoint that sync all users locks states
