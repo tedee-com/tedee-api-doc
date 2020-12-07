@@ -17,4 +17,4 @@ Devices
    :maxdepth: 1
    :hidden:
 
-   Get all locks<device/get-with-details>
+   Get devices with details<device/get-with-details>
