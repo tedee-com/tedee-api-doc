@@ -1,14 +1,22 @@
-Get the list of locks
+Get lock by id
 =========================
 
-Endpoint that returns list of all currently logged user locks.
+Endpoint that returns lock by provided id.
 
-``GET |apiUrl|/api/|apiVersion|/my/lock``
+``GET |apiUrl|/api/|apiVersion|/my/lock/<<id>>``
+
+**Parameters**
+
++------------------------+-----------+---------------------+
+| Name                   | Type      | Description         |
++========================+===========+=====================+
+| Id                     | number    | id of lock          |
++------------------------+-----------+---------------------+
 
 .. code-block:: sh
     :caption: curl
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<id>>" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 Responses 
@@ -17,7 +25,7 @@ Responses
 +------------------------+-------------------------------------------+--------------------------+
 | Name                   | Type                                      | Description              |
 +========================+===========================================+==========================+
-| 200 OK                 | :doc:`Lock <../../datastructures/lock>` []| successful operation     |
+| 200 OK                 | :doc:`Lock <../../datastructures/lock>`   | successful operation     |
 +------------------------+-------------------------------------------+--------------------------+
 
 Scopes
@@ -39,22 +47,22 @@ Examples
 * HTTP status code - ``200``
 * Response body:
 
-.. code-block:: js
+    .. code-block:: js
 
-    {
-        "result": [
+        {
+            "result":
             {
                 "bridgeId": 2,
                 "deviceSettings": {
                     "autoLockEnabled": true,
                     "autoLockDelay": 10,
                     "autoLockImplicitEnabled": false,
-                    "autoLockImplicitDelay": 0,
+                    "autoLockImplicitDelay": 10,
                     "pullSpringEnabled": true,
                     "pullSpringDuration": 10,
                     "autoPullSpringEnabled": false,
                     "postponedLockEnabled": false,
-                    "postponedLockDelay": 0,
+                    "postponedLockDelay": 10,
                     "buttonLockEnabled": false,
                     "buttonUnlockEnabled": false
                 },
@@ -91,8 +99,7 @@ Examples
                     }
                 ]
             }
-        ]
-        "success": true,
-        "errorMessages": [],
-        "statusCode": 200
-    }
+            "success": true,
+            "errorMessages": [],
+            "statusCode": 200
+        }
