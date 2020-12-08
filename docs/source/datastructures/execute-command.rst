@@ -11,5 +11,5 @@ Response from requests:
 +------------------------+------------+------------------------------------------------------------------------+
 | Name                   | Type       | Description                                                            |
 +========================+============+========================================================================+
-| operationId            | string     | epoch time in miliseconds. Used for relating commands in whole process |
+| operationId            | string     | epoch time in miliseconds. Used for correlating whole process          |
 +------------------------+------------+------------------------------------------------------------------------+

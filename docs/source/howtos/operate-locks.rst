@@ -6,21 +6,21 @@ What you need is id of your lock.
 
 Lock your tedee lock
 ----------------------
-To lock your door use endpoint :doc:`Lock your lock <../endpoints/lock/lock>`. This endpoint will return operationId. This is for correlate whole process of lock command - mobile app receives push notification with this operationId and result of executed command.
+To lock your door use endpoint :doc:`Lock your lock <../endpoints/lock/lock>`. This endpoint will return operationId. This is for correlating whole process of lock command - mobile app receives push notification with this operationId and result of executed command.
 
 .. note::
     You should calibrate your lock before using this endpoint. If you didn't calibrate your lock this endpoint will return successful response but nothing will happen.
 
 Unlock your tedee lock
 ----------------------
-To unlock your door use this endpoint :doc:`Unlock your lock <../endpoints/lock/unlock>`. This endpoint will return operationId. This is for correlate whole process of unlock command - mobile app receives push notification with this operationId and result of executed command.
+To unlock your door use this endpoint :doc:`Unlock your lock <../endpoints/lock/unlock>`. This endpoint will return operationId. This is for correlating whole process of unlock command - mobile app receives push notification with this operationId and result of executed command.
 
 .. note::
     You should calibrate your lock before using this endpoint. If you didn't calibrate your lock this endpoint will return successful response but nothing will happen.
 
 Pull spring in your tedee lock
 ------------------------------
-To perform pull spring use this endpoint :doc:`Pull spring <../endpoints/lock/pull-spring>`. This endpoint will return operationId. This is for correlate whole process of pull spring command - mobile app receives push notification with this operationId and result of executed command.
+To perform pull spring use this endpoint :doc:`Pull spring <../endpoints/lock/pull-spring>`. This endpoint will return operationId. This is for correlating whole process of pull spring command - mobile app receives push notification with this operationId and result of executed command.
 
 .. note::
     You should calibrate pull spring in your lock before using this endpoint. If you didn't calibrate pull spring this endpoint will return successful response but nothing will happen.
