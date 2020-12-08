@@ -24,6 +24,7 @@ Tedee API documentation
    Begin integration<howtos/begin-integration>
    Get and sync locks<howtos/get-and-sync-locks>
    How to operate locks<howtos/operate-locks>
+   Update lock settings<howtos/update-lock-settings>
 
 .. toctree::
    :maxdepth: 1
@@ -46,6 +47,7 @@ Tedee API documentation
    Lock<datastructures/lock>
    Lock sync<datastructures/lock-sync>
    Lock properties<datastructures/lock-properties>
+   Lock updated<datastructures/lock-updated>
    Repeat event<datastructures/repeat-event>
    Share details<datastructures/share-details>
    Software versions<datastructures/software-versions>

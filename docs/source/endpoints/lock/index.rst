@@ -12,3 +12,4 @@ Locks
    Sync locks<sync>
    Sync single lock<sync-single>
    Unlock<unlock>
+   Update lock<update-lock>

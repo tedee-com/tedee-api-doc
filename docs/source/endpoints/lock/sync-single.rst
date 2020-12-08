@@ -49,7 +49,7 @@ Examples
 .. code-block:: js
 
     {
-        "result":  "result":  
+        "result":  
         {
             "id": 1,
             "isConnected": true,
