@@ -23,6 +23,7 @@ Tedee API documentation
 
    Begin integration<howtos/begin-integration>
    Get and sync locks<howtos/get-and-sync-locks>
+   Update lock settings<howtos/update-lock-settings>
 
 .. toctree::
    :maxdepth: 1
