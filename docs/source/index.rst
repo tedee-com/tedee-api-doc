@@ -31,13 +31,15 @@ Tedee API documentation
    :caption: Endpoints
    :hidden:
 
-   endpoints/index
+   endpoints/device/index
+   endpoints/lock/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Data structures
    :hidden:
 
+   Bridge<datastructures/bridge>
    Device settings<datastructures/device-settings>
    Location<datastructures/location>
    Lock<datastructures/lock>
