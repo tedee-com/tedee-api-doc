@@ -23,6 +23,7 @@ Tedee API documentation
 
    Begin integration<howtos/begin-integration>
    Get and sync locks<howtos/get-and-sync-locks>
+   How to operate locks<howtos/operate-locks>
 
 .. toctree::
    :maxdepth: 1
@@ -40,6 +41,7 @@ Tedee API documentation
 
    Bridge<datastructures/bridge>
    Device settings<datastructures/device-settings>
+   Execute command response<datastructures/execute-command>
    Location<datastructures/location>
    Lock<datastructures/lock>
    Lock sync<datastructures/lock-sync>
