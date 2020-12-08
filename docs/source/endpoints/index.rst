@@ -9,3 +9,4 @@ Locks
    Get single lock<lock/get-single>
    Sync locks<lock/sync>
    Sync single lock<lock/sync-single>
+   Update lock<lock/update-lock>
