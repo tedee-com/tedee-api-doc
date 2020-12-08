@@ -5,7 +5,7 @@ Sync multiple locks
 ----------------------
 For this tutorial let's consider that user has more then one lock and you need to get their data and then sync their states periodically.
 
-First thing that you need to do is to use endpoint :doc:`Get all locks <../endpoints/lock/getall>`. This endpoint will return full data of all currently logged user locks.
+First thing that you need to do is to use endpoint :doc:`Get all locks <../endpoints/lock/get-all>`. This endpoint will return full data of all currently logged user locks.
 
 Then after you have succesfully downloaded locks data you can use endpoint :doc:`Sync locks <../endpoints/lock/sync>` to get only current state 
 of user locks.

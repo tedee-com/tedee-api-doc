@@ -1,0 +1,143 @@
+Get the list of devices with details
+====================================
+
+Endpoint that returns list of all currently logged user devices with details.
+
+``GET |apiUrl|/api/|apiVersion|/my/device/details``
+
+.. code-block:: sh
+    :caption: curl
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device/details" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+
+Responses 
+-------------
+
++------------------------+-----------------------------------------------+--------------------------+
+| Name                   | Type                                          | Description              |
++========================+===============================================+==========================+
+| 200 OK                 | :doc:`Lock <../../datastructures/lock>` []    | successful operation     |
++                        +-----------------------------------------------+                          +
+|                        | :doc:`Bridge <../../datastructures/bridge>` []|                          |
++------------------------+-----------------------------------------------+--------------------------+
+
+Scopes
+-------------
+
++------------------------+-------------------------------------------------------------------------+
+| Name                   | Description                                                             |
++========================+=========================================================================+
+| Device.Read            | Grants user possibility to read data connected with devices             |
++------------------------+-------------------------------------------------------------------------+
+| Device.ReadWrite       | Grants user possibility to read and write data connected with devices   |
++------------------------+-------------------------------------------------------------------------+
+
+Examples
+-------------
+
+**Example response**
+
+* HTTP status code - ``200``
+* Response body:
+
+.. code-block:: js
+
+    {
+        "result": {
+            "bridges": [
+            {
+                "iotDeviceName": "111111-111112",
+                "voIPNumberId": null,
+                "beaconMajor": 10,
+                "beaconMinor": 10,
+                "wasConfigured": true,
+                "isUpdating": false,
+                "id": 2,
+                "connectedToId": null,
+                "serialNumber": "111111-111112",
+                "macAddress": "00:0A:95:9D:68:17",
+                "name": "Bridge 1",
+                "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+                "type": 1,
+                "created": "2020-01-01T00:00:00",
+                "revision": 1,
+                "deviceRevision": 1,
+                "targetDeviceRevision": 1,
+                "isConnected": true,
+                "accessLevel": 2,
+                "shareDetails": null,
+                "softwareVersions": [
+                {
+                    "softwareType": 0,
+                    "version": "1.0.1",
+                    "updateAvailable": true
+                },
+                {
+                    "softwareType": 1,
+                    "version": "2.0.0",
+                    "updateAvailable": true
+                }
+                ]
+            }
+            ],
+            "locks": [
+            {
+                "bridgeId": 2,
+                "deviceSettings": {
+                    "autoLockEnabled": true,
+                    "autoLockDelay": 10,
+                    "autoLockImplicitEnabled": true,
+                    "autoLockImplicitDelay": 10,
+                    "pullSpringEnabled": true,
+                    "pullSpringDuration": 10,
+                    "autoPullSpringEnabled": true,
+                    "postponedLockEnabled": true,
+                    "postponedLockDelay": 10,
+                    "buttonLockEnabled": true,
+                    "buttonUnlockEnabled": true
+                },
+                "autoUnlockEnabled": true,
+                "autoUnlockConfirmEnabled": true,
+                "autoUnlockRangeIn": 300,
+                "autoUnlockRangeOut": 400,
+                "autoUnlockTimeout": 20,
+                "location": {
+                    "latitude": 52.24070739746092,
+                    "longitude": 21.086990356445305
+                },
+                "lockProperties": {
+                    "state": 3,
+                    "isCharging": false,
+                    "batteryLevel": 18
+                },
+                "beaconMajor": 10,
+                "beaconMinor": 10,
+                "id": 1,
+                "connectedToId": 2,
+                "serialNumber": "111111-11111",
+                "macAddress": "00:0A:95:9D:68:16",
+                "name": "Room 6",
+                "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+                "type": 2,
+                "created": "2020-01-01T00:00:00",
+                "revision": 2,
+                "deviceRevision": 2,
+                "targetDeviceRevision": 2,
+                "isConnected": true,
+                "accessLevel": 2,
+                "shareDetails": null,
+                "softwareVersions": [
+                    {
+                        "softwareType": 0,
+                        "version": "1.0.0",
+                        "updateAvailable": true
+                    }
+                ]
+            }
+            ]
+        },
+        "success": true,
+        "errorMessages": [],
+        "statusCode": 200
+    }
