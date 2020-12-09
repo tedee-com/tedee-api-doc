@@ -1,8 +1,8 @@
-Devices   
+Device activity
 =========================
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Get device activities<get-activities>
+   Get device activities <get-all>

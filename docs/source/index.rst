@@ -21,9 +21,9 @@ Tedee API documentation
    :caption: How to ...
    :hidden:
 
-   Begin integration<howtos/begin-integration>
-   Get and sync locks<howtos/get-and-sync-locks>
-   Update lock settings<howtos/update-lock-settings>
+   Begin integration <howtos/begin-integration>
+   Get and sync locks <howtos/get-and-sync-locks>
+   Update lock settings <howtos/update-lock-settings>
 
 .. toctree::
    :maxdepth: 1
@@ -40,28 +40,28 @@ Tedee API documentation
    :caption: Data structures
    :hidden:
 
-   Bridge<datastructures/bridge>
-   Device settings<datastructures/device-settings>
-   Location<datastructures/location>
-   Lock<datastructures/lock>
-   Lock sync<datastructures/lock-sync>
-   Lock properties<datastructures/lock-properties>
-   Lock updated<datastructures/lock-updated>
-   Repeat event<datastructures/repeat-event>
-   Share details<datastructures/share-details>
-   Software versions<datastructures/software-versions>
+   Bridge <datastructures/bridge>
+   Device settings <datastructures/device-settings>
+   Location <datastructures/location>
+   Lock <datastructures/lock>
+   Lock sync <datastructures/lock-sync>
+   Lock properties <datastructures/lock-properties>
+   Lock updated <datastructures/lock-updated>
+   Repeat event <datastructures/repeat-event>
+   Share details <datastructures/share-details>
+   Software versions <datastructures/software-versions>
 
 .. toctree::
    :maxdepth: 1
    :caption: Enums
    :hidden:
 
-   Access level<enums/access-level>
-   Access type<enums/access-type>
-   Device type<enums/device-type>
-   Event type<enums/event-type>
-   Lock state<enums/lock-state>
-   Software type<enums/software-type>
+   Access level <enums/access-level>
+   Access type <enums/access-type>
+   Device type <enums/device-type>
+   Event type <enums/event-type>
+   Lock state <enums/lock-state>
+   Software type <enums/software-type>
 
 This site contains a documentation for Tedee REST API.
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.

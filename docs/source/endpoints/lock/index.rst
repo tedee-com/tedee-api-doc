@@ -1,12 +1,12 @@
-Locks
+Lock
 =========================
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Get all locks<get-all>
-   Get single lock<get-single>
-   Sync locks<sync>
-   Sync single lock<sync-single>
-   Update lock<update-lock>
+   Get all <get-all>
+   Get single <get-single>
+   Sync <sync>
+   Sync single <sync-single>
+   Update <update>

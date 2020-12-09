@@ -3,7 +3,9 @@ Get all
 
 Endpoint that returns paged list of activities for provided device id.
 
-``GET |apiUrl|/api/|apiVersion|/my/deviceactivity``
+.. code-block:: sh
+
+    GET |apiUrl|/api/|apiVersion|/my/deviceactivity
 
 **Parameters**
 
