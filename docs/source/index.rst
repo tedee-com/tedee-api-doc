@@ -63,7 +63,7 @@ Tedee API documentation
    Lock state<enums/lock-state>
    Software type<enums/software-type>
 
-This site contains a documentation for Tedee REST API.
+This site contains a documentation for Tedee REST API (https://api.tedee.com).
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.
 You can find here guides and code samples which should help you to work with the API.
 
@@ -75,6 +75,7 @@ About Tedee
 Useful links
 ------------
 
+- `Forum <https://tedee.freshdesk.com/en/support/discussions>`_
 - `Tedee API <https://api.tedee.com/>`_
 - `Documentation repository <https://github.com/tedee-com/tedee-api-doc>`_
 
@@ -82,4 +83,4 @@ Useful links
 Need a help?
 ------------
 
-We encourage you to join a discussion or start a new one under `github issues <https://github.com/tedee-com/tedee-api-doc/issues>`_.
+We encourage you to join a discussion or start a new one under `Community forum <https://tedee.freshdesk.com/en/support/discussions>`_.
