@@ -23,7 +23,7 @@ Tedee API documentation
 
    Begin integration<howtos/begin-integration>
    Get and sync locks<howtos/get-and-sync-locks>
-   How to operate locks<howtos/operate-locks>
+   Operate locks<howtos/operate-locks>
    Update lock settings<howtos/update-lock-settings>
 
 .. toctree::
