@@ -41,6 +41,7 @@ Tedee API documentation
    :hidden:
 
    Bridge <datastructures/bridge>
+   Device activities <datastructures/device-activity>
    Device settings <datastructures/device-settings>
    Location <datastructures/location>
    Lock <datastructures/lock>
@@ -58,6 +59,7 @@ Tedee API documentation
 
    Access level <enums/access-level>
    Access type <enums/access-type>
+   Activity source <enums/activity-source>
    Device type <enums/device-type>
    Event type <enums/event-type>
    Lock state <enums/lock-state>

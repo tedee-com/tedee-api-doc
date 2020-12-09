@@ -1,7 +1,7 @@
 Activity source
 ---------------------------------------
 
-This enum describes possible activity sources
+This enum describes possible sources of device activity
 
 +-----------+-----------------------+
 | Number    | Name                  |

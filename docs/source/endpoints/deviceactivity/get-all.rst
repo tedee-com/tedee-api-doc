@@ -1,36 +1,33 @@
 Get all
 ====================================
 
-Endpoint that returns paged list of activities for provided device id.
+Get a list of activities for provided device id.
+Results are sorted by date in descending order.
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/deviceactivity
+    GET |apiUrl|/api/|apiVersion|/my/deviceactivity?deviceId={id}&elements={elements}&lastElemDate={lastElemDate}
 
-**Parameters**
+**URI Parameters**
 
-+------------------------+-----------+---------------------+
-| Name                   | Type      | Description         |
-+========================+===========+=====================+
-| Id                     | number    | id of lock          |
-+------------------------+-----------+---------------------+
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceactivity" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
++------------------------+----------------------+-----------------------------------------------------------------------------------+
+| Name                   | Type                 | Description                                                                       |
++========================+======================+===================================================================================+
+| deviceId               | number               | id of device                                                                      |
++------------------------+----------------------+-----------------------------------------------------------------------------------+
+| elements               | number (optional)    | number of elements to load (max 200, default 200)                                 |
++------------------------+----------------------+-----------------------------------------------------------------------------------+
+| lastElemDate           | datetime (optional)  | when set, only items with a date older than the entered date (in UTC) are shown   |
++------------------------+----------------------+-----------------------------------------------------------------------------------+
 
 Responses 
 -------------
 
-+------------------------+-----------------------------------------------+--------------------------+
-| Name                   | Type                                          | Description              |
-+========================+===============================================+==========================+
-| 200 OK                 | :doc:`Lock <../../datastructures/lock>` []    | successful operation     |
-+                        +-----------------------------------------------+                          +
-|                        | :doc:`Bridge <../../datastructures/bridge>` []|                          |
-+------------------------+-----------------------------------------------+--------------------------+
++------------------------+---------------------------------------------------------------------+--------------------------+
+| Name                   | Type                                                                | Description              |
++========================+=====================================================================+==========================+
+| 200 OK                 | :doc:`Device activity <../../datastructures/device-activity>` []    | successful operation     |
++------------------------+---------------------------------------------------------------------+--------------------------+
 
 Scopes
 -------------
@@ -38,15 +35,51 @@ Scopes
 +------------------------+-------------------------------------------------------------------------+
 | Name                   | Description                                                             |
 +========================+=========================================================================+
-| Device.Read            | Grants user possibility to read data connected with devices             |
-+------------------------+-------------------------------------------------------------------------+
-| Device.ReadWrite       | Grants user possibility to read and write data connected with devices   |
+| DeviceActivity.Read    | Grants user possibility to read device activities                       |
 +------------------------+-------------------------------------------------------------------------+
 
 Examples
 -------------
 
-**Example response**
+Get a list of activities for device
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* HTTP status code - ``200``
-* Response body:
+**Sample Request**
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceactivity?deviceId=2&elements=50&lastElemDate=2020-11-20T16%3A00%3A00.000" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+**Sample Response**
+
+HTTP status code: ``200``
+
+.. code-block:: js
+
+    {
+        "result": [
+            {
+                "id": 1,
+                "deviceId": 2,
+                "userId": 3,
+                "organizationUserId": 1,
+                "username": "Test",
+                "event": 32,
+                "source": 0,
+                "date": "2020-11-20T13:59:26.212"
+            },
+            {
+                "id": 2,
+                "deviceId": 2,
+                "userId": 3,
+                "organizationUserId": 1,
+                "username": "Test",
+                "event": 33,
+                "source": 0,
+                "date": "2020-11-20T13:00:45.554"
+            }
+        ],
+        "success": true,
+        "errorMessages": [],
+        "statusCode": 200
+    }

@@ -10,13 +10,10 @@ Endpoint that returns lock by provided id.
 +------------------------+-----------+---------------------+
 | Name                   | Type      | Description         |
 +========================+===========+=====================+
-| Id                     | number    | id of lock          |
+| id                     | number    | id of lock          |
 +------------------------+-----------+---------------------+
 
-.. code-block:: sh
-    :caption: curl
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<id>>" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 Responses 
@@ -41,6 +38,12 @@ Scopes
 
 Examples
 -------------
+
+.. code-block:: sh
+    :caption: curl
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<id>>" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
 
 **Example response**
 
