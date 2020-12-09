@@ -11,12 +11,12 @@ After you send command to execute given operation you can check status of your l
 
 Lock your tedee lock
 ----------------------
-To lock your door use endpoint :doc:`Lock your lock <../endpoints/lock/lock>`. This endpoint will return operationId. This is for correlating whole process of lock command - mobile app receives push notification with this operationId and result of executed command.
+To lock your door use endpoint :doc:`Close your lock <../endpoints/lock/close>`. This endpoint will return operationId. This is for correlating whole process of lock command - mobile app receives push notification with this operationId and result of executed command.
 
 
 Unlock your tedee lock
 ----------------------
-To unlock your door use this endpoint :doc:`Unlock your lock <../endpoints/lock/unlock>`. This endpoint will return operationId. This is for correlating whole process of unlock command - mobile app receives push notification with this operationId and result of executed command.
+To unlock your door use this endpoint :doc:`Open your lock <../endpoints/lock/open>`. This endpoint will return operationId. This is for correlating whole process of unlock command - mobile app receives push notification with this operationId and result of executed command.
 
 
 Pull spring in your tedee lock

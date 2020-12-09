@@ -1,26 +1,25 @@
-Unlock your lock
+Open
 =========================
 
-Endpoint that sends command to unlock your lock by provided id.
+Endpoint that sends command to open your lock by provided id.
 
-``POST |apiUrl|/api/|apiVersion|/my/lock/open``
+.. code-block:: sh
+
+    POST |apiUrl|/api/|apiVersion|/my/lock/open
+    
+Request Body
+-------------
 
 **Body**
 
 +------------------------+-----------+--------------------------------------------------+
-| Name                   | Type      | Description                                      |
+| **Name**               | **Type**  | **Description**                                  |
 +========================+===========+==================================================+
 | deviceId               | number    | id of lock                                       |
 +------------------------+-----------+--------------------------------------------------+
 | openParameter          | number    | Optional. Represents behaviour of unlocking door.| 
 |                        |           | Available options: 0 - None, 1 - Auto, 2 - Force |
 +------------------------+-----------+--------------------------------------------------+
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "{\"deviceId\":<<id>>,\"openParameter\":<<parameter>>}"
-
 
 Responses 
 -------------
@@ -34,6 +33,7 @@ Responses
 Scopes
 -------------
 
+
 +------------------------+-------------------------------------------------------------------------+
 | Name                   | Description                                                             |
 +========================+=========================================================================+
@@ -43,18 +43,36 @@ Scopes
 Examples
 -------------
 
-**Example response**
+Open with force parameter
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* HTTP status code - ``200``
-* Response body:
+Sample Request
+""""""""""""""""""""
 
-    .. code-block:: js
+.. code-block:: sh
 
-        {
-            "result": {
-                "operationId": "1577833200000"
-            },
-            "success": true,
-            "errorMessages": [],
-            "statusCode": 200
-        }
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
+
+Sample Request Body
+""""""""""""""""""""
+.. code-block:: js
+
+    {
+        "deviceId": 1,
+        "openParameter": 2
+    }
+
+Sample Response
+""""""""""""""""""""
+HTTP status code: ``200``
+
+.. code-block:: js
+
+    {
+        "result": {
+            "operationId": "1577833200000"
+        },
+        "success": true,
+        "errorMessages": [],
+        "statusCode": 200
+    }

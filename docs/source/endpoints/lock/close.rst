@@ -1,4 +1,4 @@
-Lock your lock
+Close
 =========================
 
 Endpoint that sends lock command to your lock by provided id.
