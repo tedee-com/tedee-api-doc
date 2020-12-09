@@ -4,15 +4,15 @@ Device settings
 +------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Name                   | Type       | Description                                                                                                                                                      |
 +========================+============+==================================================================================================================================================================+
-| autoLockDelay          | number     | represents time od delay for auto lock. If **autLockEnabled** is set to true lock will automatically close after specified delay                                 |
+| autoLockDelay          | number     | represents time od delay for auto lock. If **autLockEnabled** is set to true lock will automatically lock after specified delay                                  |
 +------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | autoLockEnabled        | boolean    | represents if auto lock is enabled                                                                                                                               |
 +------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | autoLockImplicitEnabled| boolean    | represents if auto lock implicit is enabled                                                                                                                      |
 +------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| autoLockImplicitDelay  | number     | represents delay of auto lock implicit. If **autoLockImplicitEnabled** is set to true lock will automatically close from semi-locked state after specified delay |
+| autoLockImplicitDelay  | number     | represents delay of auto lock implicit. If **autoLockImplicitEnabled** is set to true lock will automatically lock from semi-locked state after specified delay  |
 +------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| autoPullSpringEnabled  | boolean    | represents auto pull spring is enabled. If enabled during unlocking process tedee lock will also perform pull spring                                             |
+| autoPullSpringEnabled  | boolean    | represents auto pull spring is enabled. If enabled during unlocking process lock will also perform pull spring                                                   |
 +------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | buttonLockEnabled      | boolean    | represents if locking on button is enabled                                                                                                                       |
 +------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
