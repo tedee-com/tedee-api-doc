@@ -32,6 +32,7 @@ Tedee API documentation
    :hidden:
 
    endpoints/device/index
+   endpoints/deviceactivity/index
    endpoints/lock/index
 
 .. toctree::
@@ -58,6 +59,7 @@ Tedee API documentation
    Access level<enums/access-level>
    Access type<enums/access-type>
    Device type<enums/device-type>
+   Event type<enums/event-type>
    Lock state<enums/lock-state>
    Software type<enums/software-type>
 
