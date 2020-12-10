@@ -12,7 +12,6 @@ Tedee API documentation
    :hidden:
 
    getting-started
-   authentication
    api-versioning
    release-notes
 
@@ -21,6 +20,7 @@ Tedee API documentation
    :caption: How to ...
    :hidden:
 
+   Authenticate<howtos/authenticate>
    Begin integration<howtos/begin-integration>
    Get and sync locks<howtos/get-and-sync-locks>
    Operate locks<howtos/operate-locks>

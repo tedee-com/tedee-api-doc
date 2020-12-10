@@ -1,5 +1,5 @@
-Authentication
-**************
+How to authenticate
+===================
 
 Each request of this API requires authentication. We utilizes JSON Web Token (JWT) to identify the user.
 
@@ -17,19 +17,23 @@ To authenticate you must:
 .. _get-the-jwt:
 
 Get the access token (JWT)
-==========================
+--------------------------
 
 We support three OAuth 2.0 authorization flows to get the access token:
 
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Flow name**                        | **When to use**                                                                                                                                               |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens. One time interaction with the user is needed to obtain the refresh token. |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens. Interaction with the user is needed to obtain access tokens after they expire.                                          |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                                                                                               |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Flow name**                        | **When to use**                                                                                                                                                                               |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens. One time interaction with the user is needed to obtain the refresh token. Examples: mobile apps, web apps |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens. Interaction with the user is needed to obtain access tokens after they expire. Examples: SPA, desktop apps, service apps                                |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible. Examples: Automation apps, scripts etc.                                                                                                       |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. warning::
+
+    ROPC Flow is deprecated. Estimated time of removing this flow: end of Q1 2021. 
 
 .. warning::
 
@@ -41,7 +45,7 @@ We support three OAuth 2.0 authorization flows to get the access token:
 .. _code-flow:
 
 Code Flow
----------
+^^^^^^^^^^^^^
 
 This flow should be used for applications that can store refresh tokens and periodically exchange them for access tokens after they expire.
 One time interaction with the user is needed to obtain the refresh token. Next, the refresh token can be used to automatically obtain the next refresh tokens and access tokens.
@@ -152,7 +156,7 @@ Access tokens are short-lived. After they expire, you must refresh them to conti
 .. _implicit-flow:
 
 Implicit Flow
--------------
+^^^^^^^^^^^^^^
 
 This flow should be used for applications that cannot store refresh tokens. 
 In this case, interaction with the user is needed to obtain access tokens after they expire.
@@ -206,7 +210,7 @@ Implicit Flow does not issue refresh tokens. Interaction with the user is requir
 .. _ropc-flow:
 
 ROPC Flow
-----------------------------------------------------
+^^^^^^^^^^^
 
 This flow should be used when interaction with the user is not possible.
 To receive the JWT without user interaction, you must send following POST request.
@@ -290,7 +294,7 @@ The :code:`expires_in` property describes for how long the token will be valid (
 .. _add-jwt-to-the-headers:
 
 Attach JWT to the request
-=========================
+--------------------------
 
 Now, since we have our :ref:`JWT <get-the-jwt>`, we can use it to authenticate our calls.
 To achieve that, we just have to add an ``Authorization`` header containing our access token. This header value should look like ``Bearer <<access_token>>``, where **<<access_token>>** is our JWT. 
@@ -324,21 +328,34 @@ Let's see it on the below examples where we want to get information about all ou
 .. _list-of-scopes:
 
 Scopes
-======
+------
 
 Scopes define the set of permissions that the application requests.
-Below is a list of available scopes that can be requested during the authorization process (a single scope value indicates the permissions that are being requested):
+Below is a list of available scopes that can be requested during the authorization process (a single scope value indicates the permissions that are being requested).
 
-* |scopePrefix|user_impersonation - Access tedee api on behalf of the signed-in user
-* |scopePrefix|Account.Read - View user account
-* |scopePrefix|Account.ReadWrite - View and edit user account
-* |scopePrefix|Device.Read - View devices
-* |scopePrefix|Device.ReadWrite - View and edit devices
-* |scopePrefix|DeviceShare.Read - View device shares
-* |scopePrefix|DeviceShare.ReadWrite - View and edit device shares
-* |scopePrefix|DeviceActivity.Read - View activity logs
-* |scopePrefix|Bridge.Operate - Operate bridges
-* |scopePrefix|Lock.Operate - Operate locks
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Scope                                                                      | Short name                  | Description                                                                                                                                                         |
++============================================================================+=============================+=====================================================================================================================================================================+
+| `https://tedee.onmicrosoft.com/api/user_impersonation`                     | Impersonate user            | Access this app on behalf of the signed-in user.                                                                                                                    |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/Account.Read`                           | View user account           | Grants the ability to view user information.                                                                                                                        |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/Account.ReadWrite`                      | View and edit user account  | Grants the ability to view and edit user information. Also grant the ability to delete user account.                                                                |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/Device.Read`                            | View devices                | Grants the ability to view all devices and query information for specific device.                                                                                   |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/Device.ReadWrite`                       | View and edit device        | Grants the ability to view all devices and query information for specific device. Also grants the ability to update device settings or current status of the device.|
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/DeviceShare.Read`                       | View device shares          | Grants the ability to view shares for all devices or for specific device.                                                                                           |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/DeviceShare.ReadWrite`                  | View and edit device shares | Grants the ability to view shares for all devices or for specific device. Also grants the ability to delete existing share or create new one.                       |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/DeviceActivity.Read`                    | View activity logs          | Grants the ability to query activity logs.                                                                                                                          |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/Bridge.Operate`                         | Operate bridges             | Grants the ability to pair and unpair locks with bridges.                                                                                                           |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `https://tedee.onmicrosoft.com/api/Lock.Operate`                           | Operate locks               | Grants the ability to lock, unlock and perform pull spring. Also grants the ability to perform lock calibration.                                                    |
++----------------------------------------------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example use of scopes in request:
 
@@ -348,12 +365,12 @@ Example use of scopes in request:
 
 
 JWT token details
-=================
+-----------------
 
 `JSON Web Token (JWT) <https://jwt.io/introduction/>`_ is open standard of securely transmitting information between parties. Anyone who has access to the token is able to decode it and read the information.
 
 Claims
-------
+^^^^^^^
 
 The JWT contains useful information which you can use and the table below describe the most important one:
 
@@ -372,23 +389,23 @@ The JWT contains useful information which you can use and the table below descri
 You can read more about claims `here <https://tools.ietf.org/html/rfc7519#section-4.1>`_.
 
 Expiration date
----------------
+^^^^^^^^^^^^^^^^^
 
 Tedee API tokens are valid for 4 hours since the creation time.
 
 Debugger
---------
+^^^^^^^^^^
 
 `https://jwt.io <https://jwt.io>`_ provides a very usefull online tool to work with JWT tokens. You can use it to decode and read data included in JWT. To do that go to `JWT debugger <https://jwt.io/#debugger-io>`_
 and fill in the **Encoded** input field with your token.
 
-.. image:: images/jwt_debugger.png
+.. image:: ../images/jwt_debugger.png
     :align: center
     :alt: JWT Debugger
 
 You should see the decoded data right away on the right side of the screen
 
-.. image:: images/jwt_decoded.png
+.. image:: ../images/jwt_decoded.png
     :align: center
     :alt: JWT decoded data
     :width: 500

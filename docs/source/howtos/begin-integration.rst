@@ -2,7 +2,7 @@ How to begin integration
 ========================
 
 All the endpoints exposed on this API require authentication.
-You can find a guide to achieve that on :doc:`/authentication` page.
+You can find a guide to achieve that on :doc:`../howtos/authenticate` page.
 
 .. _get-client-id:
 
