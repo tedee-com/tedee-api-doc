@@ -1,15 +1,11 @@
-Get the list of devices with details
+Get all with details
 ====================================
 
-Endpoint that returns list of all currently logged user devices with details.
-
-``GET |apiUrl|/api/|apiVersion|/my/device/details``
+Get a list of all currently logged user devices with details.
 
 .. code-block:: sh
-    :caption: curl
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/device/details" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
+    GET |apiUrl|/api/|apiVersion|/my/device/details
 
 Responses 
 -------------
@@ -36,10 +32,18 @@ Scopes
 Examples
 -------------
 
-**Example response**
+Get all devices with details of currently logged user 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* HTTP status code - ``200``
-* Response body:
+**Sample Request**
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device/details" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+**Sample response**
+
+HTTP status code: ``200``
 
 .. code-block:: js
 
