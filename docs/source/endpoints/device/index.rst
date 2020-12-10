@@ -1,7 +1,7 @@
 Device
 =========================
 
-Endpoints used for listing devices
+Endpoints used for listing devices.
 
 .. toctree::
    :maxdepth: 1

@@ -1,7 +1,7 @@
 Device activity
 =========================
 
-Endpoints used for listing device activities
+Endpoints used for listing device activities.
 
 .. toctree::
    :maxdepth: 1

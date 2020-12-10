@@ -1,23 +1,22 @@
 Open
 =========================
 
-Endpoint that sends command to open your lock by provided id.
+Send command to open lock by provided id.
 
 .. code-block:: sh
 
     POST |apiUrl|/api/|apiVersion|/my/lock/open
     
-Request Body
--------------
+**Body Parameters**
 
-+------------------------+-----------+--------------------------------------------------+
-| Name                   | Type      | Description                                      |
-+========================+===========+==================================================+
-| deviceId               | number    | id of lock                                       |
-+------------------------+-----------+--------------------------------------------------+
-| openParameter          | number    | Optional. Represents behaviour of unlocking door.| 
-|                        |           | Available options: 0 - None, 1 - Auto, 2 - Force |
-+------------------------+-----------+--------------------------------------------------+
++------------------------+----------------------+--------------------------------------------------+
+| Name                   | Type                 | Description                                      |
++========================+======================+==================================================+
+| deviceId               | number               | id of lock                                       |
++------------------------+----------------------+--------------------------------------------------+
+| openParameter          | number (optional)    | Represents behaviour of unlocking door.          | 
+|                        |                      | Available options: 0 - None, 1 - Auto, 2 - Force |
++------------------------+----------------------+--------------------------------------------------+
 
 Responses 
 -------------
@@ -40,26 +39,25 @@ Scopes
 Examples
 -------------
 
-Open without optional parameter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Open lock without optional parameter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sample Request
-""""""""""""""""""""
+**Sample Request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
-Sample Request Body
-""""""""""""""""""""
+Body:
+
 .. code-block:: js
 
     {
         "deviceId": 1
     }
 
-Sample Response
-""""""""""""""""""""
+**Sample response**
+
 HTTP status code: ``200``
 
 .. code-block:: js
@@ -74,18 +72,17 @@ HTTP status code: ``200``
     }
 
 
-Force open
-^^^^^^^^^^^^^^^^^^^^
+Open lock with Force option
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sample Request
-""""""""""""""""""""
+**Sample Request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
-Sample Request Body
-""""""""""""""""""""
+Body:
+
 .. code-block:: js
 
     {
@@ -93,8 +90,8 @@ Sample Request Body
         "openParameter": 2
     }
 
-Sample Response
-""""""""""""""""""""
+**Sample response**
+
 HTTP status code: ``200``
 
 .. code-block:: js

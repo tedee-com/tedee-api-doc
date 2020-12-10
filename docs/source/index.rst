@@ -23,7 +23,7 @@ Tedee API documentation
 
    Begin integration <howtos/begin-integration>
    Get and sync locks <howtos/get-and-sync-locks>
-   How to operate locks <howtos/operate-locks>
+   Operate locks <howtos/operate-locks>
    Update lock settings <howtos/update-lock-settings>
 
 .. toctree::
@@ -47,8 +47,8 @@ Tedee API documentation
    Execute command response <datastructures/execute-command>
    Location <datastructures/location>
    Lock <datastructures/lock>
-   Lock sync <datastructures/lock-sync>
    Lock properties <datastructures/lock-properties>
+   Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
    Repeat event <datastructures/repeat-event>
    Share details <datastructures/share-details>

@@ -1,7 +1,7 @@
 Get all with details
 ====================================
 
-Get a list of all currently logged user devices with details.
+Get a list of all currently logged user devices with details such as devices specific data as well as their settings and share details.
 
 .. code-block:: sh
 
