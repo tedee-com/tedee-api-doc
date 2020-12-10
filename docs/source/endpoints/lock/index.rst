@@ -1,22 +1,15 @@
-Lock
+Locks
 =========================
-
-Endpoints used for listing, creating and updating locks
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Get all <get-all>
-   Get single <get-single>
-   Sync <sync>
-   Sync single <sync-single>
-   Update <update>
-
-**Operations**
-
-- `Get all <get-all.html>`_
-- `Get single <get-single.html>`_
-- `Sync <sync.html>`_
-- `Sync single <sync-single.html>`_
-- `Update <update.html>`_
+   Get all locks<get-all>
+   Get single lock<get-single>
+   Lock<lock>
+   Pull spring<pull-spring>
+   Sync locks<sync>
+   Sync single lock<sync-single>
+   Unlock<unlock>
+   Update lock<update-lock>
