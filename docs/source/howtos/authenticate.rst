@@ -21,19 +21,15 @@ Get the access token (JWT)
 
 We support three OAuth 2.0 authorization flows to get the access token:
 
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Flow name**                        | **When to use**                                                                                                                                                                               |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens. One time interaction with the user is needed to obtain the refresh token. Examples: mobile apps, web apps |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens. Interaction with the user is needed to obtain access tokens after they expire. Examples: SPA, desktop apps, service apps                                |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible. Examples: Automation apps, scripts etc.                                                                                                       |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. warning::
-
-    ROPC Flow is deprecated. Estimated time of removing this flow: end of Q1 2021. 
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Flow name**                        | **When to use**                                                                                                                                                                                             |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens. One time interaction with the user is needed to obtain the refresh token. Examples: mobile apps, web apps, service apps |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens. Interaction with the user is needed to obtain access tokens after they expire. Examples: SPA, desktop apps                                                            |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible. Examples: Automation apps, scripts etc.                                                                                                                     |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning::
 
@@ -46,6 +42,10 @@ We support three OAuth 2.0 authorization flows to get the access token:
 
 Code Flow
 ^^^^^^^^^^^^^
+
+.. warning::
+
+    Code flow should not be used in public facing application only service to service.
 
 This flow should be used for applications that can store refresh tokens and periodically exchange them for access tokens after they expire.
 One time interaction with the user is needed to obtain the refresh token. Next, the refresh token can be used to automatically obtain the next refresh tokens and access tokens.
@@ -211,6 +211,10 @@ Implicit Flow does not issue refresh tokens. Interaction with the user is requir
 
 ROPC Flow
 ^^^^^^^^^^^
+
+.. warning::
+
+    ROPC Flow is deprecated. Estimated time of removing: end of Q1 2021. 
 
 This flow should be used when interaction with the user is not possible.
 To receive the JWT without user interaction, you must send following POST request.
