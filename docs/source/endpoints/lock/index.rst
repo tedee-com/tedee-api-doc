@@ -7,9 +7,9 @@ Locks
 
    Get all locks<get-all>
    Get single lock<get-single>
-   Lock<lock>
+   Close<close>
    Pull spring<pull-spring>
    Sync locks<sync>
    Sync single lock<sync-single>
-   Unlock<unlock>
+   Open<open>
    Update lock<update-lock>

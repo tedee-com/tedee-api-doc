@@ -1,23 +1,20 @@
 Pull spring 
 =========================
 
-Endpoint that sends command to perform pull spring on your lock by provided id.
+Endpoint that sends command to open your lock by provided id.
 
-``POST |apiUrl|/api/|apiVersion|/my/lock/pull-spring``
+.. code-block:: sh
 
-**Body**
+    POST |apiUrl|/api/|apiVersion|/my/lock/pull-spring
+
+Request Body
+-------------
 
 +------------------------+-----------+--------------------------------------------------+
 | Name                   | Type      | Description                                      |
 +========================+===========+==================================================+
 | deviceId               | number    | id of lock                                       |
 +------------------------+-----------+--------------------------------------------------+
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/pull-spring" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "{\"deviceId\":<<id>>}"
-
 
 Responses 
 -------------
@@ -40,18 +37,35 @@ Scopes
 Examples
 -------------
 
-**Example response**
+Simple pull spring request
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* HTTP status code - ``200``
-* Response body:
+Sample Request
+""""""""""""""""""""
 
-    .. code-block:: js
+.. code-block:: sh
 
-        {
-            "result": {
-                "operationId": "1577833200000"
-            },
-            "success": true,
-            "errorMessages": [],
-            "statusCode": 200
-        }
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
+
+Sample Request Body
+""""""""""""""""""""
+.. code-block:: js
+
+    {
+        "deviceId": 1
+    }
+
+Sample Response
+""""""""""""""""""""
+HTTP status code: ``200``
+
+.. code-block:: js
+
+    {
+        "result": {
+            "operationId": "1577833200000"
+        },
+        "success": true,
+        "errorMessages": [],
+        "statusCode": 200
+    }

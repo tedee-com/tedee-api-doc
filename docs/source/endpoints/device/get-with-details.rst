@@ -1,7 +1,7 @@
 Get the list of devices with details
 ====================================
 
-Endpoint that returns list of all currently logged user devices with details.
+Endpoint that returns list of all currently logged user devices with details such as devices specific data as well as their settings and share details.
 
 ``GET |apiUrl|/api/|apiVersion|/my/device/details``
 
