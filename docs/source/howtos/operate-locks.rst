@@ -1,11 +1,13 @@
 How to operate your locks
 =========================
 
-In this section let's focus on how to operate tedee locks. To operate lock via API you need to be owner of the device or have active share with remoteAccessDisabled flag set on false (see :doc:`Share Details <../datastructures/share-details>`). 
+In this section let's focus on how to operate tedee locks. 
+To operate lock via API you need to be owner of the device or have active share with remoteAccessDisabled flag set on false (see :doc:`Share Details <../datastructures/share-details>`). 
 What you need is id of your lock.
 
 .. note::
-    You should calibrate your lock before using these endpoints. If you didn't calibrate your lock these endpoints will return successful response but nothing will happen.
+    You should calibrate your lock before using these endpoints. 
+    If you didn't calibrate your lock these endpoints will return successful response but nothing will happen.
 
 You can perform following actions on lock:
 * unlock

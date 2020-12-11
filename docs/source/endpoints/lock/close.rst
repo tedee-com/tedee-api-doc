@@ -1,14 +1,13 @@
 Close
 =========================
 
-Endpoint that sends close command to your lock by provided id.
+Send command to close lock by provided id.
 
 .. code-block:: sh
 
     POST |apiUrl|/api/|apiVersion|/my/lock/close
 
-Request Body
--------------
+**Body Parameters**
 
 +------------------------+-----------+--------------------------------------------------+
 | Name                   | Type      | Description                                      |
@@ -37,26 +36,25 @@ Scopes
 Examples
 -------------
 
-Simple close request
-^^^^^^^^^^^^^^^^^^^^
+Close lock
+^^^^^^^^^^
 
-Sample Request
-""""""""""""""
+**Sample Request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/close" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/close" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
-Sample Request Body
-""""""""""""""""""""
+Body:
+
 .. code-block:: js
 
     {
         "deviceId": 1
     }
 
-Sample Response
-""""""""""""""""""""
+**Sample response**
+
 HTTP status code: ``200``
 
 .. code-block:: js
