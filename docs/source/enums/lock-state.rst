@@ -26,5 +26,5 @@ This enum describes possible states of lock
 +-----------+-----------------------+
 | 9         | Unknown               |
 +-----------+-----------------------+
-| 17        | PullSpringCalibration |
+| 18        | Updating              |
 +-----------+-----------------------+

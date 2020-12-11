@@ -14,7 +14,7 @@ Send command to open lock by provided id.
 +========================+======================+==================================================+
 | deviceId               | number               | id of lock                                       |
 +------------------------+----------------------+--------------------------------------------------+
-| openParameter          | number (optional)    | Represents behaviour of unlocking door.          | 
+| openParameter          | number (optional)    | behaviour of unlocking door.                     | 
 |                        |                      | Available options: 0 - None, 1 - Auto, 2 - Force |
 +------------------------+----------------------+--------------------------------------------------+
 
