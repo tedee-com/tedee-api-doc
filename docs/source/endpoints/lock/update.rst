@@ -1,11 +1,13 @@
-Update lock
+Update
 =========================
 
-Endpoint that updates lock.
+Update lock.
 
-``PATCH |apiUrl|/api/|apiVersion|/my/lock``
+.. code-block:: sh
 
-**Parameters**
+    PATCH |apiUrl|/api/|apiVersion|/my/lock
+
+**Body Parameters**
 
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | Name                      | Type                                                                      | Description                                        |
@@ -13,8 +15,6 @@ Endpoint that updates lock.
 | id                        | number                                                                    | id of lock                                         |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | revision                  | number                                                                    | current lock revision in database                  |
-+---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| deviceSettings            | :doc:`Device settings <../../datastructures/device-settings>` (optional)  | represents device settings object                  |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | autoUnlockEnabled         | boolean (optional)                                                        | represents if auto unlock is enabled               |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
@@ -26,16 +26,12 @@ Endpoint that updates lock.
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | autoUnlockTimeout         | number (optional)                                                         | represents value of auto unlock timeout            |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
+| deviceSettings            | :doc:`Device settings <../../datastructures/device-settings>` (optional)  | represents device settings object                  |
++---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | location                  | :doc:`Location <../../datastructures/location>` (optional)                | represents location object                         |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | name                      | string (optional)                                                         | lock name                                          |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X PATCH "|apiUrl|/api/|apiVersion|/my/lock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
 
 Responses 
 -------------
@@ -60,19 +56,58 @@ Scopes
 Examples
 -------------
 
-**Example response**
+Update lock
+^^^^^^^^^^^
 
-* HTTP status code - ``200``
-* Response body:
+**Sample Request**
 
-    .. code-block:: js
+.. code-block:: sh
+
+    curl -X PATCH "|apiUrl|/api/|apiVersion|/my/lock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+
+Body:
+
+.. code-block:: js
 
         {
-            "result":
-            {
+            "id": 1,
+            "revision": 1,
+            "name": "Test",
+            "location": {
+                "latitude": 1,
+                "longitude": 1
+            },
+            "deviceSettings": {
+                "autoLockEnabled": true,
+                "autoLockDelay": 10,
+                "autoLockImplicitEnabled": true,
+                "autoLockImplicitDelay": 10,
+                "pullSpringEnabled": true,
+                "pullSpringDuration": 10,
+                "autoPullSpringEnabled": true,
+                "postponedLockEnabled": true,
+                "postponedLockDelay": 10,
+                "buttonLockEnabled": true,
+                "buttonUnlockEnabled": true
+            },
+            "autoUnlockEnabled": true,
+            "autoUnlockConfirmEnabled": true,
+            "autoUnlockRangeIn": 100,
+            "autoUnlockRangeOut": 100,
+            "autoUnlockTimeout": 30
+        }
+
+**Sample response**
+
+HTTP status code: ``200``
+
+.. code-block:: js
+
+        {
+            "result": {
                 "id": 1,
-                "revision": 1,
-                "targetDeviceRevision": 1
+                "revision": 2,
+                "targetDeviceRevision": 2
             }
             "success": true,
             "errorMessages": [],
