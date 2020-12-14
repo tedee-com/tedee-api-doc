@@ -10,8 +10,8 @@ You may find these examples useful, but note that these examples are not affilia
 
 **TypeScript**
 
- - `Homebridge <https://github.com/lukasroegner/homebridge-tedee>`_.
+ - `Homebridge <https://github.com/lukasroegner/homebridge-tedee>`_
 
 **Python**
 
- - `Home Assistant <https://community.home-assistant.io/t/custom-component-tedee-doorlock/242743>`_.
+ - `Home Assistant <https://community.home-assistant.io/t/custom-component-tedee-doorlock/242743>`_

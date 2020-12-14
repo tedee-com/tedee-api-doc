@@ -22,10 +22,10 @@ Tedee API documentation
    :hidden:
 
    Begin integration<howtos/begin-integration>
-   Example integrations<howtos/example-integrations>
    Get and sync locks<howtos/get-and-sync-locks>
    Operate locks<howtos/operate-locks>
    Update lock settings<howtos/update-lock-settings>
+   Example integrations<howtos/example-integrations>
 
 .. toctree::
    :maxdepth: 1
