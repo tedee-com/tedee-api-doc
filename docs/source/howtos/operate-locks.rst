@@ -10,6 +10,7 @@ What you need is id of your lock.
     If you didn't calibrate your lock these endpoints will return successful response but nothing will happen.
 
 You can perform following actions on lock:
+
 * unlock
 * locks
 * pull
