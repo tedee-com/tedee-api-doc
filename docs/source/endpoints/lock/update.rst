@@ -14,21 +14,21 @@ Update lock.
 +===========================+===========================================================================+====================================================+
 | id                        | number                                                                    | id of lock                                         |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| revision                  | number                                                                    | current lock revision in database                  |
+| revision                  | number                                                                    | current lock information and settings in database  |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockEnabled         | boolean (optional)                                                        | represents if auto unlock is enabled               |
+| autoUnlockEnabled         | boolean (optional)                                                        | if auto unlock is enabled                          |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockConfirmEnabled  | boolean (optional)                                                        | represents if auto unlock confirmation is enabled  |
+| autoUnlockConfirmEnabled  | boolean (optional)                                                        | if auto unlock confirmation is enabled             |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockRangeIn         | number (optional)                                                         | represents value of the in zone                    |
+| autoUnlockRangeIn         | number (optional)                                                         | value of the in zone                               |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockRangeOut        | number (optional)                                                         | represents value of the out zone                   |
+| autoUnlockRangeOut        | number (optional)                                                         | value of the out zone                              |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockTimeout         | number (optional)                                                         | represents value of auto unlock timeout            |
+| autoUnlockTimeout         | number (optional)                                                         | value of auto unlock timeout                       |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| deviceSettings            | :doc:`Device settings <../../datastructures/device-settings>` (optional)  | represents device settings object                  |
+| deviceSettings            | :doc:`Device settings <../../datastructures/device-settings>` (optional)  | device settings object                             |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| location                  | :doc:`Location <../../datastructures/location>` (optional)                | represents location object                         |
+| location                  | :doc:`Location <../../datastructures/location>` (optional)                | location object                                    |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | name                      | string (optional)                                                         | lock name                                          |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+

@@ -9,25 +9,101 @@ What you need is id of your lock.
     You should calibrate your lock before using these endpoints. 
     If you didn't calibrate your lock these endpoints will return successful response but nothing will happen.
 
-After you send command to execute given operation you can use :doc:`sync endopints <get-and-sync-locks>` to see or refresh status of your lock.
+You can perform following actions on lock:
 
-Close your tedee lock
+* unlock
+* lock
+* pull
+
+Each action can be performed only in specific lock states. Here is Lock state diagram:
+
+.. image:: ../images/lock-states-diagram.png
+    :align: center
+    :alt: lock states diagram
+
+Make sure lock and bridge are connected.
+
+
+Lock tedee lock
 ----------------------
-To close your door use endpoint :doc:`Close <../endpoints/lock/close>`. 
-This endpoint will return operationId. This is for correlating whole process of close command - mobile app receives push notification with this operationId and result of executed command.
+To lock the device first make sure it is in unlocked or semi-locked state then send lock command.
+
+Lock request
+^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/close" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
+
+**Sample Request Body**
+
+.. code-block:: js
+
+    {
+        "deviceId": 1
+    }
+
+In response you will receive operationId. The locking operation usually takes up to 3 seconds.
 
 
-Open your tedee lock
+Unlock tedee lock
 ----------------------
-To open your door use this endpoint :doc:`Open <../endpoints/lock/open>`. 
-This endpoint will return operationId. This is for correlating whole process of open command - mobile app receives push notification with this operationId and result of executed command.
+To unlock the device first make sure it is in locked or semi-locked state then send unlock command.
+
+Unlock request
+^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
+
+**Sample Request Body**
+
+.. code-block:: js
+
+    {
+        "deviceId": 1
+    }
+
+In response you will receive operationId. The unlocking operation usually takes up to 3 seconds. When lock has auto pull spring enabled then unlocking lock will perform pull operation.
 
 
-Pull spring in your tedee lock
+Pull spring in tedee lock
 ------------------------------
-To perform pull spring use this endpoint :doc:`Pull spring <../endpoints/lock/pull-spring>`. 
-This endpoint will return operationId. This is for correlating whole process of pull spring command - mobile app receives push notification with this operationId and result of executed command.
+
+To perform pull spring use this endpoint :doc:`Pull spring <../endpoints/lock/pull-spring>`.
+
+Pull request
+^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/pull-spring" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
+
+
+**Sample Request Body**
+
+.. code-block:: js
+
+    {
+        "deviceId": 1
+    }
+
+In response you will receive operationId. The duration of pull spring is configured by user.
 
 .. note::
-    Additionally you should calibrate pull spring in your lock before using this endpoint. 
-    If you didn't calibrate pull spring this endpoint will return successful response but nothing will happen.
+    Additionally you should calibrate pull spring in your lock before using this endpoint. If you didn't calibrate pull spring this endpoint will return successful response but nothing will happen.
+
+Checking operation progress
+---------------------------
+
+Returned operationId is for correlating whole process of pull spring command - mobile app receives push notification with this operationId and result of executed command.
+The lock/unlock/pull actions will take few seconds so you must somehow check the progress. To do that simply call the :doc:`Sync single endpoint <../endpoints/lock/sync-single>` repeatedly until operation complete.
+
+Sample sync single request
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<id>>/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+

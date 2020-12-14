@@ -12,7 +12,6 @@ Tedee API documentation
    :hidden:
 
    getting-started
-   authentication
    api-versioning
    release-notes
 
@@ -21,6 +20,7 @@ Tedee API documentation
    :caption: How to ...
    :hidden:
 
+   Authenticate <howtos/authenticate>
    Begin integration <howtos/begin-integration>
    Get and sync locks <howtos/get-and-sync-locks>
    Operate locks <howtos/operate-locks>
@@ -66,6 +66,7 @@ Tedee API documentation
    Device type <enums/device-type>
    Event type <enums/event-type>
    Lock state <enums/lock-state>
+   Open parameter <enums/open-parameter>
    Software type <enums/software-type>
 
 This site contains a documentation for Tedee REST API (https://api.tedee.com).
