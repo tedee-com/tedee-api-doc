@@ -8,7 +8,7 @@ Sync multiple locks
 ----------------------
 
 Get user locks
-""""""""""""""
+^^^^^^^^^^^^^^
 
 First thing that you need to do is to use endpoint :doc:`Get all locks <../endpoints/lock/get-all>`. This endpoint will return full data of all currently logged user locks.
 
@@ -20,7 +20,7 @@ First thing that you need to do is to use endpoint :doc:`Get all locks <../endpo
 
 
 Sync user locks
-"""""""""""""""
+^^^^^^^^^^^^^^^
 
 Then after you have succesfully downloaded locks data you can use endpoint :doc:`Sync locks <../endpoints/lock/sync>` to get only current state 
 of user locks.
@@ -39,7 +39,8 @@ In that way you can save full data locally and only refresh fields that can ofte
 
 
 Sync single lock
------------------------------
+-----------------
+
 In this case let's consider that you want only to sync single lock that you already have full data.
 
 Instead of calling :doc:`Sync locks <../endpoints/lock/sync>` you can call dedicated endpoint for syncing single lock by id :doc:`Sync single lock <../endpoints/lock/sync-single>`.

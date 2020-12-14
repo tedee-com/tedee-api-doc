@@ -12,7 +12,7 @@ What you need is id of your lock.
 You can perform following actions on lock:
 
 * unlock
-* locks
+* lock
 * pull
 
 Each action can be performed only in specific lock states. Here is Lock state diagram:
@@ -29,7 +29,7 @@ Lock tedee lock
 To lock the device first make sure it is in unlocked or semi-locked state then send lock command.
 
 Lock request
-""""""""""""""
+^^^^^^^^^^^^
 
 .. code-block:: sh
 
@@ -51,7 +51,7 @@ Unlock tedee lock
 To unlock the device first make sure it is in locked or semi-locked state then send unlock command.
 
 Unlock request
-""""""""""""""""""""
+^^^^^^^^^^^^^^
 
 .. code-block:: sh
 
@@ -74,7 +74,7 @@ Pull spring in tedee lock
 To perform pull spring use this endpoint :doc:`Pull spring <../endpoints/lock/pull-spring>`.
 
 Pull request
-"""""""""""""
+^^^^^^^^^^^^
 
 .. code-block:: sh
 
@@ -100,8 +100,8 @@ Checking operation progress
 Returned operationId is for correlating whole process of pull spring command - mobile app receives push notification with this operationId and result of executed command.
 The lock/unlock/pull actions will take few seconds so you must somehow check the progress. To do that simply call the :doc:`Sync single endpoint <../endpoints/lock/sync-single>` repeatedly until operation complete.
 
-Sample sync singe request
-"""""""""""""""""""""""""
+Sample sync single request
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sh
 
