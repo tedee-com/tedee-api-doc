@@ -16,7 +16,9 @@ You can perform following actions on lock:
 
 Each action can be performed only in specific lock states. Here is Lock state diagram:
 
-.. diagram
+.. image:: ../images/lock-states-diagram.png
+    :align: center
+    :alt: lock states diagram
 
 Make sure lock and bridge are connected.
 
