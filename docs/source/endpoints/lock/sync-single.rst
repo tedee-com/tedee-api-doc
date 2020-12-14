@@ -1,22 +1,19 @@
-Sync single lock
+Sync single
 =========================
 
-Endpoint that sync single lock by id.
+Sync single lock state by id.
 
-``GET |apiUrl|/api/|apiVersion|/my/lock/<<id>>/sync``
+.. code-block:: sh
 
-**Parameters**
+    GET |apiUrl|/api/|apiVersion|/my/lock/{id}/sync
+
+**URI Parameters**
 
 +------------------------+-----------+---------------------+
 | Name                   | Type      | Description         |
 +========================+===========+=====================+
 | id                     | number    | id of lock to sync  |
 +------------------------+-----------+---------------------+
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<id>>/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 Responses 
 -------------
@@ -41,16 +38,23 @@ Scopes
 Examples
 -------------
 
-**Example response**
+Sync single lock
+^^^^^^^^^^^^^^^^
 
-* HTTP status code - ``200``
-* Response body:
+**Sample Request**
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+**Sample response**
+
+HTTP status code: ``200``
 
 .. code-block:: js
 
     {
-        "result":  
-        {
+        "result": {
             "id": 1,
             "isConnected": true,
             "lockProperties": {

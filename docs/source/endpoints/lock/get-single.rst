@@ -1,23 +1,19 @@
-Get lock by id
+Get single
 =========================
 
-Endpoint that returns lock by provided id.
+Get lock by provided id.
 
-``GET |apiUrl|/api/|apiVersion|/my/lock/<<id>>``
+.. code-block:: sh
 
-**Parameters**
+    GET |apiUrl|/api/|apiVersion|/my/lock/{id}
+
+**URI Parameters**
 
 +------------------------+-----------+---------------------+
 | Name                   | Type      | Description         |
 +========================+===========+=====================+
-| Id                     | number    | id of lock          |
+| id                     | number    | id of lock          |
 +------------------------+-----------+---------------------+
-
-.. code-block:: sh
-    :caption: curl
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/<<id>>" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
 
 Responses 
 -------------
@@ -42,16 +38,24 @@ Scopes
 Examples
 -------------
 
-**Example response**
+Get single lock
+^^^^^^^^^^^^^^^
 
-* HTTP status code - ``200``
-* Response body:
+**Sample Request**
 
-    .. code-block:: js
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+
+**Sample response**
+
+HTTP status code: ``200``
+
+.. code-block:: js
 
         {
-            "result":
-            {
+            "result": {
                 "bridgeId": 2,
                 "deviceSettings": {
                     "autoLockEnabled": true,
