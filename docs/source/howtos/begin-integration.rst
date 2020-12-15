@@ -9,74 +9,26 @@ You can find a guide to achieve that on :doc:`../howtos/authenticate` page.
 Client id for you application
 -----------------------------
 
-If you want to use Code Flow or Implicit Flow in the authorization process, you will need a **client id** issued for your application by Tedee.
-Please contact us (support@tedee.com) to receive a **client id** and **client secret** for your application. 
-Please provide the following information in your message:
-
-* name of your company / application
-* general description of your application
-* scenarios in which your application will be used
-* operations that will be performed in the Tedee API by your application
-* scopes that will be requested by your application during the authorization process (`list of available scopes <../authentication.html#list-of-scopes>`_)
-* which authorization flow you want to use in your application
-* the redirect URI of your application, where authentication responses are sent and received by your application 
-* e-mail address of the person responsible for integration
+If you want to use Code Flow or Implicit Flow in the authorization process, you will need a **client id** issued for your application by Tedee. 
+For that please send the request for obtaining **client id** using this `form <https://forms.office.com/Pages/ResponsePage.aspx?id=ibO271oOn0SweG6SXqsY5mzyA4EPEdlFuUag8sIe36JUNUU4VExYVksxTlU5WDRKUFNHTFdZT0Q3Ni4u>`_.
 
 Based on above information, we will register your application in our system and send you **client id** and **client secret**.
 
+**More information**
 
+If you need more information about integration please check following links:
 
-.. _logo-guideliness:
+* if you need to use our logo please read the :doc:`logo guidance <../../logo-guidance>`,
+* check already existing :doc:`Examples <example-integrations>`,
+* if you need help then start discussion on the community `forum <https://tedee.freshdesk.com/en/support/discussions>`_,
+* scopes that will be requested by your application during the authorization process (`list of available scopes <../howtos/authenticate.html#list-of-scopes>`_).
 
-Logo guideliness
-----------------
+What's next?
+------------
 
-If you want to use the tedee logo in your applicaton / plugin / extension, it must meet some requirements.
+Start with these tutorials:
 
-Logo variations
-^^^^^^^^^^^^^^^
-
-You can use tedee logo in two different variations: full logo - contain sign with full tedee symbol, second option is only a 't' symbol on blue background.
-
-| `Download tedee full logo <https://storage.googleapis.com/tedee-wp/2020/11/FullTedeeLogo.zip>`_
-| `Download tedee sign <https://storage.googleapis.com/tedee-wp/2020/11/TedeeSign.zip>`_
-
-.. image:: ../images/tedee-logo.png
-    :align: center
-    :alt: tedee logo
-
-Safe areas
-^^^^^^^^^^
-
-The protective field defines the minimal area around the logo, where no other text or graphic may appear. The protective field is based on the height of the sign.
-
-.. image:: ../images/tedee-logo-safe-areas.png
-    :align: center
-    :alt: tedee logo safe areas
-
-Main colour
-^^^^^^^^^^^
-
-The main brand colour is shade of blue.
-
-.. image:: ../images/tedee-logo-colour.png
-    :align: center
-    :alt: tedee logo main colour
-
-List of don'ts
-^^^^^^^^^^^^^^
-
-Do not modify the logos in any way, other than resizing. If you need to resize, preserve the ratio, and ensure the badge is legible and fully visible.
-
-.. image:: ../images/tedee-logo-donts.png
-    :align: center
-    :alt: tedee logo don'ts
-
-Naming 
-^^^^^^
-
-You can only use 'tedee' word, as a name. Do not attempt to add some words to it, like 'tedee smarthome', 'tedee-lock'. For example, find out screen with tedee application for iOS. 
-
-.. image:: ../images/tedee-logo-naming.png
-    :align: center
-    :alt: tedee logo don'ts
+* :doc:`How to authenticate <authenticate>`,
+* :doc:`Get and sync locks <get-and-sync-locks>`,
+* :doc:`Operate locks <operate-locks>`,
+* :doc:`Update locks settings <update-lock-settings>`
