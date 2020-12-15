@@ -21,15 +21,25 @@ Get the access token (JWT)
 
 We support three OAuth 2.0 authorization flows to get the access token:
 
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Flow name**                        | **When to use**                                                                                                                                                                                             |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens. One time interaction with the user is needed to obtain the refresh token. Examples: mobile apps, web apps, service apps |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens. Interaction with the user is needed to obtain access tokens after they expire. Examples: SPA, desktop apps                                                            |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible. Examples: Automation apps, scripts etc.                                                                                                                     |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------+---------------------------------------------------------------------------------------------+
+| **Flow name**                        | **When to use**                                                                             |
++--------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens.         |
+|                                      |                                                                                             |
+|                                      | One time interaction with the user is needed to obtain the refresh token.                   |
+|                                      |                                                                                             |
+|                                      | Examples: mobile apps, web apps, service apps                                               |
++--------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens.                                                       |
+|                                      |                                                                                             |
+|                                      | Interaction with the user is needed to obtain access tokens after they expire.              |
+|                                      |                                                                                             |
+|                                      | Examples: SPA, desktop apps                                                                 |
++--------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                             |
+|                                      |                                                                                             |
+|                                      | Examples: Automation apps, scripts etc.                                                     |
++--------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. warning::
 
@@ -214,7 +224,7 @@ ROPC Flow
 
 .. warning::
 
-    ROPC Flow is deprecated. Estimated time of removing: end of Q1 2021. 
+    ROPC Flow is deprecated. Estimated time of removing: end of Q2 2021. The new authentication method will be introduced instead.
 
 This flow should be used when interaction with the user is not possible.
 To receive the JWT without user interaction, you must send following POST request.
@@ -235,52 +245,8 @@ To receive the JWT without user interaction, you must send following POST reques
 * **password** - user password
 
 .. code-block:: sh
-    :caption: curl
 
     curl -d "grant_type=password&username=[username]&password=[password]$&scope=openid |clientId|&client_id=|clientId|&response_type=token" -H "Content-Type: application/x-www-form-urlencoded" -X POST |authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token
-
-.. code-block:: csharp
-    :caption: C#
-
-    public async Task<string> GetAccessToken()
-    {
-        using (var client = new HttpClient())
-        {
-            var parameters = new Dictionary<string, string>
-            {
-                { "grant_type", "password" },
-                { "username", "<<user_name>>" },
-                { "password", "<<password>>" },
-                { "scope", "openid |clientId|" },
-                { "client_id", "|clientId|" },
-                { "response_type", "token" }
-            };
-
-            var authApiUrl = "|authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token";
-
-            // FormUrlEncodedContent adds "application/x-www-form-urlencoded" Content-Type by default
-            using (var content = new FormUrlEncodedContent(parameters))
-            {
-                var response = await client.PostAsync(authApiUrl, content);
-                var result = await response.Content.ReadAsAsync<AccessTokenResponse>();
-
-                return result.AccessToken;
-            }
-        }
-    }
-
-    public class AccessTokenResponse
-    {
-        [JsonProperty("access_token")]
-        public string AccessToken { get; set; }
-        [JsonProperty("token_type")]
-        public string TokenType { get; set; }
-        [JsonProperty("expires_in")]
-        public int ExpiresIn { get; set; }
-    }
-
-
-If all the values are correct you should get response like below:
 
 .. code-block:: json
 
@@ -306,28 +272,8 @@ To achieve that, we just have to add an ``Authorization`` header containing our 
 Let's see it on the below examples where we want to get information about all our devices:
 
 .. code-block:: sh
-    :caption: curl
 
     curl -H "Authorization: Bearer <<access_token>>" |apiUrl|/api/v1.12/my/device
-
-.. code-block:: csharp
-    :caption: C#
-
-    public async Task GetAllDevices()
-    {
-        var jwt = "<<access_token>>";
-        using (var client = new HttpClient())
-        {
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
-
-            var response = await client.GetAsync("|apiUrl|/api/v1.12/my/device");
-            var devices = await response.Content.ReadAsStringAsync();
-
-            Console.WriteLine("My devices: " + devices);
-        }
-    }
-
-
 
 .. _list-of-scopes:
 
