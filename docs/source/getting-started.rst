@@ -160,9 +160,9 @@ What's next?
 
 Here's a list of example actions that you can do using the API:
 
-* Get device details,
-* Update device settings,
-* Calibrate lock,
-* Read lock state,
-* Read device activities,
+* Get device details
+* Update device settings
+* Calibrate lock
+* Read lock state
+* Read device activities
 * Lock, unlock or pull spring

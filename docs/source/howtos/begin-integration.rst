@@ -18,17 +18,17 @@ Based on above information, we will register your application in our system and 
 
 If you need more information about integration please check following links:
 
-* if you need to use our logo please read the :doc:`logo guidance <../../logo-guidance>`,
-* check already existing :doc:`Examples <example-integrations>`,
-* if you need help then start discussion on the community `forum <https://tedee.freshdesk.com/en/support/discussions>`_,
-* scopes that will be requested by your application during the authorization process (`list of available scopes <../howtos/authenticate.html#list-of-scopes>`_).
+* if you need to use our logo please read the :doc:`logo guidance <../../logo-guidance>`
+* check already existing :doc:`examples <example-integrations>`
+* if you need help then start discussion on the community `forum <https://tedee.freshdesk.com/en/support/discussions>`_
+* scopes that will be requested by your application during the authorization process: `list of available scopes <../howtos/authenticate.html#list-of-scopes>`_)
 
 What's next?
 ------------
 
 Start with these tutorials:
 
-* :doc:`How to authenticate <authenticate>`,
-* :doc:`Get and sync locks <get-and-sync-locks>`,
-* :doc:`Operate locks <operate-locks>`,
+* :doc:`How to authenticate <authenticate>`
+* :doc:`Get and sync locks <get-and-sync-locks>`
+* :doc:`Operate locks <operate-locks>`
 * :doc:`Update locks settings <update-lock-settings>`
