@@ -36,6 +36,7 @@ Tedee API documentation
 
    endpoints/device/index
    endpoints/deviceactivity/index
+   endpoints/deviceshare/index
    endpoints/lock/index
 
 .. toctree::
@@ -46,6 +47,7 @@ Tedee API documentation
    Bridge <datastructures/bridge>
    Device activities <datastructures/device-activity>
    Device settings <datastructures/device-settings>
+   Device share success <datastructures/device-share-success>
    Execute command response <datastructures/execute-command>
    Location <datastructures/location>
    Lock <datastructures/lock>
@@ -90,4 +92,4 @@ Useful links
 Need a help?
 ------------
 
-We encourage you to join a discussion or start a new one under `Community forum <https://tedee.freshdesk.com/en/support/discussions>`_.
+We encourage you to join a discussion or start a new one under `Community forum <https://tedee.freshdesk.com/en/support/discussions>`_ or ask on `Twiter (@tedee_smartlock) <https://twitter.com/tedee_smartlock>`_.

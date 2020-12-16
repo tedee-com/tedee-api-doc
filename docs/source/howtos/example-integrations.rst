@@ -1,7 +1,7 @@
 Example integrations
 ==============================
 
-If you need you can take a look at integrations with our api prepared by third party devlopers.
+If you need you can take a look at integrations with our API prepared by third party developers.
 
 Please note that these third party libraries are not developed or maintained by Tedee. 
 You may find these examples useful, but note that these examples are not affiliated with or endorsed by Tedee.
