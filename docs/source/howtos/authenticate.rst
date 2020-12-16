@@ -38,7 +38,7 @@ We support three OAuth 2.0 authorization flows to get the access token:
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                             |
 |                                      |                                                                                             |
-|                                      | Examples: Automation apps, scripts etc.                                                     |
+|                                      | Examples: automation apps, scripts, etc.                                                    |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. warning::
