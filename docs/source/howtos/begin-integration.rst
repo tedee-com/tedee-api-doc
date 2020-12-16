@@ -14,7 +14,8 @@ For that please send the request for obtaining **client id** using this `form <h
 
 Based on above information, we will register your application in our system and send you **client id** and **client secret**.
 
-**More information**
+More information
+----------------
 
 If you need more information about integration please check following links:
 
