@@ -21,7 +21,7 @@ If you need more information about integration please check following links:
 * if you need to use our logo please read the :doc:`logo guidance <../../logo-guidance>`
 * check already existing :doc:`examples <example-integrations>`
 * if you need help then start discussion on the community `forum <https://tedee.freshdesk.com/en/support/discussions>`_
-* scopes that will be requested by your application during the authorization process: `list of available scopes <../howtos/authenticate.html#list-of-scopes>`_)
+* scopes that will be requested by your application during the authorization process: `list of available scopes <../howtos/authenticate.html#list-of-scopes>`_
 
 What's next?
 ------------
