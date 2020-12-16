@@ -202,8 +202,8 @@ A successful response looks like this:
 
 .. code-block:: sh
 
-    GET {redirect_uri}
-    ?access_token={access_token}
+    GET {redirect_uri}/#
+    access_token={access_token}
     &token_type=Bearer
     &expires_in=3600
     &state={state}
