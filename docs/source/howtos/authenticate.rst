@@ -38,7 +38,7 @@ We support three OAuth 2.0 authorization flows to get the access token:
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                             |
 |                                      |                                                                                             |
-|                                      | Examples: Automation apps, scripts etc.                                                     |
+|                                      | Examples: automation apps, scripts, etc.                                                    |
 +--------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. warning::
@@ -55,7 +55,8 @@ Code Flow
 
 .. warning::
 
-    Code flow should not be used in public facing application only service to service.
+    Code flow should not be used in public facing application (for example mobile apps) only service to service. 
+    If you intend to use code flow with public facing application please consider using `proof key for code exchange <https://auth0.com/docs/flows/authorization-code-flow-with-proof-key-for-code-exchange-pkce>`_.
 
 This flow should be used for applications that can store refresh tokens and periodically exchange them for access tokens after they expire.
 One time interaction with the user is needed to obtain the refresh token. Next, the refresh token can be used to automatically obtain the next refresh tokens and access tokens.
@@ -63,7 +64,7 @@ Access token is valid for 4 hours. Refresh token is valid for 14 days.
 
 .. note::
     To receive the JWT using Code Flow you will need a **client id** and **client secret** issued for your application by Tedee.
-    You can find a guide to achieve that on `How to begin integration <howtos/begin-integration.html#get-client-id>`_ page.
+    You can find a guide to achieve that on `How to begin integration <begin-integration.html#get-client-id>`_ page.
 
 There are three steps to get the JWT using Code Flow:
 
@@ -174,7 +175,7 @@ Access token is valid for 4 hours.
 
 .. note::
     To receive the JWT using Implicit Flow you will need a **client id** issued for your application by Tedee.
-    You can find a guide to achieve that on `How to begin integration <howtos/begin-integration.html#get-client-id>`_ page.
+    You can find a guide to achieve that on `How to begin integration <begin-integration.html#get-client-id>`_ page.
 
 The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
 
@@ -226,7 +227,7 @@ ROPC Flow
 
     ROPC Flow is deprecated. Estimated time of removing: end of Q2 2021. The new authentication method will be introduced instead.
 
-This flow should be used when interaction with the user is not possible.
+This flow should be used when interaction with the user is not possible. Additionally when using this flow you don't need individual clientId.
 To receive the JWT without user interaction, you must send following POST request.
 
 .. code-block:: sh
@@ -284,27 +285,27 @@ Scopes define the set of permissions that the application requests.
 Below is a list of available scopes that can be requested during the authorization process (a single scope value indicates the permissions that are being requested).
 
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Scope                                                                      | Short name                  | Description                                                                                                                                                                                     |
+| Scope                                                                      | Operation                   | Description                                                                                                                                                                                     |
 +============================================================================+=============================+=================================================================================================================================================================================================+
-| `https://tedee.onmicrosoft.com/api/user_impersonation`                     | Impersonate user            | Access this app on behalf of the signed-in user.                                                                                                                                                |
+| https://tedee.onmicrosoft.com/api/user_impersonation                       | Impersonate user            | Access this app on behalf of the signed-in user.                                                                                                                                                |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/Account.Read`                           | View user account           | Grants the ability to view user information.                                                                                                                                                    |
+| https://tedee.onmicrosoft.com/api/Account.Read                             | View user account           | Grants the ability to view user information.                                                                                                                                                    |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/Account.ReadWrite`                      | View and edit user account  | Grants the ability to view and edit user information. Also grant the ability to delete user account.                                                                                            |
+| https://tedee.onmicrosoft.com/api/Account.ReadWrite                        | View and edit user account  | Grants the ability to view and edit user information. Also grant the ability to delete user account.                                                                                            |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/Device.Read`                            | View devices                | Grants the ability to view all devices and query information for specific device.                                                                                                               |
+| https://tedee.onmicrosoft.com/api/Device.Read                              | View devices                | Grants the ability to view all devices and query information for specific device.                                                                                                               |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/Device.ReadWrite`                       | View and edit device        | Grants the ability to view all devices and query information for specific device. Also grants the ability to add and delete devices, and update device settings or current status of the device.|
+| https://tedee.onmicrosoft.com/api/Device.ReadWrite                         | View and edit devices       | Grants the ability to view all devices and query information for specific device. Also grants the ability to add and delete devices, and update device settings or current status of the device.|
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/DeviceShare.Read`                       | View device shares          | Grants the ability to view shares for all devices or for specific device.                                                                                                                       |
+| https://tedee.onmicrosoft.com/api/DeviceShare.Read                         | View device shares          | Grants the ability to view shares for all devices or for specific device.                                                                                                                       |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/DeviceShare.ReadWrite`                  | View and edit device shares | Grants the ability to view shares for all devices or for specific device. Also grants the ability to delete existing share or create new one.                                                   |
+| https://tedee.onmicrosoft.com/api/DeviceShare.ReadWrite                    | View and edit device shares | Grants the ability to view shares for all devices or for specific device. Also grants the ability to update or delete existing share or create new one.                                         |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/DeviceActivity.Read`                    | View activity logs          | Grants the ability to query activity logs.                                                                                                                                                      |
+| https://tedee.onmicrosoft.com/api/DeviceActivity.Read                      | View activity logs          | Grants the ability to query activity logs.                                                                                                                                                      |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/Bridge.Operate`                         | Operate bridges             | Grants the ability to pair and unpair locks with bridges.                                                                                                                                       |
+| https://tedee.onmicrosoft.com/api/Bridge.Operate                           | Operate bridges             | Grants the ability to pair and unpair locks with bridges.                                                                                                                                       |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `https://tedee.onmicrosoft.com/api/Lock.Operate`                           | Operate locks               | Grants the ability to lock, unlock and perform pull spring. Also grants the ability to perform lock calibration.                                                                                |
+| https://tedee.onmicrosoft.com/api/Lock.Operate                             | Operate locks               | Grants the ability to lock, unlock and perform pull spring. Also grants the ability to perform lock calibration.                                                                                |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Example use of scopes in request:
