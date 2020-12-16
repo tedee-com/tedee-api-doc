@@ -1,7 +1,7 @@
 Delete
 =========================
 
-Delete share for device
+Delete share for device.
 
 .. code-block:: sh
 

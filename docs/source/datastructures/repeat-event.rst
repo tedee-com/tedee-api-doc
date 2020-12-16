@@ -4,15 +4,15 @@ Repeat event
 +------------------------+------------+--------------------------------------------------------------+
 | Name                   | Type       | Description                                                  |
 +========================+============+==============================================================+
-| dayEndTime             | datetime   | represents event end start time                              |
+| dayEndTime             | datetime   | represents end time when user has access to the device       |
 +------------------------+------------+--------------------------------------------------------------+
-| dayStartTime           | datetime   | represents event day start time                              |
+| dayStartTime           | datetime   | represents start time when user has access to the device     |
 +------------------------+------------+--------------------------------------------------------------+
-| endDate                | datetime   | represents end date of event                                 |
+| endDate                | datetime   | represents end date wthen user has access to the device      |
 +------------------------+------------+--------------------------------------------------------------+
 | id                     | number     | id of repeat event                                           |
 +------------------------+------------+--------------------------------------------------------------+
-| startDate              | datetime   | represents start date of event                               |
+| startDate              | datetime   | represents start date when user has access to the device     |
 +------------------------+------------+--------------------------------------------------------------+
 | weekDays               | number     | represents for what week days is event                       |
 +------------------------+------------+--------------------------------------------------------------+

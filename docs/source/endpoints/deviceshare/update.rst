@@ -1,7 +1,7 @@
 Update
 =========================
 
-Update share details     for device
+Update share details for device.
 
 .. code-block:: sh
 

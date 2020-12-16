@@ -1,7 +1,7 @@
 Create
 =========================
 
-Create new share for device
+Create new share for device.
 
 .. code-block:: sh
 
@@ -83,7 +83,7 @@ HTTP status code: ``201``
         {
             "result": {
                 "id": 1,
-                "sharedUserDisplayName": "john.doe"
+                "sharedUserDisplayName": "John Doe"
             }
             "success": true,
             "errorMessages": [],
