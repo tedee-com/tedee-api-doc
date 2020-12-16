@@ -91,4 +91,4 @@ Useful links
 Need a help?
 ------------
 
-We encourage you to join a discussion or start a new one under `Community forum <https://tedee.freshdesk.com/en/support/discussions>`_.
+We encourage you to join a discussion or start a new one under `Community forum <https://tedee.freshdesk.com/en/support/discussions>`_ or ask on `Twiter (@tedee_smartlock) <https://twitter.com/tedee_smartlock>`_.
