@@ -8,11 +8,11 @@ Repeat event
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
 | dayStartTime           | datetime   | if access type is set to "Custom" it represents start time when user has access to the device     |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
-| endDate                | datetime   | represents end date wthen user has access to the device                                           |
+| endDate                | datetime   | end date when user has access to the device                                                       |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
 | id                     | number     | id of repeat event                                                                                |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
-| startDate              | datetime   | represents start date when user has access to the device                                          |
+| startDate              | datetime   | start date when user has access to the device                                                     |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
 | weekDays               | number     | if access type is set to "Custom" it represents for what week days user has access to the device  |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+

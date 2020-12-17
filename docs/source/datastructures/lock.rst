@@ -4,33 +4,33 @@ Lock
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | Name                   | Type                                               | Description                                       |
 +========================+====================================================+===================================================+
-| accessLevel            | :doc:`Access level <../enums/access-level>`        | represents current user access level              |
+| accessLevel            | :doc:`Access level <../enums/access-level>`        | current user access level                         |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| autoUnlockEnabled      | boolean                                            | represents if auto unlock is enabled              |
+| autoUnlockEnabled      | boolean                                            | is auto unlock enabled                            |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| autoUnlockRangeIn      | number                                             | represents value of the in zone                   |
+| autoUnlockRangeIn      | number                                             | value of the in zone                              |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| autoUnlockRangeOut     | number                                             | represents value of the out zone                  |
+| autoUnlockRangeOut     | number                                             | value of the out zone                             |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| autoUnlockTimeout      | number                                             | represents value of auto unlock timeout           |
+| autoUnlockTimeout      | number                                             | value of auto unlock timeout                      |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | bridgeId               | number                                             | id of bridge that lock is connected to            |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | connectedToId          | number                                             | id of bridge that lock is connected to            |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| created                | datetime                                           | represents when lock was added to user account    |
+| created                | datetime                                           | when lock was added to user account               |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | deviceRevision         | number                                             | current lock revision on the device               |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| deviceSettings         | :doc:`Device settings <device-settings>`           | represents device settings object                 |
+| deviceSettings         | :doc:`Device settings <device-settings>`           | device settings object                            |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | id                     | number                                             | lock id                                           |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| isConnected            | boolean                                            | represents if lock connected to bridge            |
+| isConnected            | boolean                                            | is lock connected to bridge                       |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| location               | :doc:`Location <location>`                         | represents location object                        |
+| location               | :doc:`Location <location>`                         | location object                                   |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| lockProperties         | :doc:`Lock properties <lock-properties>`           | represents lockProperties object                  |
+| lockProperties         | :doc:`Lock properties <lock-properties>`           | lockProperties object                             |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | macAddress             | string                                             | lock mac address                                  |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
@@ -40,13 +40,13 @@ Lock
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | serialNumber           | string                                             | lock serial number                                |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| shareDetails           | :doc:`Share details <share-details>`               | represents share details object                   |
+| shareDetails           | :doc:`Share details <share-details>`               | share details object                              |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| softwareVersions       | :doc:`Software version <software-versions>`        | represents software versions object               |
+| softwareVersions       | :doc:`Software version <software-versions>`        | software versions object                          |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | targetDeviceRevision   | number                                             | revision info that is sent to device from backend |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| type                   | :doc:`Device type <../enums/device-type>`          | represents device type                            |
+| type                   | :doc:`Device type <../enums/device-type>`          | device type                                       |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | userIdentity           | string                                             | lock owner identity                               |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
