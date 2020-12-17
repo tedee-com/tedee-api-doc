@@ -4,27 +4,27 @@ Bridge
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | Name                   | Type                                               | Description                                       |
 +========================+====================================================+===================================================+
-| accessLevel            | :doc:`Access level <../enums/access-level>`        | represents current user access level              |
+| accessLevel            | :doc:`Access level <../enums/access-level>`        | current user access level                         |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| beaconMajor            | number                                             | represents major beacon number                    |
+| beaconMajor            | number                                             | major beacon number                               |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| beaconMinor            | number                                             | represents minor beacon number                    |
+| beaconMinor            | number                                             | minor beacon number                               |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | bridgeId               | number                                             | id of bridge                                      |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | connectedToId          | number                                             | id of bridge                                      |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| created                | datetime                                           | represents when bridge was added to user account  |
+| created                | datetime                                           | date when bridge was added to user account        |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | deviceRevision         | number                                             | current bridge revision on the device             |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | id                     | number                                             | bridge id                                         |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| iotDeviceName          | string                                             | represents bridge iot name                        |
+| iotDeviceName          | string                                             | bridge iot name                                   |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| isConnected            | boolean                                            | represents if bridge is connected                 |
+| isConnected            | boolean                                            | is bridge connected                               |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| isUpdating             | boolean                                            | represents if bridge is isUpdating                |
+| isUpdating             | boolean                                            | is bridge currently updating                      |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | macAddress             | string                                             | bridge mac address                                |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
@@ -34,17 +34,17 @@ Bridge
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | serialNumber           | string                                             | bridge serial number                              |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| shareDetails           | :doc:`Share details <share-details>`               | represents share details object                   |
+| shareDetails           | :doc:`Share details <share-details>`               | share details object                              |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| softwareVersions       | :doc:`Software version <software-versions>`        | represents software versions object               |
+| softwareVersions       | :doc:`Software version <software-versions>`        | software versions object                          |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | targetDeviceRevision   | number                                             | revision info that is sent to device from backend |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| type                   | :doc:`Device type <../enums/device-type>`          | represents device type                            |
+| type                   | :doc:`Device type <../enums/device-type>`          | device type                                       |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | userIdentity           | string                                             | bridge owner identity                             |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| voIPNumberId           | number                                             | represents voip number                            |
+| voIPNumberId           | number                                             | voip number                                       |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| wasConfigured          | boolean                                            | represents if wifi was configured on bridge       |
+| wasConfigured          | boolean                                            | is wifi was configured on bridge                  |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
