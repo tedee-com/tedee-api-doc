@@ -60,7 +60,7 @@ If access type is "TimeRestricted" you need to send fields "startDate" and "endD
 accessType = 2 (Custom)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The most complicated type is "Custom". The required fields for this type are "dayStartTime" and "dayEndTime" they represnts at which hour period user will have access to the device.
+The most complicated type is "Custom". The required fields for this type are "dayStartTime" and "dayEndTime". They represnt at which hour period user will have access to the device.
 User can further customize this by selecting days. To send it proper way you need to use :doc:`Week days <../enums/week-days>` enum. Fields "startDate" and "endDate" are optional in this case.
 
 **Sample repeat event objects**
