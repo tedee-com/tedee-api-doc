@@ -26,9 +26,9 @@ Update lock.
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | autoUnlockTimeout         | number (optional)                                                         | value of auto unlock timeout                       |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| deviceSettings            | :doc:`Device settings <../../datastructures/device-settings>` (optional)  | device settings object                             |
+| deviceSettings            | :doc:`Device settings <../../datastructures/device-settings>` (optional)  | device settings to be updated                      |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| location                  | :doc:`Location <../../datastructures/location>` (optional)                | location object                                    |
+| location                  | :doc:`Location <../../datastructures/location>` (optional)                | geographic location used by auto unlock            |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | name                      | string (optional)                                                         | lock name                                          |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+

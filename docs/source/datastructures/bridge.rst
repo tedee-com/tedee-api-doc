@@ -6,9 +6,10 @@ Bridge
 +========================+====================================================+===================================================+
 | accessLevel            | :doc:`Access level <../enums/access-level>`        | current user access level                         |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| beaconMajor            | number                                             | major beacon number                               |
+| beaconMajor            | number                                             | identifies and distinguishes group of beacons     |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| beaconMinor            | number                                             | minor beacon number                               |
+| beaconMinor            | number                                             | identifies individual beacon within a group of    |
+|                        |                                                    | beacons assigned a major value                    |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | bridgeId               | number                                             | id of bridge                                      |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
@@ -34,9 +35,9 @@ Bridge
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | serialNumber           | string                                             | bridge serial number                              |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| shareDetails           | :doc:`Share details <share-details>`               | share details object                              |
+| shareDetails           | :doc:`Share details <share-details>`               | share details of current user for that device     |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
-| softwareVersions       | :doc:`Software version <software-versions>`        | software versions object                          |
+| softwareVersions       | :doc:`Software version <software-versions>`        | software versions of the device                   |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
 | targetDeviceRevision   | number                                             | revision info that is sent to device from backend |
 +------------------------+----------------------------------------------------+---------------------------------------------------+
