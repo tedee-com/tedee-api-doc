@@ -25,6 +25,7 @@ Tedee API documentation
    Get and sync locks <howtos/get-and-sync-locks>
    Operate locks <howtos/operate-locks>
    Update lock settings <howtos/update-lock-settings>
+   Share device <howtos/share-device>
    Example integrations<howtos/example-integrations>
 
 .. toctree::
@@ -70,6 +71,7 @@ Tedee API documentation
    Lock state <enums/lock-state>
    Open parameter <enums/open-parameter>
    Software type <enums/software-type>
+   Week days <enums/week-days>
 
 This site contains a documentation for Tedee REST API (https://api.tedee.com).
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.
