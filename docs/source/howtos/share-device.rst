@@ -1,16 +1,16 @@
 How to manage device shares
 ==============================
 
-Once your user have his device set, he will probably want to share it with other users (e.g. Family or friends).
-To this he need to create a share. In this tutorial we will walk through the process of creating, updating, deleting and listing share for user device.
+Once your user have his device set, he will probably want to share it with other users (e.g. family or friends).
+To do this he need to create a share. In this tutorial we will walk through the process of creating, updating, deleting and listing share for user device.
 
 Get current share list
 ----------------------------
 
-If you want to get current shares for device. All you need to do is to have device Id and use :doc:`Get all shares <../endpoints/deviceshare/get-all>`. 
+If you want to get current shares for device, you will need deviceId and use :doc:`Get all shares <../endpoints/deviceshare/get-all>`. 
 This endpoint will return all shares for device.
 
-**Sample Request**
+**Sample request**
 
 .. code-block:: sh
 
@@ -20,12 +20,12 @@ This endpoint will return all shares for device.
 Prepare share data
 -----------------------------
 
-To create or update share you need to prepare some data. Depends on what "accessType" have been chosen you need to adjust "repeatEvent" object in proper way.
+To create or update share you need to prepare some data. Depends on what :doc:`access type <../enums/access-type>` have been chosen you need to adjust :doc:`repeatEvent <../datastructures/repeat-event>` object in proper way.
 
 accessType =  0 (Permanent)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In this case, you can send empty "repeatEvent" object.
+In this case, you can send empty :doc:`repeatEvent <../datastructures/repeat-event>` object.
 
 **Sample repeat event object**
 
@@ -61,7 +61,7 @@ accessType = 2 (Custom)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The most complicated type is "Custom". The required fields for this type are "dayStartTime" and "dayEndTime" they represnts at which hour period user will have access to the device.
-User can further customize this be selecting days. To send it proper way you need to use :doc:`Week days <../enums/week-days>` enum. Fields "startDate" and "endDate" are optional in this case.
+User can further customize this by selecting days. To send it proper way you need to use :doc:`Week days <../enums/week-days>` enum. Fields "startDate" and "endDate" are optional in this case.
 
 **Sample repeat event objects**
 
@@ -94,10 +94,10 @@ In this case user will have access only from monday to friday between 8:00 and 1
 Create new share for device
 ----------------------------
 
-To create share for device user need to be owner of device or have active share with access level "Administrator". To do this you need to use 
+To create share for device user needs to be owner of device or have active share with access level "Administrator". To do this you need to use 
 :doc:`Create share <../endpoints/deviceshare/create>`. This endpoint allows to create new device share.
 
-**Sample Request**
+**Sample request**
 
 .. code-block:: sh
 
@@ -126,10 +126,10 @@ If user that we want to share device with already have Tedee account he will be 
 
 Update existing share
 ----------------------------
-To update share you need to have shareId, you get it when you create share with success or you can simply use endpoint to get all share for device :doc:`Get all shares <../endpoints/deviceshare/get-all>`.
-When you have complete info you can send request :doc:`Update share <../endpoints/deviceshare/update>` to update share.
+To update share you need to have shareId, which you get when create share with success or you can simply use endpoint to get all share for device :doc:`Get all shares <../endpoints/deviceshare/get-all>`.
+When you have complete information you can send request :doc:`Update share <../endpoints/deviceshare/update>` to update share.
 
-**Sample Request**
+**Sample request**
 
 .. code-block:: sh
 
@@ -159,7 +159,7 @@ Delete share
 
 To remove existing share simply call :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint with share id you want to delete.
 
-**Sample Request**
+**Sample request**
 
 .. code-block:: sh
 
