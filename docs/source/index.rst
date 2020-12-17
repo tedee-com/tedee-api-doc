@@ -13,6 +13,7 @@ Tedee API documentation
 
    getting-started
    api-versioning
+   logo-guidance
    release-notes
 
 .. toctree::
@@ -26,7 +27,7 @@ Tedee API documentation
    Operate locks <howtos/operate-locks>
    Update lock settings <howtos/update-lock-settings>
    Share device <howtos/share-device>
-   Example integrations<howtos/example-integrations>
+   Example integrations <howtos/example-integrations>
 
 .. toctree::
    :maxdepth: 1
@@ -93,4 +94,4 @@ Useful links
 Need a help?
 ------------
 
-We encourage you to join a discussion or start a new one under `Community forum <https://tedee.freshdesk.com/en/support/discussions>`_.
+We encourage you to join a discussion or start a new one under `Community forum <https://tedee.freshdesk.com/en/support/discussions>`_ or ask on `Twiter (@tedee_smartlock) <https://twitter.com/tedee_smartlock>`_.
