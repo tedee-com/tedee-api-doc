@@ -61,7 +61,6 @@ Body:
             "id": 1,
             "accessLevel": 1,
             "accessType": 1,
-            "userEmail": "john.doe@email.com"
             "repeatEvent": {
                 "id": 1,
                 "weekDays": 10,
