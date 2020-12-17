@@ -14,22 +14,21 @@ For that please send the request for obtaining **client id** using this `form <h
 
 Based on above information, we will register your application in our system and send you **client id** and **client secret**.
 
-More information
-----------------
-
-If you need more information about integration please check following links:
-
-* if you need to use our logo please read the :doc:`logo guidance <../../logo-guidance>`
-* check already existing :doc:`examples <example-integrations>`
-* if you need help then start discussion on the community `forum <https://tedee.freshdesk.com/en/support/discussions>`_
-* scopes that will be requested by your application during the authorization process: `list of available scopes <../howtos/authenticate.html#list-of-scopes>`_
-
-What's next?
+Tutorial
 ------------
 
-Start with these tutorials:
+To learn step by step how to integrate with tedee, please follow these tutorials:
 
 * :doc:`How to authenticate <authenticate>`
 * :doc:`Get and sync locks <get-and-sync-locks>`
 * :doc:`Operate locks <operate-locks>`
 * :doc:`Update locks settings <update-lock-settings>`
+
+More information
+----------------
+
+If you need more information about integration please check following links:
+
+* You can user our logo but first read the :doc:`logo guidance <../../logo-guidance>`
+* Check existing :doc:`integration examples <example-integrations>`
+* Use `community forum <https://tedee.freshdesk.com/en/support/discussions>`_ if you need help
