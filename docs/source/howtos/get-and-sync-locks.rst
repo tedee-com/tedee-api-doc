@@ -43,7 +43,7 @@ of user locks like battery level, connection state, and lock position.
                 }
             },            
             {
-                "id": 1,
+                "id": 2,
                 "isConnected": true,
                 "lockProperties": {
                     "state": 2,
