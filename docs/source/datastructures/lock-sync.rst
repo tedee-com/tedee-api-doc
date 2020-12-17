@@ -6,7 +6,7 @@ Lock sync
 +========================+============================================+===================================================+
 | id                     | number                                     | lock id                                           |
 +------------------------+--------------------------------------------+---------------------------------------------------+
-| isConnected            | string                                     | represents if lock is connected to bridge         |
+| isConnected            | string                                     | is lock connected to bridge                       |
 +------------------------+--------------------------------------------+---------------------------------------------------+
-| lockProperties         | :doc:`Lock properties <lock-properties>`   | represents lockProperties object                  |
+| lockProperties         | :doc:`Lock properties <lock-properties>`   | lockProperties object                             |
 +------------------------+--------------------------------------------+---------------------------------------------------+

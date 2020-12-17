@@ -4,15 +4,15 @@ Share details
 +------------------------+---------------------------------------------+------------------------------------------------+
 | Name                   | Type                                        | Description                                    |
 +========================+=============================================+================================================+
-| accessLevel            | :doc:`Access level <../enums/access-level>` | represents access level of the share           |
+| accessLevel            | :doc:`Access level <../enums/access-level>` | access level of the share                      |
 +------------------------+---------------------------------------------+------------------------------------------------+
-| accessType             | :doc:`Access type <../enums/access-type>`   | represents access type of the share            |
+| accessType             | :doc:`Access type <../enums/access-type>`   | access type of the share                       |
 +------------------------+---------------------------------------------+------------------------------------------------+
 | deviceId               | number                                      | id of the shared device                        |
 +------------------------+---------------------------------------------+------------------------------------------------+
 | id                     | number                                      | id of the share                                |
 +------------------------+---------------------------------------------+------------------------------------------------+
-| isPending              | boolean                                     | represents if share is pending                 |
+| isPending              | boolean                                     | is share invatation pending                    |
 +------------------------+---------------------------------------------+------------------------------------------------+
 | organizationUserId     | number                                      | user organization id that device is shared for |
 +------------------------+---------------------------------------------+------------------------------------------------+
@@ -24,7 +24,7 @@ Share details
 +------------------------+---------------------------------------------+------------------------------------------------+
 | userIdentity           | string                                      | user identity that device is shared for        |
 +------------------------+---------------------------------------------+------------------------------------------------+
-| repeatEvent            | :doc:`Repeat event <repeat-event>`          | represents repeat event object                 |
+| repeatEvent            | :doc:`Repeat event <repeat-event>`          | repeat event object                            |
 +------------------------+---------------------------------------------+------------------------------------------------+
-| remoteAccessDisabled   | boolean                                     | represents if remote access is disabled        |
+| remoteAccessDisabled   | boolean                                     | is remote access  disabled                     |
 +------------------------+---------------------------------------------+------------------------------------------------+
