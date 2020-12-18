@@ -8,5 +8,5 @@ Lock sync
 +------------------------+--------------------------------------------+---------------------------------------------------+
 | isConnected            | string                                     | is lock connected to bridge                       |
 +------------------------+--------------------------------------------+---------------------------------------------------+
-| lockProperties         | :doc:`Lock properties <lock-properties>`   | lockProperties object                             |
+| lockProperties         | :doc:`Lock properties <lock-properties>`   | current properties of the lock                    |
 +------------------------+--------------------------------------------+---------------------------------------------------+
