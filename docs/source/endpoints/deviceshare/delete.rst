@@ -1,7 +1,8 @@
 Delete
 =========================
 
-Delete share for device.
+This endpoint allows to remove access to the device from the user. 
+To remove access from user you need to be owner or administrator of the device.
 
 .. code-block:: sh
 
@@ -37,10 +38,10 @@ Scopes
 Examples
 -------------
 
-Delete share
-^^^^^^^^^^^^^^^
+Remove access to the device
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample request**
 
 .. code-block:: sh
 
