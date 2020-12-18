@@ -20,7 +20,7 @@ This endpoint will return all shares for device.
 Prepare share data
 -----------------------------
 
-To create or update share you need to prepare some data. Depends on what :doc:`access type <../enums/access-type>` have been chosen you need to adjust :doc:`repeatEvent <../datastructures/repeat-event>` object in proper way.
+To manage access to the device you need to prepare some data. Depends on what :doc:`access type <../enums/access-type>` have been chosen you need to adjust :doc:`repeatEvent <../datastructures/repeat-event>` object in proper way.
 
 accessType =  0 (Permanent)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -91,11 +91,12 @@ In this case user will have access only from monday to friday between 8:00 and 1
     },
 
 
-Create new share for device
+Add access to the device
 ----------------------------
 
-To create share for device user needs to be owner of device or have active share with access level "Administrator". To do this you need to use 
-:doc:`Create share <../endpoints/deviceshare/create>`. This endpoint allows to create new device share.
+To allow other user access to the device, you need to create share for him. Only owner and administrator of the device can do this.
+For this you need to use  :doc:`Create share <../endpoints/deviceshare/create>`. This endpoint allows to create new device share.
+If user that we want to share device with already have Tedee account he will be notified that device was shared with him. If not the email with invataion will be sent.
 
 **Sample request**
 
@@ -122,11 +123,9 @@ Body:
             "remoteAccessDisabled" : false
         }
 
-If user that we want to share device with already have Tedee account he will be notified that device was shared with him. If not the email with invataion will be sent.
-
-Update existing share
+Update access to the device
 ----------------------------
-To update share you need to have shareId, which you get when create share with success or you can simply use endpoint to get all share for device :doc:`Get all shares <../endpoints/deviceshare/get-all>`.
+To update user access to the device you need to have shareId, which you get when create share with success or you can simply use endpoint to get all share for device :doc:`Get all shares <../endpoints/deviceshare/get-all>`.
 When you have complete information you can send request :doc:`Update share <../endpoints/deviceshare/update>` to update share.
 
 **Sample request**
@@ -157,7 +156,7 @@ Body:
 Delete share
 ----------------------------
 
-To remove existing share simply call :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint with share id you want to delete.
+To remove user access to device call :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint with share id you want to delete.
 
 **Sample request**
 
