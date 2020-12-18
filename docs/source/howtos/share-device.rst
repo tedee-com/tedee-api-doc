@@ -1,7 +1,7 @@
 How to manage device shares
 ==============================
 
-Once your user have his device set, he will probably want to share it with other users (e.g. family or friends).
+Once user have his device set, he will probably want to share it with other users (e.g. family or friends).
 To do this he need to create a share. In this tutorial we will walk through the process of creating, updating, deleting and listing share for user device.
 
 Get current share list
@@ -94,9 +94,10 @@ In this case user will have access only from monday to friday between 8:00 and 1
 Add access to the device
 ----------------------------
 
-To allow other user access to the device, you need to create share for him. Only owner and administrator of the device can do this.
-For this you need to use  :doc:`Create share <../endpoints/deviceshare/create>`. This endpoint allows to create new device share.
-If user that we want to share device with already have Tedee account he will be notified that device was shared with him. If not the email with invataion will be sent.
+Let's consider that situation. You are responsible for managing access for users in your organization. If new employee is recruited you don't want to give him keys to the office (or you don't use keys in your organization). 
+Instead you want to share door lock to him/her. To do that you need to use :doc:`Create share <../endpoints/deviceshare/create>`. Simply call this endpoint with new organization email address to create new device share.
+
+If user that you want to share device with already have Tedee account he will be notified that device was shared with him. If not the email with invitaion will be sent.
 
 **Sample request**
 
@@ -123,9 +124,12 @@ Body:
             "remoteAccessDisabled" : false
         }
 
+
 Update access to the device
 ----------------------------
-To update user access to the device you need to have shareId, which you get when create share with success or you can simply use endpoint to get all share for device :doc:`Get all shares <../endpoints/deviceshare/get-all>`.
+
+If you want to change access to the door lock for your employees for example you want give some of them admin permissions, you can update user access to the device. 
+For that you need to have shareId, which you get when creating share with success or you can simply use endpoint to get all share for the device :doc:`Get all shares <../endpoints/deviceshare/get-all>`.
 When you have complete information you can send request :doc:`Update share <../endpoints/deviceshare/update>` to update share.
 
 **Sample request**
@@ -153,17 +157,16 @@ Body:
             "remoteAccessDisabled" : false
         }
 
-Delete share
-----------------------------
 
-To remove user access to device call :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint with share id you want to delete.
+Delete share
+-------------
+
+Let's consider different situation. Unfortunately, you need to fire one of your employee. 
+After deleting access to organization resources you can also remove employee's access to the devices within organization with the call to the :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint.
+For that you need to have share id you want to delete. You can get shares for each device from :doc:`Get all shares <../endpoints/deviceshare/get-all>` endpoint.
 
 **Sample request**
 
 .. code-block:: sh
 
     curl -X DELETE "|apiUrl|/api/|apiVersion|/my/deviceshare/15" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
-
-
-
-
