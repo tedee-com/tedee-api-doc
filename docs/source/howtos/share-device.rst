@@ -156,7 +156,7 @@ Body:
 Delete share
 ----------------------------
 
-To remove existing share simply call :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint with share id you want to delete.
+To remove user access to device call :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint with share id you want to delete.
 
 **Sample request**
 
