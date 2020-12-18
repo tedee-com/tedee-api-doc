@@ -24,7 +24,7 @@ This endpoint can be used by owner or administrator of the device.
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | remoteAccessDisabled      | boolean                                                                   | represents if remote access is disabled            |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| repeatEvent               | :doc:`Repeat event <../../datastructures/repeat-event>`                   | represents repeat event object                     |
+| repeatEvent               | :doc:`Repeat event <../../datastructures/repeat-event>`                   | represents repeat event of the share               |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | userEmail                 | string                                                                    | user email that device will be shared with         |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+

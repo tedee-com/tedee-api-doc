@@ -21,8 +21,8 @@ Tedee API documentation
    :caption: How to ...
    :hidden:
 
-   Authenticate <howtos/authenticate>
    Begin integration <howtos/begin-integration>
+   Authenticate <howtos/authenticate>
    Get and sync locks <howtos/get-and-sync-locks>
    Operate locks <howtos/operate-locks>
    Update lock settings <howtos/update-lock-settings>

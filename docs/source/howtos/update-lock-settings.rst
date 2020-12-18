@@ -1,9 +1,17 @@
 How to update lock settings
 ===========================
 
-If you want to update lock settings, the first thing you need to do is use endpoint :doc:`Get single lock <../endpoints/lock/get-single>`:
+In this section let's focus on how to update tedee lock settings. 
+If you want to update lock settings, the first thing you need to know is that there are two kinds of lock settings:
 
-**Sample request for lock with Id = 1**
+* **device settings** - settings on the device side. That means changing settings will affect all device users that have access to that lock
+* **user settings** - each user has his/her own settings and they are responsible for auto unlock feature
+
+To update device settings firstly use endpoint :doc:`Get single lock <../endpoints/lock/get-single>`:
+
+**Sample request**
+
+This request will get data for lock with Id = 1.
 
 .. code-block:: sh
 
@@ -74,9 +82,16 @@ HTTP status code: ``200``
 Above endpoint returns data for the selected lock. The data includes the **revision** attribute. 
 This is the version of the current lock settings and you must provide this value in the next update request.
 
-After successfully retrieving the revision of the current lock settings, you can use endpoint :doc:`Update lock <../endpoints/lock/update>` to update the lock:
+After successfully retrieving the revision of the current lock settings, you can use endpoint :doc:`Update lock <../endpoints/lock/update>` to update the lock.
 
-**Sample request to update autoLock and autoUnlock settings**
+Update device settings
+----------------------
+
+Firstly let's focus on updating device settings. To do that you need to specify which settings from :doc:`Device settings <../datastructures/device-settings>` you want to update.
+
+**Sample request**
+
+Example shows how to update settings that enable auto lock feature and set delay to 10 seconds for the device with id = 1. Also we update name of the lock.
 
 .. code-block:: sh
 
@@ -89,15 +104,11 @@ Body:
         {
             "id": 1,
             "revision": 2,
+            "name": "Front door lock",
             "deviceSettings": {
                 "autoLockEnabled": true,
                 "autoLockDelay": 10
-            },
-            "autoUnlockEnabled": true,
-            "autoUnlockConfirmEnabled": true,
-            "autoUnlockRangeIn": 100,
-            "autoUnlockRangeOut": 100,
-            "autoUnlockTimeout": 30
+            }
         }
 
 **Sample response**
@@ -120,7 +131,66 @@ HTTP status code: ``200``
 The revision value in the update request must be the same as the current value in the system, otherwise the request will be refused with 409 (Conflict) error.
 If update will success you will receive the new revison value.
 
+The targetDeviceRevision value is responsible for checking if device settings are up to date. 
+Process of the updating device settings is described below:
+
+1. Device receives settings with targetDeviceRevision. 
+2. If targetDeviceRevision is greater than revision on the device, device will update its settings. 
+3. Device sends confirmation about successful settings update.
+
+.. note::
+    It is possible that revision and targetDeviceRevision values are not equal. 
+    It means that there have been more updates not related to device settings than to the device settings themselves.
+
 All parameters in this endpoint (except id and revision) are optional. 
 This means that specifying a given parameter will update its value. If a given parameter is not specified, its value will not change.
 
-Only the owner or admin can update device settings and name. Guest can only modify auto-unlock settings and location.
+Only the owner or admin can update device settings and name. Guest can only modify user settings and location.
+
+Update user settings
+--------------------
+
+Let's focus now how to update user settings for the lock. Each user can have different set of settings.
+
+**Sample request**
+
+Sample request will update auto unlock settings with location for the device with id = 1.
+
+.. code-block:: sh
+
+    curl -X PATCH "|apiUrl|/api/|apiVersion|/my/lock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+
+Body:
+
+.. code-block:: js
+
+        {
+            "id": 1,
+            "revision": 2,
+            "location": {
+                "latitude": 52.24070739746092,
+                "longitude": 21.086990356445305
+            },
+            "autoUnlockEnabled": true,
+            "autoUnlockConfirmEnabled": true,
+            "autoUnlockRangeIn": 300,
+            "autoUnlockRangeOut": 400,
+            "autoUnlockTimeout": 30
+        }
+
+**Sample response**
+
+HTTP status code: ``200``
+
+.. code-block:: js
+
+        {
+            "result": {
+                "id": 1,
+                "revision": 3,
+                "targetDeviceRevision": 3
+            }
+            "success": true,
+            "errorMessages": [],
+            "statusCode": 200
+        }

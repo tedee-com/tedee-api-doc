@@ -25,7 +25,7 @@ Share details
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
 | userIdentity           | string                                      | user identity that device is shared for                          |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| repeatEvent            | :doc:`Repeat event <repeat-event>`          | repeat event object                                              | 
+| repeatEvent            | :doc:`Repeat event <repeat-event>`          | repeat event of the share                                        |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| remoteAccessDisabled   | boolean                                     | is remote access disabled                                        |
+| remoteAccessDisabled   | boolean                                     | is remote access  disabled                                       |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
