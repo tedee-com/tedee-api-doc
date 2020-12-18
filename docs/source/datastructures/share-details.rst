@@ -12,7 +12,7 @@ Share details
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
 | id                     | number                                      | id of the share                                                  |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| isPending              | boolean                                     | if user doesn't have Tedee account the email invatation is sent. |
+| isPending              | boolean                                     | if user doesn't have Tedee account the email invitation is sent. |
 |                        |                                             | Until user create account the share is pending                   |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
 | organizationUserId     | number                                      | user organization id that device is shared for                   |

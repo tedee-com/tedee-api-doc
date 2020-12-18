@@ -3,7 +3,7 @@ Get all
 
 Get all access details for specific device. 
 This endpoint can be used by all users that have share to the device but users with access level "Guest" and those users that share are not active
-will get in response only their access details. Owner and administrators with active share will get all users access details.
+will get in response only information about owner of device and own access details. Owner and administrators with active share will get all users access details.
 
 .. code-block:: sh
 
