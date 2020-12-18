@@ -1,7 +1,9 @@
 Get all
 =========================
 
-Get all shares for device by provided id.
+Get all access details for specific device. 
+This endpoint can be used by all users that have share to the device but users with access level "Guest" and those users that share are not active
+will get in response only their access details. Owner and administrators with active share will get all users access details.
 
 .. code-block:: sh
 
@@ -76,6 +78,27 @@ HTTP status code: ``200``
                         "endDate": null
                     },
                     "remoteAccessDisabled": true
+                },
+                                {
+                    "id": 16,
+                    "userId": 12,
+                    "deviceId": 1,
+                    "organizationUserId": 13,
+                    "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba2eaf7333",
+                    "accessLevel": 0,
+                    "accessType": 1,
+                    "userEmail": "john.kowalsky@email.com",
+                    "isPending": false,
+                    "userDisplayName": "John Doe",
+                    "repeatEvent": {
+                        "id": 1,
+                        "weekDays": 10,
+                        "dayStartTime": "2020-12-14T08:09:57.781Z",
+                        "dayEndTime": "2020-12-31T08:10:57.781Z",
+                        "startDate": null,
+                        "endDate": null
+                    },
+                    "remoteAccessDisabled": false
                 }
             ]
             "success": true,

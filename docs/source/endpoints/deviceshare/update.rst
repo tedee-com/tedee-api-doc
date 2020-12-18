@@ -1,7 +1,8 @@
 Update
 =========================
 
-Update share details for device.
+Allows to update access details to the device for specific share.
+This endpoint can be used by owner or administrator of the device.
 
 .. code-block:: sh
 

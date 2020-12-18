@@ -4,9 +4,9 @@ Repeat event
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
 | Name                   | Type       | Description                                                                                       |
 +========================+============+===================================================================================================+
-| dayEndTime             | datetime   | if access type is set to "Custom" it represents end time when user has access to the device       |
+| dayEndTime             | datetime   | end time when user has access to the device                                                       |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
-| dayStartTime           | datetime   | if access type is set to "Custom" it represents start time when user has access to the device     |
+| dayStartTime           | datetime   | start time when user has access to the device                                                     |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
 | endDate                | datetime   | end date when user has access to the device                                                       |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
@@ -14,5 +14,5 @@ Repeat event
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
 | startDate              | datetime   | start date when user has access to the device                                                     |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
-| weekDays               | number     | if access type is set to "Custom" it represents for what week days user has access to the device  |
+| weekDays               | number     | week days when user has access to the device                                                      |
 +------------------------+------------+---------------------------------------------------------------------------------------------------+
