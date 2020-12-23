@@ -47,7 +47,7 @@ Sync single lock
 
     curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
-**Sample response**
+**Sample response for lock connected to bridge**
 
 HTTP status code: ``200``
 
@@ -62,6 +62,24 @@ HTTP status code: ``200``
                 "isCharging": false,
                 "batteryLevel": 54
             }
+        }
+        "success": true,
+        "errorMessages": [],
+        "statusCode": 200
+    }
+
+
+**Sample response for lock disconnected from bridge**
+
+HTTP status code: ``200``
+
+.. code-block:: js
+
+    {
+        "result": {
+            "id": 1,
+            "isConnected": false,
+            "lockProperties": null
         }
         "success": true,
         "errorMessages": [],

@@ -78,12 +78,8 @@ HTTP status code: ``200``
         "result": [
             {
                 "id": 1,
-                "isConnected": true,
-                "lockProperties": {
-                    "state": 3,
-                    "isCharging": false,
-                    "batteryLevel": 54
-                }
+                "isConnected": false,
+                "lockProperties": null
             }
         ],
         "success": true,

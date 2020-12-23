@@ -81,6 +81,8 @@ HTTP status code: ``200``
                     "isCharging": false,
                     "batteryLevel": 18
                 },
+                "beaconMajor": 56,
+                "beaconMinor": 57,
                 "id": 1,
                 "connectedToId": 2,
                 "serialNumber": "111111-11111",
@@ -138,6 +140,8 @@ HTTP status code: ``200``
                 "autoUnlockTimeout": 20,
                 "location": null,
                 "lockProperties": null,
+                "beaconMajor": null,
+                "beaconMinor": null,
                 "id": 1,
                 "connectedToId": null,
                 "serialNumber": "111111-11111",
