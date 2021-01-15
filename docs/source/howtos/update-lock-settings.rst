@@ -26,7 +26,6 @@ HTTP status code: ``200``
 
         {
             "result": {
-                "bridgeId": 2,
                 "deviceSettings": {
                     "autoLockEnabled": true,
                     "autoLockDelay": 10,
@@ -40,12 +39,16 @@ HTTP status code: ``200``
                     "buttonLockEnabled": false,
                     "buttonUnlockEnabled": false
                 },
-                "autoUnlockEnabled": false,
-                "autoUnlockConfirmEnabled": false,
-                "autoUnlockRangeIn": 300,
-                "autoUnlockRangeOut": 400,
-                "autoUnlockTimeout": 20,
-                "location": null,
+                "userSettings": {
+                    "autoUnlockEnabled": true,
+                    "autoUnlockConfirmEnabled": true,
+                    "autoUnlockRangeIn": 300,
+                    "autoUnlockRangeOut": 400,
+                    "autoUnlockTimeout": 20,
+                    "location": {
+                        "latitude": 52.24070739746092,
+                        "longitude": 21.086990356445305
+                },
                 "lockProperties": {
                     "state": 3,
                     "isCharging": false,
@@ -151,6 +154,7 @@ Update user settings
 --------------------
 
 Let's focus now how to update user settings for the lock. Each user can have different set of settings.
+You need to specify which settings from :doc:`User settings <../datastructures/user-settings>` you want to update.
 
 **Sample request**
 
@@ -167,15 +171,16 @@ Body:
         {
             "id": 1,
             "revision": 2,
-            "location": {
-                "latitude": 52.24070739746092,
-                "longitude": 21.086990356445305
-            },
-            "autoUnlockEnabled": true,
-            "autoUnlockConfirmEnabled": true,
-            "autoUnlockRangeIn": 300,
-            "autoUnlockRangeOut": 400,
-            "autoUnlockTimeout": 30
+            "userSettings": {
+                    "autoUnlockEnabled": true,
+                    "autoUnlockConfirmEnabled": true,
+                    "autoUnlockRangeIn": 300,
+                    "autoUnlockRangeOut": 400,
+                    "autoUnlockTimeout": 20,
+                    "location": {
+                        "latitude": 52.24070739746092,
+                        "longitude": 21.086990356445305
+            }
         }
 
 **Sample response**
