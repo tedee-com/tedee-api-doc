@@ -51,14 +51,11 @@ HTTP status code: ``200``
         "result": {
             "bridges": [
             {
-                "iotDeviceName": "111111-111112",
-                "voIPNumberId": null,
                 "beaconMajor": 10,
                 "beaconMinor": 10,
                 "wasConfigured": true,
                 "isUpdating": false,
                 "id": 2,
-                "connectedToId": null,
                 "serialNumber": "111111-111112",
                 "macAddress": "00:0A:95:9D:68:17",
                 "name": "Bridge 1",
@@ -87,7 +84,6 @@ HTTP status code: ``200``
             ],
             "locks": [
             {
-                "bridgeId": 2,
                 "deviceSettings": {
                     "autoLockEnabled": true,
                     "autoLockDelay": 10,
@@ -101,14 +97,15 @@ HTTP status code: ``200``
                     "buttonLockEnabled": true,
                     "buttonUnlockEnabled": true
                 },
-                "autoUnlockEnabled": true,
-                "autoUnlockConfirmEnabled": true,
-                "autoUnlockRangeIn": 300,
-                "autoUnlockRangeOut": 400,
-                "autoUnlockTimeout": 20,
-                "location": {
-                    "latitude": 52.24070739746092,
-                    "longitude": 21.086990356445305
+                "userSettings": {
+                    "autoUnlockEnabled": true,
+                    "autoUnlockConfirmEnabled": true,
+                    "autoUnlockRangeIn": 300,
+                    "autoUnlockRangeOut": 400,
+                    "autoUnlockTimeout": 20,
+                    "location": {
+                        "latitude": 52.24070739746092,
+                        "longitude": 21.086990356445305
                 },
                 "lockProperties": {
                     "state": 3,

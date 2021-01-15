@@ -25,7 +25,7 @@ clientId = '02106b82-0524-4fd3-ac57-af774f340979'
 scopePrefix = 'https://tedee.onmicrosoft.com/api/'
 apiUrl = 'https://api.tedee.com'
 authApiUrl = 'https://tedee.b2clogin.com/tedee.onmicrosoft.com'
-apiVersion = 'v1.15'
+apiVersion = 'v1.16'
 
 
 # -- General configuration ---------------------------------------------------
