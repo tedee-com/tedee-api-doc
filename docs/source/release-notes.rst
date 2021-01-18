@@ -1,6 +1,13 @@
 Release notes
 =============
 
+**2021-01-18:**
+
+* added a new API version 1.16
+* all user settings moved to a new "userSettings" property in the Lock type
+* removed "bridgeId" property from the Lock type
+* removed "connectedToId", "iotDeviceName" and "voipNumber" properties from Bridge type
+
 **2020-12-07:**
 
 * removed API versions 1.10, 1.11 and 1.12
