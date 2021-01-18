@@ -16,27 +16,17 @@ Update lock.
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | revision                  | number                                                                    | current lock information and settings in database  |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockEnabled         | boolean (optional)                                                        | if auto unlock is enabled                          |
-+---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockConfirmEnabled  | boolean (optional)                                                        | if auto unlock confirmation is enabled             |
-+---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockRangeIn         | number (optional)                                                         | value of the in zone                               |
-+---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockRangeOut        | number (optional)                                                         | value of the out zone                              |
-+---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| autoUnlockTimeout         | number (optional)                                                         | value of auto unlock timeout                       |
-+---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | deviceSettings            | :doc:`Device settings <../../datastructures/device-settings>` (optional)  | device settings to be updated                      |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| location                  | :doc:`Location <../../datastructures/location>` (optional)                | geographic location used by auto unlock            |
-+---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | name                      | string (optional)                                                         | lock name                                          |
++---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
+| userSettings              | :doc:`User settings <../../datastructures/user-settings>` (optional)      | settings of current user for that device           |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 
 All parameters in this endpoint (except id and revision) are optional. 
 This means that specifying a given parameter will update its value. If a given parameter is not specified, its value will not change.
 
-Only the owner or admin can update device settings and name. Guest can only modify user settings and location.
+Only the owner or admin can update device settings and name. Guest can only modify user settings.
 
 Responses 
 -------------
@@ -174,7 +164,9 @@ Body:
         {
             "id": 1,
             "revision": 1,
-            "autoUnlockEnabled": true
+            "userSettings":{
+                "autoUnlockEnabled": true
+            }
         }
 
 **Sample response**
@@ -217,9 +209,11 @@ Body:
         {
             "id": 1,
             "revision": 1,
-            "location": {
-                "latitude": 52.24070739746092,
-                "longitude": 21.086990356445305
+            "userSettings": {
+                "location": {
+                    "latitude": 52.24070739746092,
+                    "longitude": 21.086990356445305
+                }
             }
         }
 
