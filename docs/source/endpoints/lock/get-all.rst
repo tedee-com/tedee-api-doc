@@ -48,7 +48,6 @@ HTTP status code: ``200``
     {
         "result": [
             {
-                "bridgeId": 2,
                 "deviceSettings": {
                     "autoLockEnabled": true,
                     "autoLockDelay": 10,
@@ -62,12 +61,16 @@ HTTP status code: ``200``
                     "buttonLockEnabled": false,
                     "buttonUnlockEnabled": false
                 },
-                "autoUnlockEnabled": false,
-                "autoUnlockConfirmEnabled": false,
-                "autoUnlockRangeIn": 300,
-                "autoUnlockRangeOut": 400,
-                "autoUnlockTimeout": 20,
-                "location": null,
+                "userSettings": {
+                    "autoUnlockEnabled": true,
+                    "autoUnlockConfirmEnabled": true,
+                    "autoUnlockRangeIn": 300,
+                    "autoUnlockRangeOut": 400,
+                    "autoUnlockTimeout": 20,
+                    "location": {
+                        "latitude": 52.24070739746092,
+                        "longitude": 21.086990356445305
+                },
                 "lockProperties": {
                     "state": 3,
                     "isCharging": false,

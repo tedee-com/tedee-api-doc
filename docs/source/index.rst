@@ -58,6 +58,7 @@ Tedee API documentation
    Repeat event <datastructures/repeat-event>
    Share details <datastructures/share-details>
    Software versions <datastructures/software-versions>
+   User settings <datastructures/user-settings>
 
 .. toctree::
    :maxdepth: 1
