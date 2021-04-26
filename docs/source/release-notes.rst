@@ -1,6 +1,13 @@
 Release notes
 =============
 
+**2021-04-26:**
+
+* added a new API version 1.17
+* added endpoint to check close/open/pull operation status
+* changed response for close/open/pull operation request (added "lastStateChangedDate" and chenged result code to 202 Accepted)
+* added "lastStateChangedDate" and "stateChangeResult" to all endpoints returning Lock state
+
 **2021-01-18:**
 
 * added a new API version 1.16

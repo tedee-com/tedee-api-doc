@@ -47,7 +47,7 @@ Body:
         "deviceId": 1
     }
 
-In response you will receive operationId. The locking operation usually takes up to 3 seconds.
+In response you will receive operationId and lastStateChangedDate. The locking operation usually takes up to 3 seconds.
 
 
 Unlock tedee lock
@@ -73,7 +73,7 @@ Body:
         "deviceId": 1
     }
 
-In response you will receive operationId. The unlocking operation usually takes up to 3 seconds. When lock has auto pull spring enabled then unlocking lock will perform pull operation.
+In response you will receive operationId and lastStateChangedDate. The unlocking operation usually takes up to 3 seconds. When lock has auto pull spring enabled then unlocking lock will perform pull operation.
 
 .. note::
     When lock has auto pull spring enabled it will also perform pull spring within unlock command.
@@ -107,7 +107,7 @@ Body:
         "deviceId": 1
     }
 
-In response you will receive operationId. The duration of pull spring is configured by user.
+In response you will receive operationId and lastStateChangedDate. The duration of pull spring is configured by user.
 
 .. note::
     Additionally you should calibrate pull spring in your lock before using this endpoint. If you didn't calibrate pull spring this endpoint will return successful response but nothing will happen.
@@ -141,7 +141,9 @@ HTTP status code: ``200``
             "lockProperties": {
                 "state": 3,
                 "isCharging": false,
-                "batteryLevel": 54
+                "batteryLevel": 54,
+                "stateChangeResult": 0,
+                "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
             }
         }
         "success": true,

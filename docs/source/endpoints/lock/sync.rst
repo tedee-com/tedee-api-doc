@@ -58,7 +58,9 @@ HTTP status code: ``200``
                 "lockProperties": {
                     "state": 3,
                     "isCharging": false,
-                    "batteryLevel": 54
+                    "batteryLevel": 54,
+                    "stateChangeResult": 0,
+                    "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
                 }
             }
         ],
