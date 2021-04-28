@@ -39,7 +39,9 @@ of user locks like battery level, connection state, and lock position.
                 "lockProperties": {
                     "state": 3,
                     "isCharging": false,
-                    "batteryLevel": 54
+                    "batteryLevel": 54,
+                    "stateChangeResult": 0,
+                    "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
                 }
             },            
             {
@@ -48,7 +50,9 @@ of user locks like battery level, connection state, and lock position.
                 "lockProperties": {
                     "state": 2,
                     "isCharging": true,
-                    "batteryLevel": 80
+                    "batteryLevel": 80,
+                    "stateChangeResult": 0,
+                    "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
                 }
             }
         ],
