@@ -47,6 +47,7 @@ Tedee API documentation
 
    Bridge <datastructures/bridge>
    Device activities <datastructures/device-activity>
+   Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
    Device share success <datastructures/device-share-success>
    Execute command response <datastructures/execute-command>
@@ -68,6 +69,7 @@ Tedee API documentation
    Access level <enums/access-level>
    Access type <enums/access-type>
    Activity source <enums/activity-source>
+   Device operation type <enums/device-operation-type>
    Device type <enums/device-type>
    Event type <enums/event-type>
    Lock state <enums/lock-state>
