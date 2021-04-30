@@ -8,7 +8,10 @@ Endpoints used for listing devices.
    :hidden:
 
    Get all with details <get-all-with-details>
+   Get device operation <get-device-operation>
 
 **Operations**
 
 - `Get all with details <get-all-with-details.html>`_
+- `Get device operation <get-device-operation.html>`_
+
