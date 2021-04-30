@@ -1,4 +1,4 @@
-Access type
+Device operation type
 ---------------------------------------
 
 This enum describes operation type on devices

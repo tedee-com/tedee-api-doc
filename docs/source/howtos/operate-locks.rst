@@ -115,9 +115,9 @@ In response you will receive operationId and lastStateChangedDate. The duration 
 Checking operation progress
 ---------------------------
 
-The lock/unlock/pull actions will take few seconds so you must somehow check the progress. To do that first call  :doc:`Get device operation endpoint <../endpoints/device/get-device-operation>` 
-with the operationId you received when you called lock/unlock/pull endpoint, to ensure operation is completed check fields "status" and "result", 
-if the operation was succesfull the first field should have value "COMPLETED" and the second one "0" after that you can simply call the :doc:`Sync single endpoint <../endpoints/lock/sync-single>` to get new lock status.
+The lock/unlock/pull actions will take few seconds so you must somehow check the progress. To do that first call the :doc:`Get device operation endpoint <../endpoints/device/get-device-operation>` 
+with the operationId you received when you called lock/unlock/pull endpoint. To ensure that operation is completed check fields "status" and "result", 
+if the operation was succesfull the first field should have value "COMPLETED" and the second one "0". After that you can simply call the :doc:`Sync single endpoint <../endpoints/lock/sync-single>` to get new lock status.
 
 Sample sync single request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
