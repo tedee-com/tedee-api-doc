@@ -119,10 +119,10 @@ The lock/unlock/pull actions will take few seconds so you must somehow check the
 with the operationId you received when you called lock/unlock/pull endpoint. To ensure that operation is completed check fields "status" and "result", 
 if the operation was succesfull the first field should have value "COMPLETED" and the second one "0". After that you can simply call the :doc:`Sync single endpoint <../endpoints/lock/sync-single>` to get new lock status.
 
-Sample sync single request
+Get device operation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Example of syncing single lock with id = 1.
+Example of getting operation status
 
 **Sample Request**
 
@@ -148,6 +148,11 @@ HTTP status code: ``200``
         "errorMessages": [],
         "statusCode": 200
     }
+
+Sample sync single request
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Example of syncing single lock with id = 1.
 
 **Sample request**
 
