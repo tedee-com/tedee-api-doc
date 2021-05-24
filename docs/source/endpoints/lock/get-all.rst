@@ -78,6 +78,9 @@ HTTP status code: ``200``
                     "stateChangeResult": 0,
                     "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
                 },
+                "beaconMajor": 56,
+                "beaconMinor": 57,
+                "timeZone": "Europe/Warsaw",
                 "id": 1,
                 "connectedToId": 2,
                 "serialNumber": "111111-11111",
