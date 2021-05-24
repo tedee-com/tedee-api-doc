@@ -1,6 +1,17 @@
 Release notes
 =============
 
+**2021-05-24:**
+
+* added a new API version 1.19
+* added timezone for lock and bridge devices
+* removed "Put" endpoint and added "Patch" endpoint to bridge update
+
+**2021-05-10:**
+
+* added a new API version 1.18
+* removed "unregister" endpoint from StandardNotificationHub
+
 **2021-04-26:**
 
 * added a new API version 1.17
