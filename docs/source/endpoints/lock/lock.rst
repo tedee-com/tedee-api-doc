@@ -1,18 +1,18 @@
-Close
+Lock
 =========================
 
-Send command to close lock by provided id.
+Send command to lock the device by provided id.
 
 .. code-block:: sh
 
-    POST |apiUrl|/api/|apiVersion|/my/lock/close
+    POST |apiUrl|/api/|apiVersion|/my/lock/{lockId}/operation/lock
 
-**Body Parameters**
+**URI Parameters**
 
 +------------------------+-----------+--------------------------------------------------+
 | Name                   | Type      | Description                                      |
 +========================+===========+==================================================+
-| deviceId               | number    | id of lock                                       |
+| lockId                 | number    | id of lock                                       |
 +------------------------+-----------+--------------------------------------------------+
 
 Responses 
@@ -36,22 +36,14 @@ Scopes
 Examples
 -------------
 
-Close lock
-^^^^^^^^^^
+Lock
+^^^^
 
 **Sample Request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/close" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
-
-Body:
-
-.. code-block:: js
-
-    {
-        "deviceId": 1
-    }
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/lock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 

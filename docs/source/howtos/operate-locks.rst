@@ -26,7 +26,7 @@ Make sure lock and bridge are connected.
 
 Lock tedee lock
 ----------------------
-To lock the device first make sure it is in unlocked or semi-locked state then send :doc:`lock command <../endpoints/lock/close>`.
+To lock the device first make sure it is in unlocked or semi-locked state then send :doc:`lock command <../endpoints/lock/lock>`.
 
 Lock request
 ^^^^^^^^^^^^
@@ -37,22 +37,14 @@ We will send lock command for device with id = 1.
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/close" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
-
-Body:
-
-.. code-block:: js
-
-    {
-        "deviceId": 1
-    }
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/lock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
 
 In response you will receive operationId and lastStateChangedDate. The locking operation usually takes up to 3 seconds.
 
 
 Unlock tedee lock
 ----------------------
-To unlock the device first make sure it is in locked or semi-locked state then send :doc:`unlock command <../endpoints/lock/open>`.
+To unlock the device first make sure it is in locked or semi-locked state then send :doc:`unlock command <../endpoints/lock/unlock>`.
 
 Unlock request
 ^^^^^^^^^^^^^^
@@ -63,25 +55,17 @@ We will send unlock command for device with id = 1.
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
-
-Body:
-
-.. code-block:: js
-
-    {
-        "deviceId": 1
-    }
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
 
 In response you will receive operationId and lastStateChangedDate. The unlocking operation usually takes up to 3 seconds. When lock has auto pull spring enabled then unlocking lock will perform pull operation.
 
 .. note::
-    When lock has auto pull spring enabled it will also perform pull spring within unlock command.
+    When lock has auto pull spring enabled it will also perform pull spring within unlock command. 
+    Optional parameter in the request allows to unlock the lock without pulling the spring when auto pull is enabled.
 
 
 Pull spring in tedee lock
 ------------------------------
-
 To perform pull spring first make sure lock is in unlocked state then use :doc:`pull spring command <../endpoints/lock/pull-spring>`.
 
 .. note::
@@ -96,16 +80,7 @@ Example request will perform pull spring on the lock with id = 1.
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/pull-spring" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" -d "<<request body>>"
-
-
-Body:
-
-.. code-block:: js
-
-    {
-        "deviceId": 1
-    }
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/pull" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
 
 In response you will receive operationId and lastStateChangedDate. The duration of pull spring is configured by user.
 

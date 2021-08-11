@@ -1,21 +1,21 @@
-Open
+Unlock
 =========================
 
-Send command to open lock by provided id.
+Send command to unlock the device by provided id.
 
 .. code-block:: sh
 
-    POST |apiUrl|/api/|apiVersion|/my/lock/open
+    POST |apiUrl|/api/|apiVersion|/my/lock/{lockId}/operation/unlock?mode={mode}
     
-**Body Parameters**
+**URI Parameters**
 
-+------------------------+---------------------------------------------------+-----------------------------+
-| Name                   | Type                                              | Description                 |
-+========================+===================================================+=============================+
-| deviceId               | number                                            | id of lock                  |
-+------------------------+---------------------------------------------------+-----------------------------+
-| openParameter          | :doc:`Open parameter <../../enums/open-parameter>`| behaviour of unlocking door | 
-+------------------------+---------------------------------------------------+-----------------------------+
++------------------------+---------------------------------------------------------+-----------------------------+
+| Name                   | Type                                                    | Description                 |
++========================+=========================================================+=============================+
+| lockId                 | number                                                  | id of lock                  |
++------------------------+---------------------------------------------------------+-----------------------------+
+| mode                   | :doc:`Unlock mode <../../enums/unlock-mode>` (optional) | behaviour of unlocking door | 
++------------------------+---------------------------------------------------------+-----------------------------+
 
 Responses 
 -------------
@@ -38,22 +38,14 @@ Scopes
 Examples
 -------------
 
-Open lock without optional parameter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Unlock without optional parameter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample Request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
-
-Body:
-
-.. code-block:: js
-
-    {
-        "deviceId": 1
-    }
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 
@@ -72,23 +64,40 @@ HTTP status code: ``202``
     }
 
 
-Open lock with Force option
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Unlock with Force mode
+^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample Request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/open" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock?mode=2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
-Body:
+**Sample response**
+
+HTTP status code: ``202``
 
 .. code-block:: js
 
     {
-        "deviceId": 1,
-        "openParameter": 2
+        "result": {
+            "operationId": "1577833200000",
+            "lastStateChangedDate": "2021-04-26T05:53:57.423Z"
+        },
+        "success": true,
+        "errorMessages": [],
+        "statusCode": 202
     }
+
+
+Unlock without pull spring
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Sample Request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock?mode=3" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 

@@ -73,8 +73,8 @@ Tedee API documentation
    Device type <enums/device-type>
    Event type <enums/event-type>
    Lock state <enums/lock-state>
-   Open parameter <enums/open-parameter>
    Software type <enums/software-type>
+   Unlock mode <enums/unlock-mode>
    Week days <enums/week-days>
 
 This site contains a documentation for Tedee REST API (https://api.tedee.com).

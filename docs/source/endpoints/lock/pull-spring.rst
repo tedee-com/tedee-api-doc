@@ -1,18 +1,18 @@
 Pull spring 
 =========================
 
-Send command to pull spring lock by provided id.
+Send command to pull spring the device by provided id.
 
 .. code-block:: sh
 
-    POST |apiUrl|/api/|apiVersion|/my/lock/pull-spring
+    POST |apiUrl|/api/|apiVersion|/my/lock/{lockId}/operation/pull
 
-**Body Parameters**
+**URI Parameters**
 
 +------------------------+-----------+--------------------------------------------------+
 | Name                   | Type      | Description                                      |
 +========================+===========+==================================================+
-| deviceId               | number    | id of lock                                       |
+| lockId                 | number    | id of lock                                       |
 +------------------------+-----------+--------------------------------------------------+
 
 Responses 
@@ -36,22 +36,14 @@ Scopes
 Examples
 -------------
 
-Pull spring lock
-^^^^^^^^^^^^^^^^
+Pull spring
+^^^^^^^^^^^
 
 **Sample Request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/pull-spring" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
-
-Body:
-
-.. code-block:: js
-
-    {
-        "deviceId": 1
-    }
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/pull" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 
