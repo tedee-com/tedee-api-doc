@@ -18,4 +18,4 @@ This enum describes possible modes for unlocking lock
     Everybody that has access to lock can use this enum value.
 
 .. note::
-    Without pull spring value (number 3) allows to unlock the lock without pulling the spring when auto pull is enabled.
+    Without pull spring value (number 3) allows to unlock the lock without pulling the spring.
