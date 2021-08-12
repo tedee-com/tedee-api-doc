@@ -5,14 +5,14 @@ Send command to unlock the device by provided id.
 
 .. code-block:: sh
 
-    POST |apiUrl|/api/|apiVersion|/my/lock/{lockId}/operation/unlock?mode={mode}
+    POST |apiUrl|/api/|apiVersion|/my/lock/{id}/operation/unlock?mode={mode}
     
 **URI Parameters**
 
 +------------------------+---------------------------------------------------------+-----------------------------+
 | Name                   | Type                                                    | Description                 |
 +========================+=========================================================+=============================+
-| lockId                 | number                                                  | id of lock                  |
+| id                     | number                                                  | id of lock                  |
 +------------------------+---------------------------------------------------------+-----------------------------+
 | mode                   | :doc:`Unlock mode <../../enums/unlock-mode>` (optional) | behaviour of unlocking door | 
 +------------------------+---------------------------------------------------------+-----------------------------+

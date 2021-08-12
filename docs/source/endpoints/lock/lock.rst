@@ -5,14 +5,14 @@ Send command to lock the device by provided id.
 
 .. code-block:: sh
 
-    POST |apiUrl|/api/|apiVersion|/my/lock/{lockId}/operation/lock
+    POST |apiUrl|/api/|apiVersion|/my/lock/{id}/operation/lock
 
 **URI Parameters**
 
 +------------------------+-----------+--------------------------------------------------+
 | Name                   | Type      | Description                                      |
 +========================+===========+==================================================+
-| lockId                 | number    | id of lock                                       |
+| id                     | number    | id of lock                                       |
 +------------------------+-----------+--------------------------------------------------+
 
 Responses 

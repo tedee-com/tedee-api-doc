@@ -5,14 +5,14 @@ Send command to pull spring the device by provided id.
 
 .. code-block:: sh
 
-    POST |apiUrl|/api/|apiVersion|/my/lock/{lockId}/operation/pull
+    POST |apiUrl|/api/|apiVersion|/my/lock/{id}/operation/pull
 
 **URI Parameters**
 
 +------------------------+-----------+--------------------------------------------------+
 | Name                   | Type      | Description                                      |
 +========================+===========+==================================================+
-| lockId                 | number    | id of lock                                       |
+| id                     | number    | id of lock                                       |
 +------------------------+-----------+--------------------------------------------------+
 
 Responses 
