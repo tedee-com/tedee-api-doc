@@ -225,7 +225,7 @@ ROPC Flow
 
 .. warning::
 
-    ROPC Flow is deprecated. Estimated time of removing: end of Q2 2021. The new authentication method will be introduced instead.
+    ROPC Flow is deprecated. Estimated time of removing: end of Q4 2021. The new authentication method will be introduced instead.
 
 This flow should be used when interaction with the user is not possible. Additionally when using this flow you don't need individual clientId.
 To receive the JWT without user interaction, you must send following POST request.
