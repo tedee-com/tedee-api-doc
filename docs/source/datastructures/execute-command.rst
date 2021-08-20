@@ -3,8 +3,8 @@ Execute command response
 
 Response from requests:
 
-* :doc:`Close command <../endpoints/lock/close>`
-* :doc:`Open command<../endpoints/lock/open>`
+* :doc:`Lock command <../endpoints/lock/lock>`
+* :doc:`Unlock command<../endpoints/lock/unlock>`
 * :doc:`Pull spring command <../endpoints/lock/pull-spring>`
 
 +------------------------+------------+------------------------------------------------------------------------+

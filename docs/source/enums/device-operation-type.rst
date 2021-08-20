@@ -1,14 +1,14 @@
 Device operation type
 ---------------------------------------
 
-This enum describes operation type on devices
+This enum describes operation type on lock device
 
 +-----------+-----------------------+
 | Number    | Name                  |
 +===========+=======================+
-| 0         | Close                 |
+| 0         | Lock                  |
 +-----------+-----------------------+
-| 1         | Open                  |
+| 1         | Unlock                |
 +-----------+-----------------------+
 | 2         | Pull                  |
 +-----------+-----------------------+
