@@ -21,25 +21,25 @@ Get the access token (JWT)
 
 We support three OAuth 2.0 authorization flows to get the access token:
 
-+--------------------------------------+---------------------------------------------------------------------------------------------+
-| **Flow name**                        | **When to use**                                                                             |
-+--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens.         |
-|                                      |                                                                                             |
-|                                      | One time interaction with the user is needed to obtain the refresh token.                   |
-|                                      |                                                                                             |
-|                                      | Examples: mobile apps, web apps, service apps                                               |
-+--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens.                                                       |
-|                                      |                                                                                             |
-|                                      | Interaction with the user is needed to obtain access tokens after they expire.              |
-|                                      |                                                                                             |
-|                                      | Examples: SPA, desktop apps                                                                 |
-+--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                             |
-|                                      |                                                                                             |
-|                                      | Examples: automation apps, scripts, etc.                                                    |
-+--------------------------------------+---------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Flow name**                                                      | **When to use**                                                                             |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Code Flow <code-flow>`                                       | When you can store refresh tokens and periodically exchange them for access tokens.         |
+|                                                                    |                                                                                             |
+|                                                                    | One time interaction with the user is needed to obtain the refresh token.                   |
+|                                                                    |                                                                                             |
+|                                                                    | Examples: mobile apps, web apps, service apps                                               |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Implicit Flow <implicit-flow>`                               | When you cannot store refresh tokens.                                                       |
+|                                                                    |                                                                                             |
+|                                                                    | Interaction with the user is needed to obtain access tokens after they expire.              |
+|                                                                    |                                                                                             |
+|                                                                    | Examples: SPA, desktop apps                                                                 |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Personal Access Key Flow <personal-access-key-flow>`         | When interaction with the user is not possible.                                             |
+|                                                                    |                                                                                             |
+|                                                                    | Examples: automation apps, scripts, etc.                                                    |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. warning::
 
@@ -217,51 +217,6 @@ The value of the :code:`access_token` property is your **JWT** that should be us
 Implicit Flow does not issue refresh tokens. Interaction with the user is required to obtain a new access token after the current one has expired.
 
 
-
-.. _ropc-flow:
-
-ROPC Flow
-^^^^^^^^^^^
-
-.. warning::
-
-    ROPC Flow is deprecated. Estimated time of removing: end of Q4 2021. The new authentication method will be introduced instead.
-
-This flow should be used when interaction with the user is not possible. Additionally when using this flow you don't need individual clientId.
-To receive the JWT without user interaction, you must send following POST request.
-
-.. code-block:: sh
-
-    POST |authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token
-    Content-Type: application/x-www-form-urlencoded
-
-    grant_type=password
-    &client_id=|clientId|
-    &scope=openid |clientId|
-    &response_type=token
-    &username={username}
-    &password={password}
-
-* **username** - user name/email
-* **password** - user password
-
-.. code-block:: sh
-
-    curl -d "grant_type=password&username=[username]&password=[password]$&scope=openid |clientId|&client_id=|clientId|&response_type=token" -H "Content-Type: application/x-www-form-urlencoded" -X POST |authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token
-
-.. code-block:: json
-
-    {
-        "access_token": "<<actual access token>>",
-        "token_type": "Bearer",
-        "expires_in": "10800"
-    }
-
-The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
-The :code:`expires_in` property describes for how long the token will be valid (in seconds).
-
-
-
 .. _add-jwt-to-the-headers:
 
 Attach JWT to the request
@@ -274,7 +229,66 @@ Let's see it on the below examples where we want to get information about all ou
 
 .. code-block:: sh
 
-    curl -H "Authorization: Bearer <<access_token>>" |apiUrl|/api/v1.12/my/device
+    curl -H "Authorization: Bearer <<access_token>>" |apiUrl|/api/|apiVersion|/my/device
+
+.. _personal-access-key-flow:
+
+Personal Access Key Flow
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To use this flow first you need to generate personal access key on your account. 
+To do this you need to to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` and define how long token will be valid and what
+scopes it will impersonate :ref:`Scopes <list-of-scopes>`
+
+**Sample request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/personalaccesskey" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+
+Body:
+
+.. code-block:: js
+
+        {
+            "name": "SomeExampleKeyName",
+            "validTo": "2021-04-26T06:02:04.197Z",
+            "scopes": [
+                "Device.Read",
+                "Organization.ReadWrite"
+            ]
+        }
+
+**Sample response**
+
+HTTP status code: ``201``
+
+.. code-block:: js
+
+        {
+            "result": {
+                "id": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+                "key": "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E"
+            }
+            "success": true,
+            "errorMessages": [],
+            "statusCode": 201
+        }
+
+
+.. note::
+    You can see the full personal access key just once in the response. 
+    Later you can only view it's prefix, name and valid to date when using endpoint `get all <../endpoints/personalaccesskey/get-all.html>`_.
+
+After creating a token you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). To use this form of authentication instead of using
+Bearer schema in Authorization use schema PersonalKey.
+
+**Sample request to sync lock using personal access schema**
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: PersonalKey <<personal key>>"
+
 
 .. _list-of-scopes:
 
