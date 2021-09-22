@@ -16,7 +16,7 @@ Update personal access key
 +--------------------+---------------+----------------------------------------------------+
 | name               | string        | name of the personal access key                    |
 +--------------------+---------------+----------------------------------------------------+
-| validTo            | datetime      | date when key expires                              |
+| validTo            | datetime      | date when key expires (max 5 years)                |
 +--------------------+---------------+----------------------------------------------------+
 | scopes             | list<string>  | list of scopes that is assigned to key             |
 +--------------------+---------------+----------------------------------------------------+
@@ -46,14 +46,13 @@ Examples
 
 .. code-block:: sh
 
-    curl -X PUT "|apiUrl|/api/|apiVersion|/my/personalaccesskey" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X PUT "|apiUrl|/api/|apiVersion|/my/personalaccesskey/{id}" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 Body:
 
 .. code-block:: js
 
         {
-            "id": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996", 
             "name": "SomeExampleKeyName",
             "validTo": "2021-04-26T06:02:04.197Z",
             "scopes": [
@@ -64,7 +63,7 @@ Body:
 
 **Sample response**
 
-HTTP status code: ``201``
+HTTP status code: ``204``
 
 .. code-block:: js
 
@@ -72,5 +71,5 @@ HTTP status code: ``201``
             "result": {}
             "success": true,
             "errorMessages": [],
-            "statusCode": 201
+            "statusCode": 204
         }

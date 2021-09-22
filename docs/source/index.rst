@@ -46,8 +46,7 @@ Tedee API documentation
    :caption: Data structures
    :hidden:
 
-   Bridge <datastructures/bridge>
-   Create personal access key success <datastructures/create-personal-access-key-success>
+   Bridge <datastructures/bridge> 
    Device activities <datastructures/device-activity>
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
@@ -58,7 +57,8 @@ Tedee API documentation
    Lock properties <datastructures/lock-properties>
    Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
-   Personal access key <datastructures/personalaccesskey>
+   Personal access key <datastructures/personal-access-key>
+   Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
    Share details <datastructures/share-details>
    Software versions <datastructures/software-versions>

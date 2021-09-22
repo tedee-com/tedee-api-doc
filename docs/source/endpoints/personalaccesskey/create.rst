@@ -14,7 +14,7 @@ Creates new personal access key
 +====================+===============+====================================================+
 | name               | string        | name of the personal access key                    |
 +--------------------+---------------+----------------------------------------------------+
-| validTo            | datetime      | date when key expires                              |
+| validTo            | datetime      | date when key expires (max 5 years).               |
 +--------------------+---------------+----------------------------------------------------+
 | scopes             | list<string>  | list of scopes that is assigned to key             |
 +--------------------+---------------+----------------------------------------------------+
@@ -25,7 +25,7 @@ Responses
 +------------------------+------------------------------------------------------------------------------------------+--------------------------+
 | Name                   | Type                                                                                     | Description              |
 +========================+==========================================================================================+==========================+
-| 201 Created            | :doc:`Device Share Success <../../datastructures/create-personal-access-key-success>`    | successful operation     |
+| 201 Created            | :doc:`Personal access key created <../../datastructures/personal-access-key-created>`    | successful operation     |
 +------------------------+------------------------------------------------------------------------------------------+--------------------------+
 
 Scopes

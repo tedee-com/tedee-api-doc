@@ -1,25 +1,27 @@
 How to authenticate
 ===================
 
-Each request of this API requires authentication. We utilizes JSON Web Token (JWT) to identify the user.
+Each request of this API requires authentication. We utilizes JSON Web Token (JWT) or Personal Access Keys to identify the user.
 
 .. note::
 
     You can find an example of how to authenticate in our `code samples <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/Tedee.Api.CodeSamples/Actions/S01AuthenticateUsingJWT.cs>`_.
 
-To authenticate you must:
+To authenticate with JWT you must:
 
 #. :ref:`get-the-jwt`
 #. :ref:`add-jwt-to-the-headers`
 
+To authenticate with Personal Access Key you must:
 
+#. :ref:`get-personal-access-key`
 
 .. _get-the-jwt:
 
 Get the access token (JWT)
 --------------------------
 
-We support three OAuth 2.0 authorization flows to get the access token:
+We support two OAuth 2.0 authorization flows to get the access token:
 
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | **Flow name**                                                      | **When to use**                                                                             |
@@ -35,10 +37,6 @@ We support three OAuth 2.0 authorization flows to get the access token:
 |                                                                    | Interaction with the user is needed to obtain access tokens after they expire.              |
 |                                                                    |                                                                                             |
 |                                                                    | Examples: SPA, desktop apps                                                                 |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Personal Access Key Flow <personal-access-key-flow>`         | When interaction with the user is not possible.                                             |
-|                                                                    |                                                                                             |
-|                                                                    | Examples: automation apps, scripts, etc.                                                    |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. warning::
@@ -231,14 +229,60 @@ Let's see it on the below examples where we want to get information about all ou
 
     curl -H "Authorization: Bearer <<access_token>>" |apiUrl|/api/|apiVersion|/my/device
 
-.. _personal-access-key-flow:
 
-Personal Access Key Flow
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+JWT token details
+-----------------
 
-To use this flow first you need to generate personal access key on your account. 
-To do this you need to to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` and define how long token will be valid and what
-scopes it will impersonate :ref:`Scopes <list-of-scopes>`
+`JSON Web Token (JWT) <https://jwt.io/introduction/>`_ is open standard of securely transmitting information between parties. Anyone who has access to the token is able to decode it and read the information.
+
+Claims
+^^^^^^^
+
+The JWT contains useful information which you can use and the table below describe the most important one:
+
++------------------+--------------------------------------------------------------------------------+
+| **Claim name**   | **Description**                                                                |
++------------------+--------------------------------------------------------------------------------+
+| exp              | Presents the expiration time on and after which the JWT will not be processed. |
++------------------+--------------------------------------------------------------------------------+
+| email            | Contains user's email address provided during registration process.            |
++------------------+--------------------------------------------------------------------------------+
+| name             | Contains user's name provided during registration process.                     |
++------------------+--------------------------------------------------------------------------------+
+| oid              | User's unique identifier assigned during registration process.                 |
++------------------+--------------------------------------------------------------------------------+
+
+You can read more about claims `here <https://tools.ietf.org/html/rfc7519#section-4.1>`_.
+
+Expiration date
+^^^^^^^^^^^^^^^^^
+
+Tedee API tokens are valid for 4 hours since the creation time.
+
+Debugger
+^^^^^^^^^^
+
+`https://jwt.io <https://jwt.io>`_ provides a very usefull online tool to work with JWT tokens. You can use it to decode and read data included in JWT. To do that go to `JWT debugger <https://jwt.io/#debugger-io>`_
+and fill in the **Encoded** input field with your token.
+
+.. image:: ../images/jwt_debugger.png
+    :align: center
+    :alt: JWT Debugger
+
+You should see the decoded data right away on the right side of the screen
+
+.. image:: ../images/jwt_decoded.png
+    :align: center
+    :alt: JWT decoded data
+    :width: 500
+
+.. _get-personal-access-key:
+
+Get Personal Access Key
+--------------------------
+
+To authenticate via personal access key first you need to generate it on uour account. 
+To do this you need to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint.
 
 **Sample request**
 
@@ -276,7 +320,7 @@ HTTP status code: ``201``
         }
 
 
-.. note::
+.. warning::
     You can see the full personal access key just once in the response. 
     Later you can only view it's prefix, name and valid to date when using endpoint `get all <../endpoints/personalaccesskey/get-all.html>`_.
 
@@ -327,50 +371,3 @@ Example use of scopes in request:
 .. code-block:: sh
 
     scope=https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FLock.Operate%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FDevice.Read%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2Fuser_impersonation
-
-
-JWT token details
------------------
-
-`JSON Web Token (JWT) <https://jwt.io/introduction/>`_ is open standard of securely transmitting information between parties. Anyone who has access to the token is able to decode it and read the information.
-
-Claims
-^^^^^^^
-
-The JWT contains useful information which you can use and the table below describe the most important one:
-
-+------------------+--------------------------------------------------------------------------------+
-| **Claim name**   | **Description**                                                                |
-+------------------+--------------------------------------------------------------------------------+
-| exp              | Presents the expiration time on and after which the JWT will not be processed. |
-+------------------+--------------------------------------------------------------------------------+
-| email            | Contains user's email address provided during registration process.            |
-+------------------+--------------------------------------------------------------------------------+
-| name             | Contains user's name provided during registration process.                     |
-+------------------+--------------------------------------------------------------------------------+
-| oid              | User's unique identifier assigned during registration process.                 |
-+------------------+--------------------------------------------------------------------------------+
-
-You can read more about claims `here <https://tools.ietf.org/html/rfc7519#section-4.1>`_.
-
-Expiration date
-^^^^^^^^^^^^^^^^^
-
-Tedee API tokens are valid for 4 hours since the creation time.
-
-Debugger
-^^^^^^^^^^
-
-`https://jwt.io <https://jwt.io>`_ provides a very usefull online tool to work with JWT tokens. You can use it to decode and read data included in JWT. To do that go to `JWT debugger <https://jwt.io/#debugger-io>`_
-and fill in the **Encoded** input field with your token.
-
-.. image:: ../images/jwt_debugger.png
-    :align: center
-    :alt: JWT Debugger
-
-You should see the decoded data right away on the right side of the screen
-
-.. image:: ../images/jwt_decoded.png
-    :align: center
-    :alt: JWT decoded data
-    :width: 500
