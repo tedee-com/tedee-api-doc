@@ -5,7 +5,7 @@ Update personal access key
 
 .. code-block:: sh
 
-    POST |apiUrl|/api/|apiVersion|/my/personalaccesskey
+    POST |apiUrl|/api/|apiVersion|/my/personalaccesskey/{id}
 
 **Body Parameters**
 
