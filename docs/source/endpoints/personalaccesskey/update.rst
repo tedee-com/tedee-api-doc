@@ -7,13 +7,19 @@ Update personal access key
 
     POST |apiUrl|/api/|apiVersion|/my/personalaccesskey/{id}
 
-**Body Parameters**
+**URI Parameters**
 
 +--------------------+---------------+----------------------------------------------------+
 | Name               | Type          | Description                                        |
 +====================+===============+====================================================+
 | id                 | UUID          | id of the personal access key                      |
 +--------------------+---------------+----------------------------------------------------+
+
+**Body Parameters**
+
++--------------------+---------------+----------------------------------------------------+
+| Name               | Type          | Description                                        |
++====================+===============+====================================================+
 | name               | string        | name of the personal access key                    |
 +--------------------+---------------+----------------------------------------------------+
 | validTo            | datetime      | date when key expires (max 5 years)                |
@@ -46,7 +52,7 @@ Examples
 
 .. code-block:: sh
 
-    curl -X PUT "|apiUrl|/api/|apiVersion|/my/personalaccesskey/{id}" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X PUT "|apiUrl|/api/|apiVersion|/my/personalaccesskey/bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 Body:
 

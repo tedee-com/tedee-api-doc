@@ -1,7 +1,7 @@
 How to authenticate
 ===================
 
-Each request of this API requires authentication. We utilizes JSON Web Token (JWT) or Personal Access Keys to identify the user.
+Each request of this API requires authentication. We utilizes JSON Web Token (JWT) or Personal Access Key to identify the user.
 
 .. note::
 
@@ -14,7 +14,7 @@ To authenticate with JWT you must:
 
 To authenticate with Personal Access Key you must:
 
-#. :ref:`get-personal-access-key`
+#. :ref:`use-personal-access-key`
 
 .. _get-the-jwt:
 
@@ -276,12 +276,12 @@ You should see the decoded data right away on the right side of the screen
     :alt: JWT decoded data
     :width: 500
 
-.. _get-personal-access-key:
+.. _use-personal-access-key:
 
-Get Personal Access Key
+Use Personal Access Key
 --------------------------
 
-To authenticate via personal access key first you need to generate it on uour account. 
+To authenticate via personal access key first you need to generate it on your account. 
 To do this you need to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint.
 
 **Sample request**
@@ -324,10 +324,10 @@ HTTP status code: ``201``
     You can see the full personal access key just once in the response. 
     Later you can only view it's prefix, name and valid to date when using endpoint `get all <../endpoints/personalaccesskey/get-all.html>`_.
 
-After creating a token you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). To use this form of authentication instead of using
-Bearer schema in Authorization use schema PersonalKey.
+After creating a token you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). 
+To use this type of authentication, instead of using Bearer schema in Authorization header use schema PersonalKey.
 
-**Sample request to sync lock using personal access schema**
+**Sample request to sync lock using PersonalKey schema**
 
 .. code-block:: sh
 

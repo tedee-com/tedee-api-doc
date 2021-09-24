@@ -14,7 +14,7 @@ Creates new personal access key
 +====================+===============+====================================================+
 | name               | string        | name of the personal access key                    |
 +--------------------+---------------+----------------------------------------------------+
-| validTo            | datetime      | date when key expires (max 5 years).               |
+| validTo            | datetime      | date when key expires (max 5 years)                |
 +--------------------+---------------+----------------------------------------------------+
 | scopes             | list<string>  | list of scopes that is assigned to key             |
 +--------------------+---------------+----------------------------------------------------+
