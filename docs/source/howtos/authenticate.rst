@@ -324,7 +324,7 @@ HTTP status code: ``201``
     You can see the full personal access key just once in the response. 
     Later you can only view it's prefix, name and valid to date when using endpoint `get all <../endpoints/personalaccesskey/get-all.html>`_.
 
-After creating a token you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). 
+After creating a personal key you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). 
 To use this type of authentication, instead of using Bearer schema in Authorization header use schema PersonalKey.
 
 **Sample request to sync lock using PersonalKey schema**
