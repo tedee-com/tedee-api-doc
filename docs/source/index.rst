@@ -67,7 +67,6 @@ Tedee API documentation
    :hidden:
 
    Access level <enums/access-level>
-   Access type <enums/access-type>
    Activity source <enums/activity-source>
    Device operation type <enums/device-operation-type>
    Device type <enums/device-type>

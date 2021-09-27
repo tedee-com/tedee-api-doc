@@ -22,7 +22,7 @@ Prepare share data
 
 To manage access to the device you need to prepare some data. Depends on what :doc:`access type <../enums/access-type>` have been chosen you need to adjust :doc:`repeatEvent <../datastructures/repeat-event>` object in proper way.
 
-accessType =  0 (Permanent)
+accessType (Permanent)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this case, you can send empty :doc:`repeatEvent <../datastructures/repeat-event>` object.
@@ -39,10 +39,10 @@ In this case, you can send empty :doc:`repeatEvent <../datastructures/repeat-eve
         "endDate": null
     },
 
-accessType = 1 (TimeRestricted)
+accessType (TimeRestricted)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If access type is "TimeRestricted" you need to send fields "startDate" and "endDate" it will mark the period when share for user will be active.
+If access type is "TimeRestricted" you need to send fields "startDate" or "endDate" it will mark the period when share for user will be active.
 
 **Sample repeat event object**
 
@@ -57,10 +57,11 @@ If access type is "TimeRestricted" you need to send fields "startDate" and "endD
     },
 
 
-accessType = 2 (Custom)
+accessType  (Custom)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The most complicated type is "Custom". The required fields for this type are "dayStartTime" and "dayEndTime". They represent at which hour period user will have access to the device.
+The most complicated type is "Custom". To set this type of access you must provide one of those fields "dayStartTime" and "dayEndTime" or "weekDays". 
+The "dayStartTime" and "dayEndTime" represent at which hour period user will have access to the device.
 User can further customize this by selecting days. To send it proper way you need to use :doc:`Week days <../enums/week-days>` enum. Fields "startDate" and "endDate" are optional in this case.
 
 **Sample repeat event objects**
@@ -112,7 +113,6 @@ Body:
         {
             "deviceId": 1,
             "accessLevel": 1,
-            "accessType": 2,
             "userEmail": "john.doe@email.com"
             "repeatEvent": {
                 "weekDays": 10,
@@ -145,7 +145,6 @@ Body:
         {
             "id": 1,
             "accessLevel": 1,
-            "accessType": 1,
             "repeatEvent": {
                 "id": 1,
                 "weekDays": 10,
