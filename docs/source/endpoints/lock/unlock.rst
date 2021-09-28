@@ -90,14 +90,40 @@ HTTP status code: ``202``
     }
 
 
-Unlock without pull spring
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Unlock without auto pull spring
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample Request**
 
 .. code-block:: sh
 
     curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock?mode=3" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
+
+**Sample response**
+
+HTTP status code: ``202``
+
+.. code-block:: js
+
+    {
+        "result": {
+            "operationId": "1577833200000",
+            "lastStateChangedDate": "2021-04-26T05:53:57.423Z"
+        },
+        "success": true,
+        "errorMessages": [],
+        "statusCode": 202
+    }
+
+
+Unlock or pull spring
+^^^^^^^^^^^^^^^^^^^^^
+
+**Sample Request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock?mode=4" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 
