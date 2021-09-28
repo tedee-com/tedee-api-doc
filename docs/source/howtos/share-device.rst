@@ -16,16 +16,10 @@ This endpoint will return all shares for device.
 
     curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
-
-Prepare share data
------------------------------
-
-To manage access to the device you need to prepare some data. Depends on what :doc:`access type <../enums/access-type>` have been chosen you need to adjust :doc:`repeatEvent <../datastructures/repeat-event>` object in proper way.
-
-accessType =  0 (Permanent)
+Permanent access type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In this case, you can send empty :doc:`repeatEvent <../datastructures/repeat-event>` object.
+If you want user to have permanent access to the device you need send empty :doc:`repeatEvent <../datastructures/repeat-event>` object.
 
 **Sample repeat event object**
 
@@ -39,12 +33,16 @@ In this case, you can send empty :doc:`repeatEvent <../datastructures/repeat-eve
         "endDate": null
     },
 
-accessType = 1 (TimeRestricted)
+Time restricted access type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If access type is "TimeRestricted" you need to send fields "startDate" and "endDate" it will mark the period when share for user will be active.
+If you want to restrict user access to the device you can send fields "startDate" or "endDate", it will mark the period when share for user will be active.
+You can also restrict access to specific hours of the day by sending "dayStartTime" and "dayEndTime". User can further customize this by selecting days. 
+To send it proper way you need to use :doc:`Week days <../enums/week-days>` enum. 
 
-**Sample repeat event object**
+**Sample repeat event objects**
+
+In this case the share will be created from 14 december to 31 december.
 
 .. code-block:: js
 
@@ -55,15 +53,6 @@ If access type is "TimeRestricted" you need to send fields "startDate" and "endD
         "startDate": "2020-12-14T08:09:57.781Z",
         "endDate": "2020-12-31T08:10:57.781Z"
     },
-
-
-accessType = 2 (Custom)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The most complicated type is "Custom". The required fields for this type are "dayStartTime" and "dayEndTime". They represent at which hour period user will have access to the device.
-User can further customize this by selecting days. To send it proper way you need to use :doc:`Week days <../enums/week-days>` enum. Fields "startDate" and "endDate" are optional in this case.
-
-**Sample repeat event objects**
 
 In this case the share will be created from 1 december to 31 december, and user will have access only on friday and saturday between 15:00 and 18:00
 
@@ -112,7 +101,6 @@ Body:
         {
             "deviceId": 1,
             "accessLevel": 1,
-            "accessType": 2,
             "userEmail": "john.doe@email.com"
             "repeatEvent": {
                 "weekDays": 10,
@@ -145,7 +133,6 @@ Body:
         {
             "id": 1,
             "accessLevel": 1,
-            "accessType": 1,
             "repeatEvent": {
                 "id": 1,
                 "weekDays": 10,

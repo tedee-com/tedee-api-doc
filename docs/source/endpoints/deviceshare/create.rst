@@ -18,8 +18,6 @@ This endpoint can be used by owner or administrator of the device.
 +===========================+===========================================================================+====================================================+
 | accessLevel               | :doc:`Access level <../../enums/access-level>`                            | represents user access level                       |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| accessType                | :doc:`Access type <../../enums/access-type>`                              | represents user access type                        |
-+---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | deviceId                  | number                                                                    | device id                                          |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | remoteAccessDisabled      | boolean                                                                   | represents if remote access is disabled            |
@@ -66,7 +64,6 @@ Body:
         {
             "deviceId": 1,
             "accessLevel": 1,
-            "accessType": 0,
             "userEmail": "john.doe@email.com"
             "repeatEvent": {
                 "weekDays": null,
@@ -111,7 +108,6 @@ Body:
         {
             "deviceId": 1,
             "accessLevel": 0,
-            "accessType": 1,
             "userEmail": "john.doe@email.com"
             "repeatEvent": {
                 "weekDays": null,
@@ -155,7 +151,6 @@ Body:
         {
             "deviceId": 1,
             "accessLevel": 0,
-            "accessType": 2,
             "userEmail": "john.doe@email.com"
             "repeatEvent": {
                 "weekDays": 7,
