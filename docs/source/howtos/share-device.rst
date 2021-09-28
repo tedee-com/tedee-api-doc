@@ -16,12 +16,6 @@ This endpoint will return all shares for device.
 
     curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
-
-Prepare share data
------------------------------
-
-To manage access to the device you need to prepare some data. Depends on what :doc:`access type <../enums/access-type>` have been chosen you need to adjust :doc:`repeatEvent <../datastructures/repeat-event>` object in proper way.
-
 accessType (Permanent)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
