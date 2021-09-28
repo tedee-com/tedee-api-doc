@@ -36,7 +36,7 @@ If you want user to have permanent access to the device you need send empty :doc
 Time restricted access type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you want to restrict user access to the device you can send fields "startDate" or "endDate" it will mark the period when share for user will be active.
+If you want to restrict user access to the device you can send fields "startDate" or "endDate", it will mark the period when share for user will be active.
 You can also restrict access to specific hours of the day by sending "dayStartTime" and "dayEndTime". User can further customize this by selecting days. 
 To send it proper way you need to use :doc:`Week days <../enums/week-days>` enum. 
 
