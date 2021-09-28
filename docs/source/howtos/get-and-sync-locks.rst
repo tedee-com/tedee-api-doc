@@ -18,7 +18,7 @@ First thing that you need to do is to use endpoint :doc:`Get all locks <../endpo
 Sync user locks
 -----------------------
 
-Then after you have succesfully downloaded locks data you can use endpoint :doc:`Sync locks <../endpoints/lock/sync>` to periodicalu refresh current state 
+Then after you have succesfully downloaded locks data you can use endpoint :doc:`Sync locks <../endpoints/lock/sync>` to periodically refresh current state 
 of user locks like battery level, connection state, and lock position.
 
 **Sample request**

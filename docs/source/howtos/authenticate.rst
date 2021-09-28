@@ -1,45 +1,43 @@
 How to authenticate
 ===================
 
-Each request of this API requires authentication. We utilizes JSON Web Token (JWT) to identify the user.
+Each request of this API requires authentication. We utilizes JSON Web Token (JWT) or Personal Access Key to identify the user.
 
 .. note::
 
     You can find an example of how to authenticate in our `code samples <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/Tedee.Api.CodeSamples/Actions/S01AuthenticateUsingJWT.cs>`_.
 
-To authenticate you must:
+To authenticate with JWT you must:
 
 #. :ref:`get-the-jwt`
 #. :ref:`add-jwt-to-the-headers`
 
+To authenticate with Personal Access Key you must:
 
+#. :ref:`use-personal-access-key`
 
 .. _get-the-jwt:
 
 Get the access token (JWT)
 --------------------------
 
-We support three OAuth 2.0 authorization flows to get the access token:
+We support two OAuth 2.0 authorization flows to get the access token:
 
-+--------------------------------------+---------------------------------------------------------------------------------------------+
-| **Flow name**                        | **When to use**                                                                             |
-+--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Code Flow <code-flow>`         | When you can store refresh tokens and periodically exchange them for access tokens.         |
-|                                      |                                                                                             |
-|                                      | One time interaction with the user is needed to obtain the refresh token.                   |
-|                                      |                                                                                             |
-|                                      | Examples: mobile apps, web apps, service apps                                               |
-+--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Implicit Flow <implicit-flow>` | When you cannot store refresh tokens.                                                       |
-|                                      |                                                                                             |
-|                                      | Interaction with the user is needed to obtain access tokens after they expire.              |
-|                                      |                                                                                             |
-|                                      | Examples: SPA, desktop apps                                                                 |
-+--------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`ROPC Flow <ropc-flow>`         | When interaction with the user is not possible.                                             |
-|                                      |                                                                                             |
-|                                      | Examples: automation apps, scripts, etc.                                                    |
-+--------------------------------------+---------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Flow name**                                                      | **When to use**                                                                             |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Code Flow <code-flow>`                                       | When you can store refresh tokens and periodically exchange them for access tokens.         |
+|                                                                    |                                                                                             |
+|                                                                    | One time interaction with the user is needed to obtain the refresh token.                   |
+|                                                                    |                                                                                             |
+|                                                                    | Examples: mobile apps, web apps, service apps                                               |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Implicit Flow <implicit-flow>`                               | When you cannot store refresh tokens.                                                       |
+|                                                                    |                                                                                             |
+|                                                                    | Interaction with the user is needed to obtain access tokens after they expire.              |
+|                                                                    |                                                                                             |
+|                                                                    | Examples: SPA, desktop apps                                                                 |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. warning::
 
@@ -217,51 +215,6 @@ The value of the :code:`access_token` property is your **JWT** that should be us
 Implicit Flow does not issue refresh tokens. Interaction with the user is required to obtain a new access token after the current one has expired.
 
 
-
-.. _ropc-flow:
-
-ROPC Flow
-^^^^^^^^^^^
-
-.. warning::
-
-    ROPC Flow is deprecated. Estimated time of removing: end of Q4 2021. The new authentication method will be introduced instead.
-
-This flow should be used when interaction with the user is not possible. Additionally when using this flow you don't need individual clientId.
-To receive the JWT without user interaction, you must send following POST request.
-
-.. code-block:: sh
-
-    POST |authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token
-    Content-Type: application/x-www-form-urlencoded
-
-    grant_type=password
-    &client_id=|clientId|
-    &scope=openid |clientId|
-    &response_type=token
-    &username={username}
-    &password={password}
-
-* **username** - user name/email
-* **password** - user password
-
-.. code-block:: sh
-
-    curl -d "grant_type=password&username=[username]&password=[password]$&scope=openid |clientId|&client_id=|clientId|&response_type=token" -H "Content-Type: application/x-www-form-urlencoded" -X POST |authApiUrl|/B2C_1_SignIn_Ropc/oauth2/v2.0/token
-
-.. code-block:: json
-
-    {
-        "access_token": "<<actual access token>>",
-        "token_type": "Bearer",
-        "expires_in": "10800"
-    }
-
-The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
-The :code:`expires_in` property describes for how long the token will be valid (in seconds).
-
-
-
 .. _add-jwt-to-the-headers:
 
 Attach JWT to the request
@@ -274,45 +227,7 @@ Let's see it on the below examples where we want to get information about all ou
 
 .. code-block:: sh
 
-    curl -H "Authorization: Bearer <<access_token>>" |apiUrl|/api/v1.12/my/device
-
-.. _list-of-scopes:
-
-Scopes
-------
-
-Scopes define the set of permissions that the application requests.
-Below is a list of available scopes that can be requested during the authorization process (a single scope value indicates the permissions that are being requested).
-
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Scope                                                                      | Operation                   | Description                                                                                                                                                                                     |
-+============================================================================+=============================+=================================================================================================================================================================================================+
-| https://tedee.onmicrosoft.com/api/user_impersonation                       | Impersonate user            | Access this app on behalf of the signed-in user.                                                                                                                                                |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/Account.Read                             | View user account           | Grants the ability to view user information.                                                                                                                                                    |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/Account.ReadWrite                        | View and edit user account  | Grants the ability to view and edit user information. Also grant the ability to delete user account.                                                                                            |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/Device.Read                              | View devices                | Grants the ability to view all devices and query information for specific device.                                                                                                               |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/Device.ReadWrite                         | View and edit devices       | Grants the ability to view all devices and query information for specific device. Also grants the ability to add and delete devices, and update device settings or current status of the device.|
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/DeviceShare.Read                         | View device shares          | Grants the ability to view shares for all devices or for specific device.                                                                                                                       |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/DeviceShare.ReadWrite                    | View and edit device shares | Grants the ability to view shares for all devices or for specific device. Also grants the ability to update or delete existing share or create new one.                                         |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/DeviceActivity.Read                      | View activity logs          | Grants the ability to query activity logs.                                                                                                                                                      |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/Bridge.Operate                           | Operate bridges             | Grants the ability to pair and unpair locks with bridges.                                                                                                                                       |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://tedee.onmicrosoft.com/api/Lock.Operate                             | Operate locks               | Grants the ability to lock, unlock and perform pull spring. Also grants the ability to perform lock calibration.                                                                                |
-+----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Example use of scopes in request:
-
-.. code-block:: sh
-
-    scope=https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FLock.Operate%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FDevice.Read%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2Fuser_impersonation
+    curl -H "Authorization: Bearer <<access_token>>" |apiUrl|/api/|apiVersion|/my/device
 
 
 JWT token details
@@ -360,3 +275,99 @@ You should see the decoded data right away on the right side of the screen
     :align: center
     :alt: JWT decoded data
     :width: 500
+
+.. _use-personal-access-key:
+
+Use Personal Access Key
+--------------------------
+
+To authenticate via personal access key first you need to generate it on your account. 
+To do this you need to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint.
+
+**Sample request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/personalaccesskey" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+
+Body:
+
+.. code-block:: js
+
+        {
+            "name": "SomeExampleKeyName",
+            "validTo": "2021-04-26T06:02:04.197Z",
+            "scopes": [
+                "Device.Read",
+                "Organization.ReadWrite"
+            ]
+        }
+
+**Sample response**
+
+HTTP status code: ``201``
+
+.. code-block:: js
+
+        {
+            "result": {
+                "id": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+                "key": "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E"
+            }
+            "success": true,
+            "errorMessages": [],
+            "statusCode": 201
+        }
+
+
+.. warning::
+    You can see the full personal access key just once in the response. 
+    Later you can only view it's prefix, name and valid to date when using endpoint `get all <../endpoints/personalaccesskey/get-all.html>`_.
+
+After creating a personal key you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). 
+To use this type of authentication, instead of using Bearer schema in Authorization header use schema PersonalKey.
+
+**Sample request to sync lock using PersonalKey schema**
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: PersonalKey <<personal key>>"
+
+
+.. _list-of-scopes:
+
+Scopes
+------
+
+Scopes define the set of permissions that the application requests.
+Below is a list of available scopes that can be requested during the authorization process (a single scope value indicates the permissions that are being requested).
+
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Scope                                                                      | Operation                   | Description                                                                                                                                                                                     |
++============================================================================+=============================+=================================================================================================================================================================================================+
+| https://tedee.onmicrosoft.com/api/user_impersonation                       | Impersonate user            | Access this app on behalf of the signed-in user.                                                                                                                                                |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/Account.Read                             | View user account           | Grants the ability to view user information.                                                                                                                                                    |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/Account.ReadWrite                        | View and edit user account  | Grants the ability to view and edit user information. Also grant the ability to delete user account.                                                                                            |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/Device.Read                              | View devices                | Grants the ability to view all devices and query information for specific device.                                                                                                               |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/Device.ReadWrite                         | View and edit devices       | Grants the ability to view all devices and query information for specific device. Also grants the ability to add and delete devices, and update device settings or current status of the device.|
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/DeviceShare.Read                         | View device shares          | Grants the ability to view shares for all devices or for specific device.                                                                                                                       |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/DeviceShare.ReadWrite                    | View and edit device shares | Grants the ability to view shares for all devices or for specific device. Also grants the ability to update or delete existing share or create new one.                                         |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/DeviceActivity.Read                      | View activity logs          | Grants the ability to query activity logs.                                                                                                                                                      |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/Bridge.Operate                           | Operate bridges             | Grants the ability to pair and unpair locks with bridges.                                                                                                                                       |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| https://tedee.onmicrosoft.com/api/Lock.Operate                             | Operate locks               | Grants the ability to lock, unlock and perform pull spring. Also grants the ability to perform lock calibration.                                                                                |
++----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Example use of scopes in request:
+
+.. code-block:: sh
+
+    scope=https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FLock.Operate%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FDevice.Read%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2Fuser_impersonation

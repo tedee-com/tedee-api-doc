@@ -39,13 +39,14 @@ Tedee API documentation
    endpoints/deviceactivity/index
    endpoints/deviceshare/index
    endpoints/lock/index
+   endpoints/personalaccesskey/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Data structures
    :hidden:
 
-   Bridge <datastructures/bridge>
+   Bridge <datastructures/bridge> 
    Device activities <datastructures/device-activity>
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
@@ -56,6 +57,8 @@ Tedee API documentation
    Lock properties <datastructures/lock-properties>
    Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
+   Personal access key <datastructures/personal-access-key>
+   Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
    Share details <datastructures/share-details>
    Software versions <datastructures/software-versions>
