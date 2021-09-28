@@ -63,6 +63,9 @@ In response you will receive operationId and lastStateChangedDate. The unlocking
     When lock has auto pull spring enabled it will also perform pull spring within unlock command. 
     Optional parameter in the request allows to unlock the lock without pulling the spring.
 
+.. note::
+    Optional parameter in the request allows to perform pull spring when lock is in unlocked state.
+
 
 Pull spring in tedee lock
 ------------------------------
@@ -85,7 +88,11 @@ Example request will perform pull spring on the lock with id = 1.
 In response you will receive operationId and lastStateChangedDate. The duration of pull spring is configured by user.
 
 .. note::
+    To perform pull spring you can also use Unlock request with optional parameter.
+
+.. note::
     Additionally you should calibrate pull spring in your lock before using this endpoint. If you didn't calibrate pull spring this endpoint will return successful response but nothing will happen.
+
 
 Checking operation progress
 ---------------------------
