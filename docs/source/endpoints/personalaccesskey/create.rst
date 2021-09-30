@@ -9,15 +9,15 @@ Creates new personal access key
 
 **Body Parameters**
 
-+--------------------+---------------+----------------------------------------------------+
-| Name               | Type          | Description                                        |
-+====================+===============+====================================================+
-| name               | string        | name of the personal access key                    |
-+--------------------+---------------+----------------------------------------------------+
-| validTo            | datetime      | date when key expires (max 5 years)                |
-+--------------------+---------------+----------------------------------------------------+
-| scopes             | list<string>  | list of scopes that is assigned to key             |
-+--------------------+---------------+----------------------------------------------------+
++--------------------+---------------+----------------------------------------------------------------+
+| Name               | Type          | Description                                                    |
++====================+===============+================================================================+
+| name               | string        | name of the personal access key                                |
++--------------------+---------------+----------------------------------------------------------------+
+| validTo            | datetime      | date when key expires (max 5 years)                            |
++--------------------+---------------+----------------------------------------------------------------+
+| scopes             | list<string>  | list of :ref:`scopes <list-of-scopes>` that is assigned to key |
++--------------------+---------------+----------------------------------------------------------------+
 
 Responses 
 -------------
@@ -74,3 +74,9 @@ HTTP status code: ``201``
             "errorMessages": [],
             "statusCode": 201
         }
+
+Your Personal Access Key is "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E". You can use it to :doc:`authenticate <../../howtos/authenticate>`  
+
+.. warning::
+    Keep your Personal Access Key Safe! 
+    Personal Access Key canno't be read in any other way.

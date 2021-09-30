@@ -1,25 +1,63 @@
 How to authenticate
 ===================
 
-Each request of this API requires authentication. We utilizes JSON Web Token (JWT) or Personal Access Key to identify the user.
+Each request of this API requires authentication. We utilizes OAuth 2.0 or Personal Access Key to identify the user.
+
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Authentication type**                                            | **Description**                                                                             |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Personal Access Key <personal-access-key>`                   | User can create his own keys with diffrent scopes and expiration dates and then use         |
+|                                                                    |                                                                                             |
+|                                                                    | it to authenticate his requests                                                             |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Oauth 2.0 <Oauth-20>`                                        | Standard OAuth 2.0 type of authentication based on tokens.                                  |
+|                                                                    |                                                                                             |
+|                                                                    | We support two flows Code and Implicit                                                      |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. _personal-access-key:
+
+Personal Access Key
+--------------------------
+
+To authenticate via personal access key first you need to generate it on your account. 
+To do this you need to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint.
+
+**Sample response**
+
+.. code-block:: js
+
+        {
+            "result": {
+                "id": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+                "key": "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E"
+            }
+            "success": true,
+            "errorMessages": [],
+            "statusCode": 201
+        }
+
+The PAK is in result.key.
+
+.. warning::
+    Keep your key secure!
 
 .. note::
+    You can see the full personal access key just once in the response. 
 
-    You can find an example of how to authenticate in our `code samples <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/Tedee.Api.CodeSamples/Actions/S01AuthenticateUsingJWT.cs>`_.
+After creating a PAK you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). 
+To use this type of authentication use schema PersonalKey in the Authorization header.
 
-To authenticate with JWT you must:
+**Sample request to get lock using PersonalKey schema**
 
-#. :ref:`get-the-jwt`
-#. :ref:`add-jwt-to-the-headers`
+.. code-block:: sh
 
-To authenticate with Personal Access Key you must:
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: PersonalKey <<personal key>>"
 
-#. :ref:`use-personal-access-key`
+.. _Oauth-20:
 
-.. _get-the-jwt:
-
-Get the access token (JWT)
---------------------------
+OAuth 2.0
+-----------
 
 We support two OAuth 2.0 authorization flows to get the access token:
 
@@ -30,7 +68,7 @@ We support two OAuth 2.0 authorization flows to get the access token:
 |                                                                    |                                                                                             |
 |                                                                    | One time interaction with the user is needed to obtain the refresh token.                   |
 |                                                                    |                                                                                             |
-|                                                                    | Examples: mobile apps, web apps, service apps                                               |
+|                                                                    | Examples: service apps                                                                      |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`Implicit Flow <implicit-flow>`                               | When you cannot store refresh tokens.                                                       |
 |                                                                    |                                                                                             |
@@ -53,7 +91,7 @@ Code Flow
 
 .. warning::
 
-    Code flow should not be used in public facing application (for example mobile apps) only service to service. 
+    Code flow should not be used in public facing application (for example service apps) only service to service. 
     If you intend to use code flow with public facing application please consider using `proof key for code exchange <https://auth0.com/docs/flows/authorization-code-flow-with-proof-key-for-code-exchange-pkce>`_.
 
 This flow should be used for applications that can store refresh tokens and periodically exchange them for access tokens after they expire.
@@ -220,7 +258,7 @@ Implicit Flow does not issue refresh tokens. Interaction with the user is requir
 Attach JWT to the request
 --------------------------
 
-Now, since we have our :ref:`JWT <get-the-jwt>`, we can use it to authenticate our calls.
+Now, since we have our JWT, we can use it to authenticate our calls.
 To achieve that, we just have to add an ``Authorization`` header containing our access token. This header value should look like ``Bearer <<access_token>>``, where **<<access_token>>** is our JWT. 
 
 Let's see it on the below examples where we want to get information about all our devices:
@@ -275,64 +313,6 @@ You should see the decoded data right away on the right side of the screen
     :align: center
     :alt: JWT decoded data
     :width: 500
-
-.. _use-personal-access-key:
-
-Use Personal Access Key
---------------------------
-
-To authenticate via personal access key first you need to generate it on your account. 
-To do this you need to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint.
-
-**Sample request**
-
-.. code-block:: sh
-
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/personalaccesskey" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
-
-Body:
-
-.. code-block:: js
-
-        {
-            "name": "SomeExampleKeyName",
-            "validTo": "2021-04-26T06:02:04.197Z",
-            "scopes": [
-                "Device.Read",
-                "Organization.ReadWrite"
-            ]
-        }
-
-**Sample response**
-
-HTTP status code: ``201``
-
-.. code-block:: js
-
-        {
-            "result": {
-                "id": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
-                "key": "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E"
-            }
-            "success": true,
-            "errorMessages": [],
-            "statusCode": 201
-        }
-
-
-.. warning::
-    You can see the full personal access key just once in the response. 
-    Later you can only view it's prefix, name and valid to date when using endpoint `get all <../endpoints/personalaccesskey/get-all.html>`_.
-
-After creating a personal key you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). 
-To use this type of authentication, instead of using Bearer schema in Authorization header use schema PersonalKey.
-
-**Sample request to sync lock using PersonalKey schema**
-
-.. code-block:: sh
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: PersonalKey <<personal key>>"
-
 
 .. _list-of-scopes:
 
