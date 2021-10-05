@@ -6,9 +6,9 @@ Each request of this API requires authentication. We utilizes OAuth 2.0 or Perso
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | **Authentication type**                                            | **Description**                                                                             |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Personal Access Key <personal-access-key>`                   | User can create his own keys with diffrent scopes and expiration dates and then use         |
+| :ref:`Personal Access Key <personal-access-key>`                   | User can create his own keys with different scopes and expiration dates and then            |
 |                                                                    |                                                                                             |
-|                                                                    | it to authenticate his requests                                                             |
+|                                                                    | use them to authenticate his requests                                                       |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`Oauth 2.0 <Oauth-20>`                                        | Standard OAuth 2.0 type of authentication based on tokens.                                  |
 |                                                                    |                                                                                             |
@@ -20,7 +20,7 @@ Each request of this API requires authentication. We utilizes OAuth 2.0 or Perso
 Personal Access Key
 --------------------------
 
-To authenticate via personal access key first you need to generate it on your account. 
+To authenticate via personal access key (PAK) first you need to generate it on your account. 
 To do this you need to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint.
 
 **Sample response**

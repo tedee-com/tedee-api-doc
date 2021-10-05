@@ -78,5 +78,7 @@ HTTP status code: ``201``
 Your Personal Access Key is "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E". You can use it to :doc:`authenticate <../../howtos/authenticate>`.  
 
 .. warning::
-    Keep your Personal Access Key Safe! 
+    Keep your Personal Access Key safe! 
+
+.. note::
     Personal Access Key cannot be read in any other way.
