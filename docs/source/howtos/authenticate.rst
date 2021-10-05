@@ -1,25 +1,63 @@
 How to authenticate
 ===================
 
-Each request of this API requires authentication. We utilizes JSON Web Token (JWT) or Personal Access Key to identify the user.
+Each request of this API requires authentication. We utilizes OAuth 2.0 or Personal Access Key to identify the user.
+
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Authentication type**                                            | **Description**                                                                             |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Personal Access Key <personal-access-key>`                   | User can create his own keys with different scopes and expiration dates and then            |
+|                                                                    |                                                                                             |
+|                                                                    | use them to authenticate his requests                                                       |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`Oauth 2.0 <Oauth-20>`                                        | Standard OAuth 2.0 type of authentication based on tokens.                                  |
+|                                                                    |                                                                                             |
+|                                                                    | We support two flows Code and Implicit                                                      |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. _personal-access-key:
+
+Personal Access Key
+--------------------------
+
+To authenticate via personal access key (PAK) first you need to generate it on your account. 
+To do this you need to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint.
+
+**Sample response**
+
+.. code-block:: js
+
+        {
+            "result": {
+                "id": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+                "key": "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E"
+            }
+            "success": true,
+            "errorMessages": [],
+            "statusCode": 201
+        }
+
+The PAK is in result.key.
+
+.. warning::
+    Keep your key secure!
 
 .. note::
+    You can see the full personal access key just once in the response. 
 
-    You can find an example of how to authenticate in our `code samples <https://github.com/tedee-com/tedee-api-doc/blob/master/samples/cs/Tedee.Api.CodeSamples/Actions/S01AuthenticateUsingJWT.cs>`_.
+After creating a PAK you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). 
+To use this type of authentication use schema PersonalKey in the Authorization header.
 
-To authenticate with JWT you must:
+**Sample request to get lock using PersonalKey schema**
 
-#. :ref:`get-the-jwt`
-#. :ref:`add-jwt-to-the-headers`
+.. code-block:: sh
 
-To authenticate with Personal Access Key you must:
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: PersonalKey <<personal key>>"
 
-#. :ref:`use-personal-access-key`
+.. _Oauth-20:
 
-.. _get-the-jwt:
-
-Get the access token (JWT)
---------------------------
+OAuth 2.0
+-----------
 
 We support two OAuth 2.0 authorization flows to get the access token:
 
@@ -30,7 +68,7 @@ We support two OAuth 2.0 authorization flows to get the access token:
 |                                                                    |                                                                                             |
 |                                                                    | One time interaction with the user is needed to obtain the refresh token.                   |
 |                                                                    |                                                                                             |
-|                                                                    | Examples: mobile apps, web apps, service apps                                               |
+|                                                                    | Examples: service apps                                                                      |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`Implicit Flow <implicit-flow>`                               | When you cannot store refresh tokens.                                                       |
 |                                                                    |                                                                                             |
@@ -53,7 +91,7 @@ Code Flow
 
 .. warning::
 
-    Code flow should not be used in public facing application (for example mobile apps) only service to service. 
+    Code flow should not be used in public facing application (for example service apps) only service to service. 
     If you intend to use code flow with public facing application please consider using `proof key for code exchange <https://auth0.com/docs/flows/authorization-code-flow-with-proof-key-for-code-exchange-pkce>`_.
 
 This flow should be used for applications that can store refresh tokens and periodically exchange them for access tokens after they expire.
@@ -82,9 +120,21 @@ The authorization process begins with the GET request to the authorization endpo
 
 * **client_id** - The client id assigned to your application.
 * **redirect_uri** - The redirect URI of your application, where authentication responses are sent and received by your application.
-* **response_mode** - The method that you use to send the resulting authorization code back to your application. It can be **query**, **form_post**, or **fragment**.
+* **response_mode** - The method that you use to send the resulting authorization code back to your application. It can be **query**, **form_post**, or **fragment**. You need to choose the one that is compatible with your application.
 * **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The **offline_access** scope indicates that your app needs a refresh token for long-lived access to resources. The "|scopePrefix|user_impersonation" scope is required (:ref:`list of available scopes <list-of-scopes>`).
 * **state** - A value included in the request that can be a string of any content that you want to use. Usually, a randomly generated unique value is used, to prevent cross-site request forgery attacks.
+
+**Example**
+
+.. code-block:: sh
+
+    GET |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/authorize
+    ?response_type=code
+    &client_id=bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996
+    &redirect_uri=https://yoursite.com/auth
+    &response_mode=query
+    &scope=https://tedee.onmicrosoft.com/api/user_impersonation%20https://tedee.onmicrosoft.com/api/Lock.Operate  
+    &state=d917d40e-0b1a-4495-8e23-e449c916a532
 
 After the user sign-in, the authorization code will be sent to your application to the address specified in the **redirect_uri** parameter (using the method specified in the **response_mode** parameter).
 
@@ -116,11 +166,27 @@ After successfully receiving the authorization code, you can use it to request a
     &code={code}
     &redirect_uri={redirect_uri}
 
+
+
 * **client_id** - The client id assigned to your application.
 * **client_secret** - The application client secret.
 * **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The **offline_access** scope indicates that your app needs a refresh token for long-lived access to resources. The "|scopePrefix|user_impersonation" scope is required (:ref:`list of available scopes <list-of-scopes>`).
 * **code** - The authorization code that you acquired in the first step of the flow.
 * **redirect_uri** - The redirect URI of the application where you received the authorization code.
+
+**Example**
+
+.. code-block:: sh
+
+    POST |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/token
+    Content-Type: application/x-www-form-urlencoded
+
+    grant_type=authorization_code
+    &client_id=bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996
+    &client_secret=81A2Bde1ZsZeEPDJLASKq1sBsuKaNa11W+3biasTkLAC=
+    &scope=https://tedee.onmicrosoft.com/api/user_impersonation%20https://tedee.onmicrosoft.com/api/Lock.Operate  
+    &code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq
+    &redirect_uri=https://yoursite.com/auth
 
 A successful token response looks like this:
 
@@ -129,9 +195,9 @@ A successful token response looks like this:
     {
         "not_before": "1442340812",
         "token_type": "Bearer",
-        "access_token": "<<actual access token>>",
+        "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...",
         "expires_in": "3600",
-        "refresh_token": "<<actual refresh token>>",
+        "refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
         "refresh_token_expires_in": 1209600
     }
 
@@ -194,6 +260,19 @@ The authorization process begins with the GET request to the authorization endpo
 * **state** - A value included in the request that also is returned in the token response. It can be a string of any content that you want to use. Usually, a randomly generated unique value is used, to prevent cross-site request forgery attacks.
 * **nonce** - A value included in the request (generated by the app) that is included in the resulting token as a claim. The app can then verify this value to mitigate token replay attacks. Usually, the value is a randomized, unique string that can be used to identify the origin of the request.
 
+**Example**
+
+.. code-block:: sh
+
+    GET |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/authorize
+    ?response_type=token
+    &client_id=bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996
+    &redirect_uri=https://yoursite.com/auth
+    &response_mode=fragment
+    &scope=https://tedee.onmicrosoft.com/api/user_impersonation%20https://tedee.onmicrosoft.com/api/Lock.Operate  
+    &state=d917d40e-0b1a-4495-8e23-e449c916a532
+    &nonce=defaultNonce
+
 After the user sign-in, a response will be sent to your application to the address specified in the **redirect_uri** parameter.
 
 A successful response looks like this:
@@ -220,7 +299,7 @@ Implicit Flow does not issue refresh tokens. Interaction with the user is requir
 Attach JWT to the request
 --------------------------
 
-Now, since we have our :ref:`JWT <get-the-jwt>`, we can use it to authenticate our calls.
+Now, since we have our JWT, we can use it to authenticate our calls.
 To achieve that, we just have to add an ``Authorization`` header containing our access token. This header value should look like ``Bearer <<access_token>>``, where **<<access_token>>** is our JWT. 
 
 Let's see it on the below examples where we want to get information about all our devices:
@@ -276,64 +355,6 @@ You should see the decoded data right away on the right side of the screen
     :alt: JWT decoded data
     :width: 500
 
-.. _use-personal-access-key:
-
-Use Personal Access Key
---------------------------
-
-To authenticate via personal access key first you need to generate it on your account. 
-To do this you need to send request to :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint.
-
-**Sample request**
-
-.. code-block:: sh
-
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/personalaccesskey" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
-
-Body:
-
-.. code-block:: js
-
-        {
-            "name": "SomeExampleKeyName",
-            "validTo": "2021-04-26T06:02:04.197Z",
-            "scopes": [
-                "Device.Read",
-                "Organization.ReadWrite"
-            ]
-        }
-
-**Sample response**
-
-HTTP status code: ``201``
-
-.. code-block:: js
-
-        {
-            "result": {
-                "id": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
-                "key": "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E"
-            }
-            "success": true,
-            "errorMessages": [],
-            "statusCode": 201
-        }
-
-
-.. warning::
-    You can see the full personal access key just once in the response. 
-    Later you can only view it's prefix, name and valid to date when using endpoint `get all <../endpoints/personalaccesskey/get-all.html>`_.
-
-After creating a personal key you can use it to authenticate to endpoints that you gave permissions (by defining proper scopes). 
-To use this type of authentication, instead of using Bearer schema in Authorization header use schema PersonalKey.
-
-**Sample request to sync lock using PersonalKey schema**
-
-.. code-block:: sh
-
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: PersonalKey <<personal key>>"
-
-
 .. _list-of-scopes:
 
 Scopes
@@ -365,9 +386,3 @@ Below is a list of available scopes that can be requested during the authorizati
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | https://tedee.onmicrosoft.com/api/Lock.Operate                             | Operate locks               | Grants the ability to lock, unlock and perform pull spring. Also grants the ability to perform lock calibration.                                                                                |
 +----------------------------------------------------------------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Example use of scopes in request:
-
-.. code-block:: sh
-
-    scope=https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FLock.Operate%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2FDevice.Read%20https%3A%2F%2Ftedee.onmicrosoft.com%2Fapi%2Fuser_impersonation
