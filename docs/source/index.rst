@@ -37,8 +37,10 @@ Tedee API documentation
 
    endpoints/device/index
    endpoints/deviceactivity/index
+   endpoints/devicecertificate/index
    endpoints/deviceshare/index
    endpoints/lock/index
+   endpoints/mobile/index
    endpoints/personalaccesskey/index
 
 .. toctree::
@@ -57,6 +59,7 @@ Tedee API documentation
    Lock properties <datastructures/lock-properties>
    Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
+   Mobile identifier <datastructures/mobile-identifier>
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
@@ -75,6 +78,7 @@ Tedee API documentation
    Device type <enums/device-type>
    Event type <enums/event-type>
    Lock state <enums/lock-state>
+   Operating System type <enums/operating-system>
    Software type <enums/software-type>
    Unlock mode <enums/unlock-mode>
    Week days <enums/week-days>
