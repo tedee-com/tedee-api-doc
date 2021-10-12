@@ -1,53 +1,53 @@
 Get for mobile
 =========================
 
-Get all access details for specific device. 
-This endpoint can be used by all users that have share to the device but users with access level "Guest" and those users that share are not active
-will get in response only information about owner of device and own access details. Owner and administrators with active share will get all users access details.
+Get certificate for specific mobile/other device. 
+
+Opis <TODO>
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/deviceshare?deviceId={id}
+    GET |apiUrl|/api/|apiVersion|/my/devicecertificate/getformobile?mobileId={mobileId}&deviceId={deviceId}
 
 **URI Parameters**
 
-+------------------------+-----------+---------------------+
-| Name                   | Type      | Description         |
-+========================+===========+=====================+
-| deviceId               | number    | id of device        |
-+------------------------+-----------+---------------------+
++----------+--------+---------------------+
+| Name     | Type   | Description         |
++==========+========+=====================+
+| mobileId | number | id of mobile device |
++----------+--------+---------------------+
+| deviceId | number | id of Tedee device  |
++----------+--------+---------------------+
 
 Responses 
 -------------
 
-+------------------------+----------------------------------------------------------------+--------------------------+
-| Name                   | Type                                                           | Description              |
-+========================+================================================================+==========================+
-| 200 OK                 | :doc:`Share details <../../datastructures/share-details>` []   | successful operation     |
-+------------------------+----------------------------------------------------------------+--------------------------+
++--------+-----------------------------------------------------------------------------+----------------------+
+| Name   | Type                                                                        | Description          |
++========+=============================================================================+======================+
+| 200 OK | :doc:`Certificates for mobile <../../datastructures/certificate-for-mobile` | successful operation |
++--------+-----------------------------------------------------------------------------+----------------------+
 
 Scopes
 -------------
 
-+------------------------+-------------------------------------------------------------------------------+
-| Name                   | Description                                                                   |
-+========================+===============================================================================+
-| DeviceShare.Read       | Grants user possibility to read data connected with device shares             |
-+------------------------+-------------------------------------------------------------------------------+
-| DeviceShare.ReadWrite  | Grants user possibility to read and write data connected with device shares   |
-+------------------------+-------------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------+
+| Name                      | Description                                            |
++===========================+========================================================+
+| DeviceCertificate.Operate | Grants user possibility to access devices certificates |
++---------------------------+--------------------------------------------------------+
 
 Examples
 -------------
 
-Get shares
-^^^^^^^^^^^^^^^
+Get certificate for mobile
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample Request**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/devicecertificate/getformobile?mobileId=123&deviceId=456" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 **Sample response**
@@ -59,45 +59,13 @@ HTTP status code: ``200``
         {
             "result": [
                 {
-                    "id": 15,
-                    "userId": 11,
-                    "deviceId": 1,
-                    "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
-                    "accessLevel": 1,
-                    "accessType": 0,
-                    "userEmail": "john.doe@email.com",
-                    "isPending": false,
-                    "userDisplayName": "John Doe",
-                    "repeatEvent": {
-                        "id": 1,
-                        "weekDays": 10,
-                        "dayStartTime": "2020-12-14T08:09:57.781Z",
-                        "dayEndTime": "2020-12-31T08:10:57.781Z",
-                        "startDate": null,
-                        "endDate": null
-                    },
-                    "remoteAccessDisabled": true
+                    "certificate": "AQECAgECAwRhZ+ZwBAF/BQQAAAAABgQAAVF/BRhZNAACARjRgOACQQAACLdCgQAAGHMCwgAAAF7ybAKin5BBKbnztHKIog
+                    8hD3/OqFWBI5/oNECVRyQm5EfxZyGz/Pv7oKvlXNkF2503/RCRgocotF6rVQaYsH9c5Xq4btSF/RjBEAiDLNX00yWXmpIi0AigSb3veeFyEQRN
+                    sCRYbEwCZxkFe1gIgJEGKT6EoSHwPfYmPJsHCdcgtBQPiDXM/M2qJRbu6Pb4=",
+                    "expirationDate": "2021-12-12T00:00:00.000000Z",
+                    "devicePublicKey": "BL4lFWWQ0SCxYr5aLWaCUA/88XsWkVJdxihYIN0kL9VKhE9jAx8+INXVG/vsen/VEj9YltNMtb1I+qDTUdVqo8c=",
+                    "mobilePublicKey": "BkbnztKHIog8hD3/OqFWBI5/oNECVRyQm5EfXZyGz/Pv7oKvlXNkF2503/RCRgocotF6rVQaYsH9c5Xq4btSYKE="
                 },
-                                {
-                    "id": 16,
-                    "userId": 12,
-                    "deviceId": 1,
-                    "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba2eaf7333",
-                    "accessLevel": 0,
-                    "accessType": 1,
-                    "userEmail": "john.kowalsky@email.com",
-                    "isPending": false,
-                    "userDisplayName": "John Doe",
-                    "repeatEvent": {
-                        "id": 1,
-                        "weekDays": 10,
-                        "dayStartTime": "2020-12-14T08:09:57.781Z",
-                        "dayEndTime": "2020-12-31T08:10:57.781Z",
-                        "startDate": null,
-                        "endDate": null
-                    },
-                    "remoteAccessDisabled": false
-                }
             ]
             "success": true,
             "errorMessages": [],

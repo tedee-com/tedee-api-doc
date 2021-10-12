@@ -1,53 +1,55 @@
 Get revoked for mobile
 =========================
 
-Get all access details for specific device. 
-This endpoint can be used by all users that have share to the device but users with access level "Guest" and those users that share are not active
-will get in response only information about owner of device and own access details. Owner and administrators with active share will get all users access details.
+Get all revoked certificates for mobile device.
+
+OPIS TODO
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/deviceshare?deviceId={id}
+    GET |apiUrl|/api/|apiVersion|/my/devicecertificate/getrevokedformobile?deviceId={deviceId}&version={version}
 
 **URI Parameters**
 
-+------------------------+-----------+---------------------+
-| Name                   | Type      | Description         |
-+========================+===========+=====================+
-| deviceId               | number    | id of device        |
-+------------------------+-----------+---------------------+
++----------+--------+----------------------------------------+
+| Name     | Type   | Description                            |
++==========+========+========================================+
+| deviceId | number | id of Tedee device                     |
++----------+--------+----------------------------------------+
+| version  | number | certificates Tedee device list version |
++----------+--------+----------------------------------------+
 
 Responses 
 -------------
 
-+------------------------+----------------------------------------------------------------+--------------------------+
-| Name                   | Type                                                           | Description              |
-+========================+================================================================+==========================+
-| 200 OK                 | :doc:`Share details <../../datastructures/share-details>` []   | successful operation     |
-+------------------------+----------------------------------------------------------------+--------------------------+
++----------------+---------------------------------------------------------------------------------+----------------------+
+| Name           | Type                                                                            | Description          |
++================+=================================================================================+======================+
+| 200 OK         | :doc:`Revoked certificate list <../../datastructures/revoked-certificate-list>` | successful operation |
++----------------+---------------------------------------------------------------------------------+----------------------+
+| 204 No Content |                                                                                 | version up to date   |
++----------------+---------------------------------------------------------------------------------+----------------------+
 
 Scopes
 -------------
 
-+------------------------+-------------------------------------------------------------------------------+
-| Name                   | Description                                                                   |
-+========================+===============================================================================+
-| DeviceShare.Read       | Grants user possibility to read data connected with device shares             |
-+------------------------+-------------------------------------------------------------------------------+
-| DeviceShare.ReadWrite  | Grants user possibility to read and write data connected with device shares   |
-+------------------------+-------------------------------------------------------------------------------+
++---------------------------+--------------------------------------------------------+
+| Name                      | Description                                            |
++===========================+========================================================+
+| DeviceCertificate.Operate | Grants user possibility to access devices certificates |
++---------------------------+--------------------------------------------------------+
 
 Examples
 -------------
 
-Get shares
-^^^^^^^^^^^^^^^
+Revoked certificates for mobile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample Request**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/devicecertificate/getrevokedformobile?deviceId=123&version=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 **Sample response**
@@ -57,49 +59,33 @@ HTTP status code: ``200``
 .. code-block:: js
 
         {
-            "result": [
-                {
-                    "id": 15,
-                    "userId": 11,
-                    "deviceId": 1,
-                    "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
-                    "accessLevel": 1,
-                    "accessType": 0,
-                    "userEmail": "john.doe@email.com",
-                    "isPending": false,
-                    "userDisplayName": "John Doe",
-                    "repeatEvent": {
-                        "id": 1,
-                        "weekDays": 10,
-                        "dayStartTime": "2020-12-14T08:09:57.781Z",
-                        "dayEndTime": "2020-12-31T08:10:57.781Z",
-                        "startDate": null,
-                        "endDate": null
-                    },
-                    "remoteAccessDisabled": true
-                },
-                                {
-                    "id": 16,
-                    "userId": 12,
-                    "deviceId": 1,
-                    "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba2eaf7333",
-                    "accessLevel": 0,
-                    "accessType": 1,
-                    "userEmail": "john.kowalsky@email.com",
-                    "isPending": false,
-                    "userDisplayName": "John Doe",
-                    "repeatEvent": {
-                        "id": 1,
-                        "weekDays": 10,
-                        "dayStartTime": "2020-12-14T08:09:57.781Z",
-                        "dayEndTime": "2020-12-31T08:10:57.781Z",
-                        "startDate": null,
-                        "endDate": null
-                    },
-                    "remoteAccessDisabled": false
-                }
-            ]
+            "result": {
+                "deviceId": 123,
+                "version": 2,
+                "lastUpdated": 1633692928,
+                "signature": "MEUCICFNUa+s27psC6CFYV0KJ/f=g/6AU/rS7+CWZMPahrstESAiEA5tOCveS4a1MWz4qMQN7b+cJhuFWcJjPXPr0Sl3GfCUQ=",
+                "revokedCertificates": [
+                    {
+                        "certificateId": 982,
+                        "expirationDate": "2020-12-12T00:00:00.000000Z" 
+                    }
+                ]
+            }
             "success": true,
             "errorMessages": [],
             "statusCode": 200
         }
+
+Version up to date
+^^^^^^^^^^^^^^^^^^
+
+**Sample Request**
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/devicecertificate/getrevokedformobile?deviceId=123&version=2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+
+**Sample response**
+
+HTTP status code: ``204``

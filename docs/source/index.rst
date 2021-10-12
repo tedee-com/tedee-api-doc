@@ -48,7 +48,8 @@ Tedee API documentation
    :caption: Data structures
    :hidden:
 
-   Bridge <datastructures/bridge> 
+   Bridge <datastructures/bridge>
+   Certificate for mobile <datastructures/certificate-for-mobile>
    Device activities <datastructures/device-activity>
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
@@ -63,6 +64,8 @@ Tedee API documentation
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
+   Revoked mobile certificate <datastructures/revoked-certificate>
+   Revoked mobile certificate list <datastructures/revoked-certificate-list>
    Share details <datastructures/share-details>
    Software versions <datastructures/software-versions>
    User settings <datastructures/user-settings>
