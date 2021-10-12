@@ -7,9 +7,9 @@ Endpoints used for listing, creating, updating mobiles or other user devices.
    :maxdepth: 1
    :hidden:
    
-   Add <create>
+   Register <register>
 
 
 **Operations**
 
-- `Add <create.html>`_
+- `Register <register.html>`_

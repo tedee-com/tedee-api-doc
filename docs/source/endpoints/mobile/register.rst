@@ -1,8 +1,15 @@
-Add
+Register
 =========================
 
-Add new mobile device or any other device to user account.
-Adding new device (mobile or any other device) is required to make a secure connection with Tedee Lock. As a prequisite certificate should be generated. 
+Register mobile device to user account endpoint. User is required to register all devices which wants to establish 
+connection with Tedee devices. When registering a key pair is generated on the user's access device.
+The auth pair key is necessary to establish secure PTLS session (Secure Bluetooth Communication) with Tedee device.
+
+.. note::
+    Auth pair key generation is user responsibility.
+
+.. note::
+    Remember to keep private auth pair ECDSA private key only in mobile device.
 
 .. code-block:: sh
 
@@ -10,15 +17,15 @@ Adding new device (mobile or any other device) is required to make a secure conn
 
 **Body Parameters**
 
-+--------------------+---------------------------------------------------------+----------------------------------------------------------------+
-| Name               | Type                                                    | Description                                                    |
-+====================+=========================================================+================================================================+
-| name               | string                                                  | name of the resource                                           |
-+--------------------+---------------+-----------------------------------------+----------------------------------------------------------------+
-| operatingSystem    | :doc:`Operating system <../../enums/operating-system>`  | represents operating system                                    |
-+--------------------+---------------+-----------------------------------------+----------------------------------------------------------------+
-| publicKey          | string                                                  | generated public key                                           |
-+--------------------+---------------------------------------------------------+----------------------------------------------------------------+
++-----------------+--------------------------------------------------------+--------------------------------------+
+| Name            | Type                                                   | Description                          |
++=================+========================================================+======================================+
+| name            | string                                                 | name of the resource                 |
++-----------------+--------------------------------------------------------+--------------------------------------+
+| operatingSystem | :doc:`Operating system <../../enums/operating-system>` | represents operating system          |
++-----------------+--------------------------------------------------------+--------------------------------------+
+| publicKey       | string                                                 | generated auth pair ECDSA public key |
++-----------------+--------------------------------------------------------+--------------------------------------+
 
 Responses 
 -------------
@@ -53,7 +60,7 @@ Body:
 
         {
             "name": "integrationDevice",
-            "operatingSystem": 2,
+            "operatingSystem": 3,
             "publicKey": "BL4lFWWQ0SCxYr5aLWaCUA/88XsWkVJdxihYIN0kL9VKhE9jAx8+INXVG/vsen/VEj9YltNMtb1I+qDTUdVqo8c="
         }
 

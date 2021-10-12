@@ -1,9 +1,11 @@
 Get revoked for mobile
 =========================
 
-Get all revoked certificates for mobile device.
+Get all revoked certificates for mobile device. When the Tedee devices is asking for revoked certificates, this endpoint
+is able to return the revoked certificates.
 
-OPIS TODO
+.. note::
+    For details when the Tedee device can ask for revoked certificates, please refer to: <BLE API documentation>.
 
 .. code-block:: sh
 

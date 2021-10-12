@@ -1,9 +1,15 @@
 Get for mobile
 =========================
 
-Get certificate for specific mobile/other device. 
+Get certificate for specific mobile device endpoint. To establish secure PTLS connection (Secure Bluetooth Connection)
+with Tedee device required is certificate obtained from this endpoint.
 
-Opis <TODO>
+.. note::
+    Refreshing the certificate is in scope of mobile.
+
+.. note::
+    To keep the connection alive, we recommend to refresh the certificate when validity is about 40-50%
+    remain validity period.
 
 .. code-block:: sh
 
@@ -22,11 +28,11 @@ Opis <TODO>
 Responses 
 -------------
 
-+--------+-----------------------------------------------------------------------------+----------------------+
-| Name   | Type                                                                        | Description          |
-+========+=============================================================================+======================+
-| 200 OK | :doc:`Certificates for mobile <../../datastructures/certificate-for-mobile` | successful operation |
-+--------+-----------------------------------------------------------------------------+----------------------+
++--------+------------------------------------------------------------------------------+----------------------+
+| Name   | Type                                                                         | Description          |
++========+==============================================================================+======================+
+| 200 OK | :doc:`Certificates for mobile <../../datastructures/certificate-for-mobile>` | successful operation |
++--------+------------------------------------------------------------------------------+----------------------+
 
 Scopes
 -------------
