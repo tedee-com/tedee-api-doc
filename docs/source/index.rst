@@ -39,6 +39,7 @@ Tedee API documentation
    endpoints/deviceactivity/index
    endpoints/deviceshare/index
    endpoints/lock/index
+   endpoints/lockpin/index
    endpoints/personalaccesskey/index
 
 .. toctree::
@@ -54,6 +55,9 @@ Tedee API documentation
    Execute command response <datastructures/execute-command>
    Location <datastructures/location>
    Lock <datastructures/lock>
+   Lock PIN <datastructures/lock-pin>
+   Lock PIN details <datastructures/lock-pin-details>
+   Lock PIN list <datastructures/lock-pin-list>
    Lock properties <datastructures/lock-properties>
    Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
