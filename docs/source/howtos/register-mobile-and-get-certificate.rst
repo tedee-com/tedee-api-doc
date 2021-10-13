@@ -107,7 +107,7 @@ HTTP status code: ``200``
 
 Using the certificate, mobile should be able to establish connection with Tedee device.
 
-Step 3: Get time for Tedee device
+Step 4: Get time for Tedee device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Tedee device require time updates. When the Tedee device is asking for current time, it can be obtained from Tedee API
@@ -133,7 +133,6 @@ HTTP status code: ``200``
         "statusCode": 200
     }
 
-Next steps:
-^^^^^^^^^^^
+**Next steps:**
 
 - TODO: Revoked certificates management.
