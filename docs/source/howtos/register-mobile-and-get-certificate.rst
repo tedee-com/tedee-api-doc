@@ -110,7 +110,7 @@ Using the certificate, mobile should be able to establish connection with Tedee 
 Step 4: Get time for Tedee device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Tedee device require time updates. When the Tedee device is asking for current time, it can be obtained from Tedee API
+Tedee device require current time. Firstly, during when connection is establishing, later when the Tedee device is asking for it. Current time can be obtained from Tedee API
 using `Get signed time <../endpoints/datetime/get-signed-time.html>`_ endpoint.
 
 .. code-block:: sh
