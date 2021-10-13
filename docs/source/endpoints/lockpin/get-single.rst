@@ -65,7 +65,7 @@ HTTP status code: ``200``
         "result": {
             "id": 2,
             "alias": "test pin 2",
-            "pin": "12345",
+            "pin": "192837",
             "startDate": "2021-10-01T00:00:00.000Z",
             "endDate": "2021-12-31T00:00:00.000Z",
             "dayStartTime": "2021-10-01T10:00:00.000Z",

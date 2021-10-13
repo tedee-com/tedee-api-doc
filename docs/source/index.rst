@@ -56,6 +56,7 @@ Tedee API documentation
    Location <datastructures/location>
    Lock <datastructures/lock>
    Lock PIN <datastructures/lock-pin>
+   Lock PIN created <datastructures/lock-pin-created>
    Lock PIN details <datastructures/lock-pin-details>
    Lock PIN list <datastructures/lock-pin-list>
    Lock properties <datastructures/lock-properties>

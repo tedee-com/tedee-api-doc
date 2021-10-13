@@ -1,7 +1,7 @@
 Create
 =========================
 
-Creates new personal access key
+Creates new personal access key.
 
 .. code-block:: sh
 
