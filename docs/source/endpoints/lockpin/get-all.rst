@@ -49,7 +49,7 @@ Examples
 Get a list of all pins for the lock with id 1 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample request**
 
 .. code-block:: sh
 
@@ -83,7 +83,7 @@ HTTP status code: ``200``
 Attempting to get a list of pins after providing the current version of the list 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample request**
 
 .. code-block:: sh
 

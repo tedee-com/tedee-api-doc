@@ -49,7 +49,7 @@ Examples
 Get pin details of pin id 2 for the lock with id 1 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample request**
 
 .. code-block:: sh
 
