@@ -8,7 +8,7 @@ The auth pair key is necessary to establish secure PTLS session (Secure Bluetoot
 .. note::
     Auth pair key generation is user responsibility.
 
-.. note::
+.. warning::
     Remember to keep private auth pair ECDSA private key only in mobile device.
 
 .. code-block:: sh

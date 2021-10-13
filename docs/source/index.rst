@@ -25,6 +25,7 @@ Tedee API documentation
    Authenticate <howtos/authenticate>
    Get and sync locks <howtos/get-and-sync-locks>
    Operate locks <howtos/operate-locks>
+   Register and use mobile <howtos/register-mobile-and-get-certificate>
    Update lock settings <howtos/update-lock-settings>
    Share device <howtos/share-device>
    Example integrations <howtos/example-integrations>
@@ -35,6 +36,7 @@ Tedee API documentation
    :caption: Endpoints
    :hidden:
 
+   endpoints/datetime/index
    endpoints/device/index
    endpoints/deviceactivity/index
    endpoints/devicecertificate/index
@@ -61,12 +63,14 @@ Tedee API documentation
    Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
    Mobile identifier <datastructures/mobile-identifier>
+   Mobile registered <datastructures/registered-mobile>
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
    Revoked mobile certificate <datastructures/revoked-certificate>
    Revoked mobile certificate list <datastructures/revoked-certificate-list>
    Share details <datastructures/share-details>
+   Signed time <datastructures/signed-time>
    Software versions <datastructures/software-versions>
    User settings <datastructures/user-settings>
 

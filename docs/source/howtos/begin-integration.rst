@@ -22,6 +22,7 @@ To learn step by step how to integrate with tedee, please follow these tutorials
 * :doc:`How to authenticate <authenticate>`
 * :doc:`Get and sync locks <get-and-sync-locks>`
 * :doc:`Operate locks <operate-locks>`
+* :doc:`Register mobile and get mobile certificate <register-mobile-and-get-certificate>`
 * :doc:`Update locks settings <update-lock-settings>`
 
 More information
@@ -29,6 +30,6 @@ More information
 
 If you need more information about integration please check following links:
 
-* You can user our logo but first read the :doc:`logo guidance <../../logo-guidance>`
+* You can user our logo but first read the :doc:`logo guidance <../logo-guidance>`
 * Check existing :doc:`integration examples <example-integrations>`
 * Use `community forum <https://tedee.freshdesk.com/en/support/discussions>`_ if you need help
