@@ -68,7 +68,7 @@ We support OAuth 2.0 code flow authorization to get the access token:
 |                                                                    |                                                                                             |
 |                                                                    | One time interaction with the user is needed to obtain the refresh token.                   |
 |                                                                    |                                                                                             |
-|                                                                    | Examples: mobile apps, service apps                                                                      |
+|                                                                    | Examples: mobile apps, service apps                                                         |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. warning::
