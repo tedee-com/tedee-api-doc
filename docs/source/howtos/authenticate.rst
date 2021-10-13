@@ -12,7 +12,7 @@ Each request of this API requires authentication. We utilizes OAuth 2.0 or Perso
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | :ref:`Oauth 2.0 <Oauth-20>`                                        | Standard OAuth 2.0 type of authentication based on tokens.                                  |
 |                                                                    |                                                                                             |
-|                                                                    | We support two flows Code and Implicit                                                      |
+|                                                                    | We only support code flow.                                                                  |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. _personal-access-key:
@@ -59,7 +59,7 @@ To use this type of authentication use schema PersonalKey in the Authorization h
 OAuth 2.0
 -----------
 
-We support two OAuth 2.0 authorization flows to get the access token:
+We support OAuth 2.0 code flow authorization to get the access token:
 
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | **Flow name**                                                      | **When to use**                                                                             |
@@ -68,13 +68,7 @@ We support two OAuth 2.0 authorization flows to get the access token:
 |                                                                    |                                                                                             |
 |                                                                    | One time interaction with the user is needed to obtain the refresh token.                   |
 |                                                                    |                                                                                             |
-|                                                                    | Examples: service apps                                                                      |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Implicit Flow <implicit-flow>`                               | When you cannot store refresh tokens.                                                       |
-|                                                                    |                                                                                             |
-|                                                                    | Interaction with the user is needed to obtain access tokens after they expire.              |
-|                                                                    |                                                                                             |
-|                                                                    | Examples: SPA, desktop apps                                                                 |
+|                                                                    | Examples: mobile apps, service apps                                                                      |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. warning::
@@ -225,74 +219,6 @@ Access tokens are short-lived. After they expire, you must refresh them to conti
     &scope={scope}
     &refresh_token={refresh_token}
     &redirect_uri={redirect_uri}
-
-
-
-.. _implicit-flow:
-
-Implicit Flow
-^^^^^^^^^^^^^^
-
-This flow should be used for applications that cannot store refresh tokens. 
-In this case, interaction with the user is needed to obtain access tokens after they expire.
-Access token is valid for 4 hours.
-
-.. note::
-    To receive the JWT using Implicit Flow you will need a **client id** issued for your application by Tedee.
-    You can find a guide to achieve that on `How to begin integration <begin-integration.html#get-client-id>`_ page.
-
-The authorization process begins with the GET request to the authorization endpoint. This is the interactive part of the flow, where the user takes action.
-
-.. code-block:: sh
-
-    GET |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/authorize
-    ?response_type=token
-    &client_id={client_id}
-    &redirect_uri={redirect_uri}
-    &response_mode=fragment
-    &scope={scope}
-    &state={state}
-    &nonce={nonce}
-
-* **client_id** - The client id assigned to your application.
-* **redirect_uri** - The redirect URI of your application, where authentication responses are sent and received by your application.
-* **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The "|scopePrefix|user_impersonation" scope is required (:ref:`list of available scopes <list-of-scopes>`).
-* **state** - A value included in the request that also is returned in the token response. It can be a string of any content that you want to use. Usually, a randomly generated unique value is used, to prevent cross-site request forgery attacks.
-* **nonce** - A value included in the request (generated by the app) that is included in the resulting token as a claim. The app can then verify this value to mitigate token replay attacks. Usually, the value is a randomized, unique string that can be used to identify the origin of the request.
-
-**Example**
-
-.. code-block:: sh
-
-    GET |authApiUrl|/B2C_1A_Signup_Signin_With_Kmsi/oauth2/v2.0/authorize
-    ?response_type=token
-    &client_id=bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996
-    &redirect_uri=https://yoursite.com/auth
-    &response_mode=fragment
-    &scope=https://tedee.onmicrosoft.com/api/user_impersonation%20https://tedee.onmicrosoft.com/api/Lock.Operate  
-    &state=d917d40e-0b1a-4495-8e23-e449c916a532
-    &nonce=defaultNonce
-
-After the user sign-in, a response will be sent to your application to the address specified in the **redirect_uri** parameter.
-
-A successful response looks like this:
-
-.. code-block:: sh
-
-    GET {redirect_uri}/#
-    access_token={access_token}
-    &token_type=Bearer
-    &expires_in=3600
-    &state={state}
-
-* **access_token** - The signed JSON Web Token (JWT) that you requested.
-* **token_type** - The token type value (Bearer).
-* **expires_in** - The length of time that the token is valid (in seconds).
-* **state** - If a state parameter is included in the request, the same value should appear in the response. The application should verify that the state values in the request and response are identical.
-
-The value of the :code:`access_token` property is your **JWT** that should be used to :ref:`authenticate your calls <add-jwt-to-the-headers>` to the API.
-Implicit Flow does not issue refresh tokens. Interaction with the user is required to obtain a new access token after the current one has expired.
-
 
 .. _add-jwt-to-the-headers:
 
