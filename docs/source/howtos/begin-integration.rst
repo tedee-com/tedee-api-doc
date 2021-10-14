@@ -14,16 +14,28 @@ For that please send the request for obtaining **client id** using this `form <h
 
 Based on above information, we will register your application in our system and send you **client id** and **client secret**.
 
-Tutorial
+Tutorials
 ------------
 
 To learn step by step how to integrate with tedee, please follow these tutorials:
+
+Integration via API
+^^^^^^^^^^^^^^^^^^^^
+
+These tutorials are intended for integrators who will use only Tedee API for integrations:
 
 * :doc:`How to authenticate <authenticate>`
 * :doc:`Get and sync locks <get-and-sync-locks>`
 * :doc:`Operate locks <operate-locks>`
 * :doc:`Register mobile and get mobile certificate <register-mobile-and-get-certificate>`
 * :doc:`Update locks settings <update-lock-settings>`
+
+Integration via BLE
+^^^^^^^^^^^^^^^^^^^^
+
+These tutorials are intended for integrators who wants to integrate with Tedee devices via Bluetooth connection:
+
+* :doc:`How to connect to Tedee device via Bluetooth <register-mobile-and-get-certificate>`
 
 More information
 ----------------
