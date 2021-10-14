@@ -70,7 +70,7 @@ This enum describes possible events in device activity logs
 +--------+------------------------+-------------------------------------------------------------------------------------------------------------------+
 | 63     | PullSpringByPin        | keypad sent unlock request when pull spring is enabled and lock was open and only pull spring was performed       |
 +--------+------------------------+-------------------------------------------------------------------------------------------------------------------+
-| 64     | PartiallyOpenByPin     | keypad sent unlock request and received lock status changed to partially open                                                                                                       |
+| 64     | PartiallyOpenByPin     | keypad sent unlock request and received lock status changed to partially open                                     |
 +--------+------------------------+-------------------------------------------------------------------------------------------------------------------+
 | 224    | FirmwareUpdateByBridge | device was updated by bridge                                                                                      |
 +--------+------------------------+-------------------------------------------------------------------------------------------------------------------+
