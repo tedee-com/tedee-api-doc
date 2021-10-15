@@ -2,7 +2,7 @@ How to manage PIN list of the lock
 ==================================
 
 If you have a lock paired with a keypad and your lock is also paired with a bridge, you can manage pins using API.
-In this tutorial we will walk through the process of listing, creating, updating and deleting pin for lock device.
+In this tutorial we will walk through the process of listing, creating, updating, and deleting pins for the lock device.
 
 Get current pin list
 --------------------

@@ -25,6 +25,8 @@ Responses
 +========================+=================================================================+==============================================+
 | 200 OK                 | :doc:`Lock PIN details <../../datastructures/lock-pin-details>` | successful operation                         |
 +------------------------+-----------------------------------------------------------------+----------------------------------------------+
+| 403 Forbidden          |                                                                 | user doesn't have permission to the lock     |
++------------------------+-----------------------------------------------------------------+----------------------------------------------+
 | 404 Not Found          |                                                                 | pin not found                                |
 +------------------------+-----------------------------------------------------------------+----------------------------------------------+
 | 408 Request Timeout    |                                                                 | timeout while fetching data from the device  |
@@ -71,6 +73,28 @@ HTTP status code: ``200``
             "dayStartTime": "2021-10-01T10:00:00.000Z",
             "dayEndTime": "2021-10-01T18:00:00.000Z",
             "weekDays": 1
+        },
+        "success": true,
+        "errorMessages": [],
+        "statusCode": 200
+    }
+
+**Sample response**
+
+HTTP status code: ``200``
+
+.. code-block:: js
+
+    {
+        "result": {
+            "id": 2,
+            "alias": "test pin 2",
+            "pin": "192837",
+            "startDate": null,
+            "endDate": null,
+            "dayStartTime": null,
+            "dayEndTime": null,
+            "weekDays": null
         },
         "success": true,
         "errorMessages": [],

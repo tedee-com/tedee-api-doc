@@ -25,6 +25,8 @@ Responses
 +=========================+==============================================+
 | 204 No Content          | successful operation                         |
 +-------------------------+----------------------------------------------+
+| 403 Forbidden           | user doesn't have permission to the lock     |
++-------------------------+----------------------------------------------+
 | 404 Not Found           | pin not found                                |
 +-------------------------+----------------------------------------------+
 | 408 Request Timeout     | timeout while sending data to the device     |
