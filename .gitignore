@@ -13,3 +13,5 @@ _build
 
 ### VisualStudio ###
 /.vs
+.DS_Store
+.gitignore
