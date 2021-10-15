@@ -41,7 +41,7 @@ Tedee Cloud is generating access certificates.
 When the auth key pair is generated on the mobile device, then it can be registered in Tedee Cloud.
 If you are integrating an external device operating system flag should be set to 3.
 
-To register new mobile use `Register mobile <../endpoints/mobile/register.html>`_ endpoint.
+To register new mobile you should use `Register mobile <../endpoints/mobile/register.html>`_ endpoint.
 
 **Sample request**
 
@@ -83,7 +83,7 @@ To establish a secure BLE connection with the Tedee device, an access certificat
 The access certificate is issued by Tedee Cloud with a 10-days validity period. The mobile device is responsible 
 for requesting and refreshing the access certificates. We recommend refreshing the certificate when validity is about 40-50% remain validity period. 
 
-To generate the certificate `Get for mobile <../endpoints/devicecertificate/get-for-mobile.html>`_ endpoint should be used.
+To generate the certificate you should use `Get for mobile <../endpoints/devicecertificate/get-for-mobile.html>`_ endpoint.
 
 **Sample request**
 
@@ -127,7 +127,7 @@ Step 4: Get time for Tedee device
 To establish a secure BLE connection Tedee device require current time for proper work. When the Tedee device is not having a current time set, 
 the mobile device is responsible for providing it.
 
-To get current time from Tedee API is returned `Get signed time <../endpoints/datetime/get-signed-time.html>`_ endpoint.
+To get current time from Tedee API you should use `Get signed time <../endpoints/datetime/get-signed-time.html>`_ endpoint.
 
 .. code-block:: sh
 

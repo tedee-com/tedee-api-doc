@@ -1,7 +1,7 @@
 Mobile
 =========================
 
-Endpoints used for listing, and creating mobiles or other user devices.
+Endpoints used for creating, listing, and deleting mobile devices.
 
 .. toctree::
    :maxdepth: 1

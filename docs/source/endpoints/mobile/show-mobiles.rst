@@ -1,7 +1,7 @@
 Show mobiles
 =========================
 
-Show mobile devices registered on user account..
+Show mobile devices registered on user account.
 
 .. code-block:: sh
 
