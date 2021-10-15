@@ -9,6 +9,7 @@ Endpoints used for listing, and creating mobiles or other user devices.
    
    Register <register>
    Show mobiles <show-mobiles>
+   Delete <delete>
 
 
 **Operations**

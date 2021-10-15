@@ -5,7 +5,7 @@ Get all revoked certificates for mobile device. When the Tedee devices is asking
 is able to return the revoked certificates.
 
 .. note::
-    For details when the Tedee device can ask for revoked certificates, please refer to: <BLE API documentation>.
+    For details when the Tedee device can ask for revoked certificates, please refer to: **Tedee BLE API Documentation**.
 
 .. code-block:: sh
 
