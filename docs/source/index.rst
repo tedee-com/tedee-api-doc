@@ -27,6 +27,7 @@ Tedee API documentation
    Operate locks <howtos/operate-locks>
    Update lock settings <howtos/update-lock-settings>
    Share device <howtos/share-device>
+   Connect to device via Bluetooth <howtos/connect-device-via-ble>
    Example integrations <howtos/example-integrations>
 
 .. toctree::
@@ -35,10 +36,13 @@ Tedee API documentation
    :caption: Endpoints
    :hidden:
 
+   endpoints/datetime/index
    endpoints/device/index
    endpoints/deviceactivity/index
+   endpoints/devicecertificate/index
    endpoints/deviceshare/index
    endpoints/lock/index
+   endpoints/mobile/index
    endpoints/personalaccesskey/index
 
 .. toctree::
@@ -46,7 +50,8 @@ Tedee API documentation
    :caption: Data structures
    :hidden:
 
-   Bridge <datastructures/bridge> 
+   Bridge <datastructures/bridge>
+   Certificate for mobile <datastructures/certificate-for-mobile>
    Device activities <datastructures/device-activity>
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
@@ -57,10 +62,15 @@ Tedee API documentation
    Lock properties <datastructures/lock-properties>
    Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
+   Mobile identifier <datastructures/mobile-identifier>
+   Mobile registered <datastructures/registered-mobile>
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
+   Revoked certificate <datastructures/revoked-certificate>
+   Revoked certificate list <datastructures/revoked-certificate-list>
    Share details <datastructures/share-details>
+   Signed time <datastructures/signed-time>
    Software versions <datastructures/software-versions>
    User settings <datastructures/user-settings>
 
@@ -75,6 +85,7 @@ Tedee API documentation
    Device type <enums/device-type>
    Event type <enums/event-type>
    Lock state <enums/lock-state>
+   Operating System type <enums/operating-system>
    Software type <enums/software-type>
    Unlock mode <enums/unlock-mode>
    Week days <enums/week-days>

@@ -14,21 +14,34 @@ For that please send the request for obtaining **client id** using this `form <h
 
 Based on above information, we will register your application in our system and send you **client id** and **client secret**.
 
-Tutorial
+Tutorials
 ------------
 
 To learn step by step how to integrate with tedee, please follow these tutorials:
 
+Integration via API
+^^^^^^^^^^^^^^^^^^^^
+
+These tutorials are intended for integrators who will use only Tedee API for integrations:
+
 * :doc:`How to authenticate <authenticate>`
 * :doc:`Get and sync locks <get-and-sync-locks>`
 * :doc:`Operate locks <operate-locks>`
+* :doc:`How to manage device shares <share-device>`
 * :doc:`Update locks settings <update-lock-settings>`
+
+Integration via BLE
+^^^^^^^^^^^^^^^^^^^^
+
+These tutorials are intended for integrators who wants to integrate with Tedee devices via Bluetooth connection:
+
+* :doc:`How to connect to Tedee device via Bluetooth <connect-device-via-ble>`
 
 More information
 ----------------
 
 If you need more information about integration please check following links:
 
-* You can user our logo but first read the :doc:`logo guidance <../../logo-guidance>`
+* You can user our logo but first read the :doc:`logo guidance <../logo-guidance>`
 * Check existing :doc:`integration examples <example-integrations>`
 * Use `community forum <https://tedee.freshdesk.com/en/support/discussions>`_ if you need help
