@@ -1,11 +1,11 @@
 Update
 =========================
 
-Update personal access key
+Update personal access key.
 
 .. code-block:: sh
 
-    POST |apiUrl|/api/|apiVersion|/my/personalaccesskey/{id}
+    PUT |apiUrl|/api/|apiVersion|/my/personalaccesskey/{id}
 
 **URI Parameters**
 
@@ -33,7 +33,7 @@ Responses
 +------------------------+-------------------------+
 | Name                   |Description              |
 +========================+=========+===============+
-| 204 NoContent          |successful operation     |
+| 204 No Content         |successful operation     |
 +------------------------+-------------------------+
 
 Scopes
@@ -73,8 +73,7 @@ HTTP status code: ``204``
 
 .. code-block:: js
 
-        {
-            "result": {}
+        {   
             "success": true,
             "errorMessages": [],
             "statusCode": 204

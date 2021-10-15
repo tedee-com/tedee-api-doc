@@ -27,6 +27,7 @@ Tedee API documentation
    Operate locks <howtos/operate-locks>
    Update lock settings <howtos/update-lock-settings>
    Share device <howtos/share-device>
+   Manage lock PIN list <howtos/manage-lock-pin-list>
    Connect to device via Bluetooth <howtos/connect-device-via-ble>
    Example integrations <howtos/example-integrations>
 
@@ -42,6 +43,7 @@ Tedee API documentation
    endpoints/devicecertificate/index
    endpoints/deviceshare/index
    endpoints/lock/index
+   endpoints/lockpin/index
    endpoints/mobile/index
    endpoints/personalaccesskey/index
 
@@ -59,6 +61,10 @@ Tedee API documentation
    Execute command response <datastructures/execute-command>
    Location <datastructures/location>
    Lock <datastructures/lock>
+   Lock PIN <datastructures/lock-pin>
+   Lock PIN created <datastructures/lock-pin-created>
+   Lock PIN details <datastructures/lock-pin-details>
+   Lock PIN list <datastructures/lock-pin-list>
    Lock properties <datastructures/lock-properties>
    Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
