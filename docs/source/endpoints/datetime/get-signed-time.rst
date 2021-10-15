@@ -31,7 +31,7 @@ Examples
 -------------
 
 Get signed time
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 **Sample Request**
 
