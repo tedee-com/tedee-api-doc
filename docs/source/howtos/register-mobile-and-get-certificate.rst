@@ -125,9 +125,9 @@ Step 4: Get time for Tedee device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To establish a secure BLE connection Tedee device require current time for proper work. When the Tedee device is not having a current time set, 
-the mobile should it to the Tedee device.
+the mobile device is responsible for providing it.
 
-To get current time from Tedee API is returned`Get signed time <../endpoints/datetime/get-signed-time.html>`_ endpoint.
+To get current time from Tedee API is returned `Get signed time <../endpoints/datetime/get-signed-time.html>`_ endpoint.
 
 .. code-block:: sh
 

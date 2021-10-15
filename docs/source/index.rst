@@ -25,9 +25,9 @@ Tedee API documentation
    Authenticate <howtos/authenticate>
    Get and sync locks <howtos/get-and-sync-locks>
    Operate locks <howtos/operate-locks>
-   Connect to device via Bluetooth <howtos/register-mobile-and-get-certificate>
    Update lock settings <howtos/update-lock-settings>
    Share device <howtos/share-device>
+   Connect to device via Bluetooth <howtos/register-mobile-and-get-certificate>
    Example integrations <howtos/example-integrations>
 
 .. toctree::
@@ -67,8 +67,8 @@ Tedee API documentation
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
-   Revoked mobile certificate <datastructures/revoked-certificate>
-   Revoked mobile certificate list <datastructures/revoked-certificate-list>
+   Revoked certificate <datastructures/revoked-certificate>
+   Revoked certificate list <datastructures/revoked-certificate-list>
    Share details <datastructures/share-details>
    Signed time <datastructures/signed-time>
    Software versions <datastructures/software-versions>
