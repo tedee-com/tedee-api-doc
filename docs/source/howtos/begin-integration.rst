@@ -35,7 +35,7 @@ Integration via BLE
 
 These tutorials are intended for integrators who wants to integrate with Tedee devices via Bluetooth connection:
 
-* :doc:`How to connect to Tedee device via Bluetooth <register-mobile-and-get-certificate>`
+* :doc:`How to connect to Tedee device via Bluetooth <connect-device-via-ble>`
 
 More information
 ----------------

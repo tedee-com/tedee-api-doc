@@ -27,7 +27,7 @@ Tedee API documentation
    Operate locks <howtos/operate-locks>
    Update lock settings <howtos/update-lock-settings>
    Share device <howtos/share-device>
-   Connect to device via Bluetooth <howtos/register-mobile-and-get-certificate>
+   Connect to device via Bluetooth <howtos/connect-device-via-ble>
    Example integrations <howtos/example-integrations>
 
 .. toctree::
