@@ -27,7 +27,7 @@ These tutorials are intended for integrators who will use only Tedee API for int
 * :doc:`How to authenticate <authenticate>`
 * :doc:`Get and sync locks <get-and-sync-locks>`
 * :doc:`Operate locks <operate-locks>`
-* :doc:`Register mobile and get mobile certificate <register-mobile-and-get-certificate>`
+* :doc:`How to manage device shares <share-device>`
 * :doc:`Update locks settings <update-lock-settings>`
 
 Integration via BLE

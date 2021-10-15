@@ -6,9 +6,9 @@ Certificate for mobile
 +=================+==========+=============================+
 | certificate     | string   | certificate string          |
 +-----------------+----------+-----------------------------+
-| expirationDate  | dateTime | certificate expiration date |
-+-----------------+----------+-----------------------------+
 | devicePublicKey | string   | Tedee device public key     |
++-----------------+----------+-----------------------------+
+| expirationDate  | dateTime | certificate expiration date |
 +-----------------+----------+-----------------------------+
 | mobilePublicKey | string   | mobile public key           |
 +-----------------+----------+-----------------------------+

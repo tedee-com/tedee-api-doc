@@ -25,7 +25,7 @@ Tedee API documentation
    Authenticate <howtos/authenticate>
    Get and sync locks <howtos/get-and-sync-locks>
    Operate locks <howtos/operate-locks>
-   Register and use mobile <howtos/register-mobile-and-get-certificate>
+   Connect to device via Bluetooth <howtos/register-mobile-and-get-certificate>
    Update lock settings <howtos/update-lock-settings>
    Share device <howtos/share-device>
    Example integrations <howtos/example-integrations>

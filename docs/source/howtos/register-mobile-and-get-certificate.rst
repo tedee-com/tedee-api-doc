@@ -77,16 +77,17 @@ If the registration succeed it means, your device is properly registered in Tede
 
 Step 3: Get certificate for mobile device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To establish a secure BLE connection with the Tedee device, an access certificate is required. This certificated is read and validated by the Tedee device.
+
+To establish a secure BLE connection with the Tedee device, an access certificate is required. This certificate is read and validated by the Tedee device.
 
 The access certificate is issued by Tedee Cloud with a 10-days validity period. The mobile device is responsible 
-for requesting and refreshing the access certificates. we recommend refreshing the certificate when validity is about 40-50% remain validity period. 
+for requesting and refreshing the access certificates. We recommend refreshing the certificate when validity is about 40-50% remain validity period. 
 
 To generate the certificate `Get for mobile <../endpoints/devicecertificate/get-for-mobile.html>`_ endpoint should be used.
 
 **Sample request**
 
-.. code-block:: sh
+.. code-block:: js
 
     GET |apiUrl|/api/|apiVersion|/my/devicecertificate/getformobile?mobileId=123&deviceId=1
 

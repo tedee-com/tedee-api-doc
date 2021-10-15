@@ -1,7 +1,7 @@
 Show mobiles
 =========================
 
-Show registered mobile devices in Tedee Cloud.
+Show mobile devices registered on user account..
 
 .. code-block:: sh
 
