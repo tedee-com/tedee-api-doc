@@ -16,8 +16,8 @@ Prequisities
     - Tedee device should be added to user account. 
 
 
-Step 1: Generate EXaauth pair key on the mobile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1: Generate ECSDA auth pair key on the mobile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Tedee devices are communicating only with other trusted devices. As a first step, on the mobile device, an ECDSA auth key pair should be generated.
 
