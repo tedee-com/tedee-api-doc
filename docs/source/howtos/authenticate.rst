@@ -92,7 +92,8 @@ second request to obtain the access token with refresh token. Access token allow
 Use the refresh token to periodically exchange it for new access tokens. Refresh token is valid for 14 days.  
 For more details read the `Microsoft documentation <https://docs.microsoft.com/en-us/azure/active-directory-b2c/authorization-code-flow>`_.
 
-Below examples describes how to use the Code Flow + PKCE + Secret. Do not implement it by self, instead use existing libraries like:
+Example below, describes how to use the Code Flow + PKCE + Secret. Do not implement it by self, instead use existing libraries like:
+
  - `MSAL for Android <https://github.com/AzureAD/microsoft-authentication-library-for-android>`_
  - `MSAL for iOS <https://github.com/AzureAD/microsoft-authentication-library-for-objc>`_
  - `MSAL for Python <https://github.com/AzureAD/microsoft-authentication-library-for-python>`_
@@ -314,11 +315,11 @@ Below is a list of available scopes that can be requested during the authorizati
 | Lock.Operate                             | Perform lock, unlock and pull spring operations on lock.                                                                                                                  |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Mobile.Read                              | View user registered mobiles.                                                                                                                                             |
-+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Mobile.ReadWrite                         | Manage user mobile or other devices.                                                                                                                                      |
-+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | DeviceCertificate.Operate                | Access devices certificates.                                                                                                                                              |
-+-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
 
