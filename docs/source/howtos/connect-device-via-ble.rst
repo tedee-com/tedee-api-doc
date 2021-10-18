@@ -1,5 +1,5 @@
 How to connect to Tedee device via Bluetooth
-======================================================
+============================================
 
 As an integrator, you may want to establish a secure connection between the Tedee device and your device over BLE. To do that you need
 to register your device and generate a certificate for it. In this tutorial, we will cover how to register a new integration device
@@ -11,16 +11,15 @@ in Tedee Cloud (e.g. mobile device) and manage access certificates for it.
 
     In this tutorial, we will name a device that wants to establish a secure connection over BLE with the Tedee device as **mobile**.
 
-Prequisities
-^^^^^^^^^^^^^
-    - Tedee device should be added to user account. 
+**Prerequisites:**
+
+    - Tedee device should be added to Tedee account.
 
 
 Step 1: Generate ECSDA auth pair key on the mobile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------
 
 The Tedee devices are communicating only with other trusted devices. As a first step, on the mobile device, an ECDSA auth key pair should be generated.
-
 Tedee devices are using the ECDSA cryptography algorithm with uses elliptic curve cryptography. The elliptic curve base point 256 is used.
 
 .. note::
@@ -34,12 +33,13 @@ Tedee devices are using the ECDSA cryptography algorithm with uses elliptic curv
 
 
 Step 2: Register mobile device
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
+
 Only mobiles registered in Tedee Cloud can establish secure Bluetooth connections with Tedee devices. For those mobiles, 
 Tedee Cloud is generating access certificates. 
 
 When the auth key pair is generated on the mobile device, then it can be registered in Tedee Cloud.
-If you are integrating an external device operating system flag should be set to 3.
+If you are integrating an external device operating system flag should be set to ``3``.
 
 To register new mobile you should use `Register mobile <../endpoints/mobile/register.html>`_ endpoint.
 
@@ -55,9 +55,9 @@ To register new mobile you should use `Register mobile <../endpoints/mobile/regi
 .. code-block:: js
 
         {
-            "name": "<<integration device name>>",
+            "name": "{integration device name}",
             "operatingSystem": 3,
-            "publicKey": "<<public as base64 key generated in step 1>>"
+            "publicKey": "{public as base64 key generated in step 1}"
         }
 
 **Sample response**
@@ -73,10 +73,11 @@ To register new mobile you should use `Register mobile <../endpoints/mobile/regi
             "statusCode": 201
         }
 
-If the registration succeed it means, your device is properly registered in Tedee Cloud. Mobile identifier should be saved.
+If the registration succeed it means, your device is properly registered in Tedee Cloud. You should save the ``mobile identifier`` on the device, 
+it will be used to retrieve and refresh access certificate.
 
 Step 3: Get certificate for mobile device
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------
 
 To establish a secure BLE connection with the Tedee device, an access certificate is required. This certificate is read and validated by the Tedee device.
 
@@ -87,15 +88,13 @@ To generate the certificate you should use `Get for mobile <../endpoints/devicec
 
 **Sample request**
 
-.. code-block:: js
+.. code-block:: sh
 
     GET |apiUrl|/api/|apiVersion|/my/devicecertificate/getformobile?mobileId=123&deviceId=1
 
 In the response the certificate data will be returned. 
 
 **Sample response**
-
-HTTP status code: ``200``
 
 .. code-block:: js
 
@@ -113,16 +112,18 @@ HTTP status code: ``200``
             "statusCode": 200
         }
 
-The 'result.certificate' field is containing the certificate issued by Tedee Cloud. The 'result.expirationDate' is containing the date when the access certificate will expire.
-The 'result.certificate' field value should be passed to the Tedee device as the certificate.
+The ``result.certificate`` contains the certificate issued by Tedee Cloud, it must be passed to Tedee device when the connection is established.
 
 .. note::
     The access certificate is returned in bytes in Base64 format.
 
-For more details find **Tedee BLE API documentation**.
+Step 4: Connect to Tedee Lock
+-----------------------------
 
-Step 4: Get time for Tedee device
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Now you are ready to establish Bluetooth connection with Tedee Lock, for details read the `Tedee BLE API documentation <https://tedee-tedee-lock-ble-api-doc.readthedocs-hosted.com/en/latest/index.html>`_.
+
+Step 4.1: Get time for Tedee device
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To establish a secure BLE connection Tedee device require current time for proper work. When the Tedee device is not having a current time set, 
 the mobile device is responsible for providing it.
@@ -135,8 +136,6 @@ To get current time from Tedee API you should use `Get signed time <../endpoints
 
 **Sample response**
 
-HTTP status code: ``200``
-
 .. code-block:: js
 
     {
@@ -148,6 +147,3 @@ HTTP status code: ``200``
         "errorMessages": [],
         "statusCode": 200
     }
-
-**More information**
-    - Tedee BLE API documentation   
