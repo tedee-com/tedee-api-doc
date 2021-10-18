@@ -323,4 +323,4 @@ Below is a list of available scopes that can be requested during the authorizati
 
 .. note::
 
-    To request scope in OAuth the name must be used together with resource name. To request for scope ``Account.Read`` then you must use ``https://tedee.onmicrosoft.com/api/Account.Read`` name.
+    To request scope in OAuth the name must be used together with resource name. To request for ``Account.Read`` scope, you must use the ``https://tedee.onmicrosoft.com/api/Account.Read`` name.
