@@ -73,7 +73,7 @@ In this case user will have access only from monday to friday between 8:00 and 1
 
     "repeatEvent": {
         "weekDays": 31,
-        "dayStartTime": "2020-12-01T8:00:00.000Z",
+        "dayStartTime": "2020-12-01T08:00:00.000Z",
         "dayEndTime": "2020-12-31T16:00:00.000Z",
         "startDate": null,
         "endDate": null

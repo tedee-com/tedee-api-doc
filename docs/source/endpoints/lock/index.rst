@@ -1,7 +1,7 @@
 Lock
 =========================
 
-Endpoints used for listing, creating, updating and operating locks.
+Endpoints used for listing, updating and operating locks.
 
 .. toctree::
    :maxdepth: 1
