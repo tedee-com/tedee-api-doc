@@ -24,7 +24,7 @@ Update personal access key.
 +--------------------+---------------+----------------------------------------------------------------+
 | validTo            | datetime      | date when key expires (max 5 years)                            |
 +--------------------+---------------+----------------------------------------------------------------+
-| scopes             | string[]      | array of :ref:`scopes <list-of-scopes>` that is assigned to key|
+| scopes             | string[]      | table of :ref:`scopes <list-of-scopes>` that is assigned to key|
 +--------------------+---------------+----------------------------------------------------------------+
 
 Responses 
