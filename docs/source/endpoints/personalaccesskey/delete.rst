@@ -1,11 +1,11 @@
-Update
+Delete
 =========================
 
-Update personal access key.
+Delete personal access key.
 
 .. code-block:: sh
 
-    PUT |apiUrl|/api/|apiVersion|/my/personalaccesskey/{id}
+    DELETE |apiUrl|/api/|apiVersion|/my/personalaccesskey/{id}
 
 **URI Parameters**
 
@@ -15,17 +15,6 @@ Update personal access key.
 | id                 | UUID          | id of the personal access key                      |
 +--------------------+---------------+----------------------------------------------------+
 
-**Body Parameters**
-
-+--------------------+---------------+----------------------------------------------------------------+
-| Name               | Type          | Description                                                    |
-+====================+===============+================================================================+
-| name               | string        | name of the personal access key                                |
-+--------------------+---------------+----------------------------------------------------------------+
-| validTo            | datetime      | date when key expires (max 5 years)                            |
-+--------------------+---------------+----------------------------------------------------------------+
-| scopes             | string[]      | table of :ref:`scopes <list-of-scopes>` that is assigned to key|
-+--------------------+---------------+----------------------------------------------------------------+
 
 Responses 
 -------------
@@ -52,20 +41,8 @@ Examples
 
 .. code-block:: sh
 
-    curl -X PUT "|apiUrl|/api/|apiVersion|/my/personalaccesskey/bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/personalaccesskey/bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
 
-Body:
-
-.. code-block:: js
-
-        {
-            "name": "SomeExampleKeyName",
-            "validTo": "2021-04-26T06:02:04.197Z",
-            "scopes": [
-                "Device.Read",
-                "Organization.ReadWrite"
-            ]
-        }
 
 **Sample response**
 

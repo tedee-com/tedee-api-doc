@@ -16,7 +16,7 @@ Creates new personal access key.
 +--------------------+---------------+----------------------------------------------------------------+
 | validTo            | datetime      | date when key expires (max 5 years)                            |
 +--------------------+---------------+----------------------------------------------------------------+
-| scopes             | list<string>  | list of :ref:`scopes <list-of-scopes>` that is assigned to key |
+| scopes             | string[]      | table of :ref:`scopes <list-of-scopes>` that is assigned to key|
 +--------------------+---------------+----------------------------------------------------------------+
 
 Responses 
