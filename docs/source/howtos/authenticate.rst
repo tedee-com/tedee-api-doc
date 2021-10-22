@@ -124,8 +124,8 @@ The authorization process begins with the GET request to the authorization endpo
 * **redirect_uri** - The redirect URI of your application, where authentication responses are sent and received by your application.
 * **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The "|scopePrefix|user_impersonation" scope is required (:ref:`list of available scopes <list-of-scopes>`).
 * **state** - A randomly generated unique value is used, to prevent cross-site request forgery attacks.
-* **code_challenge** - Used to secure authorization code grants via Proof Key for Code Exchange (PKCE). For details check the PKCE documentation.
-* **code_challenge_method** - Can be `s256` (recommended) or `plain`. For details check the PKCE documentation.
+* **code_challenge** - Used to secure authorization code grants via Proof Key for Code Exchange (PKCE). For details check the `PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_.
+* **code_challenge_method** - Can be `s256` (recommended) or `plain` (`PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_).
 
 **Example**
 
@@ -173,6 +173,7 @@ After successfully receiving the authorization code, you can use it to request a
 * **client_id** - The client id assigned to your application.
 * **client_secret** - The application client secret.
 * **code** - The authorization code that you acquired in the first step of the flow.
+* **code_verifier** - For `plain` method use the same value as for ``code_challenge`` (`PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_).
 * **redirect_uri** - The redirect URI of the application where you received the authorization code.
 
 .. warning::
