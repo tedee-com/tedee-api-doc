@@ -1,5 +1,5 @@
-How to connect to Tedee device via Bluetooth
-============================================
+How to prepare your device to connect to Tedee Lock via Bluetooth
+=================================================================
 
 As an integrator, you may want to establish a secure connection between the Tedee device and your device over BLE. To do that you need
 to register your device and generate a certificate for it. In this tutorial, we will cover how to register a new integration device

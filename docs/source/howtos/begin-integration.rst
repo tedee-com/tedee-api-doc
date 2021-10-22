@@ -1,21 +1,21 @@
 How to begin integration
 ========================
 
-Hi, so you want to write some integration? Chose one of supported scenarios: Full internet or Bluetooth, follow provided steps and have fun.
+Hi, so you want to write some integration? Choose one of supported scenarios: Full internet or Bluetooth, follow provided steps and have fun.
 
 .. _get-client-id:
 
 Integration via API
 -------------------
 
-You both a Tedee Lock and you want to write some automation? You want to create a plugin to existing Smart Home system to integrate it with 
+You bought a Tedee Lock and you want to write some automation? You want to create a plugin to existing Smart Home system to integrate it with 
 Tedee Lock via internet? Your company provide smart home platform and want to integrate with Tedee Lock via internet? 
 You are in good place, our Open REST API allows you do everything what you need. 
 
 You will need:
 
 * Tedee Lock added to your Tedee account
-* Tedee Bridge connected to the Interned and paired with the lock
+* Tedee Bridge connected to the Internet and paired with the lock
 
 Follow these tutorials:
 
@@ -28,7 +28,7 @@ Follow these tutorials:
 Integration via Bluetooth
 -------------------------
 
-If you already have own bridge/device then you can connect it to Tedee Lock via Bluetooth. 
+If you already own bridge/device then you can connect it to Tedee Lock via Bluetooth. 
 Your device must have internet connection to refresh access certificate used to communicate with Tedee Lock.
 
 You will need:
