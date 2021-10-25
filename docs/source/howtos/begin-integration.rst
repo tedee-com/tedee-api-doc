@@ -1,28 +1,23 @@
 How to begin integration
 ========================
 
-All the endpoints exposed on this API require authentication.
-You can find a guide to achieve that on :doc:`../howtos/authenticate` page.
+Hi, so you want to write some integration? Choose one of supported scenarios: Full internet or Bluetooth, follow provided steps and have fun.
 
 .. _get-client-id:
 
-Client id for you application
------------------------------
-
-If you want to use Code Flow or Implicit Flow in the authorization process, you will need a **client id** issued for your application by Tedee. 
-For that please send the request for obtaining **client id** using this `form <https://forms.office.com/Pages/ResponsePage.aspx?id=ibO271oOn0SweG6SXqsY5mzyA4EPEdlFuUag8sIe36JUNUU4VExYVksxTlU5WDRKUFNHTFdZT0Q3Ni4u>`_.
-
-Based on above information, we will register your application in our system and send you **client id** and **client secret**.
-
-Tutorials
-------------
-
-To learn step by step how to integrate with tedee, please follow these tutorials:
-
 Integration via API
-^^^^^^^^^^^^^^^^^^^^
+-------------------
 
-These tutorials are intended for integrators who will use only Tedee API for integrations:
+You bought a Tedee Lock and you want to write some automation? You want to create a plugin to existing Smart Home system to integrate it with 
+Tedee Lock via internet? Your company provide smart home platform and want to integrate with Tedee Lock via internet? 
+You are in good place, our Open REST API allows you do everything what you need. 
+
+You will need:
+
+* Tedee Lock added to your Tedee account
+* Tedee Bridge connected to the Internet and paired with the lock
+
+Follow these tutorials:
 
 * :doc:`How to authenticate <authenticate>`
 * :doc:`Get and sync locks <get-and-sync-locks>`
@@ -30,12 +25,22 @@ These tutorials are intended for integrators who will use only Tedee API for int
 * :doc:`How to manage device shares <share-device>`
 * :doc:`Update locks settings <update-lock-settings>`
 
-Integration via BLE
-^^^^^^^^^^^^^^^^^^^^
+Integration via Bluetooth
+-------------------------
 
-These tutorials are intended for integrators who wants to integrate with Tedee devices via Bluetooth connection:
+If you already own bridge/device then you can connect it to Tedee Lock via Bluetooth. 
+Your device must have internet connection to refresh access certificate used to communicate with Tedee Lock.
 
-* :doc:`How to connect to Tedee device via Bluetooth <connect-device-via-ble>`
+You will need:
+
+* Tedee Lock added to your Tedee account
+* Your own bridge/device with internet connection
+
+Follow these tutorials:
+
+* :doc:`How to authenticate <authenticate>`
+* :doc:`How to prepare your device to connect to Tedee Lock via Bluetooth <connect-device-via-ble>`
+* `How to connect your device to Tedee Lock via Bluetooth <https://tedee-tedee-lock-ble-api-doc.readthedocs-hosted.com/en/latest/howtos/begin-integration.html>`_
 
 More information
 ----------------
