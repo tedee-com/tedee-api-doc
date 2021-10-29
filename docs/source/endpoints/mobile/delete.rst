@@ -9,11 +9,11 @@ Remove mobile device from user account.
 
 **URI Parameters**
 
-+------+--------+--------------------+
-| Name | Type   | Description        |
-+======+========+====================+
-| id   | number | mobile identidfier |
-+------+--------+--------------------+
++------+--------+--------------------------+
+| Name | Type   | Description              |
++======+========+==========================+
+| id   | number | mobile device identifier |
++------+--------+--------------------------+
 
 Responses 
 -------------
