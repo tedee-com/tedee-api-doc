@@ -9,11 +9,11 @@ Remove mobile device from user account.
 
 **URI Parameters**
 
-+------+--------+--------------------+
-| Name | Type   | Description        |
-+======+========+====================+
-| id   | number | mobile identidfier |
-+------+--------+--------------------+
++------+--------+---------------------------+
+| Name | Type   | Description               |
++======+========+===========================+
+| id   | UUID   | mobile device identifier  |
++------+--------+---------------------------+
 
 Responses 
 -------------
@@ -40,7 +40,7 @@ Examples
 
 .. code-block:: sh
 
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/mobile/1" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/mobile/7f8da1c1-18fb-4d79-8c19-5add0e7b92b2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 **Sample response**
 

@@ -66,7 +66,7 @@ To register new mobile you should use `Register mobile <../endpoints/mobile/regi
 
         {
             "result": {
-                "id": 123,
+                "id": "7f8da1c1-18fb-4d79-8c19-5add0e7b92b2",
             }
             "success": true,
             "errorMessages": [],
@@ -90,7 +90,7 @@ To generate the certificate you should use `Get for mobile <../endpoints/devicec
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/devicecertificate/getformobile?mobileId=123&deviceId=1
+    GET |apiUrl|/api/|apiVersion|/my/devicecertificate/getformobile?mobileId=7f8da1c1-18fb-4d79-8c19-5add0e7b92b2&deviceId=1
 
 In the response the certificate data will be returned. 
 

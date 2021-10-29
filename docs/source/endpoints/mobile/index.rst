@@ -8,11 +8,13 @@ Endpoints used for creating, listing, and deleting mobile devices.
    :hidden:
    
    Register <register>
-   Show mobiles <show-mobiles>
+   Get all <get-all>
+   Get single <get-single>
    Delete <delete>
-
 
 **Operations**
 
 - `Register <register.html>`_
-- `Show mobiles <show-mobiles.html>`_
+- `Get all <get-all.html>`_
+- `Get single <get-single.html>`_
+- `Delete <delete.html>`_
