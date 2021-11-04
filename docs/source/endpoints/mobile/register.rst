@@ -72,7 +72,7 @@ HTTP status code: ``201``
 
         {
             "result": {
-                "id": 123,
+                "id": "7f8da1c1-18fb-4d79-8c19-5add0e7b92b2",
             }
             "success": true,
             "errorMessages": [],

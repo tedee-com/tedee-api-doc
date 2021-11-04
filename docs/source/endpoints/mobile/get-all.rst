@@ -1,4 +1,4 @@
-Show mobiles
+Get all
 =========================
 
 Show mobile devices registered on user account.
@@ -46,20 +46,20 @@ HTTP status code: ``200``
         {
             "result": [
                 {
-                "id": 123,
+                "id": "7f8da1c1-18fb-4d79-8c19-5add0e7b92b2",
                 "userIdentity": "00000000-0000-0000-0000-000000000001",
                 "name": "iPhone Device",
                 "operatingSystem": 0
                 },
                 {
-                "id": 456,
-                "userIdentity": "00000000-0000-0000-0000-000000000002",
+                "id": "ed9b5e77-5c1e-4d2d-8435-1f2a352f6165",
+                "userIdentity": "00000000-0000-0000-0000-000000000001",
                 "name": "Android Device",
                 "operatingSystem": 1
                 },
                 {
-                "id": 789,
-                "userIdentity": "00000000-0000-0000-0000-000000000003",
+                "id": "35de00bc-a889-4e3d-8fd4-79114e7afa90",
+                "userIdentity": "00000000-0000-0000-0000-000000000001",
                 "name": "Integration Device",
                 "operatingSystem": 3
                 }

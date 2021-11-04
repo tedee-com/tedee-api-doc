@@ -4,5 +4,5 @@ Mobile identifier
 +------+--------+--------------------------+
 | Name | Type   | Description              |
 +======+========+==========================+
-| id   | number | mobile device identifier |
+| id   | UUID   | mobile device identifier |
 +------+--------+--------------------------+

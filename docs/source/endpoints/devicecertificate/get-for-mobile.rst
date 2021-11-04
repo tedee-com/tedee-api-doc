@@ -20,7 +20,7 @@ with Tedee device required is certificate obtained from this endpoint.
 +----------+--------+---------------------+
 | Name     | Type   | Description         |
 +==========+========+=====================+
-| mobileId | number | id of mobile device |
+| mobileId | UUID   | id of mobile device |
 +----------+--------+---------------------+
 | deviceId | number | id of Tedee device  |
 +----------+--------+---------------------+
@@ -53,7 +53,7 @@ Get certificate for mobile
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/devicecertificate/getformobile?mobileId=123&deviceId=456" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/devicecertificate/getformobile?mobileId=7f8da1c1-18fb-4d79-8c19-5add0e7b92b2&deviceId=456" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 **Sample response**
