@@ -31,7 +31,7 @@ To do this use you can use Tedee Portal or the :doc:`Create Personal Access Key 
     Treat the PAK as your password, keep it in a safe place and don't share it with anyone. Anyone who knows it can use it to gain access to your locks.
 
 Add PAK using Tedee Portal
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the `Tedee Portal - Personal Access Keys <https://portal.tedee.com/personal-access-keys>`_ page. Here you see the list of personal access keys created by you.
 You can navigate to this page by clicking in the top right corner, on your credentials and selecting the `Personal Access Keys` in the user menu.
@@ -58,7 +58,7 @@ Type the personal access key name, choose the expiration date and select the sco
 The personal key is created. Remember to save your key. You can copy the key by clicking the copy button located on the right side of the `My new key` textbox.
 
 Add PAK using Tedee API
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
