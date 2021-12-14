@@ -25,10 +25,58 @@ Personal Access Key
 --------------------------
 
 Best way to start writing integration. To authenticate via personal access key (PAK) first you need to generate it on your account. 
-To do this use the :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint, remember to provide correct scopes.
+To do this use you can use Tedee Portal or the :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint, remember to provide correct access scopes.
 
 .. warning::
     Treat the PAK as your password, keep it in a safe place and don't share it with anyone. Anyone who knows it can use it to gain access to your locks.
+
+Add PAK using Tedee Portal
+--------------------------
+
+Open the `Tedee Portal - Personal Access Keys <https://portal.tedee.com/personal-access-keys>`_. Here you see the list of personal access keys created by you.
+You can edit, regenerate, delete or add new keys from here.
+
+If you want to add a new personal access key, click `Add key` located in the top right corner of the screen. After clicking the button sidebar on the right screen should appear.
+
+.. image:: ../images/pak_add_key.png
+    :align: center
+    :width: 600
+    :alt: add personal key
+
+|
+
+Type the personal access key name, choose the expiration date and select the scopes. You need to select at least one access scope.
+
+.. image:: ../images/pak_created.png
+    :align: center
+    :width: 400
+    :alt: personal key created
+
+| 
+
+The personal key is created. Remember to save your key. You can copy the key by clicking the copy button located on the right side of the `My new key` textbox.
+
+Add PAK using Tedee API
+------------------------
+
+**Sample request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/personalaccesskey" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+
+Body:
+
+.. code-block:: js
+
+        {
+            "name": "SomeExampleKeyName",
+            "validTo": "2021-04-26T06:02:04.197Z",
+            "scopes": [
+                "Device.Read",
+                "Organization.ReadWrite"
+            ]
+        }
 
 **Sample response**
 
@@ -44,7 +92,7 @@ To do this use the :doc:`Create Personal Access Key <../endpoints/personalaccess
             "statusCode": 201
         }
 
-The PAK is in ``result.key`` and now can be used to authenticate your requests, just put it in the ``Authorization`` header.
+The PAK is in ``result.key`` and now can be used to authenticate your requests, just put it in the ``Authorization`` header using ``PersonalKey`` schema prefix.
 
 **Sample request to get lock using PAK**
 
