@@ -26,11 +26,12 @@ Personal Access Key
 
 Best way to start writing integration. To authenticate via personal access key (PAK) first you need to generate it on your account. 
 To do this use you can use `Tedee Portal <portal.tedee.com>`_.
+
 .. warning::
     Treat the PAK as your password, keep it in a safe place and don't share it with anyone. Anyone who knows it can use it to gain access to your locks.
 
-Add PAK using Tedee Portal
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Generate PAK using Tedee Portal
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the `Tedee Portal - Personal Access Keys <https://portal.tedee.com/personal-access-keys>`_ page. Here you see the list of personal access keys created by you.
 You can navigate to this page by clicking in the top right corner, on your initials and selecting the `Personal Access Keys` in the user menu.
