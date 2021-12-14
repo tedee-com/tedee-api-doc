@@ -33,7 +33,8 @@ To do this use you can use Tedee Portal or the :doc:`Create Personal Access Key 
 Add PAK using Tedee Portal
 --------------------------
 
-Open the `Tedee Portal - Personal Access Keys <https://portal.tedee.com/personal-access-keys>`_. Here you see the list of personal access keys created by you.
+Open the `Tedee Portal - Personal Access Keys <https://portal.tedee.com/personal-access-keys>`_ page. Here you see the list of personal access keys created by you.
+You can navigate to this page by clicking in the top right corner, on your credentials and selecting the `Personal Access Keys` in the user menu.
 You can edit, regenerate, delete or add new keys from here.
 
 If you want to add a new personal access key, click `Add key` located in the top right corner of the screen. After clicking the button sidebar on the right screen should appear.
