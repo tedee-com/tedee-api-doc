@@ -22,29 +22,40 @@ Each request of this API requires authentication. We utilizes OAuth 2.0 or Perso
 .. _personal-access-key:
 
 Personal Access Key
---------------------------
+--------------------
 
 Best way to start writing integration. To authenticate via personal access key (PAK) first you need to generate it on your account. 
-To do this use the :doc:`Create Personal Access Key <../endpoints/personalaccesskey/create>` endpoint, remember to provide correct scopes.
+To do this you can use `Tedee Portal <https://portal.tedee.com>`_.
 
 .. warning::
     Treat the PAK as your password, keep it in a safe place and don't share it with anyone. Anyone who knows it can use it to gain access to your locks.
 
-**Sample response**
+Generate PAK using Tedee Portal
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: js
+Open the `Tedee Portal - Personal Access Keys <https://portal.tedee.com/personal-access-keys>`_ page. Here you see the list of personal access keys created by you.
+You can navigate to this page by clicking in the top right corner, on your initials and selecting the `Personal Access Keys` in the user menu.
+You can edit, regenerate, delete or add new keys from here.
 
-        {
-            "result": {
-                "id": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
-                "key": "smnxaz.IWA6u00VLQmA8tlfioDXcH+bSiI6u8LgTG9cv3Evh/E"
-            }
-            "success": true,
-            "errorMessages": [],
-            "statusCode": 201
-        }
+If you want to add a new personal access key, click `Add key` located in the top right corner of the screen. After clicking the button sidebar on the right screen should appear.
 
-The PAK is in ``result.key`` and now can be used to authenticate your requests, just put it in the ``Authorization`` header.
+.. image:: ../images/pak_add_key.png
+    :align: center
+    :width: 600
+    :alt: add personal key
+
+|
+
+Type the personal access key name, choose the expiration date and select the access scopes required by your integration.
+
+.. image:: ../images/pak_created.png
+    :align: center
+    :width: 400
+    :alt: personal key created
+
+| 
+
+The personal key is created. Remember to save your key. You can copy the key by clicking the copy button located on the right side of the `My new key` textbox.
 
 **Sample request to get lock using PAK**
 
@@ -93,7 +104,6 @@ Use the refresh token to periodically exchange it for new access tokens. Refresh
 For more details read the `Microsoft documentation <https://docs.microsoft.com/en-us/azure/active-directory-b2c/authorization-code-flow>`_.
 
 Example below, describes how to use the Code Flow + PKCE + Secret. Do not implement it by self, instead use existing libraries like:
-
  - `MSAL for Android <https://github.com/AzureAD/microsoft-authentication-library-for-android>`_
  - `MSAL for iOS <https://github.com/AzureAD/microsoft-authentication-library-for-objc>`_
  - `MSAL for Python <https://github.com/AzureAD/microsoft-authentication-library-for-python>`_
