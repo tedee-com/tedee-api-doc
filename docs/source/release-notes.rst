@@ -1,6 +1,22 @@
 Release notes
 =============
 
+**2022-01-31:**
+
+* added new keypad device setting for enable/disable lock action by keypad button
+* added new events to device activity logs (LockedByKeypadWithPin and LockedByKeypadWithoutPin)
+
+**2022-01-17:**
+
+* removed API version 1.9
+* added automatic keypad pairing with bridge when keypad is paired with lock
+
+**2021-12-20:**
+
+* added a new API version 1.25
+* added new keypad device setting with battery type
+* added restriction for sound volume values in keypad
+
 **2021-11-22:**
 
 * added a new API version 1.24
