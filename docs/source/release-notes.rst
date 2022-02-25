@@ -1,6 +1,10 @@
 Release notes
 =============
 
+**2022-02-28:**
+
+* added new user setting on lock device for WiFi checking in auto-unlock
+
 **2022-01-31:**
 
 * added new keypad device setting for enable/disable lock action by keypad button
