@@ -136,7 +136,7 @@ Update share access
 
 If you want to change your employees' access to the main entrance, for example, if you're going to give some of the admin permissions, you can update user share.
 
-To find the share, you need the **employee email** the share was created. Firstly, use :doc:`Get device shares <../endpoints/deviceshare/get-all>` to fetch all shares for the specific Tedee Lock, and later find the share using the email.
+To find the share, you need the **employee email** the share was created. Firstly, use :doc:`Get device shares <../endpoints/deviceshare/get-all>` to fetch all shares for the specific Tedee Lock, and later find the share using the ``userEmail``.
 
 Finally, to update the share use :doc:`Update share <../endpoints/deviceshare/update>` endpoint.
 
