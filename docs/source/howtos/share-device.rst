@@ -1,37 +1,23 @@
-How to manage device shares
-==============================
+How to automate access to the Tedee Lock
+=========================================
 
 This tutorial will go through the Tedee Lock shares management based on a real case scenario, managing access to the Tedee Lock within an organization.
 
 Imagine an organization where the Tedee Lock is installed in the main door. You want to automatically grant access to the main entrance when a new employee is hired and taken away when the employee ends his job. 
 
-List device shares
--------------------
-
-You can use the Tedee App or the Tedee API to see all shares for the specific Tedee Lock. 
-
-Using the Tedee API, if you want to get shares for the Tedee Lock, you need the ``deviceId`` and use :doc:`Get all shares <../endpoints/deviceshare/get-all>`. 
-This endpoint will return all shares for the device. 
-
-.. note::
-    From the mobile app as the Tedee Lock owner/admin, you can see users who have access to the device and those who have pending invitations. The pending invitation means that the invited user has no account created in the Tedee App, and the access will be granted automatically after the account creation. 
-
-**Sample request**
-
-.. code-block:: sh
-
- curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
 Creating share access
 ------------------------
 
-Let's consider that situation. You are responsible for managing entrance access in your organization, and you want to automate granting access to the Tedee Lock. 
+Let's consider that situation. You hired a new employee who will start work next month. You want to grant access to the entrance door for him.
 
-You can automate this process by creating a share in Tedee API. Then, all you need is when the new employee will start work and an email the employee will use.
+You can do that by creating a share in Tedee API. You need to use :doc:`Create share <../endpoints/deviceshare/create>` endpoint. Call this endpoint with the new organization's email address and define ``startDate`` as the date when the employee starts work. The share will be created and active from the date you specified as the ``startDate``.
 
-You need to use :doc:`Create share <../endpoints/deviceshare/create>` endpoint. Call this endpoint with the new organization's email address to create a new device share.
+.. note::
+   Every share you create for the specific Tedee Lock must have a unique address email.
 
-If the employee you want to share the device with already has a Tedee account, he will receive a notification that the device was shared with him. Otherwise, an email invitation will be sent automatically by the Tedee system.
+If the employee you want to share the device with already has a Tedee account, he will receive a notification that the device was shared with him. Otherwise, an email invitation will be sent automatically by the Tedee system. 
+
+The last step is registering the new employee in the Tedee system. After that, the new employee will have access to the entrance door to your organization.
 
 **Sample request**
 
@@ -164,11 +150,28 @@ Body:
     "remoteAccessDisabled" : false
  }
 
+List device shares
+-------------------
+
+You can use the Tedee App or the Tedee API to see all shares for the specific Tedee Lock. 
+
+Using the Tedee API, if you want to get shares for the Tedee Lock, you need the ``deviceId`` and use :doc:`Get all shares <../endpoints/deviceshare/get-all>`. 
+This endpoint will return all shares for the device. 
+
+.. note::
+    From the mobile app as the Tedee Lock owner/admin, you can see users who have access to the device and those who have pending invitations. The pending invitation means that the invited user has no account created in the Tedee App, and the access will be granted automatically after the registering. 
+
+**Sample request**
+
+.. code-block:: sh
+
+ curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
 
 Delete share access
 ---------------------
 
-Let's consider a different situation. Unfortunately, you need to fire one of your employees. 
+Let's consider a different situation. Unfortunately, you need to fire one of your employees.
 
 After deleting access to organization resources, you can also remove employees' access to the organization's Tedee Lock devices using :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint.
 
@@ -179,4 +182,8 @@ The delete endpoint requires finding ``shareId``. You can obtain it by fetching 
 .. code-block:: sh
 
  curl -X DELETE "|apiUrl|/api/|apiVersion|/my/deviceshare/15" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
+
+
+.. note::
+   You do not need to remove shares, where defined is the ``endDate``. When it is specified, the access is active only till this date.
 
