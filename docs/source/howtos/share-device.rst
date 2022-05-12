@@ -1,11 +1,11 @@
 How to automate access to the Tedee Lock
 =========================================
 
-This tutorial will go through the Tedee Lock shares management based on a real case scenario, managing access to the Tedee Lock within an organization.
+This tutorial will go through the Tedee Lock access management based on a real case scenario, managing access to the Tedee Lock within an organization.
 
 Imagine an organization where the Tedee Lock is installed in the main door. You want to automatically grant access to the main entrance when a new employee is hired and taken away when the employee ends his job. 
 
-Creating share access
+Granting user access
 ------------------------
 
 Let's consider that situation. You hired a new employee who will start work next month. You want to grant access to the entrance door for him.
@@ -15,9 +15,7 @@ You can do that by creating a share in Tedee API. You need to use :doc:`Create s
 .. note::
    Every share you create for the specific Tedee Lock must have a unique address email.
 
-If the employee you want to share the device with already has a Tedee account, he will receive a notification that the device was shared with him. Otherwise, an email invitation will be sent automatically by the Tedee system. 
-
-The last step is registering the new employee in the Tedee system. After that, the new employee will have access to the entrance door to your organization.
+If the employee you want to share the device with already has a Tedee account, he will receive a notification that the device was shared with him. Otherwise, an email invitation will be sent automatically by the Tedee system and the user will be asked to register a new Tedee account. 
 
 **Sample request**
 
@@ -117,7 +115,7 @@ In this case, the user will have access only from Monday to Friday between 8:00 
  "endDate": null
  }
 
-Update share access
+Update user access
 ----------------------
 
 If you want to change your employees' access to the main entrance, for example, if you're going to give some of the admin permissions, you can update user share.
@@ -150,8 +148,8 @@ Body:
     "remoteAccessDisabled" : false
  }
 
-List device shares
--------------------
+List users with access to the device
+---------------------------------------
 
 You can use the Tedee App or the Tedee API to see all shares for the specific Tedee Lock. 
 
@@ -168,14 +166,12 @@ This endpoint will return all shares for the device.
  curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
-Delete share access
+Removing user access
 ---------------------
 
-Let's consider a different situation. Unfortunately, you need to fire one of your employees.
+If user access was limited in time then it will expire automatically after the specified ``endDate``.
 
-After deleting access to organization resources, you can also remove employees' access to the organization's Tedee Lock devices using :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint.
-
-The delete endpoint requires finding ``shareId``. You can obtain it by fetching all device shares from :doc:`Get all shares <../endpoints/deviceshare/get-all>` and finding it, searching the list by ``userEmail``. 
+Let's consider a different situation. Unfortunately, you need to fire one of your employees. In that case, you must call the :doc:Delete share <../endpoints/deviceshare/delete> endpoint to remove his access to the Lock.
 
 **Sample request**
 
