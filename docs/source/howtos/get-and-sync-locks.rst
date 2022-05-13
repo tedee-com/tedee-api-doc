@@ -63,7 +63,7 @@ of user locks like battery level, connection state, and lock position.
 
 .. warning::
 
-    You shouldn't run sync endpoint more than once every 10 seconds.
+    You cannot call the sync endpoint more often than the limit described in the documentation.
 
 .. note::
     Do not hardcode lock Id. It will change everytime user add the lock to account.
