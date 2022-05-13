@@ -5,7 +5,7 @@ Sync all users locks states.
 
 .. warning::
 
-    You shouldn't run this endpoint more than once every 10 seconds.
+    You shouldn't run this endpoint more than once every 20 seconds.
 
 .. code-block:: sh
 
