@@ -3,6 +3,10 @@ Sync single
 
 Sync single lock state by id.
 
+.. warning::
+
+    You shouldn't run this endpoint more than once every 20 seconds.
+
 .. code-block:: sh
 
     GET |apiUrl|/api/|apiVersion|/my/lock/{id}/sync
