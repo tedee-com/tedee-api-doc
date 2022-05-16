@@ -1,159 +1,187 @@
-How to manage device shares
-==============================
+How to automate access to the Tedee Lock
+=========================================
 
-Once user have his device set, he will probably want to share it with other users (e.g. family or friends).
-To do this he need to create a share. In this tutorial we will walk through the process of creating, updating, deleting and listing share for user device.
+This tutorial will go through the Tedee Lock access management based on a real case scenario, managing access to the Tedee Lock within an organization.
 
-Get current share list
-----------------------------
+Imagine an organization where the Tedee Lock is installed in the main door. You want to automatically grant access to the main entrance when a new employee is hired and taken away when the employee ends his job. 
 
-If you want to get current shares for device, you will need deviceId and use :doc:`Get all shares <../endpoints/deviceshare/get-all>`. 
-This endpoint will return all shares for device.
+Granting user access
+------------------------
+
+Let's consider that situation. You hired a new employee who will start work next month. You want to grant access to the entrance door for him.
+
+You can do that by creating a share in Tedee API. You need to use :doc:`Create share <../endpoints/deviceshare/create>` endpoint. Call this endpoint with the new organization's email address and define ``startDate`` as the date when the employee starts work. The share will be created and active from the date you specified as the ``startDate``.
+
+.. note::
+   Every share you create for the specific Tedee Lock must have a unique address email.
+
+If the employee you want to share the device with already has a Tedee account, he will receive a notification that the device was shared with him. Otherwise, an email invitation will be sent automatically by the Tedee system and the user will be asked to register a new Tedee account. 
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+ curl -X POST "|apiUrl|/api/|apiVersion|/my/deviceshare" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
-Permanent access type
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Body:
 
-If you want user to have permanent access to the device you need send empty :doc:`repeatEvent <../datastructures/repeat-event>` object.
+.. code-block:: js
+
+ {
+    "deviceId": 1,
+    "accessLevel": 1,
+    "userEmail": "john.doe@email.com"
+    "repeatEvent": {
+        "weekDays": 10,
+        "dayStartTime": "2020-12-14T08:09:57.781Z",
+        "dayEndTime": "2020-12-31T08:10:57.781Z",
+        "startDate": null,
+        "endDate": null
+    },
+    "remoteAccessDisabled" : false
+ }
+
+In the next section, we will present how you can customize access to the Tedee Lock.
+
+.. note::
+    We recommend using **email** as the identifier of the share. You can use it later to find the share, e.g. if you want to update or delete it.
+
+Share types
+------------
+Not all employees should have the same access to the main entrance. For some of them, you will assign a permanent share, but, e.g., for subcontractors or other services like, e.g., cleaning service, you want to narrow the access to the office.
+
+The sharing feature enables the creation of fully customized access to the Tedee Lock. The access can be permanent, time-restricted, or fully customized - which means the access can be constrained by time, weekdays, or daily hours.
+
+Permanent access
+^^^^^^^^^^^^^^^^
+
+If you want a user to have permanent access to the Tedee Lock, you need to send an empty :doc:`repeatEvent <../datastructures/repeat-event>` object.
 
 **Sample repeat event object**
 
 .. code-block:: js
 
-    "repeatEvent": {
-        "weekDays": null,
-        "dayStartTime": null,
-        "dayEndTime": null,
-        "startDate": null,
-        "endDate": null
-    },
+ "repeatEvent": {
+    "weekDays": null,
+    "dayStartTime": null,
+    "dayEndTime": null,
+    "startDate": null,
+    "endDate": null
+ },
 
-Time restricted access type
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Customized access
+^^^^^^^^^^^^^^^^^^^^
 
-If you want to restrict user access to the device you can send fields "startDate" or "endDate", it will mark the period when share for user will be active.
-You can also restrict access to specific hours of the day by sending "dayStartTime" and "dayEndTime". User can further customize this by selecting days. 
-To send it proper way you need to use :doc:`Week days <../enums/week-days>` enum. 
+If you want to restrict user access to the Tedee Lock, you can send ``startDate`` or ``endDate`` fields. The share will be active only in the specified period.
+You can also restrict access to specific day hours by sending ``dayStartTime`` and ``dayEndTime``. You can further customize the access by selecting only particular weekdays.
+To send it properly, you need to use :doc:`Week days <../enums/week-days>` enum. 
 
 **Sample repeat event objects**
 
-In this case the share will be created from 14 december to 31 december.
+In this case, the share will be created from 14 December 2020 to 31 December 2020.
 
 .. code-block:: js
 
-    "repeatEvent": {
-        "weekDays": null,
-        "dayStartTime": null,
-        "dayEndTime": null,
-        "startDate": "2020-12-14T08:09:57.781Z",
-        "endDate": "2020-12-31T08:10:57.781Z"
-    },
+ "repeatEvent": {
+    "weekDays": null,
+    "dayStartTime": null,
+    "dayEndTime": null,
+    "startDate": "2020-12-14T08:09:57.781Z",
+    "endDate": "2020-12-31T08:10:57.781Z"
+ },
 
-In this case the share will be created from 1 december to 31 december, and user will have access only on friday and saturday between 15:00 and 18:00
-
-.. code-block:: js
-
-    "repeatEvent": {
-        "weekDays": 48,
-        "dayStartTime": "2020-12-01T15:00:00.000Z",
-        "dayEndTime": "2020-12-31T18:00:00.000Z",
-        "startDate": "2020-12-01T08:00:00.000Z",
-        "endDate": "2020-12-31T20:00:00.000Z"
-    },
-
-
-In this case user will have access only from monday to friday between 8:00 and 16:00
+In this case, the share will be created from 1 December 2020 to 31 December 2020, and the user will have access only on Friday and Saturday between 15:00 and 18:00.
 
 .. code-block:: js
 
+ "repeatEvent": {
+    "weekDays": 48,
+    "dayStartTime": "2020-12-01T15:00:00.000Z",
+    "dayEndTime": "2020-12-31T18:00:00.000Z",
+    "startDate": "2020-12-01T08:00:00.000Z",
+    "endDate": "2020-12-31T20:00:00.000Z"
+ },
+
+
+In this case, the user will have access only from Monday to Friday between 8:00 and 16:00.
+
+.. code-block:: js
+
+ "repeatEvent": {
+ "weekDays": 31,
+ "dayStartTime": "2020-12-01T08:00:00.000Z",
+ "dayEndTime": "2020-12-31T16:00:00.000Z",
+ "startDate": null,
+ "endDate": null
+ }
+
+Update user access
+----------------------
+
+If you want to change your employees' access to the main entrance, for example, if you're going to give some of the admin permissions, you can update user share.
+
+To find the share, you need the **employee email** the share was created. Firstly, use :doc:`Get device shares <../endpoints/deviceshare/get-all>` to fetch all shares for the specific Tedee Lock, and later find the share using the ``userEmail``.
+
+Finally, to update the share use :doc:`Update share <../endpoints/deviceshare/update>` endpoint.
+
+**Sample request**
+
+.. code-block:: sh
+
+ curl -X PATCH "|apiUrl|/api/|apiVersion|/my/deviceshare" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+
+Body:
+
+.. code-block:: js
+
+ {
+    "id": 1,
+    "accessLevel": 1,
     "repeatEvent": {
-        "weekDays": 31,
-        "dayStartTime": "2020-12-01T08:00:00.000Z",
-        "dayEndTime": "2020-12-31T16:00:00.000Z",
+        "id": 1,
+        "weekDays": 10,
+        "dayStartTime": "2020-12-14T08:09:57.781Z",
+        "dayEndTime": "2020-12-31T08:10:57.781Z",
         "startDate": null,
         "endDate": null
     },
+    "remoteAccessDisabled" : false
+ }
 
+List users with access to the device
+---------------------------------------
 
-Add access to the device
-----------------------------
+You can use the Tedee App or the Tedee API to see all shares for the specific Tedee Lock. 
 
-Let's consider that situation. You are responsible for managing access for users in your organization. If new employee is recruited you don't want to give him keys to the office (or you don't use keys in your organization). 
-Instead you want to share door lock to him/her. To do that you need to use :doc:`Create share <../endpoints/deviceshare/create>`. Simply call this endpoint with new organization email address to create new device share.
+Using the Tedee API, if you want to get shares for the Tedee Lock, you need the ``deviceId`` and use :doc:`Get all shares <../endpoints/deviceshare/get-all>`. 
+This endpoint will return all shares for the device. 
 
-If user that you want to share device with already have Tedee account he will be notified that device was shared with him. If not the email with invitaion will be sent.
-
-**Sample request**
-
-.. code-block:: sh
-
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/deviceshare" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
-
-Body:
-
-.. code-block:: js
-
-        {
-            "deviceId": 1,
-            "accessLevel": 1,
-            "userEmail": "john.doe@email.com"
-            "repeatEvent": {
-                "weekDays": 10,
-                "dayStartTime": "2020-12-14T08:09:57.781Z",
-                "dayEndTime": "2020-12-31T08:10:57.781Z",
-                "startDate": null,
-                "endDate": null
-            },
-            "remoteAccessDisabled" : false
-        }
-
-
-Update access to the device
-----------------------------
-
-If you want to change access to the door lock for your employees for example you want give some of them admin permissions, you can update user access to the device. 
-For that you need to have shareId, which you get when creating share with success or you can simply use endpoint to get all share for the device :doc:`Get all shares <../endpoints/deviceshare/get-all>`.
-When you have complete information you can send request :doc:`Update share <../endpoints/deviceshare/update>` to update share.
+.. note::
+    From the mobile app as the Tedee Lock owner/admin, you can see users who have access to the device and those who have pending invitations. The pending invitation means that the invited user has no account created in the Tedee App, and the access will be granted automatically after the registering. 
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X PATCH "|apiUrl|/api/|apiVersion|/my/deviceshare" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
-
-Body:
-
-.. code-block:: js
-
-        {
-            "id": 1,
-            "accessLevel": 1,
-            "repeatEvent": {
-                "id": 1,
-                "weekDays": 10,
-                "dayStartTime": "2020-12-14T08:09:57.781Z",
-                "dayEndTime": "2020-12-31T08:10:57.781Z",
-                "startDate": null,
-                "endDate": null
-            },
-            "remoteAccessDisabled" : false
-        }
+ curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
-Delete share
--------------
+Removing user access
+---------------------
 
-Let's consider different situation. Unfortunately, you need to fire one of your employee. 
-After deleting access to organization resources you can also remove employee's access to the devices within organization with the call to the :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint.
-For that you need to have share id you want to delete. You can get shares for each device from :doc:`Get all shares <../endpoints/deviceshare/get-all>` endpoint.
+If user access was limited in time then it will expire automatically after the specified ``endDate``.
+
+Let's consider a different situation. Unfortunately, you need to fire one of your employees. In that case, you must call the :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint to remove his access to the Lock.
+
+To find the share, you need the **employee email** the share was created. Firstly, use :doc:`Get device shares <../endpoints/deviceshare/get-all>` to fetch all shares for the specific Tedee Lock, and later find the share using the ``userEmail``.
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/deviceshare/15" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
+ curl -X DELETE "|apiUrl|/api/|apiVersion|/my/deviceshare/15" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
+
+
+.. note::
+   You do not need to remove shares, where defined is the ``endDate``. When it is specified, the access is active only till this date.
+
