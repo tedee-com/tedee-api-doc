@@ -171,7 +171,9 @@ Removing user access
 
 If user access was limited in time then it will expire automatically after the specified ``endDate``.
 
-Let's consider a different situation. Unfortunately, you need to fire one of your employees. In that case, you must call the :doc:Delete share <../endpoints/deviceshare/delete> endpoint to remove his access to the Lock.
+Let's consider a different situation. Unfortunately, you need to fire one of your employees. In that case, you must call the :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint to remove his access to the Lock.
+
+To find the share, you need the **employee email** the share was created. Firstly, use :doc:`Get device shares <../endpoints/deviceshare/get-all>` to fetch all shares for the specific Tedee Lock, and later find the share using the ``userEmail``.
 
 **Sample request**
 
