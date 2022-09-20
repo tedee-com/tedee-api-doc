@@ -120,7 +120,7 @@ Update user access
 
 If you want to change your employees' access to the main entrance, for example, if you're going to give some of the admin permissions, you can update user share.
 
-To find the share, you need the **employee email** the share was created. Firstly, use :doc:`Get device shares <../endpoints/deviceshare/get-all>` to fetch all shares for the specific Tedee Lock, and later find the share using the ``userEmail``.
+To find the share, you need the **employee email** the share was created. Use :doc:`Get device shares <../endpoints/deviceshare/get-all>` with ``Filters.Email`` field to fetch all shares for the specific Tedee Lock that have given email.
 
 Finally, to update the share use :doc:`Update share <../endpoints/deviceshare/update>` endpoint.
 
@@ -173,7 +173,7 @@ If user access was limited in time then it will expire automatically after the s
 
 Let's consider a different situation. Unfortunately, you need to fire one of your employees. In that case, you must call the :doc:`Delete share <../endpoints/deviceshare/delete>` endpoint to remove his access to the Lock.
 
-To find the share, you need the **employee email** the share was created. Firstly, use :doc:`Get device shares <../endpoints/deviceshare/get-all>` to fetch all shares for the specific Tedee Lock, and later find the share using the ``userEmail``.
+To find the share, you need the **employee email** the share was created. Use :doc:`Get device shares <../endpoints/deviceshare/get-all>` with ``Filters.Email`` field to fetch all shares for the specific Tedee Lock that have given email.
 
 **Sample request**
 
