@@ -4,18 +4,23 @@ Get all
 Get all access details for specific device. 
 This endpoint can be used by all users that have share to the device but users with access level "Guest" and those users that share are not active
 will get in response only information about owner of device and own access details. Owner and administrators with active share will get all users access details.
+Results can be filtered by id and/or email of user.
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/deviceshare?deviceId={id}
+    GET |apiUrl|/api/|apiVersion|/my/deviceshare?deviceId={id}&Filters.UserIdentity={userId}&Filters.Email={email}
 
 **URI Parameters**
 
-+------------------------+-----------+---------------------+
-| Name                   | Type      | Description         |
-+========================+===========+=====================+
-| deviceId               | number    | id of device        |
-+------------------------+-----------+---------------------+
++----------------------+-------------------+---------------------+
+| Name                 | Type              | Description         |
++======================+===================+=====================+
+| deviceId             | number            | id of device        |
++----------------------+-------------------+---------------------+
+| Filters.UserIdentity | string (optional) | id of user          |
++----------------------+-------------------+---------------------+
+| Filters.Email        | string (optional) | email of user       |
++----------------------+-------------------+---------------------+
 
 Responses 
 -------------
