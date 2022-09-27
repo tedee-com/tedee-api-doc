@@ -2,10 +2,35 @@ Get all
 =========================
 
 Get a list of all currently logged user locks.
+Filters.OrganizationIds accept 'null' as value, then private locks (which don't belong to any organization) are returned.
 
 .. code-block:: sh
 
     GET |apiUrl|/api/|apiVersion|/my/lock
+
+**URI Parameters**
+
++------------------------+--------------------+---------------------------------+
+| Name                   | Type               | Description                     |
++========================+====================+=================================+
+| IncludeOrganization    | boolean (optional) | should organizations be included|
++------------------------+--------------------+---------------------------------+
+| Page                   | integer (optional) | number of page                  |
++------------------------+--------------------+---------------------------------+
+| ItemsPerPage           | integer (optional) | count of items on page          |
++------------------------+--------------------+---------------------------------+
+| Filters.Text           | string (optional)  | text to filter                  |
++------------------------+--------------------+---------------------------------+
+| Filters.State          | int[] (optional)   | state of lock                   |
++------------------------+--------------------+---------------------------------+
+| Filters.BatteryLevel   | integer (optional) | battery level of lock           |
++------------------------+--------------------+---------------------------------+
+| Filters.OrganizationIds| string[] (optional)| id of organizations             |
++------------------------+--------------------+---------------------------------+
+| Filters.UpdateAvailable| boolean (optional) | updateAvailable on lock         |
++------------------------+--------------------+---------------------------------+
+| includeUserSettings    | boolean (optional) | should userSettings be included |
++------------------------+--------------------+---------------------------------+
 
 Responses 
 -------------
