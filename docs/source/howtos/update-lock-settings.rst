@@ -7,7 +7,7 @@ If you want to update lock settings, the first thing you need to know is that th
 * **device settings** - settings on the device side. That means changing settings will affect all device users that have access to that lock
 * **user settings** - each user has his/her own settings and they are responsible for auto unlock feature
 
-To update device settings firstly use endpoint :doc:`Get single lock <../endpoints/lock/get-single>`:
+To update device settings first use endpoint :doc:`Get single lock <../endpoints/lock/get-single>`:
 
 **Sample request**
 
@@ -92,7 +92,7 @@ After successfully retrieving the revision of the current lock settings, you can
 Update device settings
 ----------------------
 
-Firstly let's focus on updating device settings. To do that you need to specify which settings from :doc:`Device settings <../datastructures/device-settings>` you want to update.
+First let's focus on updating device settings. To do that you need to specify which settings from :doc:`Device settings <../datastructures/device-settings>` you want to update.
 
 **Sample request**
 
@@ -134,7 +134,7 @@ HTTP status code: ``200``
         }
 
 The revision value in the update request must be the same as the current value in the system, otherwise the request will be refused with 409 (Conflict) error.
-If update will success you will receive the new revison value.
+You will receive the new revison value when the update was successful.
 
 The targetDeviceRevision value is responsible for checking if device settings are up to date. 
 Process of the updating device settings is described below:
