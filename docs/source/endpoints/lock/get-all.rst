@@ -17,7 +17,7 @@ Filters.OrganizationIds accept 'null' as value, then private locks (which don't 
 +------------------------+--------------------+---------------------------------+
 | Filters.OrganizationIds| string[] (optional)| id of organizations             |
 +------------------------+--------------------+---------------------------------+
-| Filters.State          | int[] (optional)   | state of lock                   |
+| Filters.State          | int[] (optional)   | states of lock                  |
 +------------------------+--------------------+---------------------------------+
 | Filters.Text           | string (optional)  | text to filter                  |
 +------------------------+--------------------+---------------------------------+
