@@ -13,13 +13,13 @@ Filters.OrganizationIds accept 'null' as value, then private locks (which don't 
 +------------------------+--------------------+---------------------------------+
 | Name                   | Type               | Description                     |
 +========================+====================+=================================+
-| Filters.Text           | string (optional)  | text to filter                  |
-+------------------------+--------------------+---------------------------------+
-| Filters.State          | int[] (optional)   | state of lock                   |
-+------------------------+--------------------+---------------------------------+
 | Filters.BatteryLevel   | integer (optional) | battery level of lock           |
 +------------------------+--------------------+---------------------------------+
 | Filters.OrganizationIds| string[] (optional)| id of organizations             |
++------------------------+--------------------+---------------------------------+
+| Filters.State          | int[] (optional)   | state of lock                   |
++------------------------+--------------------+---------------------------------+
+| Filters.Text           | string (optional)  | text to filter                  |
 +------------------------+--------------------+---------------------------------+
 | Filters.UpdateAvailable| boolean (optional) | updateAvailable on lock         |
 +------------------------+--------------------+---------------------------------+
