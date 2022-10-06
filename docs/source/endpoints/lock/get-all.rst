@@ -13,12 +13,6 @@ Filters.OrganizationIds accept 'null' as value, then private locks (which don't 
 +------------------------+--------------------+---------------------------------+
 | Name                   | Type               | Description                     |
 +========================+====================+=================================+
-| IncludeOrganization    | boolean (optional) | should organizations be included|
-+------------------------+--------------------+---------------------------------+
-| Page                   | integer (optional) | number of page                  |
-+------------------------+--------------------+---------------------------------+
-| ItemsPerPage           | integer (optional) | count of items on page          |
-+------------------------+--------------------+---------------------------------+
 | Filters.Text           | string (optional)  | text to filter                  |
 +------------------------+--------------------+---------------------------------+
 | Filters.State          | int[] (optional)   | state of lock                   |
@@ -29,7 +23,13 @@ Filters.OrganizationIds accept 'null' as value, then private locks (which don't 
 +------------------------+--------------------+---------------------------------+
 | Filters.UpdateAvailable| boolean (optional) | updateAvailable on lock         |
 +------------------------+--------------------+---------------------------------+
+| IncludeOrganization    | boolean (optional) | should organizations be included|
++------------------------+--------------------+---------------------------------+
 | includeUserSettings    | boolean (optional) | should userSettings be included |
++------------------------+--------------------+---------------------------------+
+| ItemsPerPage           | integer (optional) | count of items on page          |
++------------------------+--------------------+---------------------------------+
+| Page                   | integer (optional) | number of page                  |
 +------------------------+--------------------+---------------------------------+
 
 Responses 
