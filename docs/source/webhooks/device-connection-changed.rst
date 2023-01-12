@@ -1,7 +1,7 @@
 Device connection changed
 ====================================
 
-Webhook triggers when device connection is changed (e.g. after lock is switched on/off, bridge is plugged/unplugged from power source, bridge lost WiFi signal).
+Webhook triggers when device connection state is changed (e.g. after lock is switched on/off, bridge is plugged/unplugged from power source, bridge lost WiFi signal).
 This webhook is triggered for lock and bridge devices.
 
 Body 
@@ -50,7 +50,7 @@ Examples
         "data": {
             "deviceId": 12345,
             "deviceType": 2,
-            "isConnected": true,
-            "eventTime": "2022-11-09T14:15:28.327Z"
+            "eventTime": "2022-11-09T14:15:28.327Z",
+            "isConnected": true
         }
     }

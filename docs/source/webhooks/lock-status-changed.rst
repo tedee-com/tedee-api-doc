@@ -1,8 +1,9 @@
 Lock status changed
 ====================================
 
-Webhook triggers when device status changes (e.g. lock locking/unlocking). 
-This webhook triggers only for lock device.
+Webhook triggers when device status changes (e.g. lock was locked/unlocked). 
+This webhook is triggered only for lock device.
+Webhooks are not sent for intermediate states: locking, unlocking, pulling.
 
 Body 
 -------------
@@ -50,7 +51,7 @@ Examples
         "data": {
             "deviceId": 12345,
             "deviceType": 2,
-            "state": 4,
-            "eventTime": "2022-11-09T14:15:28.327Z"
+            "eventTime": "2022-11-09T14:15:28.327Z",
+            "state": 6
         }
     }
