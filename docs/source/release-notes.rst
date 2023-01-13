@@ -1,6 +1,29 @@
 Release notes
 =============
 
+**2022-12-05:**
+
+* added a new API version 1.29
+* changed HoldToUnlock user setting type to enum
+
+**2022-08-16:**
+
+* added a new API version 1.28
+* removed old organization endpoints
+* unified schema of organization/device area
+
+**2022-07-18:**
+
+* added a new API version 1.27
+* removed unlocked notification from global user settings
+
+**2022-06-20:**
+
+* added a new API version 1.26
+* added support for device notification settings
+* added paging and filtering to my/lock endpoint
+* added IncludeOrganization parameter to my/lock endpoint
+
 **2022-02-28:**
 
 * added new user setting on lock device for WiFi checking in auto-unlock

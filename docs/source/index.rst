@@ -49,6 +49,17 @@ Tedee API documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Webhooks
+   :hidden:
+
+   Overview <webhooks/overview>
+   Device battery level changed <webhooks/device-battery-level-changed>
+   Device connection changed <webhooks/device-connection-changed>
+   Device settings changed <webhooks/device-settings-changed>
+   Lock status changed <webhooks/lock-status-changed>
+
+.. toctree::
+   :maxdepth: 1
    :caption: Data structures
    :hidden:
 

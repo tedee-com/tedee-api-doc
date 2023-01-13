@@ -21,6 +21,11 @@ Sync user locks
 Then after you have succesfully downloaded locks data you can use endpoint :doc:`Sync locks <../endpoints/lock/sync>` to periodically refresh current state 
 of user locks like battery level, connection state, and lock position.
 
+.. note::
+    If your integration uses OAuth authentication (you have a client id issued for your application by Tedee), 
+    we strongly recommend using webhooks instead of periodically sending requests to the Tedee API to refresh devices.
+    More information: :doc:`Webhooks overview <../webhooks/overview>`.
+
 **Sample request**
 
 .. code-block:: sh
