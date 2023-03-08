@@ -135,7 +135,7 @@ The authorization process begins with the GET request to the authorization endpo
 * **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The |scopePrefix|user_impersonation scope is required (:ref:`list of available scopes <list-of-scopes>`). When building app with Mobile/Desktop flow, remember to add ``offline_access`` scope, which will enable obtaining ``refresh_token``.
 * **state** - A randomly generated unique value is used, to prevent cross-site request forgery attacks.
 * **code_challenge** - Used to secure authorization code grants via Proof Key for Code Exchange (PKCE). For details check the `PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_.
-* **code_challenge_method** - Can be `s256` (recommended) or `plain` (`PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_). When using `s256` remember to to use 43 long ``code_verifier``.
+* **code_challenge_method** - Can be `s256` (recommended) or `plain` (`PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_). When using `s256` remember to use 43 long ``code_verifier``.
 
 **Example**
 
