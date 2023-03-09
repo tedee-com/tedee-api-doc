@@ -132,10 +132,10 @@ The authorization process begins with the GET request to the authorization endpo
 
 * **client_id** - The client id assigned to your application.
 * **redirect_uri** - The redirect URI of your application, where authentication responses are sent and received by your application.
-* **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The "|scopePrefix|user_impersonation" scope is required (:ref:`list of available scopes <list-of-scopes>`).
+* **scope** - A space-separated list of scopes. A single scope value indicates the permissions that are being requested. The |scopePrefix|user_impersonation scope is required (:ref:`list of available scopes <list-of-scopes>`). When building app with Mobile/Desktop flow, remember to add ``offline_access`` scope, which will enable obtaining ``refresh_token``.
 * **state** - A randomly generated unique value is used, to prevent cross-site request forgery attacks.
 * **code_challenge** - Used to secure authorization code grants via Proof Key for Code Exchange (PKCE). For details check the `PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_.
-* **code_challenge_method** - Can be `s256` (recommended) or `plain` (`PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_).
+* **code_challenge_method** - Can be `s256` (recommended) or `plain` (`PKCE RFC <https://datatracker.ietf.org/doc/html/rfc7636>`_). When using `s256` remember to use 43 long ``code_verifier``.
 
 **Example**
 
@@ -145,7 +145,7 @@ The authorization process begins with the GET request to the authorization endpo
     ?response_type=code
     &client_id=bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996
     &redirect_uri=https://yoursite.com/auth
-    &scope=https://tedee.onmicrosoft.com/api/user_impersonation%20https://tedee.onmicrosoft.com/api/Lock.Operate  
+    &scope=https://tedee.onmicrosoft.com/api/user_impersonation%20https://tedee.onmicrosoft.com/api/Lock.Operate%20offline_access
     &state=d917d40e-0b1a-4495-8e23-e449c916a532
     &code_challenge=long-random-pkce-challenge-value-for-plain-method
     &code_challenge_method=plain
