@@ -41,8 +41,11 @@ Follow these tutorials:
 * :doc:`How to authenticate <authenticate>`
 * :doc:`How to prepare your device to connect to Tedee Lock via Bluetooth <connect-device-via-ble>`
 * `How to connect your device to Tedee Lock via Bluetooth <https://tedee-tedee-lock-ble-api-doc.readthedocs-hosted.com/en/latest/howtos/begin-integration.html>`_
-* `How to connect to your device from iOS app <https://github.com/tedee-com/tedee-example-ble-ios>`_
-* `How to connect to your device from Android app <https://github.com/tedee-com/tedee-example-ble-android>`_
+
+Examples:
+
+* `PTLS connection from iOS app <https://github.com/tedee-com/tedee-example-ble-ios>`_
+* `PTLS connection from Android app <https://github.com/tedee-com/tedee-example-ble-android>`_
 
 More information
 ----------------
