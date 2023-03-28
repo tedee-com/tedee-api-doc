@@ -46,6 +46,7 @@ Tedee API documentation
    endpoints/lockpin/index
    endpoints/mobile/index
    endpoints/organization/index
+   endpoints/organizationaccesslinks/index
    endpoints/personalaccesskey/index
 
 .. toctree::
@@ -82,6 +83,7 @@ Tedee API documentation
    Lock updated <datastructures/lock-updated>
    Mobile identifier <datastructures/mobile-identifier>
    Mobile registered <datastructures/registered-mobile>
+   Organization <datastructures/organization>
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
