@@ -45,6 +45,7 @@ Tedee API documentation
    endpoints/lock/index
    endpoints/lockpin/index
    endpoints/mobile/index
+   endpoints/organization/index
    endpoints/personalaccesskey/index
 
 .. toctree::
