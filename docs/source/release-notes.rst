@@ -1,6 +1,11 @@
 Release notes
 =============
 
+**2023-03-27:**
+
+* added a new API version 1.30
+* added organization access links management endpoints
+
 **2022-12-05:**
 
 * added a new API version 1.29

@@ -24,6 +24,7 @@ Update lock.
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | timeZone                  | datetime                                                                  | timezone of lock                                   |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
+
 All parameters in this endpoint (except id and revision) are optional. 
 This means that specifying a given parameter will update its value. If a given parameter is not specified, its value will not change.
 
