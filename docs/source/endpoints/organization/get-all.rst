@@ -5,7 +5,7 @@ Show organizations the user is admin of.
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/organization?dataScope={dataScope}&page={page}&itemsPerPage={itemsPerPage}&filters.Text={textFilter}&filters.HaveLocks={haveLocksFilter}'
+    GET |apiUrl|/api/|apiVersion|/organization?dataScope={dataScope}&page={page}&itemsPerPage={itemsPerPage}&filters.Text={textFilter}&filters.HaveLocks={haveLocksFilter}
 
 **URI Parameters**
 
