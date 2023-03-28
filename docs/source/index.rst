@@ -89,7 +89,9 @@ Tedee API documentation
    Organization access link created <datastructures/organization-access-link-created>
    Organization access link list <datastructures/organization-access-link-list>
    Organization access link single <datastructures/organization-access-link-single>
+   Organization access link device <datastructures/organization-access-link-device>
    Organization access link assignable device list <datastructures/organization-access-link-assignable-devices-list>
+   Organization access link assignable device <datastructures/organization-access-link-assignable-device>
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
