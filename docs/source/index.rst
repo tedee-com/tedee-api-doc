@@ -84,6 +84,11 @@ Tedee API documentation
    Mobile identifier <datastructures/mobile-identifier>
    Mobile registered <datastructures/registered-mobile>
    Organization <datastructures/organization>
+   Organization access link <datastructures/organization-access-link>
+   Organization access link created <datastructures/organization-access-link-created>
+   Organization access link list <datastructures/organization-access-link-list>
+   Organization access link single <datastructures/organization-access-link-single>
+   Organization access link assignable device list <datastructures/organization-access-link-assignable-device-list>
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
