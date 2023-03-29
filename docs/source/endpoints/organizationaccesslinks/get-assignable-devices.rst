@@ -1,4 +1,4 @@
-Get organization access link assignable devices
+Get access link assignable devices
 ===============================================
 
 Get devices which can be assigned to an organization access link.
@@ -16,7 +16,7 @@ Get devices which can be assigned to an organization access link.
 +--------------------+-------------------+---------------------------------------------------+
 | page               | number            | page number                                       |
 +--------------------+-------------------+---------------------------------------------------+
-| itemsPerPage       | number (optional) | number of elements to load (max 200, default 200) |
+| itemsPerPage       | number (optional) | number of elements to load (max 100, default 100) |
 +--------------------+-------------------+---------------------------------------------------+
 | filters.DeviceName | string (optional) | filtering device name                             |
 +--------------------+-------------------+---------------------------------------------------+

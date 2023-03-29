@@ -1,7 +1,7 @@
 Get all
 =========================
 
-Show organizations the user is admin of.
+Get all user administered or owned organizations.
 
 .. code-block:: sh
 
