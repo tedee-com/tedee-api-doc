@@ -26,11 +26,11 @@ Get devices which can be assigned to an organization access link.
 Responses 
 -------------
 
-+--------+---------------------------------------------------------------------------------------------------------------------+----------------------+
-| Name   | Type                                                                                                                | Description          |
-+========+=====================================================================================================================+======================+
-| 200 OK | :doc:`Organization Assignable Devices List <../../datastructures/organization-access-link-assignable-devices-list>` | successful operation |
-+--------+---------------------------------------------------------------------------------------------------------------------+----------------------+
++--------+--------------------------------------------------------------------------------------------------------------------+----------------------+
+| Name   | Type                                                                                                               | Description          |
++========+====================================================================================================================+======================+
+| 200 OK | :doc:`Access Link Assignable Devices List <../../datastructures/organization-access-link-assignable-devices-list>` | successful operation |
++--------+--------------------------------------------------------------------------------------------------------------------+----------------------+
 
 Scopes
 -------------
@@ -61,6 +61,30 @@ HTTP status code: ``200``
         {
             "result": {
                 "accessLinkDevices": [
+                    {
+                        "deviceId": 123,
+                        "name": "Lock",
+                        "type": 2,
+                        "timeZone": "Europe/Warsaw",
+                        "softwareVersions": [
+                        {
+                            "softwareType": 0,
+                            "version": "2.4.5200"
+                        }
+                        ]
+                    },
+                    {
+                        "deviceId": 28690,
+                        "name": "Gate",
+                        "type": 5,
+                        "timeZone": "Europe/London",
+                        "softwareVersions": [
+                        {
+                            "softwareType": 0,
+                            "version": "2.4.2081"
+                        }
+                        ]
+                    }
                 ],
                 "page": 1,
                 "itemsPerPage": 25
