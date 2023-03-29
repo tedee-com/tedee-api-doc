@@ -6,5 +6,5 @@ Organization Access Link created
 +======+========+=====================================+
 | id   | UUID   | organization access link identifier |
 +------+--------+-------------------------------------+
-| url  | string | organization access link URL |
+| url  | string | organization access link URL        |
 +------+--------+-------------------------------------+
