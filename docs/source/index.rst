@@ -30,6 +30,7 @@ Tedee API documentation
    Manage lock PIN list <howtos/manage-lock-pin-list>
    Connect to device via Bluetooth <howtos/connect-device-via-ble>
    Example integrations <howtos/example-integrations>
+   Manage access links <howtos/manage-access-links>
 
 .. toctree::
    :maxdepth: 1
@@ -45,6 +46,8 @@ Tedee API documentation
    endpoints/lock/index
    endpoints/lockpin/index
    endpoints/mobile/index
+   endpoints/organization/index
+   endpoints/organizationaccesslinks/index
    endpoints/personalaccesskey/index
 
 .. toctree::
@@ -81,6 +84,14 @@ Tedee API documentation
    Lock updated <datastructures/lock-updated>
    Mobile identifier <datastructures/mobile-identifier>
    Mobile registered <datastructures/registered-mobile>
+   Organization <datastructures/organization>
+   Organization access link <datastructures/organization-access-link>
+   Organization access link created <datastructures/organization-access-link-created>
+   Organization access link list <datastructures/organization-access-link-list>
+   Organization access link single <datastructures/organization-access-link-single>
+   Organization access link device <datastructures/organization-access-link-device>
+   Organization access link assignable device list <datastructures/organization-access-link-assignable-devices-list>
+   Organization access link assignable device <datastructures/organization-access-link-assignable-device>
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>

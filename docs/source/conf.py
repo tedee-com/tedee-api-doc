@@ -19,13 +19,13 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Tedee API documentation'
-copyright = '2022, Tedee'
+copyright = '2023, Tedee'
 author = 'Tedee'
 clientId = '02106b82-0524-4fd3-ac57-af774f340979'
 scopePrefix = 'https://tedee.onmicrosoft.com/api/'
 apiUrl = 'https://api.tedee.com'
 authApiUrl = 'https://tedee.b2clogin.com/tedee.onmicrosoft.com'
-apiVersion = 'v1.29'
+apiVersion = 'v1.30'
 
 
 # -- General configuration ---------------------------------------------------
