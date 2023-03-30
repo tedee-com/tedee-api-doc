@@ -37,13 +37,15 @@ You can create an access link from the Tedee Portal. Hovewer, this tutorial will
 
 Firstly, you need to find an organization you want to create the access link in.
 
+Use :doc:`Get organization <../endpoints/organization/get-all>` endpoint:
+
 .. code-block:: sh
 
     GET |apiUrl|/api/|apiVersion|/organization
 
 As a result you will get a list of organizations you administer. You can find the organization you want to create the access link in.
 
-To create an access link, you need to send a POST request to the following endpoint:
+To create an access link, you need to send a POST request using :doc:`Create organization access link <../endpoints/organizationaccesslinks/create>` endpoint:
 
 .. code-block:: sh
 
@@ -75,14 +77,6 @@ The example request body is:
             }
         }
 
-The devices you can assign to the access link can be fetched from the endpoint:
-
-.. code-block:: sh
-
-    GET |apiUrl|/api/|apiVersion|/organization/{organizationId}/accesslink/device/assignable
-
-Where ``{organizationId}`` is the ID of the organization you want to create the access link in.
-
 After you send the POST request, you will receive the access link id and the access link URL.
 
 .. code-block:: js
@@ -102,7 +96,7 @@ Update an access link
 
 You can always update the access link. You can change the name, description, devices assigned to the access link, and the time period the access link is valid.
 
-To update an access link, you need to send a PATCH request to the following endpoint:
+To update an access link, you need to send a PATCH request using :doc:`Update organization access link <../endpoints/organizationaccesslinks/update>` endpoint:
 
 .. code-block:: sh
 
@@ -115,7 +109,7 @@ Delete an access link
 
 You can delete an access link. After you delete the access link, it will not be valid anymore.
 
-To delete an access link, you need to send a DELETE request to the following endpoint:
+To delete an access link, you need to send a DELETE request using :doc:`Delete organization access link <../endpoints/organizationaccesslinks/delete>` endpoint:
 
 .. code-block:: sh
 
