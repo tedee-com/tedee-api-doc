@@ -337,9 +337,9 @@ Below is a list of available scopes that can be requested during the authorizati
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Organization.ReadWrite    | View and manage organization. Also grants the ability to add, update and delete organization devices and organization users                                               |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AccessLinks.Read          | Grants user possibility to view organization access links.                                                                                                                |
+| AccessLink.Read          | Grants user possibility to view organization access links.                                                                                                                |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AccessLinks.ReadWrite     | Grants user possibility to manage organization access links.                                                                                                              |
+| AccessLink.ReadWrite     | Grants user possibility to manage organization access links.                                                                                                              |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 

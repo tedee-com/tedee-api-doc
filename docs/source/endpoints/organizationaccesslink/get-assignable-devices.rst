@@ -38,9 +38,9 @@ Scopes
 +-----------------------+--------------------------------------------------------------+
 | Name                  | Description                                                  |
 +=======================+==============================================================+
-| AccessLinks.Read      | Grants user possibility to view organization access links.   |
+| AccessLink.Read      | Grants user possibility to view organization access links.   |
 +-----------------------+--------------------------------------------------------------+
-| AccessLinks.ReadWrite | Grants user possibility to manage organization access links. |
+| AccessLink.ReadWrite | Grants user possibility to manage organization access links. |
 +-----------------------+--------------------------------------------------------------+
 
 Examples
