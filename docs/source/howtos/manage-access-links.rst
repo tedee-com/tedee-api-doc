@@ -45,7 +45,7 @@ Use :doc:`Get organization <../endpoints/organization/get-all>` endpoint:
 
 As a result you will get a list of organizations you administer. You can find the organization you want to create the access link in.
 
-To create an access link, you need to send a POST request using :doc:`Create organization access link <../endpoints/organizationaccesslinks/create>` endpoint:
+To create an access link, you need to send a POST request using :doc:`Create organization access link <../endpoints/organizationaccesslink/create>` endpoint:
 
 .. code-block:: sh
 
@@ -96,7 +96,7 @@ Update an access link
 
 You can always update the access link. You can change the name, description, devices assigned to the access link, and the time period the access link is valid.
 
-To update an access link, you need to send a PATCH request using :doc:`Update organization access link <../endpoints/organizationaccesslinks/update>` endpoint:
+To update an access link, you need to send a PATCH request using :doc:`Update organization access link <../endpoints/organizationaccesslink/update>` endpoint:
 
 .. code-block:: sh
 
@@ -109,7 +109,7 @@ Delete an access link
 
 You can delete an access link. After you delete the access link, it will not be valid anymore.
 
-To delete an access link, you need to send a DELETE request using :doc:`Delete organization access link <../endpoints/organizationaccesslinks/delete>` endpoint:
+To delete an access link, you need to send a DELETE request using :doc:`Delete organization access link <../endpoints/organizationaccesslink/delete>` endpoint:
 
 .. code-block:: sh
 
