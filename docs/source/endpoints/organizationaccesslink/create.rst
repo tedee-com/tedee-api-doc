@@ -101,7 +101,7 @@ HTTP status code: ``201``
         {
             "result": {
                 "id": 10df36b5-a06e-4bec-9398-786b0231453a,
-                "url" "https://api.tedee.com/link/0bbDshXmsgjRdDmU2zwYjR1-iQZOcHJL7TuL9NoXOXgC1iF2zVKVKCquVqbEldmkDSspWJKRlH4JcPk.QMzs4Q__"
+                "url" "https://portal.tedee.com/link/0bbDshXmsgjRdDmU2zwYjR1-iQZOcHJL7TuL9NoXOXgC1iF2zVKVKCquVqbEldmkDSspWJKRlH4JcPk.QMzs4Q__"
             }
             "success": true,
             "errorMessages": [],
