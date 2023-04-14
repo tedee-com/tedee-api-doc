@@ -58,7 +58,7 @@ The request body should contain the following parameters:
 * ``name`` - the name of the access link. It is a string with a maximum length of 450 characters.
 * ``description`` - the description of the access link. It is a string with a maximum length of 72 characters.
 * ``deviceIds`` - the list of device IDs you want to assign to the access link. It is a list of integers.
-* ``repeatEvent`` - the access details of the access link. 
+* ``repeatEvent`` - the access details of the access link int UTC.
 
 The example request body is:
 
@@ -76,6 +76,9 @@ The example request body is:
                 "endDate": "2023-02-01T00:00:00.000Z"
             }
         }
+
+.. note::
+    Dates sent to Tedee API must be in the UTC timezone. The client must convert the date to UTC before sending it to the API.
 
 After you send the POST request, you will receive the access link id and the access link URL.
 
