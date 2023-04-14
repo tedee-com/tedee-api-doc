@@ -8,7 +8,7 @@ We will introduce you to organization access links and how to use them.
 Organization access links
 --------------------------
 
-Organization access allows sharing access to Tedee Lock or Gate with a guest by simple Url. A guest with an access link can open locks or gates without having a Tedee account.
+Organization access links allows sharing access to Tedee Lock or Gate with a guest by simple Url. A guest with an access link can open locks or gates without having a Tedee account.
 
 Access link can be created only from organization and only for devices which are assigned to organization. If you don't have an organization, you can create it using Tedee Portal.
 
@@ -83,7 +83,7 @@ After you send the POST request, you will receive the access link id and the acc
 
         {
             "id": "647afced-54af-40bf-90b9-f8ef28946088",
-            "url": "https://tedee.com/accesslink/123"
+            "url": "https://portal.tedee.com/link/123"
         }
 
 Received access link URL you can share with your friends or guests. They can open the Tedee smart lock or gate using the access link URL.
