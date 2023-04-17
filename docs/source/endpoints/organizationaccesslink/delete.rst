@@ -5,17 +5,17 @@ Deletes the organization access link.
 
 .. code-block:: sh
 
-    PUT |apiUrl|/api/|apiVersion|/organization/{organizationId}/accessLink/{accessLinkId}
+    DELETE |apiUrl|/api/|apiVersion|/organization/{organizationId}/accessLink/{accessLinkId}
 
 **URI Parameters**
 
-+--------------+--------+-----------------------+
-| Name         | Type   | Description           |
-+==============+========+=======================+
-| id           | number | id of the lock        |
-+--------------+--------+-----------------------+
-| accessLinkId | UUID   | id of the access link |
-+--------------+--------+-----------------------+
++----------------+--------+------------------------+
+| Name           | Type   | Description            |
++================+========+========================+
+| organizationId | number | id of the organization |
++----------------+--------+------------------------+
+| accessLinkId   | UUID   | id of the access link  |
++----------------+--------+------------------------+
 
 Responses 
 -------------

@@ -81,7 +81,7 @@ HTTP status code: ``200``
                         }
                     ]
                 },
-                "accessLinkUrl": "https://api.tedee.com/link/0bbDshXmsgjRdDmU2zwYjR1-iQZOcHJL7TuL9NoXOXgC1iF2zVKVKCquVqbEldmkDSspWJKRlH4JcPk.QMzs4Q__"
+                "accessLinkUrl": "https://portal.tedee.com/link/0bbDshXmsgjRdDmU2zwYjR1-iQZOcHJL7TuL9NoXOXgC1iF2zVKVKCquVqbEldmkDSspWJKRlH4JcPk.QMzs4Q__"
             }
             "success": true,
             "errorMessages": [],

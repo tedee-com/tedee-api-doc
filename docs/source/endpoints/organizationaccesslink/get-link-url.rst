@@ -56,7 +56,7 @@ HTTP status code: ``200``
 
         {
             "result": {
-                "url": "https://api.tedee.com/link/0bbDshXmsgjRdDmU2zwYjR1-iQZOcHJL7TuL9NoXOXgC1iF2zVKVKCquVqbEldmkDSspWJKRlH4JcPk.QMzs4Q__"
+                "url": "https://portal.tedee.com/link/0bbDshXmsgjRdDmU2zwYjR1-iQZOcHJL7TuL9NoXOXgC1iF2zVKVKCquVqbEldmkDSspWJKRlH4JcPk.QMzs4Q__"
             }
             "success": true,
             "errorMessages": [],
