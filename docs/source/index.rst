@@ -47,7 +47,7 @@ Tedee API documentation
    endpoints/lockpin/index
    endpoints/mobile/index
    endpoints/organization/index
-   endpoints/organizationaccesslinks/index
+   endpoints/organizationaccesslink/index
    endpoints/personalaccesskey/index
    endpoints/gate/index
 

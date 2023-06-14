@@ -7,6 +7,9 @@ Updates an organization access link.
 
     PATCH |apiUrl|/api/|apiVersion|/organization/{organizationId}/accesslink/{accessLinkId}
 
+.. warning:: 
+    We do not recommend to create access links with permanent access.
+
 **URI Parameters**
 
 +----------------+--------+------------------------+
@@ -31,6 +34,18 @@ Updates an organization access link.
 | repeatEvent | :doc:`Repeat event <../../datastructures/repeat-event>` (optional) | repeat event of the access link                   |
 +-------------+--------------------------------------------------------------------+---------------------------------------------------+
 
+
+.. note::
+    Access links requirements:
+
+    - description must be in range 0-72 characters
+    - deviceIds must contain at least one device
+    - deviceIds must contain distinct device ids
+    - user must be at least organization admin to perform this operation
+
+.. note::
+    Dates sent to Tedee API must be in the UTC timezone. The client must convert the date to UTC before sending it to the API.
+
 Responses 
 -------------
 
@@ -47,23 +62,11 @@ Responses
 Scopes
 -------------
 
-+-----------------------+-------------------------------------------------------------+
-| Name                  | Description                                                 |
-+=======================+=============================================================+
-| AccessLinks.ReadWrite | Grants user possibility to manage organization access links |
-+-----------------------+-------------------------------------------------------------+
-
-.. note::
-    Access links requirements:
-
-    - description must be in range 0-72 characters
-    - deviceIds must contain at least one device
-    - deviceIds must contain distinct device ids
-    - user must be at least organization admin to perform this operation
-
-
-.. note::
-    We do not recommend to create access links with permanent access.
++----------------------+-------------------------------------------------------------+
+| Name                 | Description                                                 |
++======================+=============================================================+
+| AccessLink.ReadWrite | Grants user possibility to manage organization access links |
++----------------------+-------------------------------------------------------------+
 
 Examples
 -------------

@@ -31,13 +31,13 @@ Responses
 Scopes
 -------------
 
-+-----------------------+--------------------------------------------------------------+
-| Name                  | Description                                                  |
-+=======================+==============================================================+
-| AccessLinks.Read      | Grants user possibility to view organization access links.   |
-+-----------------------+--------------------------------------------------------------+
-| AccessLinks.ReadWrite | Grants user possibility to manage organization access links. |
-+-----------------------+--------------------------------------------------------------+
++----------------------+--------------------------------------------------------------+
+| Name                 | Description                                                  |
++======================+==============================================================+
+| AccessLink.Read      | Grants user possibility to view organization access links.   |
++----------------------+--------------------------------------------------------------+
+| AccessLink.ReadWrite | Grants user possibility to manage organization access links. |
++----------------------+--------------------------------------------------------------+
 
 Examples
 -------------
@@ -56,7 +56,7 @@ HTTP status code: ``200``
 
         {
             "result": {
-                "url": "https://api.tedee.com/link/0bbDshXmsgjRdDmU2zwYjR1-iQZOcHJL7TuL9NoXOXgC1iF2zVKVKCquVqbEldmkDSspWJKRlH4JcPk.QMzs4Q__"
+                "url": "https://portal.tedee.com/link/0bbDshXmsgjRdDmU2zwYjR1-iQZOcHJL7TuL9NoXOXgC1iF2zVKVKCquVqbEldmkDSspWJKRlH4JcPk.QMzs4Q__"
             }
             "success": true,
             "errorMessages": [],

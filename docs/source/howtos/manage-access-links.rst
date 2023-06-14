@@ -8,7 +8,7 @@ We will introduce you to organization access links and how to use them.
 Organization access links
 --------------------------
 
-Organization access allows sharing access to Tedee Lock or Gate with a guest by simple Url. A guest with an access link can open locks or gates without having a Tedee account.
+Organization access links allows sharing access to Tedee Lock or Gate with a guest by simple Url. A guest with an access link can open locks or gates without having a Tedee account.
 
 Access link can be created only from organization and only for devices which are assigned to organization. If you don't have an organization, you can create it using Tedee Portal.
 
@@ -45,7 +45,7 @@ Use :doc:`Get organization <../endpoints/organization/get-all>` endpoint:
 
 As a result you will get a list of organizations you administer. You can find the organization you want to create the access link in.
 
-To create an access link, you need to send a POST request using :doc:`Create organization access link <../endpoints/organizationaccesslinks/create>` endpoint:
+To create an access link, you need to send a POST request using :doc:`Create organization access link <../endpoints/organizationaccesslink/create>` endpoint:
 
 .. code-block:: sh
 
@@ -58,7 +58,7 @@ The request body should contain the following parameters:
 * ``name`` - the name of the access link. It is a string with a maximum length of 450 characters.
 * ``description`` - the description of the access link. It is a string with a maximum length of 72 characters.
 * ``deviceIds`` - the list of device IDs you want to assign to the access link. It is a list of integers.
-* ``repeatEvent`` - the access details of the access link. 
+* ``repeatEvent`` - the access details of the access link int UTC.
 
 The example request body is:
 
@@ -77,13 +77,16 @@ The example request body is:
             }
         }
 
+.. note::
+    Dates sent to Tedee API must be in the UTC timezone. The client must convert the date to UTC before sending it to the API.
+
 After you send the POST request, you will receive the access link id and the access link URL.
 
 .. code-block:: js
 
         {
             "id": "647afced-54af-40bf-90b9-f8ef28946088",
-            "url": "https://tedee.com/accesslink/123"
+            "url": "https://portal.tedee.com/link/123"
         }
 
 Received access link URL you can share with your friends or guests. They can open the Tedee smart lock or gate using the access link URL.
@@ -96,7 +99,7 @@ Update an access link
 
 You can always update the access link. You can change the name, description, devices assigned to the access link, and the time period the access link is valid.
 
-To update an access link, you need to send a PATCH request using :doc:`Update organization access link <../endpoints/organizationaccesslinks/update>` endpoint:
+To update an access link, you need to send a PATCH request using :doc:`Update organization access link <../endpoints/organizationaccesslink/update>` endpoint:
 
 .. code-block:: sh
 
@@ -109,7 +112,7 @@ Delete an access link
 
 You can delete an access link. After you delete the access link, it will not be valid anymore.
 
-To delete an access link, you need to send a DELETE request using :doc:`Delete organization access link <../endpoints/organizationaccesslinks/delete>` endpoint:
+To delete an access link, you need to send a DELETE request using :doc:`Delete organization access link <../endpoints/organizationaccesslink/delete>` endpoint:
 
 .. code-block:: sh
 
