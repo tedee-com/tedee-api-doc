@@ -53,7 +53,7 @@ Lock
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | userIdentity             | string                                             | lock owner identity                               |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| userSettings             | :doc:`User settings <user-settings>`               | settings of current user for that device          |
+| userSettings             | :doc:`Lock user settings <lock-user-settings>`     | settings of current user for that device          |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 
 

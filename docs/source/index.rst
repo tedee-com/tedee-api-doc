@@ -79,6 +79,7 @@ Tedee API documentation
    Gate <datastructures/gate>
    Location <datastructures/location>
    Lock <datastructures/lock>
+   Lock user settings <datastructures/lock-user-settings>
    Lock PIN <datastructures/lock-pin>
    Lock PIN created <datastructures/lock-pin-created>
    Lock PIN details <datastructures/lock-pin-details>
@@ -104,7 +105,6 @@ Tedee API documentation
    Share details <datastructures/share-details>
    Signed time <datastructures/signed-time>
    Software versions <datastructures/software-versions>
-   User settings <datastructures/user-settings>
 
 .. toctree::
    :maxdepth: 1

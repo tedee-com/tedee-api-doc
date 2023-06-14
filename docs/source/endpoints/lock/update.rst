@@ -20,7 +20,7 @@ Update lock.
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | name                      | string (optional)                                                         | lock name                                          |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| userSettings              | :doc:`User settings <../../datastructures/user-settings>` (optional)      | settings of current user for that device           |
+| userSettings              | :doc:`Lock user settings <../../datastructures/lock-user-settings>` (optional)      | settings of current user for that device           |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
 | timeZone                  | datetime                                                                  | timezone of lock                                   |
 +---------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
@@ -28,7 +28,7 @@ Update lock.
 All parameters in this endpoint (except id and revision) are optional. 
 This means that specifying a given parameter will update its value. If a given parameter is not specified, its value will not change.
 
-Only the owner or admin can update device settings and name. Guest can only modify user settings.
+Only the owner or admin can update device settings and name. Guest can only modify lock user settings.
 
 Responses 
 -------------
