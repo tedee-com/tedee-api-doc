@@ -49,6 +49,7 @@ Tedee API documentation
    endpoints/organization/index
    endpoints/organizationaccesslinks/index
    endpoints/personalaccesskey/index
+   endpoints/gate/index
 
 .. toctree::
    :maxdepth: 1
@@ -73,6 +74,9 @@ Tedee API documentation
    Device settings <datastructures/device-settings>
    Device share success <datastructures/device-share-success>
    Execute command response <datastructures/execute-command>
+   Gate list <datastructures/gate-list>
+   Gate user settings <datastructures/gate-user-settings>
+   Gate <datastructures/gate>
    Location <datastructures/location>
    Lock <datastructures/lock>
    Lock PIN <datastructures/lock-pin>
@@ -117,6 +121,7 @@ Tedee API documentation
    Software type <enums/software-type>
    Unlock mode <enums/unlock-mode>
    Week days <enums/week-days>
+   Gate icon <enums/gate-icon>
 
 This site contains a documentation for Tedee REST API (https://api.tedee.com).
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.
