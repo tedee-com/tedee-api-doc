@@ -1,7 +1,7 @@
 Get all
 ====================
 
-Get a list of all currently logged user gates
+Returns the gates of the currently logged-on user.
 
 .. code-block:: sh
 
@@ -9,19 +9,19 @@ Get a list of all currently logged user gates
 
 **URI Parameters**
 
-+------------------------+--------------------+---------------------------------+   
-| Name                   | Type               | Description                     |
-+========================+====================+=================================+
-| Filters.Name           | string (optional)  | name to filter                  |
-+------------------------+--------------------+---------------------------------+
-| Filters.IsConnected    | boolean (optional) | connection to filter            |
-+------------------------+--------------------+---------------------------------+
-| includeUserSettings    | boolean (optional) | should userSettings be included |
-+------------------------+--------------------+---------------------------------+
-| ItemsPerPage           | integer (optional) | count of items on page          |
-+------------------------+--------------------+---------------------------------+
-| Page                   | integer (optional) | number of page                  |
-+------------------------+--------------------+---------------------------------+
++------------------------+--------------------+----------------------------------------+   
+| Name                   | Type               | Description                            |
++========================+====================+========================================+
+| filters.name           | string (optional)  | filtering by gate name                 |
++------------------------+--------------------+----------------------------------------+
+| filters.isConnected    | boolean (optional) | filtering by current connection status |
++------------------------+--------------------+----------------------------------------+
+| includeUserSettings    | boolean (optional) | should userSettings be included        |
++------------------------+--------------------+----------------------------------------+
+| itemsPerPage           | integer (optional) | count of items on page                 |
++------------------------+--------------------+----------------------------------------+
+| page                   | integer (optional) | number of page                         |
++------------------------+--------------------+----------------------------------------+
 
 Responses 
 -------------
@@ -67,7 +67,7 @@ HTTP status code: ``200``
             "itemsPerPage":2147483647,
             "gates":[
                 {
-                    "externalId":"4a3fdaac87aa",
+                    "externalId":"2",
                     "externalName":"Backend doorbox 2",
                     "externalType":"gateBox",
                     "impulseLength":5000,
@@ -80,7 +80,7 @@ HTTP status code: ``200``
                     "serialNumber":"23210501-125413",
                     "macAddress":null,
                     "name":"Backend doorbox 2",
-                    "userIdentity":"1e2fb063-8110-49e5-a9cf-8bcc63696bcf",
+                    "userIdentity":"12345678-1234-1234-1234-1234567890",
                     "type":5,
                     "created":"2023-05-24T16:10:34.2354605",
                     "revision":1,
@@ -94,12 +94,12 @@ HTTP status code: ``200``
                         "id":346363,
                         "userId":9541,
                         "deviceId":30586,
-                        "userIdentity":"12c77a1f-6448-44ff-864c-a420a4674aa9",
+                        "userIdentity":"12345678-1234-1234-1234-1234567890",
                         "accessLevel":0,
                         "accessType":0,
-                        "userEmail":"marcin.kocinski@tedee.com",
+                        "userEmail":"test.test@test.test",
                         "isPending":false,
-                        "userDisplayName":"Marcin Koc",
+                        "userDisplayName":"Test",
                         "repeatEvent":
                         {
                             "id":382010,

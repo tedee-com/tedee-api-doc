@@ -153,7 +153,7 @@ This means that specifying a given parameter will update its value. If a given p
 Only the owner or admin can update device settings and name. Guest can only modify lock user settings and location.
 
 Update lock user settings
---------------------
+--------------------------
 
 Let's focus now how to update lock user settings for the lock. Each user can have different set of settings.
 You need to specify which settings from :doc:`Lock user settings <../datastructures/lock-user-settings>` you want to update.

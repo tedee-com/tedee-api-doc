@@ -1,7 +1,7 @@
 Delete gate
 ===============================
 
-Deletes gate provided id.
+Deletes the gate with specified id.
 
 .. code-block:: sh
 
@@ -12,7 +12,7 @@ Deletes gate provided id.
 +------+--------+-----------------------+
 | Name | Type   | Description           |
 +======+========+=======================+
-| id   | number | id of the organization|
+| id   | number | id of gate            |
 +------+--------+-----------------------+
 
 Responses 
