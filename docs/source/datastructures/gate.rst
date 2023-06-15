@@ -1,4 +1,4 @@
-Lock
+Gate
 -----------------
 
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
@@ -6,40 +6,37 @@ Lock
 +==========================+====================================================+===================================================+
 | accessLevel              | :doc:`Access level <../enums/access-level>`        | current user access level                         |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| beaconMajor              | number                                             | identifies and distinguishes group of beacons     |
+| created                  | datetime                                           | when gate was added to user account               |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| beaconMinor              | number                                             | identifies individual beacon within a group of    |
-|                          |                                                    | beacons assigned a major value                    |
+| deviceRevision           | number                                             | current gate revision on the device               |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| connectedToId            | number                                             | id of bridge that lock is connected to            |
+| externalId               | string                                             | id of gate in BleBox system                       |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| connectedToKeypadId      | number                                             | id of keypad that lock is paired with             |
+| externalName             | string                                             | name of gate in external system                   |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| created                  | datetime                                           | when lock was added to user account               |
+| externalType             | string                                             | type of gate in external system                   |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| deviceRevision           | number                                             | current lock revision on the device               |
+| impulseLength            | number                                             | length of the gate opening time in miliseconds    |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| deviceSettings           | :doc:`Device settings <device-settings>`           | current device settings                           |
+| icon                     | :doc:`Gate icon <../enums/gate-icon>`              | icon of gate                                      |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| id                       | number                                             | lock id                                           |
+| id                       | number                                             | gate id                                           |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| isConnected              | boolean                                            | is lock connected to bridge                       |
+| isConnected              | boolean                                            | is gate connected to bridge                       |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| lockProperties           | :doc:`Lock properties <lock-properties>`           | current lock status and properties                |
+| isPresentInExternal      | boolean                                            | current device settings                           |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| macAddress               | string                                             | lock mac address                                  |
+| location                 | :doc:`Location <location>`                         | location of gate                                  |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| name                     | string                                             | lock name                                         |
+| macAddress               | string                                             | gate mac address                                  |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| organizationId           | integer                                            | id of organization that lock is connected to      |
+| name                     | string                                             | gate name                                         |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| organizationName         | string                                             | name of organization that lock is connected to    |
+| organizationId           | integer                                            | id of organization that gate is connected to      |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| organizationSlug         | string                                             | unique, custom url of organization                |
+| revision                 | number                                             | current gate revision in database                 |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| revision                 | number                                             | current lock revision in database                 |
-+--------------------------+----------------------------------------------------+---------------------------------------------------+
-| serialNumber             | string                                             | lock serial number                                |
+| serialNumber             | string                                             | gate serial number                                |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | shareDetails             | :doc:`Share details <share-details>`               | share details of current user for that device     |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
@@ -47,14 +44,11 @@ Lock
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | targetDeviceRevision     | number                                             | revision info that is sent to device from backend |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| timeZone                 | string                                             | timezone of lock                                  |
+| timeZone                 | string                                             | timezone of gate                                  |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | type                     | :doc:`Device type <../enums/device-type>`          | device type                                       |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| userIdentity             | string                                             | lock owner identity                               |
+| userIdentity             | string                                             | gate owner identity                               |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| userSettings             | :doc:`Lock user settings <lock-user-settings>`     | settings of current user for that device          |
+| userSettings             | :doc:`Gate user settings <gate-user-settings>`     | user settings of gate                             |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-
-
-

@@ -150,13 +150,13 @@ Process of the updating device settings is described below:
 All parameters in this endpoint (except id and revision) are optional. 
 This means that specifying a given parameter will update its value. If a given parameter is not specified, its value will not change.
 
-Only the owner or admin can update device settings and name. Guest can only modify user settings and location.
+Only the owner or admin can update device settings and name. Guest can only modify lock user settings and location.
 
-Update user settings
---------------------
+Update lock user settings
+--------------------------
 
-Let's focus now how to update user settings for the lock. Each user can have different set of settings.
-You need to specify which settings from :doc:`User settings <../datastructures/user-settings>` you want to update.
+Let's focus now how to update lock user settings for the lock. Each user can have different set of settings.
+You need to specify which settings from :doc:`Lock user settings <../datastructures/lock-user-settings>` you want to update.
 
 **Sample request**
 
