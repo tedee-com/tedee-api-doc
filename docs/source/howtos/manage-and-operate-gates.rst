@@ -1,11 +1,11 @@
 How to manage and operate gates
 ================================
 
-In this tutorial, we will go through gate management. We will show you how to get and delete gates.
+In this tutorial, we will go through gate management. We will show you how to manage gates and how to operate them.
 
 .. note::
 
-    To have gate, you need to have your Tedee account linked to BleBox and have smart relay module in wBox application.
+    You need to remember that the gate is an external device. To add gates to your Tedee account, you first need to set up an integration to BleBox using the Tedee mobile app. Once you are linked with BleBox, your BleBox devices should be synced with the Tedee account.
 
 
 Get user gates
@@ -19,23 +19,25 @@ To get list of user gates use :doc:`Get all <../endpoints/gate/get-all>` endpoin
 
     curl -X GET "|apiUrl|/api/|apiVersion|/my/gate" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
-As a result you will get a list of gates user have access to. You can find the gate you want to delete.
-In result gates you will see properties as gate connection status, firmware and impulse time. Changing impulse time need to be done in wBox.
+As a result, you will get a list of gates you have synchronized between Tedee and BleBox accounts. You will see the last sync state between Tedee and BleBox systems using the GET endpoint. In the following paragraphs, we will present how to sync the gates state to the latest one.
+
+The GET endpoint can check the current gate connection status, firmware, and impulse length, which is the gate opening signal duration.
 
 .. note::
+    You must use the Blebox (wBox app) directly to update impulse length or gate firmware.
 
-       Gate connection status can be one of the following:
-       
-       1. **connected** - IsConnected is true and isPresentInExternal is true - Gate is connected to BleBox and actions like unlock can be performed
-       
-       2. **disconnected** - IsConnected is false and isPresentInExternal is true - Gate is not connected to BleBox, but still exist in BleBox
-       
-       3. **unlinked** - IsConnected is false and isPresentInExternal is false - Gate is not present in BleBox
+The important thing is to understand states gate can have:
 
-Get user gate by id
+    1. **connected** - The gate is connected to BleBox. The open operations can be performed (IsConnected is true, and IsPresentInExternal is true).
+    
+    2. **disconnected** - The gate is disconnected from the network connection but still exists in BleBox. The open operation can fail if the connection is not re-established in the meantime (IsConnected is false, and IsPresentInExternal is true).
+    
+    3. **unlinked** - Gate is not present in the user BleBox account but still exists in Tedee. (IsPresentInExternal is false).
+
+Get gate by id
 ---------------------
 
-To get single get by id use :doc:`Get single <../endpoints/gate/get-single>` endpoint:
+To get single gate by id use :doc:`Get single <../endpoints/gate/get-single>` endpoint:
 
 **Sample request**
 
@@ -43,9 +45,9 @@ To get single get by id use :doc:`Get single <../endpoints/gate/get-single>` end
 
     curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
-As a result you will get gate.
+As a result you will with same details as described above.
 
-Delete gate by id
+Delete gate 
 ---------------------
 
 To delete gate use :doc:`Get single <../endpoints/gate/delete>` endpoint:
@@ -56,8 +58,9 @@ To delete gate use :doc:`Get single <../endpoints/gate/delete>` endpoint:
 
     curl -X DELETE "|apiUrl|/api/|apiVersion|/my/gate/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
-As a result you will delete gate.
+After running this endpoint, the gate will disappear from your Tedee account.
 
 .. warning::
 
-    The gate will be added again as new device during next sync, if you haven't deleted it from your BleBox account. If you want to delete gate permanently you have to delete it from your BleBox account first.
+    The gate will be added as a new device during the next synchronization between the Tedee and Blebox systems. If you want to delete the gate permanently, you must delete it from your BleBox account first.
+
