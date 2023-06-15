@@ -31,6 +31,7 @@ Tedee API documentation
    Connect to device via Bluetooth <howtos/connect-device-via-ble>
    Example integrations <howtos/example-integrations>
    Manage access links <howtos/manage-access-links>
+   Manage and operate gates <howtos/manage-and-operate-gates>
 
 .. toctree::
    :maxdepth: 1
