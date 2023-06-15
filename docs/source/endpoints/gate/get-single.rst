@@ -1,7 +1,7 @@
 Get single
 ====================
 
-Get gate by provided id.
+Returns the gate with the specified id.
 
 .. code-block:: sh
 
@@ -12,7 +12,7 @@ Get gate by provided id.
 +------------------------+--------------------+---------------------------------+
 | Name                   | Type               | Description                     |
 +========================+====================+=================================+
-| id                     | number             | id of lock                      |
+| id                     | number             | id of the gate                  |
 +------------------------+--------------------+---------------------------------+
 | includeUserSettings    | boolean (optional) | should userSettings be included |
 +------------------------+--------------------+---------------------------------+
@@ -56,7 +56,7 @@ HTTP status code: ``200``
 
         {
         "result": {
-            "externalId": "4a3fdaac87aa",
+            "externalId": "2",
             "externalName": "Backend doorbox 2",
             "externalType": "gateBox",
             "impulseLength": 5000,
@@ -69,7 +69,7 @@ HTTP status code: ``200``
             "serialNumber": "23210501-125413",
             "macAddress": null,
             "name": "Backend doorbox 2",
-            "userIdentity": "1e2fb063-8110-49e5-a9cf-8bcc63696bcf",
+            "userIdentity": "12345678-1234-1234-1234-1234567890",
             "type": 5,
             "created": "2023-05-24T16:10:34.2354605",
             "revision": 1,
@@ -82,12 +82,12 @@ HTTP status code: ``200``
             "id": 346363,
             "userId": 9541,
             "deviceId": 30586,
-            "userIdentity": "12c77a1f-6448-44ff-864c-a420a4674aa9",
+            "userIdentity": "12345678-1234-1234-1234-1234567890",
             "accessLevel": 0,
             "accessType": 0,
-            "userEmail": "marcin.kocinski@tedee.com",
+            "userEmail": "test.test@test.test",
             "isPending": false,
-            "userDisplayName": "Marcin Koc",
+            "userDisplayName": "Test",
             "repeatEvent": {
                 "id": 382010,
                 "weekDays": null,
