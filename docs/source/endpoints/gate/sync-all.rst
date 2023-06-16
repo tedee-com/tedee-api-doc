@@ -1,4 +1,4 @@
-Sync
+Sync all
 =========================
 
 Sync all users gates with BleBox.
