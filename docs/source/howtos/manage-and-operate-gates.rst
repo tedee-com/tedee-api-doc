@@ -64,3 +64,20 @@ After running this endpoint, the gate will disappear from your Tedee account.
 
     The gate will be added as a new device during the next synchronization between the Tedee and Blebox systems. If you want to delete the gate permanently, you must delete it from your BleBox account first.
 
+Unlock gate
+----------------------
+To unlock gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint:
+
+**Sample request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/link/gate/1/operation/unlock" -H "accept: application/json" -H "Authorization: Link <<access token>>"
+    
+.. note::
+    To complete the operation successfully, you must meet several conditions:
+    
+    - gate must be connected to the network
+    - gate must be be present in BleBox account
+    - your BleBox integration must be active
+    - you need to have access to the gate in Tedee system
