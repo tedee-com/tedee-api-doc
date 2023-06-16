@@ -10,11 +10,11 @@ Endpoints used for listing, updating and operating gates.
    Get all <get-all>
    Get single <get-single>
    Delete <delete>
-   Unlock<unlock>
+   Unlock <unlock>
 
 **Operations**
 
 - `Get all <get-all.html>`_
 - `Get single <get-single.html>`_
 - `Delete <delete.html>`_
-- `Unlock <unlock>`_
+- `Unlock <unlock.html>`_
