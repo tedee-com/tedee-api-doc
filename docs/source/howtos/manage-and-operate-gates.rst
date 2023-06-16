@@ -66,7 +66,7 @@ After running this endpoint, the gate will disappear from your Tedee account.
 
 Unlock gate
 ----------------------
-To unlock gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint:
+To unlock the gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint:
 
 **Sample request**
 
@@ -74,13 +74,13 @@ To unlock gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint:
 
     curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/operation/unlock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
     
-After running this endpoint, the gate will be unlocked for impulse length time.
-You can check value of impulse length in :doc:`Get single <../endpoints/gate/get-single>` endpoint.
+After running this endpoint, the gate will be unlocked for an impulse length time.
+You can check the value of impulse length in the :doc:`Get single <../endpoints/gate/get-single>` endpoint.
     
 .. note::
     To complete the operation successfully, you must meet several conditions:
     
     - gate must be connected to the network
-    - gate must be be present in BleBox account
+    - gate must be present in the BleBox account
     - your BleBox integration must be active
-    - you need to have access to the gate in Tedee system
+    - you need to have access to the gate in the Tedee system
