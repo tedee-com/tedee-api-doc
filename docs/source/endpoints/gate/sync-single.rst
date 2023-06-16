@@ -1,4 +1,4 @@
-Sync
+Sync single
 =========================
 
 Sync gate with given id with BleBox.
@@ -44,7 +44,7 @@ Sync user gate
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/sync/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 **Sample response**
