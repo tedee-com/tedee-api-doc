@@ -79,11 +79,11 @@ HTTP status code: ``200``
         "accessLevel": 2,
         "shareDetails": null,
         "softwareVersions": [
-        {
-            "softwareType": 0,
-            "version": "0.1044",
-            "updateAvailable": false
-        }
+            {
+                "softwareType": 0,
+                "version": "0.1044",
+                "updateAvailable": false
+            }
         ]
     },
     "success": true,

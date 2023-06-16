@@ -1,7 +1,7 @@
 Sync all
 =========================
 
-Sync all users gates with BleBox.
+Sync all user gates with BleBox.
 
 .. code-block:: sh
 
