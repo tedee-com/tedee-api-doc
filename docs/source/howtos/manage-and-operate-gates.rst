@@ -74,6 +74,9 @@ To unlock gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint:
 
     curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/operation/unlock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
     
+After running this endpoint, the gate will be unlocked for impulse length time.
+You can check value of impulse length in :doc:`Get single <../endpoints/gate/get-single>` endpoint.
+    
 .. note::
     To complete the operation successfully, you must meet several conditions:
     
