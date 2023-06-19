@@ -45,7 +45,7 @@ To get single gate by id use :doc:`Get single <../endpoints/gate/get-single>` en
 
     curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
-As a result you will with same details as described above.
+As a result you will get single gate with same details as described above.
 
 Delete gate 
 ---------------------
@@ -64,3 +64,43 @@ After running this endpoint, the gate will disappear from your Tedee account.
 
     The gate will be added as a new device during the next synchronization between the Tedee and Blebox systems. If you want to delete the gate permanently, you must delete it from your BleBox account first.
 
+
+Sync
+---------------------
+
+Synchronization is a process of updating gates data in Tedee with data from BleBox. It is required to have current data from BleBox in Tedee.
+
+.. note::
+    Synchronization is a one-way process. Tedee will not update BleBox data.
+
+
+.. note::
+    Gates that are present in Tedee and are not present in BleBox will be marked as unlinked. When an unlinked gate appears in BleBox again, it will be linked.
+
+The synchronization process is performed by Tedee automatically 24 hours after the last successful full synchronization. You can also trigger it manually using the following endpoints.
+
+Sync user gates
+---------------------
+
+To sync gates from linked BleBox account use :doc:`Sync all <../endpoints/gate/sync-all>` endpoint:
+
+**Sample request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+As a result, your gates data from BleBox is synchronized to Tedee.
+
+Sync single gate
+---------------------
+
+To sync single gate use :doc:`Sync single <../endpoints/gate/sync-single>` endpoint:
+
+**Sample request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+As a result, you will sync only a single gate with the logic described above. Sync single does not delay auto-sync as it does not affect other gates.
