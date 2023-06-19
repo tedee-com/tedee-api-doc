@@ -82,5 +82,5 @@ You can check the value of impulse length in the :doc:`Get single <../endpoints/
     
     - gate must be connected to the network
     - gate must be present in the BleBox account
-    - your BleBox integration must be active
+    - integration with BleBox must be active
     - you need to have access to the gate in the Tedee system

@@ -1,7 +1,7 @@
 Unlock
 =========================
 
-Send command to unlock gate by provided id.
+Send a command to unlock gate by provided id.
 
 .. code-block:: sh
 
