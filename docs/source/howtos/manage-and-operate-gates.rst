@@ -24,7 +24,7 @@ As a result, you will get a list of gates you have synchronized between Tedee an
 The GET endpoint can check the current gate connection status, firmware, and impulse length, which is the gate opening signal duration.
 
 .. note::
-    You must use the Blebox (wBox app) directly to update impulse length or gate firmware.
+    You must use the BleBox (wBox app) directly to update impulse length or gate firmware.
 
 The important thing is to understand states gate can have:
 
@@ -64,7 +64,6 @@ After running this endpoint, the gate will disappear from your Tedee account.
 
     The gate will be added as a new device during the next synchronization between the Tedee and Blebox systems. If you want to delete the gate permanently, you must delete it from your BleBox account first.
 
-
 Sync
 ---------------------
 
@@ -72,7 +71,6 @@ Synchronization is a process of updating gates data in Tedee with data from BleB
 
 .. note::
     Synchronization is a one-way process. Tedee will not update BleBox data.
-
 
 .. note::
     Gates that are present in Tedee and are not present in BleBox will be marked as unlinked. When an unlinked gate appears in BleBox again, it will be linked.
@@ -87,7 +85,6 @@ To sync gates from linked BleBox account use :doc:`Sync all <../endpoints/gate/s
 **Sample request**
 
 .. code-block:: sh
-
     curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 As a result, your gates data from BleBox is synchronized to Tedee.
@@ -100,7 +97,26 @@ To sync single gate use :doc:`Sync single <../endpoints/gate/sync-single>` endpo
 **Sample request**
 
 .. code-block:: sh
-
     curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 As a result, you will sync only a single gate with the logic described above. Sync single does not delay auto-sync as it does not affect other gates.
+
+Unlock gate
+----------------------
+To unlock the gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint:
+
+**Sample request**
+
+.. code-block:: sh
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/operation/unlock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    
+After running this endpoint, the gate will be unlocked for an impulse length time.
+You can check the value of impulse length in the :doc:`Get single <../endpoints/gate/get-single>` endpoint.
+    
+.. note::
+    To complete the operation successfully, you must meet several conditions:
+    
+    - gate must be connected to the network
+    - gate must be present in the BleBox account
+    - integration with BleBox must be active
+    - you need to have access to the gate in the Tedee system
