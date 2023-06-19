@@ -12,6 +12,7 @@ Endpoints used for listing, updating and operating gates.
    Delete <delete>
    Sync all <sync-all>
    Sync single <sync-single>
+   Unlock <unlock>
 
 **Operations**
 
@@ -20,3 +21,4 @@ Endpoints used for listing, updating and operating gates.
 - `Delete <delete.html>`_
 - `Sync all <sync-all.html>`_
 - `Sync single <sync-single.html>`_
+- `Unlock <unlock.html>`_

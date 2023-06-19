@@ -24,7 +24,7 @@ As a result, you will get a list of gates you have synchronized between Tedee an
 The GET endpoint can check the current gate connection status, firmware, and impulse length, which is the gate opening signal duration.
 
 .. note::
-    You must use the Blebox (wBox app) directly to update impulse length or gate firmware.
+    You must use the BleBox (wBox app) directly to update impulse length or gate firmware.
 
 The important thing is to understand states gate can have:
 
@@ -64,3 +64,23 @@ After running this endpoint, the gate will disappear from your Tedee account.
 
     The gate will be added as a new device during the next synchronization between the Tedee and Blebox systems. If you want to delete the gate permanently, you must delete it from your BleBox account first.
 
+Unlock gate
+----------------------
+To unlock the gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint:
+
+**Sample request**
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/operation/unlock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    
+After running this endpoint, the gate will be unlocked for an impulse length time.
+You can check the value of impulse length in the :doc:`Get single <../endpoints/gate/get-single>` endpoint.
+    
+.. note::
+    To complete the operation successfully, you must meet several conditions:
+    
+    - gate must be connected to the network
+    - gate must be present in the BleBox account
+    - integration with BleBox must be active
+    - you need to have access to the gate in the Tedee system
