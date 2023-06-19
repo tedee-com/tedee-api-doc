@@ -85,6 +85,7 @@ To sync gates from linked BleBox account use :doc:`Sync all <../endpoints/gate/s
 **Sample request**
 
 .. code-block:: sh
+
     curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 As a result, your gates data from BleBox is synchronized to Tedee.
@@ -97,6 +98,7 @@ To sync single gate use :doc:`Sync single <../endpoints/gate/sync-single>` endpo
 **Sample request**
 
 .. code-block:: sh
+
     curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 As a result, you will sync only a single gate with the logic described above. Sync single does not delay auto-sync as it does not affect other gates.
@@ -108,6 +110,7 @@ To unlock the gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint
 **Sample request**
 
 .. code-block:: sh
+    
     curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/operation/unlock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
     
 After running this endpoint, the gate will be unlocked for an impulse length time.
