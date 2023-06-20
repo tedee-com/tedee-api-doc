@@ -3,6 +3,12 @@ Unlock
 
 Send a command to unlock the gate with provided id.
 
+Running this operation requires the user to have active BleBox integration and active permission to the gate.
+
+After successful operation, the gate will be unlocked.
+
+If you want to get familiar with the whole flow how to manage and operate gates, please refer to our tutorial: :doc:`How to manage and operate gates <../../howtos/manage-and-operate-gates>`.
+
 .. code-block:: sh
 
     POST |apiUrl|/api/|apiVersion|/my/gate/{id}/operation/unlock

@@ -3,6 +3,8 @@ Get single
 
 Returns the gate with the specified id.
 
+If you want to get familiar with the whole flow how to manage and operate gates, please refer to our tutorial: :doc:`How to manage and operate gates <../../howtos/manage-and-operate-gates>`.
+
 .. code-block:: sh
 
     GET |apiUrl|/api/|apiVersion|/my/gate/{id}
