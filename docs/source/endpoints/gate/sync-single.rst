@@ -44,7 +44,7 @@ Sync user gate
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/123/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 **Sample response**
@@ -63,7 +63,7 @@ HTTP status code: ``200``
         "userSettings": null,
         "location": null,
         "isPresentInExternal": true,
-        "id": 31628,
+        "id": 123,
         "organizationId": 883,
         "serialNumber": "12345-12345",
         "name": "Test",

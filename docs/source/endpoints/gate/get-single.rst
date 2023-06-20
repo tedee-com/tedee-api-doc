@@ -46,7 +46,7 @@ Get single gate
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/123" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 
@@ -78,7 +78,7 @@ HTTP status code: ``200``
             "isConnected": false,
             "accessLevel": 0,
             "shareDetails": {
-            "id": 346363,
+            "id": 123,
             "userId": 9541,
             "deviceId": 30586,
             "userIdentity": "12345678-1234-1234-1234-1234567890",

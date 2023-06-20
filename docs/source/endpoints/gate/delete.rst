@@ -45,7 +45,7 @@ Delete gate
 
 .. code-block:: sh
 
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/gate/1" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/gate/123" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 **Sample response**
 
