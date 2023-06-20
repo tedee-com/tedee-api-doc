@@ -44,8 +44,8 @@ Scopes
 Example
 -------------
 
-Unlock the gate with id 123
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Unlock the gate
+^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
