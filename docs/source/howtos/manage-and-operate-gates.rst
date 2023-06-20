@@ -89,7 +89,7 @@ As a result, you will sync only a single gate with the logic described above. Sy
 
 Unlock gate
 ----------------------
-To unlock the gate use :doc:`unlock command <../endpoints/gate/unlock>` endpoint:
+To unlock the gate use :doc:`Unlock gate <../endpoints/gate/unlock>` endpoint:
 
 **Sample request**
 
@@ -109,7 +109,7 @@ You can check the value of impulse length in the :doc:`Delete gate <../endpoints
 Delete gate 
 ---------------------
 
-To delete gate use :doc:`Get single <../endpoints/gate/delete>` endpoint:
+To delete gate use :doc:`Delete gate <../endpoints/gate/delete>` endpoint:
 
 **Sample request**
 
