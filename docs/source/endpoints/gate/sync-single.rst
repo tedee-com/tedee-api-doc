@@ -66,7 +66,6 @@ HTTP status code: ``200``
         "id": 31628,
         "organizationId": 883,
         "serialNumber": "12345-12345",
-        "macAddress": null,
         "name": "Test",
         "userIdentity": "12345678-1234-1234-1234-123456789",
         "type": 5,

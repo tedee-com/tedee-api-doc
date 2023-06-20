@@ -78,7 +78,6 @@ HTTP status code: ``200``
                     "id":30586,
                     "organizationId":901,
                     "serialNumber":"23210501-125413",
-                    "macAddress":null,
                     "name":"Backend doorbox 2",
                     "userIdentity":"12345678-1234-1234-1234-1234567890",
                     "type":5,
