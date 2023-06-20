@@ -18,17 +18,17 @@ Send a command to unlock the gate with provided id.
 Responses 
 -------------
 
-+-------------------------+-----------------------------------------------------------------------------+
-| Name                    | Description                                                                 |
-+=========================+=============================================================================+
-| 204 No Content          | Successful operation                                                        |
-+-------------------------+-----------------------------------------------------------------------------+
-| 400 Bad Request         | The user doesn't have active BleBox integration, the gate is disconnected   |
-+-------------------------+-----------------------------------------------------------------------------+
-| 403 Forbidden           | The user doesn't have permission to the gate                                |
-+-------------------------+-----------------------------------------------------------------------------+
-| 404 Not Found           | Gate not found                                                              |
-+-------------------------+-----------------------------------------------------------------------------+
++-----------------+-------------------------------------------------------------+
+| Name            | Description                                                 |
++=================+=============================================================+
+| 204 No Content  | Successful operation                                        |
++-----------------+-------------------------------------------------------------+
+| 400 Bad Request | The user doesn't have active BleBox integration             |
++-----------------+-------------------------------------------------------------+
+| 403 Forbidden   | The user doesn't have active permission (share) to the gate |
++-----------------+-------------------------------------------------------------+
+| 404 Not Found   | Gate not found                                              |
++-----------------+-------------------------------------------------------------+
 
 Scopes
 -------------
@@ -44,14 +44,14 @@ Scopes
 Example
 -------------
 
-Unlock the gate with id 1
+Unlock the gate with id 123
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/operation/unlock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/123/operation/unlock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 
