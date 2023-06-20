@@ -47,23 +47,6 @@ To get single gate by Tedee id use :doc:`Get single <../endpoints/gate/get-singl
 
 As a result you will get single gate with same details as described above.
 
-Delete gate 
----------------------
-
-To delete gate use :doc:`Get single <../endpoints/gate/delete>` endpoint:
-
-**Sample request**
-
-.. code-block:: sh
-
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/gate/123" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
-
-After running this endpoint, the gate will disappear from your Tedee account.
-
-.. warning::
-
-    The gate will be added as a new device during the next synchronization between the Tedee and Blebox systems. If you want to delete the gate permanently, you must delete it from your BleBox account first.
-
 Sync all gates
 ---------------------
 
@@ -122,3 +105,20 @@ You can check the value of impulse length in the :doc:`Delete gate <../endpoints
     
     - gate must be connected to the network
     - you need to have access to the gate in the Tedee system
+
+Delete gate 
+---------------------
+
+To delete gate use :doc:`Get single <../endpoints/gate/delete>` endpoint:
+
+**Sample request**
+
+.. code-block:: sh
+
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/gate/123" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+
+After running this endpoint, the gate will disappear from your Tedee account.
+
+.. warning::
+
+    The gate will be added as a new device during the next synchronization between the Tedee and Blebox systems. If you want to delete the gate permanently, you must delete it from your BleBox account first.
