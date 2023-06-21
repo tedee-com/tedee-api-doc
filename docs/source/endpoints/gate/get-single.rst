@@ -3,6 +3,8 @@ Get single
 
 Returns the gate with the specified id.
 
+If you want to get familiar with the whole flow how to manage and operate gates, please refer to our tutorial: :doc:`How to manage and operate gates <../../howtos/manage-and-operate-gates>`.
+
 .. code-block:: sh
 
     GET |apiUrl|/api/|apiVersion|/my/gate/{id}
@@ -46,7 +48,7 @@ Get single gate
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/gate/123" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 
@@ -67,7 +69,6 @@ HTTP status code: ``200``
             "id": 30586,
             "organizationId": 901,
             "serialNumber": "23210501-125413",
-            "macAddress": null,
             "name": "Backend doorbox 2",
             "userIdentity": "12345678-1234-1234-1234-1234567890",
             "type": 5,
@@ -79,7 +80,7 @@ HTTP status code: ``200``
             "isConnected": false,
             "accessLevel": 0,
             "shareDetails": {
-            "id": 346363,
+            "id": 123,
             "userId": 9541,
             "deviceId": 30586,
             "userIdentity": "12345678-1234-1234-1234-1234567890",

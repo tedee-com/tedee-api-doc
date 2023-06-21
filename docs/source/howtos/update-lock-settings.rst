@@ -59,7 +59,6 @@ HTTP status code: ``200``
                 "id": 1,
                 "connectedToId": 2,
                 "serialNumber": "111111-11111",
-                "macAddress": "00:0A:95:9D:68:16",
                 "name": "Room 6",
                 "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
                 "type": 2,

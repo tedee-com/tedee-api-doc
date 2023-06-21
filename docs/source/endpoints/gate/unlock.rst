@@ -3,6 +3,12 @@ Unlock
 
 Send a command to unlock the gate with provided id.
 
+Running this operation requires the user to have active BleBox integration and active permission to the gate.
+
+After successful operation, the gate will be unlocked.
+
+If you want to get familiar with the whole flow how to manage and operate gates, please refer to our tutorial: :doc:`How to manage and operate gates <../../howtos/manage-and-operate-gates>`.
+
 .. code-block:: sh
 
     POST |apiUrl|/api/|apiVersion|/my/gate/{id}/operation/unlock
@@ -18,17 +24,17 @@ Send a command to unlock the gate with provided id.
 Responses 
 -------------
 
-+-------------------------+-----------------------------------------------------------------------------+
-| Name                    | Description                                                                 |
-+=========================+=============================================================================+
-| 204 No Content          | Successful operation                                                        |
-+-------------------------+-----------------------------------------------------------------------------+
-| 400 Bad Request         | The user doesn't have active BleBox integration, the gate is disconnected   |
-+-------------------------+-----------------------------------------------------------------------------+
-| 403 Forbidden           | The user doesn't have permission to the gate                                |
-+-------------------------+-----------------------------------------------------------------------------+
-| 404 Not Found           | Gate not found                                                              |
-+-------------------------+-----------------------------------------------------------------------------+
++-----------------+-------------------------------------------------------------+
+| Name            | Description                                                 |
++=================+=============================================================+
+| 204 No Content  | Successful operation                                        |
++-----------------+-------------------------------------------------------------+
+| 400 Bad Request | The user doesn't have active BleBox integration             |
++-----------------+-------------------------------------------------------------+
+| 403 Forbidden   | The user doesn't have active permission (share) to the gate |
++-----------------+-------------------------------------------------------------+
+| 404 Not Found   | Gate not found                                              |
++-----------------+-------------------------------------------------------------+
 
 Scopes
 -------------
@@ -44,14 +50,14 @@ Scopes
 Example
 -------------
 
-Unlock the gate with id 1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Unlock the gate
+^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/1/operation/unlock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/gate/123/operation/unlock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 

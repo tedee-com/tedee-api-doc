@@ -3,6 +3,14 @@ Delete gate
 
 Deletes the gate with specified id.
 
+After running this endpoint, the gate will disappear from your Tedee account.
+
+.. warning::
+
+    The gate will be added as a new device during the next synchronization between the Tedee and Blebox systems. If you want to delete the gate permanently, you must delete it from your BleBox account first.
+
+If you want to get familiar with the whole flow how to manage and operate gates, please refer to our tutorial: :doc:`How to manage and operate gates <../../howtos/manage-and-operate-gates>`.
+
 .. code-block:: sh
 
     DELETE |apiUrl|/api/|apiVersion|/my/gate/{id}
@@ -45,7 +53,7 @@ Delete gate
 
 .. code-block:: sh
 
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/gate/1" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/gate/123" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 **Sample response**
 

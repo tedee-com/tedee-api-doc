@@ -3,6 +3,8 @@ Get all
 
 Returns the gates of the currently logged-on user.
 
+If you want to get familiar with the whole flow how to manage and operate gates, please refer to our tutorial: :doc:`How to manage and operate gates <../../howtos/manage-and-operate-gates>`.
+
 .. code-block:: sh
 
     GET |apiUrl|/api/|apiVersion|/my/gate
@@ -78,7 +80,6 @@ HTTP status code: ``200``
                     "id":30586,
                     "organizationId":901,
                     "serialNumber":"23210501-125413",
-                    "macAddress":null,
                     "name":"Backend doorbox 2",
                     "userIdentity":"12345678-1234-1234-1234-1234567890",
                     "type":5,
