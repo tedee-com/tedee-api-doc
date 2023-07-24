@@ -9,7 +9,7 @@ Release notes
 
 **2023-07-10:**
 
-* support for `location`` in organization access links
+* support for `location` in organization access links
 
 **2023-06-26:**
 
@@ -23,10 +23,10 @@ Release notes
 *  extend `OrganizationAccessLink` description to 1000 chars
 *  restore `Gate Area > Delete Gate device <https://api.tedee.com/swagger/index.html#/Gate/DeleteGate>`_ endpoint
 *  update `Gate Area > Unlock Gate with entered Id <https://api.tedee.com/swagger/index.html#/Gate/UnlockGate>`_ endpoint:
-    + success operation returns `204 No Content` instead of `200 OK`
-    + endpoint returns no data in response body on success
+     + success operation returns `204 No Content` instead of `200 OK`
+     + endpoint returns no data in response body on success
 * enable cloning 'userSettings' in `Device > Clond device data <https://api.tedee.com/swagger/index.html#/Device/Clone>`_ endpoint
-  + `DataToClone` parameter value to clone user settings is `4` 
+     + `DataToClone` parameter value to clone user settings is `4` 
 
 **2023-05-29:**
 
@@ -36,21 +36,21 @@ Release notes
 * return `OrganizationAccessLink` sorted by name in `Organization Access Link Area > Get organization access links <https://api.tedee.com/swagger/index.html#/OrganizationAccessLink/GetAllAccessLinksForOrganization>`_ endpoint
 * `Gate`` firmware version is returned in `softwareVersions` property
 *  fixes:
-    +  enable guest user changing his user settings with `Gate Area > Update Gate device with entered Id <https://api.tedee.com/swagger/index.html#/Gate/PatchGate>`_ endpoint
+     +  enable guest user changing his user settings with `Gate Area > Update Gate device with entered Id <https://api.tedee.com/swagger/index.html#/Gate/PatchGate>`_ endpoint
 
 **2023-05-15:**
 
 * updated `OrganizationAccessLink` requirements:
-    + `name` length constrained to 50 chars
-    + `description` length constrained to 500 chars  
+   + `name` length constrained to 50 chars
+   + `description` length constrained to 500 chars  
 * extend `Gate` models with `Icon` property, which enables settings predefined icon for Gate device
 
 **2023-04-10:**
 
 * update `Integration Area > Update linked BleBox account connection <https://api.tedee.com/swagger/index.html#/Integration/PatchLinkedBleBoxAccount>`_ endpoint:
-  + user can optionally set the `organizationId` parameter to assign all devices from the BleBox account to the organization
+     + user can optionally set the `organizationId` parameter to assign all devices from the BleBox account to the organization
 * fixes:
-  + `userEmail` property is validated on `DeviceShare` creating 
+     + `userEmail` property is validated on `DeviceShare` creating 
 
 **2023-03-27:**
 
