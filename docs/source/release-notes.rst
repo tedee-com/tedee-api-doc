@@ -5,7 +5,7 @@ Release notes
 
 * `Bridge` extended with `LocalApiEnabled` setting
 * add rate limiter for Get All Locks endpoint for Personal Access Key (10 requests per 10 minutes allowed)
-* Organization endpoints extended with `deviceType` property
+* `Organization` endpoints extended with `deviceType` property
 
 **2023-07-10:**
 
@@ -22,7 +22,7 @@ Release notes
 *  extend Gate devices properties with `Location`
 *  extend `OrganizationAccessLink` description to 1000 chars
 *  restore `Gate Area > Delete Gate device <https://api.tedee.com/swagger/index.html#/Gate/DeleteGate>`_ endpoint
-*  update `Gate Area > Unlock Gate with entered Id <https://api.tedee.com/swagger/index.html#/Gate/UnlockGate>`_ endpoint:
+*  update `Gate Area > Unlock Gate <https://api.tedee.com/swagger/index.html#/Gate/UnlockGate>`_ endpoint:
      + success operation returns `204 No Content` instead of `200 OK`
      + endpoint returns no data in response body on success
 * enable cloning 'userSettings' in `Device > Clond device data <https://api.tedee.com/swagger/index.html#/Device/Clone>`_ endpoint
@@ -34,7 +34,7 @@ Release notes
 * added `Gate Area > Show all gates assigned to logged user <https://api.tedee.com/swagger/index.html#/Gate/GetAllGates>`_ endpoint
 * added `Integration Area > Sync BleBox Accounts <https://api.tedee.com/swagger/index.html#/Integration/PostSyncBleBoxAccounts>`_ endpoint, which enables synchronization of BleBox accounts with Tedee Cloud
 * return `OrganizationAccessLink` sorted by name in `Organization Access Link Area > Get organization access links <https://api.tedee.com/swagger/index.html#/OrganizationAccessLink/GetAllAccessLinksForOrganization>`_ endpoint
-* `Gate`` firmware version is returned in `softwareVersions` property
+* `Gate` firmware version is returned in `softwareVersions` property
 *  fixes:
      +  enable guest user changing his user settings with `Gate Area > Update Gate device with entered Id <https://api.tedee.com/swagger/index.html#/Gate/PatchGate>`_ endpoint
 
