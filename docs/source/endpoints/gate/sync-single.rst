@@ -26,15 +26,17 @@ If you want to get familiar with the whole flow how to manage and operate gates,
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/gate/{id}/sync
+    POST |apiUrl|/api/|apiVersion|/my/gate/{id}/sync?includeUserSettings=true
 
 **URI Parameters**
 
-+------------------------+-----------+---------------------+
-| Name                   | Type      | Description         |
-+========================+===========+=====================+
-| id                     | number    | id of gate to sync  |
-+------------------------+-----------+---------------------+
++------------------------+--------------------+-------------------------------------------------+
+| Name                   | Type               | Description                                     |
++========================+====================+=================================================+
+| id                     | number             | id of gate to sync                              |
++------------------------+--------------------+-------------------------------------------------+
+| includeUserSettings    | boolean (optional) | should userSettings be included (default false) |
++------------------------+--------------------+-------------------------------------------------+
 
 
 Responses 

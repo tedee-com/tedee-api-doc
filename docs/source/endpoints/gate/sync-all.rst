@@ -26,7 +26,7 @@ If you want to get familiar with the whole flow how to manage and operate gates,
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/gate/sync
+    POST |apiUrl|/api/|apiVersion|/my/gate/sync
 
 Responses 
 -------------
