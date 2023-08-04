@@ -1,6 +1,10 @@
 Release notes
 =============
 
+**2023-08-07**
+
+* `Organization user` endpoint extended with filter to search by name/email and to include pending users
+
 **2023-07-24**
 
 * `Bridge` extended with `LocalApiEnabled` setting
