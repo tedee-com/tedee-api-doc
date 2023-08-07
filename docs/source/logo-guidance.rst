@@ -8,8 +8,8 @@ Logo variations
 
 You can use tedee logo in two different variations: full logo - contain sign with full tedee symbol, second option is only a 't' symbol on blue background.
 
-| `Download tedee full logo <https://storage.googleapis.com/tedee-wp/2020/11/FullTedeeLogo.zip>`_
-| `Download tedee sign <https://storage.googleapis.com/tedee-wp/2020/11/TedeeSign.zip>`_
+| `Download tedee full logo <https://tedee.com/app/uploads/2023/08/FullTedeeLogo.zip>`_
+| `Download tedee sign <https://tedee.com/app/uploads/2023/08/TedeeSign.zip>`_
 
 .. image:: images/tedee-logo.png
     :align: center
