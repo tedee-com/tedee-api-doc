@@ -1,6 +1,11 @@
 Release notes
 =============
 
+**2023-08-07**
+
+* extended `OrganizationUser Area > Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_ endpoint with filter to search by name/email and to include pending users
+* added `IncludeUserSetting` parameter to `Gate Area > Sync single <https://api.tedee.com/swagger/index.html#/Gate/SyncSingleGate>`_ endpoint
+
 **2023-07-24**
 
 * `Bridge` extended with `LocalApiEnabled` setting
