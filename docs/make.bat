@@ -9,8 +9,6 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=_build
-set SPHINXAUTOBUILD=sphinx-autobuild
-
 
 if "%1" == "livehtml" (
 	sphinx-autobuild -v %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
