@@ -1,12 +1,14 @@
 How to get and sync locks
 =========================
 
-For this tutorial let's consider that you have one or more locks and you need to get their data and then sync their states periodically.
+For the purpose of this tutorial, let's assume that you possess one or more locks, and it is essential to retrieve their data initially and subsequently synchronize their states at regular intervals.
 
 Get user locks
 ---------------------
 
-First thing that you need to do is to use endpoint :doc:`Get all locks <../endpoints/lock/get-all>`. This endpoint will return full data of all currently logged user locks.
+The first step in managing your locks is to retrieve the complete list of locks assigned to your account.
+To do this, use the :doc:`Get all locks <../endpoints/lock/get-all>` endpoint.
+This endpoint will return detailed information for each lock associated with the currently logged-in user's account, providing a comprehensive overview of all your locks and their current statuses.
 
 **Sample request**
 
@@ -18,13 +20,26 @@ First thing that you need to do is to use endpoint :doc:`Get all locks <../endpo
 Sync user locks
 -----------------------
 
-Then after you have succesfully downloaded locks data you can use endpoint :doc:`Sync locks <../endpoints/lock/sync>` to periodically refresh current state 
-of user locks like battery level, connection state, and lock position.
+After receiving the locks, you should switch to using the :doc:`Sync locks <../endpoints/lock/sync>` endpoint to periodically update the status of the locks and keep your application data current.
 
 .. note::
-    If your integration uses OAuth authentication (you have a client id issued for your application by Tedee), 
-    we strongly recommend using webhooks instead of periodically sending requests to the Tedee API to refresh devices.
+    If your integration employs OAuth authentication, and you possess a client ID issued for your application by Tedee, we highly advise utilizing webhooks as opposed to recurrently sending requests to the Tedee API for device refresh.
+    This approach not only optimizes the performance of your application but also ensures a more efficient use of resources.
+    
     More information: :doc:`Webhooks overview <../webhooks/overview>`.
+    
+The :doc:`Sync locks <../endpoints/lock/sync>` and :doc:`Sync single <../endpoints/lock/sync-single>` endpoints serve distinct purposes and are used in different scenarios.
+The :doc:`Sync locks <../endpoints/lock/sync>` endpoint is designed to refresh the current state of all locks assigned to the user, updating the battery level, connection state, and lock position of each lock to reflect their current statuses.
+Conversely, the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint targets a specific lock, updating only its current state.
+
+.. note::
+    Use the :doc:`Sync locks <../endpoints/lock/sync>` endpoint when you need to update the status of all locks associated with the user's account. This is especially useful when the user initially logs into the application or after a significant period of inactivity, to ensure that the application data is current and accurate.
+
+.. note::
+    Use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint when you need to update the status of a specific lock, perhaps after a user action on that particular lock. This endpoint is more efficient in scenarios where only one lock's status needs updating, as it minimizes data transfer and processing time.
+
+.. warning::
+    Please note that if you receive a webhook notification indicating a change in the status of a lock, there is no need to use the 'Sync' endpoints as the update data will be included in the webhook notification.    
 
 **Sample request**
 
@@ -71,5 +86,5 @@ of user locks like battery level, connection state, and lock position.
     You shouldn't run sync endpoint more than once every 10 seconds.
 
 .. note::
-    Do not hardcode lock Id. It will change everytime user add the lock to account.
-    If you must hardcode then use device Serial Number which will not change.
+    Avoid hardcoding the lock ID because it changes every time a user adds a lock to their account.
+    If it is absolutely necessary to hardcode an identifier, use the device Serial Number as it remains unchanged and unique to each lock.
