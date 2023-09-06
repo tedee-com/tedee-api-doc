@@ -33,7 +33,7 @@ The :doc:`Sync locks <../endpoints/lock/sync>` endpoint is designed to refresh t
 Conversely, the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint targets a specific lock, updating only its current state.
 
 Which endpoint should I use?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use the :doc:`Sync locks <../endpoints/lock/sync>` endpoint when you need to update the status of all locks associated with the user's account. This is especially useful when the user initially logs into the application or after a significant period of inactivity, to ensure that the application data is current and accurate.
 
