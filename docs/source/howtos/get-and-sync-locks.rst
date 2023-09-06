@@ -28,15 +28,16 @@ After receiving the locks, you should switch to using the :doc:`Sync locks <../e
     
     More information: :doc:`Webhooks overview <../webhooks/overview>`.
     
-The :doc:`Sync locks <../endpoints/lock/sync>` and :doc:`Sync single <../endpoints/lock/sync-single>` endpoints serve distinct purposes and are used in different scenarios.
+The :doc:`Sync locks <../endpoints/lock/sync>` and :doc:`Sync single <../endpoints/lock/sync-single>` endpoints are used in different scenarios.
 The :doc:`Sync locks <../endpoints/lock/sync>` endpoint is designed to refresh the current state of all locks assigned to the user, updating the battery level, connection state, and lock position of each lock to reflect their current statuses.
 Conversely, the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint targets a specific lock, updating only its current state.
 
-.. note::
-    Use the :doc:`Sync locks <../endpoints/lock/sync>` endpoint when you need to update the status of all locks associated with the user's account. This is especially useful when the user initially logs into the application or after a significant period of inactivity, to ensure that the application data is current and accurate.
+Which endpoint should I use?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-    Use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint when you need to update the status of a specific lock, perhaps after a user action on that particular lock. This endpoint is more efficient in scenarios where only one lock's status needs updating, as it minimizes data transfer and processing time.
+Use the :doc:`Sync locks <../endpoints/lock/sync>` endpoint when you need to update the status of all locks associated with the user's account. This is especially useful when the user initially logs into the application or after a significant period of inactivity, to ensure that the application data is current and accurate.
+
+Use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint when you need to update the status of a specific lock, perhaps after a user action on that particular lock. This endpoint is more efficient in scenarios where only one lock's status needs updating, as it minimizes data transfer and processing time.
 
 .. warning::
     Please note that if you receive a webhook notification indicating a change in the status of a lock, there is no need to use the 'Sync' endpoints as the update data will be included in the webhook notification.    
