@@ -4,11 +4,11 @@ Release notes
 **2023-10-18**
 
 * added new API version 1.31
-* `Organization User > Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>` endpoint returns `organizationUserId` in response body on success
-* `Organization > Get activities for organization device or user <https://api.tedee.com/swagger/index.html#/Organization/GetActivities>` endpoints takes `OrganizationUserId` instead of `UserId`
-* `Organization User > Get all user organization devices with permissions <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetUserDevices>` endpoints takes `OrganizationUserId` instead of `UserId`
-* `Organization User > Get organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUserProfile>` endpoints takes `OrganizationUserId` instead of `UserId`, and in addition return `OrganizationUserId` and `UserId` in response body
-* added `Organization Device > Return all shares for specific device <https://api.tedee.com/swagger/index.html#/OrganizationDevice/GetSpecificDeviceShareDetails>` endpoint
+* `Organization User > Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_ endpoint returns `organizationUserId` in response body on success
+* `Organization > Get activities for organization device or user <https://api.tedee.com/swagger/index.html#/Organization/GetActivities>`_ endpoints takes `OrganizationUserId` instead of `UserId`
+* `Organization User > Get all user organization devices with permissions <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetUserDevices>`_ endpoints takes `OrganizationUserId` instead of `UserId`
+* `Organization User > Get organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUserProfile>`_ endpoints takes `OrganizationUserId` instead of `UserId`, and in addition return `OrganizationUserId` and `UserId` in response body
+* added `Organization Device > Return all shares for specific device <https://api.tedee.com/swagger/index.html#/OrganizationDevice/GetSpecificDeviceShareDetails>`_ endpoint
 
 
 **2023-08-07**s
