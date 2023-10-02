@@ -1,7 +1,15 @@
 Release notes
 =============
 
-**2023-10-18**
+**2023-10-02**
+
+* added new API version 1.32
+* added new user setting on lock device for canceling auto-unlock by other auto-unlock (autoUnlockCancelOtherAutoUnlock)
+* added new user setting in user profile to enable dynamic changing first lock on device list based on user location (dynamicFirstLock)
+* added new endpoints for lock device calibration
+* removed old endpoints for lock device calibration
+
+**2023-09-18**
 
 * added new API version 1.31
 * `Organization User > Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_ endpoint returns `organizationUserId` in the response body on success
