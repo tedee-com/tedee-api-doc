@@ -5,7 +5,7 @@ Release notes
 
 * added new API version 1.32
 * added new user setting on lock device for canceling auto-unlock by other auto-unlock (autoUnlockCancelOtherAutoUnlock)
-* added new user setting in user profile to enable dynamic changing first lock on device list based on user location (dynamicFirstLock)
+* added new user setting in user profile for dynamic changing first lock on device list based on user location (dynamicFirstLock)
 * added new endpoints for lock device calibration
 * removed old endpoints for lock device calibration
 
