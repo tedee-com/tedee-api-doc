@@ -1,6 +1,15 @@
 Release notes
 =============
 
+**2023-10-30**
+
+* improvements in `Gate > Unlock Gate <https://api.tedee.com/swagger/index.html#/Gate/UnlockGate>`_ endpoint. Endpoint now returns `HTTP 408 Request timeout` when connecting to BleBox device ends with timeout.
+
+**2023-10-16**
+
+* added filters to `Organization > Get organization permission matrix <https://api.tedee.com/swagger/index.html#/Organization/GetOrganizationPermissions>`_ endpoint. The currently available filters are: `Filters.Text` where you can specify user name or email, and `Filters.DeviceId [array]` where you can specify only devices you are interested in.
+* improved new calibration endpoints `Lock > Calibrare Lock <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.32#/Lock/CalibrateLock>`_ and `Lock > Calibrate Pull Spring <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.32#/Lock/CalibratePullSpring>`_. If you try calibrating the lock using a new endpoints and your bridge firmware is outdated, you will get an `HTTP 409 Conflict` response.
+
 **2023-10-02**
 
 * added new API version 1.32
