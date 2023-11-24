@@ -3,7 +3,7 @@ Release notes
 
 **2023-11-27**
 
-* added "serialNumber", "softwareVersion" and "state" properties to response from GET my/bridge/paired-devices endpoint
+* added "serialNumber", "softwareVersion" and "state" properties to response from `Bridge > Get paired devices <https://api.tedee.com/swagger/index.html#/Bridge/GetPairedDevices>`_ endpoint
 
 **2023-10-30**
 
