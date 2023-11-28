@@ -1,6 +1,10 @@
 Release notes
 =============
 
+**2023-11-27**
+
+* added "serialNumber", "softwareVersion" and "state" properties to response from `Bridge > Get paired devices <https://api.tedee.com/swagger/index.html#/Bridge/GetPairedDevices>`_ endpoint
+
 **2023-10-30**
 
 * improvements in `Gate > Unlock Gate <https://api.tedee.com/swagger/index.html#/Gate/UnlockGate>`_ endpoint. Endpoint now returns `HTTP 408 Request timeout` when connecting to BleBox device ends with timeout.
