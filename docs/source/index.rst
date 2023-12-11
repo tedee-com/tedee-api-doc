@@ -114,6 +114,7 @@ Tedee API documentation
 
    Access level <enums/access-level>
    Activity source <enums/activity-source>
+   Auto unlock pull condition <enums/auto-unlock-pull-condition>
    Device operation type <enums/device-operation-type>
    Device type <enums/device-type>
    Event type <enums/event-type>
