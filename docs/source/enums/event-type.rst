@@ -78,23 +78,23 @@ This enum describes possible events in device activity logs
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 226    | LockedByAccessLink        | lock was locked via access link                                                                                    |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| 227    | UnlockedByLocalApi        | lock was unlocked via local api                                                                                    |
+| 227    | UnlockedByBridgeApi       | lock was unlocked via bridge api                                                                                   |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 228    | UnlockedByAccessLink      | lock was unlocked via access link                                                                                  |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| 229    | UnlockedByLocalApi        | lock was unlocked via local api                                                                                    |
+| 229    | UnlockedByBridgeApi       | lock was unlocked via bridge api                                                                                   |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 230    | PulledByAccessLink        | spring was pulled via access link                                                                                  |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| 231    | PulledByLocalApi          | spring was pulled via local api                                                                                    |
+| 231    | PulledByBridgeApi         | spring was pulled via bridge api                                                                                   |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 232    | PartiallyOpenByAccessLink | access link sent unlock request and received lock status changed to partially open                                 |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| 233    | PartiallyOpenByLocalApi   | local api sent unlock request and received lock status changed to partially open                                   |
+| 233    | PartiallyOpenByBridgeApi  | bridge api sent unlock request and received lock status changed to partially open                                  |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 234    | PulledAutoByAccessLink    | access link sent auto unlock request when lock was already in unlocked position and only pull spring was performed |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| 235    | PulledAutoByLocalApi      | local api sent auto unlock request when lock was already in unlocked position and only pull spring was performed   |
+| 235    | PulledAutoByBridgeApi     | bridge api sent auto unlock request when lock was already in unlocked position and only pull spring was performed  |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 10000  | GateUnlockedByRemote      | gate was unlocked via mobile app                                                                                   |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
