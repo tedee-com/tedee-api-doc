@@ -140,7 +140,7 @@ Useful links
 - `Forum <https://tedee.freshdesk.com/en/support/discussions>`_
 - `Tedee API <https://api.tedee.com/>`_
 - `Documentation repository <https://github.com/tedee-com/tedee-api-doc>`_
-
+- `Tedee Bridge API documentation <docs.tedee.com/bridge-api>`_
 
 Need a help?
 ------------

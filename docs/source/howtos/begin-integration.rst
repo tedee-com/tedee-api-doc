@@ -1,12 +1,12 @@
 How to begin integration
 ========================
 
-Hi, so you want to write some integration? Choose one of supported scenarios: Full internet or Bluetooth, follow provided steps and have fun.
+Hi, so you want to write some integration? Choose one of supported scenarios: Full internet, Bluetooth or local network, follow provided steps and have fun.
 
 .. _get-client-id:
 
-Integration via API
--------------------
+Integration via Cloud API
+-------------------------
 
 You bought a Tedee Lock and you want to write some automation? You want to create a plugin to existing Smart Home system to integrate it with 
 Tedee Lock via internet? Your company provide smart home platform and want to integrate with Tedee Lock via internet? 
@@ -46,6 +46,27 @@ Examples:
 
 * `PTLS connection from iOS app <https://github.com/tedee-com/tedee-example-ble-ios>`_
 * `PTLS connection from Android app <https://github.com/tedee-com/tedee-example-ble-android>`_
+
+Integration via Bridge API
+--------------------------
+
+If you want to integrate with Tedee Lock via a local network, you can use Bridge API.
+Bridge must have an internet connection to obtain and periodically refresh access certificate for paired devices.
+
+You will need:
+
+* Tedee Lock added to your Tedee account
+* Tedee Bridge connected to the Internet and paired with the lock
+
+Follow these tutorials:
+
+* `How to authenticate <https://docs.tedee.com/bridge-api#tag/Authenticate>`_
+* `Get and sync locks <https://docs.tedee.com/bridge-api#tag/Get-and-sync-locks>`_
+* `Operate locks <https://docs.tedee.com/bridge-api#tag/Operate-locks>`_
+
+Documentation:
+
+* `Bridge API documentation <https://docs.tedee.com/bridge-api>`_
 
 More information
 ----------------
