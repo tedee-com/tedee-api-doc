@@ -25,6 +25,27 @@ Follow these tutorials:
 * :doc:`How to manage device shares <share-device>`
 * :doc:`Update locks settings <update-lock-settings>`
 
+Integration via Bridge API
+--------------------------
+
+If you want to integrate with Tedee Lock via a local network, you can use Bridge API.
+Bridge must have an internet connection to obtain and periodically refresh access certificate for paired devices.
+
+You will need:
+
+* Tedee Lock added to your Tedee account
+* Tedee Bridge connected to the Internet and paired with the lock
+
+Documentation:
+
+* `Bridge API documentation <https://docs.tedee.com/bridge-api>`_
+
+Follow these tutorials:
+
+* `How to authenticate <https://docs.tedee.com/bridge-api#tag/Authenticate>`_
+* `Get and sync locks <https://docs.tedee.com/bridge-api#tag/Get-and-sync-locks>`_
+* `Operate locks <https://docs.tedee.com/bridge-api#tag/Operate-locks>`_
+
 Integration via Bluetooth
 -------------------------
 
@@ -46,27 +67,6 @@ Examples:
 
 * `PTLS connection from iOS app <https://github.com/tedee-com/tedee-example-ble-ios>`_
 * `PTLS connection from Android app <https://github.com/tedee-com/tedee-example-ble-android>`_
-
-Integration via Bridge API
---------------------------
-
-If you want to integrate with Tedee Lock via a local network, you can use Bridge API.
-Bridge must have an internet connection to obtain and periodically refresh access certificate for paired devices.
-
-You will need:
-
-* Tedee Lock added to your Tedee account
-* Tedee Bridge connected to the Internet and paired with the lock
-
-Follow these tutorials:
-
-* `How to authenticate <https://docs.tedee.com/bridge-api#tag/Authenticate>`_
-* `Get and sync locks <https://docs.tedee.com/bridge-api#tag/Get-and-sync-locks>`_
-* `Operate locks <https://docs.tedee.com/bridge-api#tag/Operate-locks>`_
-
-Documentation:
-
-* `Bridge API documentation <https://docs.tedee.com/bridge-api>`_
 
 More information
 ----------------
