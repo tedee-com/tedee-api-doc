@@ -1,6 +1,10 @@
 Release notes
 =============
 
+**2024-02-19**
+
+* added "isAsync" (hotel mode) property to lock :doc:`Device settings <../../datastructures/device-settings>`
+
 **2023-11-27**
 
 * added "serialNumber", "softwareVersion" and "state" properties to response from `Bridge > Get paired devices <https://api.tedee.com/swagger/index.html#/Bridge/GetPairedDevices>`_ endpoint
