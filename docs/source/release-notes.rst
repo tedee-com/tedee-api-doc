@@ -1,6 +1,19 @@
 Release notes
 =============
 
+**2024-06-03**
+
+* new `DryContact <https://api.tedee.com/swagger/index.html#/DryContact>`_ area introduced with CRUD endpoints for managing dry contact devices:
+     + `DryContact > Add DryContact <https://api.tedee.com/swagger/index.html#/DryContact/PostDryContact>`_ endpoint.
+     + `DryContact > Update DryContact <https://api.tedee.com/swagger/index.html#/DryContact/PatchDryContact>`_ endpoint.
+     + `DryContact > Delete DryContact <https://api.tedee.com/swagger/index.html#/DryContact/DeleteDryContact>`_ endpoint.
+     + `DryContact > Get DryContact <https://api.tedee.com/swagger/index.html#/DryContact/GetDryContact>`_ endpoint.
+* `Lock` area extended with pair/unpair `DryContact` endpoints:
+     + `Lock > Pair DryContact <https://api.tedee.com/swagger/index.html#/Lock/PairLockWithDryContact>`_ endpoint.
+     + `Lock > Unpair DryContact <https://api.tedee.com/swagger/index.html#/Lock/UnpairLockFromDryContact>`_ endpoint.
+* :doc:`Lock <../../datastructures/lock>` type extended with `connectedToDryContactId` property.
+* `Device > Get devices with details <https://api.tedee.com/swagger/index.html#/Device/GetDevicesWithDetails>`_ endpoint extended with `drycontacts[]` array.
+
 **2024-02-19**
 
 * added "isAsync" (hotel mode) property to lock :doc:`Device settings <../../datastructures/device-settings>`
