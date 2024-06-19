@@ -1,6 +1,13 @@
 Release notes
 =============
 
+**2024-06-17**
+
+* new `DryContact > Get all <https://api.tedee.com/swagger/index.html#/DryContact/GetAllDryContacts>`_ endpoint introduced for getting all dry contact devices.
+* :doc:`Unlock gate <../../endpoints/gate/unlock>` endpoint returns new HTTP statuses:
+     + 412 Precondition Failed - when user doesn't have active BleBox integration
+     + 423 Locked - when gate is disconnected
+
 **2024-06-03**
 
 * new `DryContact <https://api.tedee.com/swagger/index.html#/DryContact>`_ area introduced with CRUD endpoints for managing dry contact devices:
