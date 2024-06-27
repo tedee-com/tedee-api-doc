@@ -29,6 +29,22 @@ To do this you can use `Tedee Portal <https://portal.tedee.com>`_.
 
 .. warning::
     Treat the PAK as your password, keep it in a safe place and don't share it with anyone. Anyone who knows it can use it to gain access to your locks.
+   
+Rate limiting
+^^^^^^^^^^^^^
+
+To ensure optimal performance and stability of our services, we have implemented a rate limiting policy for API requests. Please be aware of the following restrictions:
+
+* **Rate limit** - Users can send up to **1000 requests per hour** when authenticating using a personal key.
+* **Exceeding the limit** - If the rate limit is exceeded, further requests will be temporarily blocked until the beginning of the next hour.
+* **HTTP Status Code** -  Requests that exceed the rate limit will receive an HTTP status code of 429 (Too Many Requests).
+* **Retry-After header** - The response with 429 status code will include a Retry-After header indicating the number of seconds to wait before retrying the request.
+
+**Best Practices to avoid rate limiting**
+
+* **Implement exponential backoff** -  When you encounter a 429 status code, implement an exponential backoff strategy to retry your requests after a delay.
+* **Monitor your usage** - Keep track of the number of requests your application is making to avoid approaching the rate limit threshold.
+* **Use caching** - Cache responses from the API where applicable to reduce the number of requests needed for repeated data retrieval.
 
 Generate PAK using Tedee Portal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
