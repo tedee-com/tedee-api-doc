@@ -40,7 +40,7 @@ To ensure optimal performance and stability of our services, we have implemented
 * **HTTP Status Code** -  Requests that exceed the rate limit will receive an HTTP status code of 429 (Too Many Requests).
 * **Retry-After header** - The response with 429 status code will include a Retry-After header indicating the number of seconds to wait before retrying the request.
 
-**Best Practices to avoid rate limiting**
+**Best practices to avoid rate limiting**
 
 * **Implement exponential backoff** -  When you encounter a 429 status code, implement an exponential backoff strategy to retry your requests after a delay.
 * **Monitor your usage** - Keep track of the number of requests your application is making to avoid approaching the rate limit threshold.
