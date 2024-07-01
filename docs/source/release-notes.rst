@@ -1,6 +1,11 @@
 Release notes
 =============
 
+**2024-07-02**
+
+* `Organization user > Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_ endpoint extended with role property.
+* :ref:`Personal access key <personal-access-key-rate-limiting>` global rate limit introduced. User can make up to 1000 requests per 1 hour.
+
 **2024-06-17**
 
 * new `DryContact > Get all <https://api.tedee.com/swagger/index.html#/DryContact/GetAllDryContacts>`_ endpoint introduced for getting all dry contact devices.

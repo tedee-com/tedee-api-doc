@@ -29,6 +29,8 @@ To do this you can use `Tedee Portal <https://portal.tedee.com>`_.
 
 .. warning::
     Treat the PAK as your password, keep it in a safe place and don't share it with anyone. Anyone who knows it can use it to gain access to your locks.
+
+.. _personal-access-key-rate-limiting:
    
 Rate limiting
 ^^^^^^^^^^^^^
@@ -44,7 +46,9 @@ To ensure optimal performance and stability of our services, we have implemented
 
 * **Implement exponential backoff** -  When you encounter a 429 status code, implement an exponential backoff strategy to retry your requests after a delay.
 * **Monitor your usage** - Keep track of the number of requests your application is making to avoid approaching the rate limit threshold.
-* **Use caching** - Cache responses from the API where applicable to reduce the number of requests needed for repeated data retrieval.
+* **Optimize your requests** - Avoid making unnecessary requests and ensure that your application is making efficient use of the API.
+* **Send requests in intervals** - Distribute your requests evenly over time instead of sending them all at once. This can help avoid hitting the rate limit and improve the reliability of your requests.
+* **Utilize sync endpoints appropriately** - If you only want to synchronize one lock, use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint. If you need to synchronize several, use the :doc:`Sync locks <../endpoints/lock/sync>` endpoint. Keep in mind that the :doc:`Sync locks <../endpoints/lock/sync>` endpoint has the ability to provide specific lock ids to sync.
 
 Generate PAK using Tedee Portal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

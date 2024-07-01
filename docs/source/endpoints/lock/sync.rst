@@ -9,7 +9,15 @@ Sync all users locks states.
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/lock/sync
+    GET |apiUrl|/api/|apiVersion|/my/lock/sync?id={lockId1}&id={lockId2}
+
+**URI Parameters**
+
++------------------------+---------------------+----------------------------------------+
+| Name                   | Type                | Description                            |
++========================+=====================+========================================+
+| id                     | int[] (optional)    | array with lock ids                    |
++------------------------+---------------------+----------------------------------------+
 
 Responses 
 -------------
