@@ -30,26 +30,6 @@ To do this you can use `Tedee Portal <https://portal.tedee.com>`_.
 .. warning::
     Treat the PAK as your password, keep it in a safe place and don't share it with anyone. Anyone who knows it can use it to gain access to your locks.
 
-.. _personal-access-key-rate-limiting:
-   
-Rate limiting
-^^^^^^^^^^^^^
-
-To ensure optimal performance and stability of our services, we have implemented a rate limiting policy for API requests. Please be aware of the following restrictions:
-
-* **Rate limit** - Users can send up to **1000 requests per hour** when authenticating using a personal key.
-* **Exceeding the limit** - If the rate limit is exceeded, further requests will be temporarily blocked until the beginning of the next hour.
-* **HTTP Status Code** -  Requests that exceed the rate limit will receive an HTTP status code of 429 (Too Many Requests).
-* **Retry-After header** - The response with 429 status code will include a Retry-After header indicating the number of seconds to wait before retrying the request.
-
-**Best practices to avoid rate limiting**
-
-* **Implement exponential backoff** -  When you encounter a 429 status code, implement an exponential backoff strategy to retry your requests after a delay.
-* **Monitor your usage** - Keep track of the number of requests your application is making to avoid approaching the rate limit threshold.
-* **Optimize your requests** - Avoid making unnecessary requests and ensure that your application is making efficient use of the API.
-* **Send requests in intervals** - Distribute your requests evenly over time instead of sending them all at once. This can help avoid hitting the rate limit and improve the reliability of your requests.
-* **Utilize sync endpoints appropriately** - If you only want to synchronize one lock, use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint. If you need to synchronize several, use the :doc:`Sync locks <../endpoints/lock/sync>` endpoint. Keep in mind that the :doc:`Sync locks <../endpoints/lock/sync>` endpoint has the ability to provide specific lock ids to sync.
-
 Generate PAK using Tedee Portal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
