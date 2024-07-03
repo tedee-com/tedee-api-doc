@@ -13,6 +13,7 @@ Tedee API documentation
 
    getting-started
    api-versioning
+   api-rate-limiting
    logo-guidance
    release-notes
 
