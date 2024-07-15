@@ -5,7 +5,6 @@ Release notes
 
 * `User > Delete account <https://api.tedee.com/swagger/index.html#/User/DeleteUser>`_ endpoint returns an `HTTP 412 Precondition Failed` status when the user owns an organization. To delete an account, the user must first `delete the owned organization <https://api.tedee.com/swagger/index.html#/Organization/DeleteOrganization>`_.
 
-
 **2024-07-02**
 
 * `Organization user > Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_ endpoint extended with role property.
