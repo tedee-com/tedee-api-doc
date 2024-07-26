@@ -6,8 +6,8 @@ We have implemented a rate-limiting policy for API requests to ensure optimal pe
 Usage
 -----
 
-* **Rate limit** - Users can send up to **700 requests per hour**.
-* **Exceeding the limit** - If the rate limit is exceeded, further requests will be temporarily blocked until the beginning of the next hour.
+* **Rate limit** - Users can send up to **700 requests per 1-hour window**. The limit is applied per user account.
+* **Exceeding the limit** - If the rate limit is exceeded, further requests will be temporarily blocked until the beginning of the next 1-hour window.
 * **HTTP Status Code** -  Requests that exceed the rate limit will receive an HTTP status code of 429 (Too Many Requests).
 * **Retry-After header** - The HTTP 429 status code response will include a Retry-After header indicating the number of seconds to wait before retrying the request.
 
