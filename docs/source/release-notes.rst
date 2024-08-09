@@ -1,6 +1,16 @@
 Release notes
 =============
 
+**2024-08-12**
+
+* New endpoint added: `Lock > Get Accessories <https://api.tedee.com/swagger/index.html#/Lock/GetAccessories>`_.
+     + The endpoint returns a list of accessories that can be paired with the lock.
+     + Currently endpoint support only DryContact devices.
+* New endpoint added: `Lock > Unpair Accessory <https://api.tedee.com/swagger/index.html#/Lock/UnpairLockFromAccessory>`_.
+     + The endpoint allows unpairing accessories from the lock.
+     + Currently endpoint support only DryContact devices.
+* Fix: After linking account with BleBox devices are properly displayed in the Tedee app.
+
 **2024-07-15**
 
 * `User > Delete account <https://api.tedee.com/swagger/index.html#/User/DeleteUser>`_ endpoint returns an `HTTP 412 Precondition Failed` status when the user owns an organization. To delete an account, the user must first `delete the owned organization <https://api.tedee.com/swagger/index.html#/Organization/DeleteOrganization>`_.
