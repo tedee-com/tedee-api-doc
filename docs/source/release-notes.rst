@@ -1,6 +1,12 @@
 Release notes
 =============
 
+**2024-09-09**
+
+* added new API version 1.33
+* removed `connectedToDryContactId` property from `Lock` device
+* add user display name to response from `DeviceShare > Post Bulk <https://api.tedee.com/swagger/index.html#/DeviceShare/PostBulkDeviceShare>`_ endpoint
+
 **2024-08-12**
 
 * New endpoint added: `Lock > Get Accessories <https://api.tedee.com/swagger/index.html#/Lock/GetAccessories>`_.
