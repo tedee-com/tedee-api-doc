@@ -67,7 +67,8 @@ HTTP status code: ``200``
                 "batteryLevel": 54,
                 "stateChangeResult": 0,
                 "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
-            }
+            },
+            "revision": 1
         }
         "success": true,
         "errorMessages": [],
@@ -85,7 +86,8 @@ HTTP status code: ``200``
         "result": {
             "id": 1,
             "isConnected": false,
-            "lockProperties": null
+            "lockProperties": null,
+            "revision": 1
         }
         "success": true,
         "errorMessages": [],
