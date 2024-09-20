@@ -51,7 +51,7 @@ Requests require additional meta data sent in headers, which help to process the
 
 .. _`authorization-header`:
 
-* **Authorization** - contains JWT to authorize the request (:doc:`read more <../howtos/authenticate>`)
+* **Authorization** - contains personal access key (PAK) or access token (JWT) to authorize the request (:doc:`read more <../howtos/authenticate>`)
 * **Content-Type** - ``application/json`` value is required in this header for POST, PUT and PATCH requests
 
 User context
@@ -59,7 +59,7 @@ User context
 
 Tedee API is based on REST architecture. This implies that the application does not store any state.
 Hence, the client session can not be handled on the server side and every request should provide the information about the user.
-This is handled by JWT included in :ref:`authorization <authorization-header>` header. The access token contains an information that allows to identify the user.
+This is handled by PAK or JWT included in :ref:`authorization <authorization-header>` header. The personal access key (PAK) and access token (JWT) contain an information that allows to identify the user.
 All the requests that starts with ``/my/`` referes to resources directly assigned to the current user for example asking for ``/my/devices`` will return only devices to which authenticated user has access.
 
 Example request
@@ -72,7 +72,7 @@ Put this address ``|apiUrl|/api/|apiVersion|/my/device`` in the `url` input like
 
  GET |apiUrl|/api/|apiVersion|/my/device HTTP/1.1
  Accept: application/json
- Authorization: Bearer <<your-jwt>>
+ Authorization: PersonalKey <<personal access key>>
 
 You should receive response with all your devices.
 
@@ -160,9 +160,6 @@ What's next?
 
 Here's a list of example actions that you can do using the API:
 
-* Get device details
-* Update device settings
-* Calibrate lock
-* Read lock state
-* Read device activities
-* Lock, unlock or pull spring
+* :doc:`Get and sync your locks <howtos/get-and-sync-locks>`
+* :doc:`Operate your locks <howtos/operate-locks>`
+* :doc:`Update lock settings <howtos/update-lock-settings>`

@@ -11,11 +11,11 @@ To update device settings firstly use endpoint :doc:`Get single lock <../endpoin
 
 **Sample request**
 
-This request will get data for lock with Id = 1.
+This request will get data for lock with id = 123.
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 **Sample response**

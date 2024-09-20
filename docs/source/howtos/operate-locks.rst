@@ -31,13 +31,13 @@ To lock the device first make sure it is in unlocked or semi-locked state then s
 Lock request
 ^^^^^^^^^^^^
 
-We will send lock command for device with id = 1.
+We will send lock command for device with id 123.
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/lock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/operation/lock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
 
 In response you will receive operationId and lastStateChangedDate. The locking operation usually takes up to 3 seconds.
 
@@ -49,13 +49,13 @@ To unlock the device first make sure it is in locked or semi-locked state then s
 Unlock request
 ^^^^^^^^^^^^^^
 
-We will send unlock command for device with id = 1.
+We will send unlock command for device with id 123.
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/operation/unlock" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
 
 In response you will receive operationId and lastStateChangedDate. The unlocking operation usually takes up to 3 seconds. When lock has auto pull spring enabled then unlocking lock will perform pull operation.
 
@@ -77,13 +77,13 @@ To perform pull spring first make sure lock is in unlocked state then use :doc:`
 Pull request
 ^^^^^^^^^^^^
 
-Example request will perform pull spring on the lock with id = 1.
+Example request will perform pull spring on the lock with id 123.
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/pull" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/operation/pull" -H "accept: application/json" -H "Authorization: Bearer <<access token>>" 
 
 In response you will receive operationId and lastStateChangedDate. The duration of pull spring is configured by user.
 
@@ -134,13 +134,13 @@ HTTP status code: ``200``
 Sample sync single request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Example of syncing single lock with id = 1.
+Example of syncing single lock with id 123.
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 

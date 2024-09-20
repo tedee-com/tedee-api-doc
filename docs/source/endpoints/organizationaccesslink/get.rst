@@ -42,11 +42,11 @@ Scopes
 Examples
 -------------
 
-**Sample request**
+**Sample request for organization with id = 123**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/organization/1/accesslink/10df36b5-a06e-4bec-9398-786b0231453a" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/organization/123/accesslink/10df36b5-a06e-4bec-9398-786b0231453a" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 **Sample response**
 

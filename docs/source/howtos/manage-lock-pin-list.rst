@@ -9,11 +9,11 @@ Get current pin list
 
 If you want to get the current pin list for the lock, you will need deviceId and use :doc:`Get all pins <../endpoints/lockpin/get-all>` endpoint. 
 
-**Sample request**
+**Sample request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/pin" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123/pin" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 This endpoint will return all pins for the given lock.
 
@@ -48,11 +48,11 @@ After each pin operation, such as creating, updating or deleting, the version of
 When getting the pins, you can optionally provide the last received version of the pin list.
 If there is a newer version of the list on the device, all pins will be returned, otherwise the response code 304 Not Modified will be returned. 
 
-**Sample request with a list version parameter**
+**Sample request with a list version parameter for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/pin?listVersion=2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123/pin?listVersion=2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response when the provided version of the list is up-to-date**
 
@@ -99,11 +99,11 @@ Get pin details
 
 If you want to get details of a selected pin, you will need deviceId along with pinId and use :doc:`Get single pin <../endpoints/lockpin/get-single>` endpoint.
 
-**Sample request**
+**Sample request for lock with id = 123 and pin with id = 2**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/pin/2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123/pin/2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 This endpoint will return pin details.
 
@@ -135,11 +135,11 @@ Create a new pin
 
 If you want to add a new pin for the given lock, you will need deviceId and use :doc:`Create pin <../endpoints/lockpin/create>` endpoint.
 
-**Sample request**
+**Sample request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/pin" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/pin" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 This endpoint will return Id of the created pin.
 
@@ -220,11 +220,11 @@ If you want to update the selected pin for the given lock, you will need deviceI
 Before making any changes you should read the pin details to have complete information about the pin. To do that use :doc:`Get single pin <../endpoints/lockpin/get-single>` endpoint.
 Once you have all, you can send the updated information to the endpoint :doc:`Update pin <../endpoints/lockpin/update>` to update the pin.
 
-**Sample request**
+**Sample request for lock with id = 123 and pin with id = 2**
 
 .. code-block:: sh
 
-    curl -X PUT "|apiUrl|/api/|apiVersion|/my/lock/1/pin/2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X PUT "|apiUrl|/api/|apiVersion|/my/lock/123/pin/2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 Body:
 
@@ -246,8 +246,8 @@ Delete pin
 
 If you want to delete selected pin for the given lock, you will need deviceId along with pinId and use :doc:`Delete pin <../endpoints/lockpin/delete>` endpoint.
 
-**Sample request**
+**Sample request for lock with id = 123 and pin with id = 2**
 
 .. code-block:: sh
 
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/lock/1/pin/2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/lock/123/pin/2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"

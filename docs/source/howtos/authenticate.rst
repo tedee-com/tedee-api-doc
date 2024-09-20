@@ -21,7 +21,7 @@ Each request of this API requires authentication. We utilizes OAuth 2.0 or Perso
 
 .. _personal-access-key:
 
-Personal Access Key
+Personal Access Key (PAK)
 --------------------
 
 Best way to start writing integration. To authenticate via personal access key (PAK) first you need to generate it on your account. 
@@ -57,11 +57,19 @@ Type the personal access key name, choose the expiration date and select the acc
 
 The personal key is created. Remember to save your key. You can copy the key by clicking the copy button located on the right side of the `My new key` textbox.
 
-**Sample request to get lock using PAK**
+.. _add-pak-to-the-headers:
+
+Attach PAK to the request
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now, since we have our PAK, we can use it to authenticate our calls.
+To achieve that, we just have to add an ``Authorization`` header containing our personal access key (PAK). This header value should look like ``PersonalKey <<personal access key>>``, where **<<personal access key>>** is our PAK. 
+
+Let's see it on the below example where we want to get information about all our devices:
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "Authorization: PersonalKey {personal key}" -H "accept: application/json" 
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device" -H "accept: application/json" -H "Authorization: PersonalKey <<personal access key>>"
 
 .. _Oauth-20:
 
@@ -252,11 +260,11 @@ Attach JWT to the request
 Now, since we have our JWT, we can use it to authenticate our calls.
 To achieve that, we just have to add an ``Authorization`` header containing our access token. This header value should look like ``Bearer <<access_token>>``, where **<<access_token>>** is our JWT. 
 
-Let's see it on the below examples where we want to get information about all our devices:
+Let's see it on the below example where we want to get information about all our devices:
 
 .. code-block:: sh
 
-    curl -H "Authorization: Bearer <<access_token>>" |apiUrl|/api/|apiVersion|/my/device
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device" -H "accept: application/json" -H "Authorization: Bearer <<access_token>>"
 
 
 JWT token details
@@ -286,7 +294,7 @@ You can read more about claims `here <https://tools.ietf.org/html/rfc7519#sectio
 Expiration date
 ~~~~~~~~~~~~~~~~~~
 
-Tedee API tokens are valid for 4 hours since the creation time.
+Tedee API access token is valid for 4 hours since the creation time.
 
 Debugger
 ~~~~~~~~~~~~
@@ -341,7 +349,6 @@ Below is a list of available scopes that can be requested during the authorizati
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | AccessLink.ReadWrite      | Grants user possibility to manage organization access links.                                                                                                              |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 .. note::
 
