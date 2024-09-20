@@ -11,7 +11,7 @@ To update device settings firstly use endpoint :doc:`Get single lock <../endpoin
 
 **Sample request**
 
-This request will get data for lock with id = 123.
+This request will get data for lock with id = 123
 
 .. code-block:: sh
 
