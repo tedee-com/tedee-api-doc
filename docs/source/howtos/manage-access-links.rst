@@ -86,7 +86,7 @@ After you send the POST request, you will receive the access link id and the acc
 
         {
             "id": "647afced-54af-40bf-90b9-f8ef28946088",
-            "url": "https://portal.tedee.com/link/123"
+            "url": "https://portal.tedee.com/link/10df36b5-a06e-4bec-9398-786b0231453a"
         }
 
 Received access link URL you can share with your friends or guests. They can open the Tedee smart lock or gate using the access link URL.

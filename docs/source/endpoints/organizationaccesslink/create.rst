@@ -82,11 +82,11 @@ Body:
 .. code-block:: js
 
         {
-            "name": "test pin 3",
-            "description": "918273",
+            "name": "Sample Link",
+            "description": "Building address: 123 Main St, City, State, 12345",
             "deviceIds": [
-                123,
-                223
+                1,
+                2
             ],
             "repeatEvent": {
                 "startDate": "2023-01-01T00:00:00.000Z",

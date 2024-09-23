@@ -66,18 +66,18 @@ HTTP status code: ``200``
                     },
                     "devices": [
                         {
-                        "id": 1,
-                        "name": "Gate",
-                        "timeZone": "UTC-8",
-                        "order": 1,
-                        "deviceType": 5
+                            "id": 1,
+                            "name": "Gate",
+                            "timeZone": "UTC-8",
+                            "order": 1,
+                            "deviceType": 5
                         },
                         {
-                        "id": 2,
-                        "name": "Lock",
-                        "timeZone": "UTC-8",
-                        "order": 2,
-                        "deviceType": 2
+                            "id": 2,
+                            "name": "Lock",
+                            "timeZone": "UTC-8",
+                            "order": 2,
+                            "deviceType": 2
                         }
                     ]
                 },

@@ -62,7 +62,7 @@ HTTP status code: ``200``
             "result": {
                 "accessLinkDevices": [
                     {
-                        "deviceId": 123,
+                        "deviceId": 1,
                         "name": "Lock",
                         "type": 2,
                         "timeZone": "Europe/Warsaw",
@@ -74,7 +74,7 @@ HTTP status code: ``200``
                         ]
                     },
                     {
-                        "deviceId": 28690,
+                        "deviceId": 2,
                         "name": "Gate",
                         "type": 5,
                         "timeZone": "Europe/London",

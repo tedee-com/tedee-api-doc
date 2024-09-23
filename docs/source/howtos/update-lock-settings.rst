@@ -56,7 +56,7 @@ HTTP status code: ``200``
                     "stateChangeResult": 0,
                     "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
                 },
-                "id": 1,
+                "id": 123,
                 "connectedToId": 2,
                 "serialNumber": "111111-11111",
                 "name": "Room 6",

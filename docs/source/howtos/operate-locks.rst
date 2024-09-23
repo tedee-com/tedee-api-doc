@@ -120,7 +120,7 @@ HTTP status code: ``200``
 
     {
         "result": {
-            "deviceId" : 1,
+            "deviceId" : 123,
             "operationId" : "1619078520230",
             "result" : 0,
             "status" : "COMPLETED"
@@ -150,7 +150,7 @@ HTTP status code: ``200``
 
     {
         "result": {
-            "id": 1,
+            "id": 123,
             "isConnected": true,
             "lockProperties": {
                 "state": 3,

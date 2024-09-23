@@ -106,7 +106,7 @@ HTTP status code: ``200``
                 "beaconMajor": 56,
                 "beaconMinor": 57,
                 "timeZone": "Europe/Warsaw",
-                "id": 1,
+                "id": 123,
                 "connectedToId": 2,
                 "serialNumber": "111111-11111",
                 "name": "Room 6",
