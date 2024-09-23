@@ -63,7 +63,6 @@ HTTP status code: ``200``
             {
                 "id": 1,
                 "isConnected": true,
-                "revision": 1,
                 "lockProperties": {
                     "state": 3,
                     "isCharging": false,
@@ -90,7 +89,6 @@ HTTP status code: ``200``
         "result": [
             {
                 "id": 1,
-                "revision": 1,
                 "isConnected": false,
                 "lockProperties": null,
                 "revision": 1
