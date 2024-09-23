@@ -6,6 +6,8 @@ Lock
 +==========================+====================================================+===================================================+
 | accessLevel              | :doc:`Access level <../enums/access-level>`        | current user access level                         |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
+| accessories              | :doc:`Lock accessory <lock-accessory>` []          | collection of accessories paired with lock        |
++--------------------------+----------------------------------------------------+---------------------------------------------------+
 | beaconMajor              | number                                             | identifies and distinguishes group of beacons     |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | beaconMinor              | number                                             | identifies individual beacon within a group of    |
@@ -50,8 +52,6 @@ Lock
 | userIdentity             | string                                             | lock owner identity                               |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | userSettings             | :doc:`Lock user settings <lock-user-settings>`     | settings of current user for that device          |
-+--------------------------+----------------------------------------------------+---------------------------------------------------+
-| accessories              | :doc:`Lock accessory <lock-accessory>` []          | collection of accessories paired with lock        |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 
 
