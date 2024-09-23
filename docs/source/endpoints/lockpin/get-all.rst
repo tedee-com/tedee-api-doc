@@ -48,14 +48,14 @@ Scopes
 Examples
 -------------
 
-Get a list of all pins for the lock with id 1 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Get a list of all pins for the lock with id 123 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/pin" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123/pin" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 
@@ -85,11 +85,11 @@ HTTP status code: ``200``
 Attempting to get a list of pins after providing the current version of the list 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample request**
+**Sample request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/pin?listVersion=2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123/pin?listVersion=2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 

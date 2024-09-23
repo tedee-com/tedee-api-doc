@@ -49,7 +49,7 @@ Examples
 Delete gate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample request**
+**Sample request for gate with id = 123**
 
 .. code-block:: sh
 

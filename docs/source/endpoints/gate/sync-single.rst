@@ -63,7 +63,7 @@ Examples
 Sync user gate
 ^^^^^^^^^^^^^^^^^^^^
 
-**Sample request**
+**Sample request for gate with id = 123**
 
 .. code-block:: sh
 

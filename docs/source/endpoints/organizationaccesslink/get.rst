@@ -42,11 +42,11 @@ Scopes
 Examples
 -------------
 
-**Sample request**
+**Sample request for organization with id = 123**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/organization/1/accesslink/10df36b5-a06e-4bec-9398-786b0231453a" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/organization/123/accesslink/10df36b5-a06e-4bec-9398-786b0231453a" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 **Sample response**
 
@@ -66,18 +66,18 @@ HTTP status code: ``200``
                     },
                     "devices": [
                         {
-                        "id": 1,
-                        "name": "Gate",
-                        "timeZone": "UTC-8",
-                        "order": 1,
-                        "deviceType": 5
+                            "id": 1,
+                            "name": "Gate",
+                            "timeZone": "UTC-8",
+                            "order": 1,
+                            "deviceType": 5
                         },
                         {
-                        "id": 2,
-                        "name": "Lock",
-                        "timeZone": "UTC-8",
-                        "order": 2,
-                        "deviceType": 2
+                            "id": 2,
+                            "name": "Lock",
+                            "timeZone": "UTC-8",
+                            "order": 2,
+                            "deviceType": 2
                         }
                     ]
                 },

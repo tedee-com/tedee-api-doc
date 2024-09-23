@@ -44,7 +44,7 @@ Examples
 Get single gate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample request for gate with id = 123**
 
 .. code-block:: sh
 

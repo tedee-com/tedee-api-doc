@@ -78,14 +78,14 @@ Scopes
 Examples
 -------------
 
-Update pin with id 2 for the lock with id 1 (permanent access)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Update pin with id 2 for the lock with id 123 (permanent access)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X PUT "|apiUrl|/api/|apiVersion|/my/lock/1/pin/2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X PUT "|apiUrl|/api/|apiVersion|/my/lock/123/pin/2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 Body:
 
@@ -108,14 +108,14 @@ HTTP status code: ``204``
             "statusCode": 204
         }
 
-Update pin with id 2 for the lock with id 1 (restricted access)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Update pin with id 2 for the lock with id 123 (restricted access)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X PUT "|apiUrl|/api/|apiVersion|/my/lock/1/pin/2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X PUT "|apiUrl|/api/|apiVersion|/my/lock/123/pin/2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 Body:
 

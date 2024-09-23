@@ -43,11 +43,11 @@ Examples
 Get single lock
 ^^^^^^^^^^^^^^^
 
-**Sample request**
+**Sample request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 **Sample response for lock paired with bridge**
@@ -91,7 +91,7 @@ HTTP status code: ``200``
                 "beaconMajor": 56,
                 "beaconMinor": 57,
                 "timeZone": "Europe/Warsaw",
-                "id": 1,
+                "id": 123,
                 "connectedToId": 2,
                 "serialNumber": "111111-11111",
                 "name": "Room 6",
@@ -152,7 +152,7 @@ HTTP status code: ``200``
                 "lockProperties": null,
                 "beaconMajor": null,
                 "beaconMinor": null,
-                "id": 1,
+                "id": 123,
                 "connectedToId": null,
                 "serialNumber": "111111-11111",
                 "name": "Room 6",
