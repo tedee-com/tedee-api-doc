@@ -63,7 +63,8 @@ Use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint when you nee
                     "batteryLevel": 54,
                     "stateChangeResult": 0,
                     "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
-                }
+                },
+                "revision": 1
             },            
             {
                 "id": 2,
@@ -74,7 +75,8 @@ Use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint when you nee
                     "batteryLevel": 80,
                     "stateChangeResult": 0,
                     "lastStateChangedDate": "2021-04-26T06:02:04.197Z"
-                }
+                },
+                "revision": 1
             }
         ],
         "success": true,
