@@ -1,20 +1,26 @@
 Release notes
 =============
 
-**2024-09-09**
+**2024-09-23**
 
-* added new API version 1.33
-* removed `connectedToDryContactId` property from `Lock` device
-* add user display name to response from `DeviceShare > Post Bulk <https://api.tedee.com/swagger/index.html#/DeviceShare/PostBulkDeviceShare>`_ endpoint
+* added API version 1.33, which consists of breaking changes described below:
+     + fields `connectedToDryContactId`, `connectedToKeypadId` removed from `Lock` model.
+     + field `accessories` of type :doc:`Lock Accessory [] <../datastructures/lock-accessory>` added to `Lock` model.
+     + endpoint `Lock > Pair lock with DryContact device <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.32#/Lock/PairLockWithDryContact>`_ removed.
+     + endpoint `Lock > Unpair lock from DryContact device <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.32#/Lock/UnpairLockFromDryContact>`_ removed.
+     + endpoint `Lock > Pair lock with Keypad device <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.32#/Lock/PairDeviceWithKeypad>`_ removed.
+     + endpoint `Lock > Unpair lock from Keypad device <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.32#/Lock/UnpairDeviceFromKeypad>`_ removed.
+* New endpoint added: `Lock > Pair Accessory <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.33#/Lock/PairLockWithAccessory>`_.
+     + The endpoint allows pairing accessories to the lock.
+* add user display name to response from `DeviceShare > Post Bulk <https://api.tedee.com/swagger/index.html#/DeviceShare/PostBulkDeviceShare>`_ endpoint.
+* added `revision` field to :doc:`Lock > Sync <../../endpoints/lock/sync>` and :doc:`Lock > Sync single <../../endpoints/lock/sync-single>` endpoints.
 
 **2024-08-12**
 
 * New endpoint added: `Lock > Get Accessories <https://api.tedee.com/swagger/index.html#/Lock/GetAccessories>`_.
      + The endpoint returns a list of accessories that can be paired with the lock.
-     + Currently endpoint support only DryContact devices.
 * New endpoint added: `Lock > Unpair Accessory <https://api.tedee.com/swagger/index.html#/Lock/UnpairLockFromAccessory>`_.
      + The endpoint allows unpairing accessories from the lock.
-     + Currently endpoint support only DryContact devices.
 * Fix: After linking account with BleBox devices are properly displayed in the Tedee app.
 
 **2024-07-15**
