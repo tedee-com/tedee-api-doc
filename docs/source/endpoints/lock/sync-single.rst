@@ -45,11 +45,11 @@ Examples
 Sync single lock
 ^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123/sync" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response for lock connected to bridge**
 
@@ -59,7 +59,7 @@ HTTP status code: ``200``
 
     {
         "result": {
-            "id": 1,
+            "id": 123,
             "isConnected": true,
             "lockProperties": {
                 "state": 3,
@@ -84,7 +84,7 @@ HTTP status code: ``200``
 
     {
         "result": {
-            "id": 1,
+            "id": 123,
             "isConnected": false,
             "lockProperties": null,
             "revision": 1

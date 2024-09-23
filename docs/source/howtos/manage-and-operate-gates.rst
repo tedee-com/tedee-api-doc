@@ -39,7 +39,7 @@ Get single gate
 
 To get single gate by Tedee id use :doc:`Get single <../endpoints/gate/get-single>` endpoint:
 
-**Sample request**
+**Sample request for gate with id = 123**
 
 .. code-block:: sh
 
@@ -79,7 +79,7 @@ You may want to check the latest state of the single gate without waiting for th
 
 To sync single gate use :doc:`Sync single <../endpoints/gate/sync-single>` endpoint:
 
-**Sample request**
+**Sample request for gate with id = 123**
 
 .. code-block:: sh
 
@@ -111,7 +111,7 @@ Delete gate
 
 To delete gate use :doc:`Delete gate <../endpoints/gate/delete>` endpoint:
 
-**Sample request**
+**Sample request for gate with id = 123**
 
 .. code-block:: sh
 

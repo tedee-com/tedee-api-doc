@@ -39,11 +39,11 @@ Examples
 Lock
 ^^^^
 
-**Sample Request**
+**Sample request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/lock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/operation/lock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 

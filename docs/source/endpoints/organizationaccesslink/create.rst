@@ -68,25 +68,25 @@ Scopes
 Examples
 -------------
 
-Create organization access link for organization with id 1 with restricted access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create organization access link for organization with id 123 with restricted access
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/organization/1/accesslink" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
+    curl -X POST "|apiUrl|/api/|apiVersion|/organization/123/accesslink" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" -d "<<body>>"
 
 Body:
 
 .. code-block:: js
 
         {
-            "name": "test pin 3",
-            "description": "918273",
+            "name": "Sample Link",
+            "description": "Building address: 123 Main St, City, State, 12345",
             "deviceIds": [
-                123,
-                223
+                1,
+                2
             ],
             "repeatEvent": {
                 "startDate": "2023-01-01T00:00:00.000Z",

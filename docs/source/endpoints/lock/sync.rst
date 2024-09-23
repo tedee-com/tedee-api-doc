@@ -61,7 +61,7 @@ HTTP status code: ``200``
     {
         "result": [
             {
-                "id": 1,
+                "id": 123,
                 "isConnected": true,
                 "lockProperties": {
                     "state": 3,
@@ -88,7 +88,7 @@ HTTP status code: ``200``
     {
         "result": [
             {
-                "id": 1,
+                "id": 123,
                 "isConnected": false,
                 "lockProperties": null,
                 "revision": 1

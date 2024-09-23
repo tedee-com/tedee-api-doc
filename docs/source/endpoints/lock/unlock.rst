@@ -41,11 +41,11 @@ Examples
 Unlock without optional parameter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/operation/unlock" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 
@@ -67,11 +67,11 @@ HTTP status code: ``202``
 Unlock with Force mode
 ^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample Request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock?mode=2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/operation/unlock?mode=2" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 
@@ -93,11 +93,11 @@ HTTP status code: ``202``
 Unlock without auto pull spring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample Request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock?mode=3" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/operation/unlock?mode=3" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 
@@ -119,11 +119,11 @@ HTTP status code: ``202``
 Unlock or pull spring
 ^^^^^^^^^^^^^^^^^^^^^
 
-**Sample Request**
+**Sample Request for lock with id = 123**
 
 .. code-block:: sh
 
-    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/1/operation/unlock?mode=4" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
+    curl -X POST "|apiUrl|/api/|apiVersion|/my/lock/123/operation/unlock?mode=4" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>" 
 
 **Sample response**
 

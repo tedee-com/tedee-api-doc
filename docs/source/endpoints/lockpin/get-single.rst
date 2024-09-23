@@ -48,14 +48,14 @@ Scopes
 Examples
 -------------
 
-Get pin details of pin id 2 for the lock with id 1 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Get pin details of pin with id 2 for the lock with id 123 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/1/pin/2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/lock/123/pin/2" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 
