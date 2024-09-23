@@ -25,7 +25,9 @@ Filters.OrganizationIds accept 'null' as value, then private locks (which don't 
 +------------------------+--------------------+---------------------------------+
 | IncludeOrganization    | boolean (optional) | should organizations be included|
 +------------------------+--------------------+---------------------------------+
-| includeUserSettings    | boolean (optional) | should userSettings be included |
+| IncludeUserSettings    | boolean (optional) | should userSettings be included |
++------------------------+--------------------+---------------------------------+
+| IncludeAccessories     | boolean (optional) | should accessories be included  |
 +------------------------+--------------------+---------------------------------+
 | ItemsPerPage           | integer (optional) | count of items on page          |
 +------------------------+--------------------+---------------------------------+

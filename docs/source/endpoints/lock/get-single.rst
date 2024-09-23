@@ -14,7 +14,9 @@ Get lock by provided id.
 +========================+====================+=================================+
 | id                     | number             | id of lock                      |
 +------------------------+--------------------+---------------------------------+
-| includeUserSettings    | boolean (optional) | should userSettings be included |
+| IncludeUserSettings    | boolean (optional) | should userSettings be included |
++------------------------+--------------------+---------------------------------+
+| IncludeAccessories     | boolean (optional) | should accessories be included  |
 +------------------------+--------------------+---------------------------------+
 
 Responses 

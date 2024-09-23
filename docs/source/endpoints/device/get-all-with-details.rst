@@ -7,6 +7,17 @@ Get a list of all currently logged user devices with details such as devices spe
 
     GET |apiUrl|/api/|apiVersion|/my/device/details
 
+**URI Parameters**
+
++------------------------+--------------------+---------------------------------+
+| Name                   | Type               | Description                     |
++========================+====================+=================================+
++------------------------+--------------------+---------------------------------+
+| IncludeUserSettings    | boolean (optional) | should userSettings be included |
++------------------------+--------------------+---------------------------------+
+| IncludeAccessories     | boolean (optional) | should accessories be included  |
++------------------------+--------------------+---------------------------------+
+
 Responses 
 -------------
 
@@ -39,7 +50,7 @@ Get all devices with details of currently logged user
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/device/details" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device/details?IncludeUserSetting=true&IncludeAccessories=true" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 **Sample response**
 
@@ -84,6 +95,7 @@ HTTP status code: ``200``
             ],
             "locks": [
             {
+                "accessories": [],
                 "deviceSettings": {
                     "autoLockEnabled": true,
                     "autoLockDelay": 10,
@@ -138,7 +150,10 @@ HTTP status code: ``200``
                     }
                 ]
             }
-            ]
+            ],
+            "keypads": [],
+            "gates": [],
+            "dryContacts": []
         },
         "success": true,
         "errorMessages": [],
