@@ -63,13 +63,13 @@ Attach PAK to the request
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now, since we have our PAK, we can use it to authenticate our calls.
-To achieve that, we just have to add an ``Authorization`` header containing our personal access key (PAK). This header value should look like ``PersonalKey <<personal access key>>``, where **<<personal access key>>** is our PAK. 
+To achieve that, we just have to add an ``Authorization`` header containing our personal access key (PAK). This header has to be in the following format ``PersonalKey <<personal access key>>``, where **PersonalKey** is the authorization scheme, and **<<personal access key>>** must be replaced with your unique personal access key (PAK).
 
 Let's see it on the below example where we want to get information about all our devices:
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/device" -H "accept: application/json" -H "Authorization: PersonalKey <<personal access key>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device" -H "Authorization: PersonalKey <<personal access key>>" -H "accept: application/json"
 
 .. _Oauth-20:
 
@@ -258,13 +258,13 @@ Attach JWT to the request
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now, since we have our JWT, we can use it to authenticate our calls.
-To achieve that, we just have to add an ``Authorization`` header containing our access token. This header value should look like ``Bearer <<access_token>>``, where **<<access_token>>** is our JWT. 
+To achieve that, we just have to add an ``Authorization`` header containing our access token. This header has to be in the following format ``Bearer <<access_token>>``, where **Bearer** is the authorization scheme, and  **<<access_token>>** is our JWT. 
 
 Let's see it on the below example where we want to get information about all our devices:
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/device" -H "accept: application/json" -H "Authorization: Bearer <<access_token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device" -H "Authorization: Bearer <<access_token>>" -H "accept: application/json"
 
 
 JWT token details
