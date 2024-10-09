@@ -1,6 +1,13 @@
 Release notes
 =============
 
+**2024-10-07**
+
+* endpoint `Lock > Get Accessories <https://api.tedee.com/swagger/index.html#/Lock/GetAccessories>`_ extended with `AccessoryType` parameter, which allows filtering accessories by type.
+* `Keypad` model extended with `deviceState`, which includes information about the device state. Currently, the object contains:
+    + `batteryLevel` - battery level in percentage (returned if no older than 30-days),
+    + `batteryLevelModifiedDateTime` - date and time when the battery level was last modified (returned if no older than 30-days),
+
 **2024-09-23**
 
 * added API version 1.33, which consists of breaking changes described below:

@@ -22,7 +22,7 @@ Each request of this API requires authentication. We utilizes OAuth 2.0 or Perso
 .. _personal-access-key:
 
 Personal Access Key (PAK)
---------------------
+-------------------------
 
 Best way to start writing integration. To authenticate via personal access key (PAK) first you need to generate it on your account. 
 To do this you can use `Tedee Portal <https://portal.tedee.com>`_.
