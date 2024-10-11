@@ -89,6 +89,7 @@ Tedee API documentation
    Lock properties <datastructures/lock-properties>
    Lock sync <datastructures/lock-sync>
    Lock updated <datastructures/lock-updated>
+   Lock accessory <datastructures/lock-accessory>
    Mobile identifier <datastructures/mobile-identifier>
    Mobile registered <datastructures/registered-mobile>
    Organization <datastructures/organization>
