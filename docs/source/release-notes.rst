@@ -6,7 +6,7 @@ Release notes
 * New endpoint added: `Device > Transfer ownership <https://api.tedee.com/swagger/index.html#/Device/PostTransferDeviceOwnership>`_
     + The endpoint allows transferring the ownership of the device to another user. 
     + To perform the operation, the user must be the owner of the transferred device.
-* Bug fixes:
+* Fixes:
  + Users with paired lock with keypad can delete account.
  + Exception on `Organization access link > Edit organization access link <https://api.tedee.com/swagger/index.html#/OrganizationAccessLink/PatchAccessLink>`_ when changing devices order.
 
