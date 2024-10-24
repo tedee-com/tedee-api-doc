@@ -1,6 +1,14 @@
 Release notes
 =============
 
+**2024-10-22**
+
+* New endpoint added: `Device > Transfer ownership <https://api.tedee.com/swagger/index.html#/Device/PostTransferDeviceOwnership>`_
+    + The endpoint allows transferring the ownership of the device to another user. 
+    + To perform the operation, the user must be the owner of the transferred device.
+* Fixes:
+ + Exception on `Organization access link > Edit organization access link <https://api.tedee.com/swagger/index.html#/OrganizationAccessLink/PatchAccessLink>`_ when changing devices order.
+
 **2024-10-07**
 
 * endpoint `Lock > Get Accessories <https://api.tedee.com/swagger/index.html#/Lock/GetAccessories>`_ extended with `AccessoryType` parameter, which allows filtering accessories by type.
