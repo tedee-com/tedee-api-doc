@@ -6,7 +6,7 @@ Release notes
 * Removed `deviceSettings` field from dry contact model. It is no longer possible to configure dry contact by API.
     + User can configure dry contact using a configuration file in the mobile app.
 * Endpoint `Device > Transfer ownership <https://api.tedee.com/swagger/index.html#/Device/PostTransferDeviceOwnership>`_ allows to transfer ownership of multiple devices at once. 
-    + If the transferred device was paired with others not included in the request, they will be unpaired. 
+    + If any devices in the transfer are currently paired with devices outside the transfer request, those pairings will be removed. 
 
 **2024-10-22**
 
