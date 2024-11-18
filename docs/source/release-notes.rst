@@ -1,6 +1,11 @@
 Release notes
 =============
 
+**2024-11-18**
+
+* Endpoint `Device > Transfer ownership <https://api.tedee.com/swagger/index.html#/Device/PostTransferDeviceOwnership>`_ extended with `removeExistingShares` parameter. 
+    + If set to true, all existing shares will be removed from the transferred devices.
+
 **2024-11-04**
 
 * Removed `deviceSettings` field from dry contact model. It is no longer possible to configure dry contact by API.
