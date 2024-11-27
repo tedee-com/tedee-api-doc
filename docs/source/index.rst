@@ -121,6 +121,7 @@ Tedee API documentation
    Device type <enums/device-type>
    Event type <enums/event-type>
    Lock state <enums/lock-state>
+   Door state <enums/door-state>
    Operating System type <enums/operating-system>
    Software type <enums/software-type>
    Unlock mode <enums/unlock-mode>
