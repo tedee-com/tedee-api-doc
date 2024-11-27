@@ -58,3 +58,6 @@ Examples
             "doorState": 3
         }
     }
+
+.. note::
+    To get doorState values different than 0, lock must be paired with door sensor. 

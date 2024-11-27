@@ -16,3 +16,6 @@ This enum describes possible states of door
 +-----------+-----------------------+
 | 4         | Uncalibrated          |
 +-----------+-----------------------+
+
+.. note::
+    To get values different than 0, door sensor must be paired with lock. 
