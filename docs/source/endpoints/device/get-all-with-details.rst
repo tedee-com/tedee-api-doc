@@ -107,7 +107,11 @@ HTTP status code: ``200``
                     "postponedLockEnabled": true,
                     "postponedLockDelay": 10,
                     "buttonLockEnabled": true,
-                    "buttonUnlockEnabled": true
+                    "buttonUnlockEnabled": true,
+                    "isAsync": false,
+                    "openDoorAlertEnabled": false,
+                    "openDoorAlertThreshold": 300,
+                    "autoLockAfterDoorClosedEnabled": false
                 },
                 "userSettings": {
                     "autoUnlockEnabled": true,
