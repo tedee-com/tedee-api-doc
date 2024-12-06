@@ -29,10 +29,11 @@ Tedee API documentation
    Update lock settings <howtos/update-lock-settings>
    Share device <howtos/share-device>
    Manage lock PIN list <howtos/manage-lock-pin-list>
-   Connect to device via Bluetooth <howtos/connect-device-via-ble>
-   Example integrations <howtos/example-integrations>
    Manage access links <howtos/manage-access-links>
    Manage and operate gates <howtos/manage-and-operate-gates>
+   Use state from door sensor <howtos/use-state-from-door-sensor>
+   Connect to device via Bluetooth <howtos/connect-device-via-ble>
+   Example integrations <howtos/example-integrations>
 
 .. toctree::
    :maxdepth: 1
@@ -119,14 +120,14 @@ Tedee API documentation
    Auto unlock pull condition <enums/auto-unlock-pull-condition>
    Device operation type <enums/device-operation-type>
    Device type <enums/device-type>
-   Event type <enums/event-type>
-   Lock state <enums/lock-state>
    Door state <enums/door-state>
+   Event type <enums/event-type>
+   Gate icon <enums/gate-icon>
+   Lock state <enums/lock-state>
    Operating System type <enums/operating-system>
    Software type <enums/software-type>
    Unlock mode <enums/unlock-mode>
    Week days <enums/week-days>
-   Gate icon <enums/gate-icon>
 
 This site contains a documentation for Tedee REST API (https://api.tedee.com).
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.

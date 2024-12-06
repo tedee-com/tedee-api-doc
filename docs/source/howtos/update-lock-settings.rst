@@ -54,7 +54,8 @@ HTTP status code: ``200``
                         "longitude": 21.086990356445305
                 },
                 "lockProperties": {
-                    "state": 3,
+                    "state": 6,
+                    "doorState": 3,
                     "isCharging": false,
                     "batteryLevel": 18,
                     "stateChangeResult": 0,
