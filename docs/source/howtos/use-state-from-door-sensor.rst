@@ -7,17 +7,17 @@ In this tutorial, we will walk through the scenarios of checking the state of th
 .. note::
     You should pair your lock with a door sensor before using the following features.
 
-You can use the door sensor to the following actions:
+You can use the door sensor for the following actions:
 
-* :ref:`Check the state of the door <check-door-state>`
+* :ref:`Check the door state <check-door-state>`
 * :ref:`Receive the current door state when it changes <receive-door-state>`
 * :ref:`Automatically lock the lock after the door is closed <auto-lock-after-door-closed>`
 * :ref:`Receive an alert if the door has been open too long <door-open-too-long-alert>`
 
 .. _check-door-state:
 
-Check the state of the door
----------------------------
+Check the door state
+--------------------
 
 You can check the state of the door at any time using the Tedee API. 
 The door state is always returned together with the state of the lock that is paired with the door sensor. 
@@ -69,8 +69,8 @@ From an integration perspective, it is crucial to keep device information up to 
 :doc:`Webhook <../webhooks/overview>` notifications solve this problem by automatically sending updates when changes happen. This eliminates the need to periodically send requests to the Tedee API to refresh devices. 
 We use webhook notifications to send information about door status changes. 
 
-When the state of the door changes (for example, when the door is opened or closed), the :doc:`Lock status changed <../webhooks/lock-status-changed>` webhook will be sent. 
-The current state of the door is sent in the :doc:`doorState <../enums/door-state>` property in this webhook. 
+When the state of the door changes (for example, when the door is opened or closed), the :doc:`Lock status changed <../webhooks/lock-status-changed>` webhook will be send. 
+The current state of the door is send in the :doc:`doorState <../enums/door-state>` property in this webhook. 
 Since this is the same webhook that is sent when the lock status changes, it also contains the current state of the lock that is paired with the door sensor.
 
 **Sample webhook after door state changed**
