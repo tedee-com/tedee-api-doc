@@ -32,6 +32,8 @@ Data
 +------------------------+--------------------------------------------+------------------------------------------------+
 | deviceType             | :doc:`Device type <../enums/device-type>`  | device type                                    |
 +------------------------+--------------------------------------------+------------------------------------------------+
+| doorState              | :doc:`Door state <../enums/door-state>`    | current state of the door sensor device        |
++------------------------+--------------------------------------------+------------------------------------------------+
 | eventTime              | datetime                                   | exact time when the state change occurred      |
 +------------------------+--------------------------------------------+------------------------------------------------+
 | state                  | :doc:`Lock state <../enums/lock-state>`    | current state of the lock device               |
@@ -51,7 +53,11 @@ Examples
         "data": {
             "deviceId": 12345,
             "deviceType": 2,
+            "doorState": 3,
             "eventTime": "2022-11-09T14:15:28.327Z",
             "state": 6
         }
     }
+
+.. note::
+    To get doorState values different than 0, lock must be paired with door sensor. 

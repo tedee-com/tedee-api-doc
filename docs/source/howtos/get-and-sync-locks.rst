@@ -58,7 +58,8 @@ Use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint when you nee
                 "id": 1,
                 "isConnected": true,
                 "lockProperties": {
-                    "state": 3,
+                    "state": 6,
+                    "doorState": 3,
                     "isCharging": false,
                     "batteryLevel": 54,
                     "stateChangeResult": 0,
@@ -71,6 +72,7 @@ Use the :doc:`Sync single <../endpoints/lock/sync-single>` endpoint when you nee
                 "isConnected": true,
                 "lockProperties": {
                     "state": 2,
+                    "doorState": 2,
                     "isCharging": true,
                     "batteryLevel": 80,
                     "stateChangeResult": 0,

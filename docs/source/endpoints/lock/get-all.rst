@@ -86,7 +86,11 @@ HTTP status code: ``200``
                     "postponedLockEnabled": false,
                     "postponedLockDelay": 10,
                     "buttonLockEnabled": false,
-                    "buttonUnlockEnabled": false
+                    "buttonUnlockEnabled": false,
+                    "isAsync": false,
+                    "openDoorAlertEnabled": false,
+                    "openDoorAlertThreshold": 300,
+                    "autoLockAfterDoorClosedEnabled": false
                 },
                 "userSettings": {
                     "autoUnlockEnabled": true,
@@ -99,7 +103,8 @@ HTTP status code: ``200``
                         "longitude": 21.086990356445305
                 },
                 "lockProperties": {
-                    "state": 3,
+                    "state": 6,
+                    "doorState": 3,
                     "isCharging": false,
                     "batteryLevel": 18,
                     "stateChangeResult": 0,

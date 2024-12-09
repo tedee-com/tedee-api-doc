@@ -153,7 +153,8 @@ HTTP status code: ``200``
             "id": 123,
             "isConnected": true,
             "lockProperties": {
-                "state": 3,
+                "state": 6,
+                "doorState": 3,
                 "isCharging": false,
                 "batteryLevel": 54,
                 "stateChangeResult": 0,
