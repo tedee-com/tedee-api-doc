@@ -22,7 +22,7 @@ Update lock.
 +---------------------------+--------------------------------------------------------------------------------+----------------------------------------------------+
 | userSettings              | :doc:`Lock user settings <../../datastructures/lock-user-settings>` (optional) | settings of current user for that device           |
 +---------------------------+--------------------------------------------------------------------------------+----------------------------------------------------+
-| timeZone                  | datetime                                                                       | timezone of lock                                   |
+| timeZone                  | datetime (optional)                                                            | timezone of lock                                   |
 +---------------------------+--------------------------------------------------------------------------------+----------------------------------------------------+
 
 All parameters in this endpoint (except id and revision) are optional. 

@@ -46,13 +46,14 @@ Tedee API documentation
    endpoints/deviceactivity/index
    endpoints/devicecertificate/index
    endpoints/deviceshare/index
+   endpoints/doorsensor/index
+   endpoints/gate/index
    endpoints/lock/index
    endpoints/lockpin/index
    endpoints/mobile/index
    endpoints/organization/index
    endpoints/organizationaccesslink/index
    endpoints/personalaccesskey/index
-   endpoints/gate/index
 
 .. toctree::
    :maxdepth: 1
@@ -76,6 +77,11 @@ Tedee API documentation
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
    Device share success <datastructures/device-share-success>
+   Door sensor list <datastructures/door-sensor-list>
+   Door sensor state <datastructures/door-sensor-state>
+   Door sensor updated <datastructures/door-sensor-updated>
+   Door sensor user settings <datastructures/door-sensor-user-settings>
+   Door sensor <datastructures/door-sensor>
    Execute command response <datastructures/execute-command>
    Gate list <datastructures/gate-list>
    Gate user settings <datastructures/gate-user-settings>
