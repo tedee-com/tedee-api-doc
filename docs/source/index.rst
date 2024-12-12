@@ -46,13 +46,14 @@ Tedee API documentation
    endpoints/deviceactivity/index
    endpoints/devicecertificate/index
    endpoints/deviceshare/index
+   endpoints/doorsensor/index
+   endpoints/gate/index
    endpoints/lock/index
    endpoints/lockpin/index
    endpoints/mobile/index
    endpoints/organization/index
    endpoints/organizationaccesslink/index
    endpoints/personalaccesskey/index
-   endpoints/gate/index
 
 .. toctree::
    :maxdepth: 1
@@ -76,21 +77,25 @@ Tedee API documentation
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
    Device share success <datastructures/device-share-success>
+   Device updated <datastructures/device-updated>
+   Door sensor list <datastructures/door-sensor-list>
+   Door sensor state <datastructures/door-sensor-state>
+   Door sensor user settings <datastructures/door-sensor-user-settings>
+   Door sensor <datastructures/door-sensor>
    Execute command response <datastructures/execute-command>
    Gate list <datastructures/gate-list>
    Gate user settings <datastructures/gate-user-settings>
    Gate <datastructures/gate>
    Location <datastructures/location>
    Lock <datastructures/lock>
-   Lock user settings <datastructures/lock-user-settings>
+   Lock accessory <datastructures/lock-accessory>
    Lock PIN <datastructures/lock-pin>
    Lock PIN created <datastructures/lock-pin-created>
    Lock PIN details <datastructures/lock-pin-details>
    Lock PIN list <datastructures/lock-pin-list>
    Lock properties <datastructures/lock-properties>
    Lock sync <datastructures/lock-sync>
-   Lock updated <datastructures/lock-updated>
-   Lock accessory <datastructures/lock-accessory>
+   Lock user settings <datastructures/lock-user-settings>
    Mobile identifier <datastructures/mobile-identifier>
    Mobile registered <datastructures/registered-mobile>
    Organization <datastructures/organization>
