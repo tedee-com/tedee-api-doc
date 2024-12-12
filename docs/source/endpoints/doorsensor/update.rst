@@ -1,7 +1,7 @@
 Update
 =========================
 
-Update door sensor.
+Updates the door sensor with the specified id.
 
 .. code-block:: sh
 
@@ -12,7 +12,7 @@ Update door sensor.
 +------+--------+-----------------------+
 | Name | Type   | Description           |
 +======+========+=======================+
-| id   | number | id of door sensor     |
+| id   | number | id of the door sensor |
 +------+--------+-----------------------+
 
 **Body Parameters**
@@ -32,7 +32,7 @@ Update door sensor.
 All parameters in this endpoint (except id and revision) are optional. 
 This means that specifying a given parameter will update its value. If a given parameter is not specified, its value will not change.
 
-Only the owner or admin can update device settings and name. Guest can only modify user settings.
+Only the owner or admin can update name and time zone. Guest can only modify user settings.
 
 Responses 
 -------------

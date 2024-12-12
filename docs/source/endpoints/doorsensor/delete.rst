@@ -14,7 +14,7 @@ After running this endpoint, the door sensor will disappear from your Tedee acco
 +------+--------+-----------------------+
 | Name | Type   | Description           |
 +======+========+=======================+
-| id   | number | id of door sensor     |
+| id   | number | id of the door sensor |
 +------+--------+-----------------------+
 
 Responses 

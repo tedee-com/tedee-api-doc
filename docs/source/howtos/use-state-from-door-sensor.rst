@@ -69,7 +69,7 @@ From an integration perspective, it is crucial to keep device information up to 
 :doc:`Webhook <../webhooks/overview>` notifications solve this problem by automatically sending updates when changes happen. This eliminates the need to periodically send requests to the Tedee API to refresh devices. 
 We use webhook notifications to send information about door status changes. 
 
-When the state of the door changes (for example, when the door is opened or closed), the :doc:`Lock status changed <../webhooks/lock-status-changed>` webhook will be send. 
+When the state of the door changes (for example, when the door is opened or closed), the :doc:`Lock status changed <../webhooks/lock-status-changed>` webhook will be sent. 
 The current state of the door is send in the :doc:`doorState <../enums/door-state>` property in this webhook. 
 Since this is the same webhook that is sent when the lock status changes, it also contains the current state of the lock that is paired with the door sensor.
 

@@ -40,3 +40,7 @@ Door sensor
 +--------------------------+---------------------------------------------------------------+-----------------------------------------------------+
 | userSettings             | :doc:`Door sensor user settings <door-sensor-user-settings>`  | settings of current user for that device            |
 +--------------------------+---------------------------------------------------------------+-----------------------------------------------------+
+
+.. note::
+    The state of the door is not part of the door sensor model, but of the :doc:`Lock <../../datastructures/lock>` model.
+    The current :doc:`doorState <../enums/door-state>` is returned along with other :doc:`properties <lock-properties>` of the lock paired with the door sensor.
