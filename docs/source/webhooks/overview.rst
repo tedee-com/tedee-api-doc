@@ -24,3 +24,4 @@ In that case, two webhook notifications will be received on your webhook URL. Th
 - `Device connection changed <device-connection-changed.html>`_
 - `Device settings changed <device-settings-changed.html>`_
 - `Lock status changed <lock-status-changed.html>`_
+- `Bell button pressed <bell-button-pressed.html>`_
