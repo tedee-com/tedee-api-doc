@@ -65,6 +65,7 @@ Tedee API documentation
    Device connection changed <webhooks/device-connection-changed>
    Device settings changed <webhooks/device-settings-changed>
    Lock status changed <webhooks/lock-status-changed>
+   Bell button pressed <webhooks/bell-button-pressed>
 
 .. toctree::
    :maxdepth: 1
