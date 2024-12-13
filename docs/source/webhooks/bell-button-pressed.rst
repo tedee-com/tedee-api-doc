@@ -9,7 +9,7 @@ Body
 +------------------------+---------------------------------------------+-----------------------------------------------------------+
 | Name                   | Type                                        | Description                                               |
 +========================+=============================================+===========================================================+
-| data                   | :ref:`Data <data-bell-button-pressed>`      | detailed information about what changed                   |
+| data                   | :ref:`Data <data-bell-button-pressed>`      | detailed information about the event                  |
 +------------------------+---------------------------------------------+-----------------------------------------------------------+
 | event                  | string                                      | event name: "bell-button-pressed"                         |
 +------------------------+---------------------------------------------+-----------------------------------------------------------+
@@ -47,3 +47,6 @@ Examples
             "eventTime": "2024-12-13T07:36:36.6926999"
         }
     }
+
+.. note::
+    This webhook is sent only to the users with admin permissions on the lock
