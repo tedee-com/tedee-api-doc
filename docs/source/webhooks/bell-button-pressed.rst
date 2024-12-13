@@ -1,7 +1,8 @@
 Bell button pressed
 ====================================
 
-Webhook triggers when bell button is pressed on the keypad connected to the lock.  
+Webhook triggers when bell button is pressed on the keypad connected to the lock. 
+This webhook is sent only to the users with at least Admin permissions on the lock.
 
 Body 
 -------------
@@ -47,6 +48,3 @@ Examples
             "eventTime": "2024-12-13T07:36:36.6926999"
         }
     }
-
-.. note::
-    This webhook is sent only to the users with admin permissions on the lock
