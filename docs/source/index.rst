@@ -45,7 +45,7 @@ Tedee API documentation
    endpoints/device/index
    endpoints/deviceactivity/index
    endpoints/devicecertificate/index
-   endpoints/deviceshare/index
+   endpoints/deviceaccess/index
    endpoints/doorsensor/index
    endpoints/gate/index
    endpoints/lock/index
@@ -72,9 +72,11 @@ Tedee API documentation
    :caption: Data structures
    :hidden:
 
+   Access details <datastructures/access-details>
    Bridge <datastructures/bridge>
    Certificate for mobile <datastructures/certificate-for-mobile>
    Device activities <datastructures/device-activity>
+   Device access <datastructures/device-access>
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
    Device share success <datastructures/device-share-success>
@@ -112,7 +114,6 @@ Tedee API documentation
    Repeat event <datastructures/repeat-event>
    Revoked certificate <datastructures/revoked-certificate>
    Revoked certificate list <datastructures/revoked-certificate-list>
-   Share details <datastructures/share-details>
    Signed time <datastructures/signed-time>
    Software versions <datastructures/software-versions>
 

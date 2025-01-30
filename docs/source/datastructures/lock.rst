@@ -39,7 +39,7 @@ Lock
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | serialNumber             | string                                             | lock serial number                                |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| shareDetails             | :doc:`Share details <share-details>`               | share details of current user for that device     |
+| accessDetails            | :doc:`Access details <share-details>`              | access details of current user for that device    |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | softwareVersions         | :doc:`Software version <software-versions>`        | software versions of the device                   |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+

@@ -1,4 +1,4 @@
-Device share
+Device access
 =========================
 
 Endpoints used for listing, creating, updating and removing access to the devices.

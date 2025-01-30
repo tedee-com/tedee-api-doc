@@ -6,14 +6,16 @@ To remove access from user you need to be owner or administrator of the device.
 
 .. code-block:: sh
 
-    DELETE |apiUrl|/api/|apiVersion|/my/deviceshare/{deviceShareId}
+    DELETE |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access/{deviceShareId}
 
 **URI Parameters**
 
 +---------------------------+-----------+--------------------------+
 | Name                      | Type      |    Description           | 
 +===========================+===========+==========================+
-| deviceShareId             | number    | id of share to delete    |
+| deviceId                  | number    | id of device             |
++---------------------------+-----------+--------------------------+
+| accessId                  | number    | id of access to delete   |
 +---------------------------+-----------+--------------------------+
 
 
@@ -32,7 +34,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| DeviceShare.ReadWrite  | Grants user possibility to read and write data connected with device shares   |
+| DeviceShare.ReadWrite  | Grants user possibility to read and write data connected with device access   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples
@@ -45,7 +47,7 @@ Remove access to the device
 
 .. code-block:: sh
 
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/deviceshare/15" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/device/1/access/15" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
 
 
 
