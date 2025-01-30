@@ -36,7 +36,7 @@ Gate
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | serialNumber             | string                                             | gate serial number                                |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
-| accessDetails            | :doc:`Access details <access-details>`             | access details of current user for that device    |
+| accessDetails            | :doc:`Access details <device-access>`              | access details of current user for that device    |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+
 | softwareVersions         | :doc:`Software version <software-versions>`        | software versions of the device                   |
 +--------------------------+----------------------------------------------------+---------------------------------------------------+

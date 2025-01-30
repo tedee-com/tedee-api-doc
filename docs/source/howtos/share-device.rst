@@ -57,13 +57,14 @@ If you want a user to have permanent access to the Tedee Lock, you need to send 
 **Sample permanent access restriction**
 
 .. code-block:: js
-{
+    
+ {
     "weekDays": null,
     "dayStartTime": null,
     "dayEndTime": null,
     "startDate": null,
     "endDate": null
-}
+ }
 
 Customized access
 ^^^^^^^^^^^^^^^^^^^^
@@ -77,29 +78,32 @@ To send it properly, you need to use :doc:`Week days <../enums/week-days>` enum.
 In this case, the share will be created from 14 December 2020 to 31 December 2020.
 
 .. code-block:: js
-{
+    
+ {
     "weekDays": null,
     "dayStartTime": null,
     "dayEndTime": null,
     "startDate": "2020-12-14T08:09:57.781Z",
     "endDate": "2020-12-31T08:10:57.781Z"
-}
+ }
 
 In this case, the share will be created from 1 December 2020 to 31 December 2020, and the user will have access only on Friday and Saturday between 15:00 and 18:00.
 
 .. code-block:: js
-{
+    
+ {
     "weekDays": 48,
     "dayStartTime": "2020-12-01T15:00:00.000Z",
     "dayEndTime": "2020-12-31T18:00:00.000Z",
     "startDate": "2020-12-01T08:00:00.000Z",
     "endDate": "2020-12-31T20:00:00.000Z"
-}
+ }
 
 In this case, the user will have access only from Monday to Friday between 8:00 and 16:00.
 
 .. code-block:: js
-{
+    
+ {
      "weekDays": 31,
      "dayStartTime": "2020-12-01T08:00:00.000Z",
      "dayEndTime": "2020-12-31T16:00:00.000Z",

@@ -2,7 +2,7 @@ How to operate your locks
 =========================
 
 In this section let's focus on how to operate tedee locks. 
-To operate lock via API you need to be owner of the device or have active share with remoteAccessDisabled flag set on false (see :doc:`Share Details <../datastructures/share-details>`). 
+To operate lock via API you need to be owner of the device or have active share with remoteAccessDisabled flag set on false (see :doc:`Share Details <../datastructures/access-details>`). 
 What you need is id of your lock.
 
 .. note::
