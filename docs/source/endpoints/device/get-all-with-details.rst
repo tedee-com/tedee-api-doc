@@ -111,7 +111,8 @@ HTTP status code: ``200``
                     "isAsync": false,
                     "openDoorAlertEnabled": false,
                     "openDoorAlertThreshold": 300,
-                    "autoLockAfterDoorClosedEnabled": false
+                    "autoLockAfterDoorClosedEnabled": false,
+                    "doorStateEventLoggingEnabled": false
                 },
                 "userSettings": {
                     "autoUnlockEnabled": true,
