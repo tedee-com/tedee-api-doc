@@ -1,8 +1,9 @@
 Release notes
 =============
-**2025-01-27
 
-* Added new API version 1.34
+**2025-01-27**
+
+* Added new API version 1.34.
 * Device Share area is migrated to the `Device Access area <https://api.tedee.com/swagger/index.html#/DeviceAccess>`_.
 * Device access is returned in `accessDetails` property instead `deviceDetail`.
 * Time restriction for device access are in :doc:`access details <../../datastructures/access-details>` instead :doc:`repeat event <../../datastructures/repeat-event>`. Repeat event is used only for access links.
