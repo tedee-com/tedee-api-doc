@@ -87,7 +87,7 @@ HTTP status code: ``200``
                         "latitude": 52.24070739746092,
                         "longitude": 21.086990356445305
                 },
-                "lockProperties": {
+                "deviceState": {
                     "state": 6,
                     "doorState": 3,
                     "isCharging": false,
@@ -160,7 +160,7 @@ HTTP status code: ``200``
                         "latitude": 52.24070739746092,
                         "longitude": 21.086990356445305
                 },
-                "lockProperties": null,
+                "deviceState": null,
                 "beaconMajor": null,
                 "beaconMinor": null,
                 "id": 123,
