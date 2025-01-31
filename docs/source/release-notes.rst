@@ -1,6 +1,16 @@
 Release notes
 =============
 
+**2025-01-13**
+
+* API Version 1.33 extended with :doc:`Door Sensor Area <../endpoints/doorsensor/index>`. which manages door sensor devices.
+
+**2024-12-16**
+
+* `Lock` extended with new setting: `AutoLockAfterDoorClosedEnabled` - enables/disables auto-locking after the door is closed. The default value is false.
+* Added new Event Type: `DoorOpenTooLong`.
+* Added publishing `BellButtonPressed` event via webhooks for integrations: :doc:`Bell Button Pressed Webhook <../webhooks/bell-button-pressed>`.
+
 **2024-11-18**
 
 * Endpoint `Device > Transfer ownership <https://api.tedee.com/swagger/index.html#/Device/PostTransferDeviceOwnership>`_ extended with `removeExistingShares` parameter. 

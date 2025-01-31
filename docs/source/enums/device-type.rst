@@ -18,3 +18,5 @@ This enum describes possible device types
 +--------+--------------+
 | 6      | DryContact   |
 +--------+--------------+
+| 10     | Keypad PRO   |
++--------+--------------+
