@@ -79,7 +79,7 @@ Tedee API documentation
    Device access <datastructures/device-access>
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
-   Device share success <datastructures/device-share-success>
+   Device access success <datastructures/device-access-success>
    Device updated <datastructures/device-updated>
    Door sensor list <datastructures/door-sensor-list>
    Door sensor state <datastructures/door-sensor-state>
