@@ -82,6 +82,18 @@ This enum describes possible events in device activity logs
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 76     | PulledAutoByPin           | spring was pulled automatically by pin                                                                             |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
+| 77     | UnlockedByFingerprint     | unlocked by fingerprint from keypad                                                                                |
++--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
+| 78     | ForceUnlockedByFingerprint| unlocked using force unlock option by fingerprint from keypad                                                      |
++--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
+| 79     | PartiallyOpenByFingerprint| when the keypad sends an unlock request via fingerprint,                                                           |
+|        |                           | it receives a response indicating the lock is partially open                                                       |
++--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
+| 80     | PulledByFingerprint       | when the keypad sends an unlock request via fingerprint,                                                           |
+|        |                           | the pull spring is enabled while the lock is in an open state, only the pull spring action is performed            |
++--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
+| 81     | PulledAutoByFingerprint   | spring was pulled automatically by fingerprint from keypad                                                         |
++--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 83     | DoorOpened                | door was opened                                                                                                    |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 84     | DoorClosed                | door was closed                                                                                                    |
