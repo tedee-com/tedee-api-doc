@@ -5,9 +5,8 @@ Release notes
 
 * Added new API version 1.34.
 * Device Share area is migrated to the `Device Access area <https://api.tedee.com/swagger/index.html#/DeviceAccess>`_.
-* Device access is returned in `accessDetails` property instead `deviceDetail`.
+* Device access is returned in `accessDetails` property instead `shareDetails`.
 * Time restriction for device access are in :doc:`access details <../../datastructures/access-details>` instead :doc:`repeat event <../../datastructures/repeat-event>`. Repeat event is used only for access links.
-* :doc:`GET device access endpoint <../../endpoints/deviceaccess/get-all>` allows to filter out current user access, when user has access level `Guest` or share is not active.
 * Renamed property from `lockProperties` to `deviceState` in :doc:`Lock <../../datastructures/lock>` model.
 
 **2025-01-13**
