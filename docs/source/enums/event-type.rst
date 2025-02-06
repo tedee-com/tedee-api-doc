@@ -89,7 +89,7 @@ This enum describes possible events in device activity logs
 | 79     | PartiallyOpenByFingerprint| when the keypad sends an unlock request via fingerprint,                                                           |
 |        |                           | it receives a response indicating the lock is partially open                                                       |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| 80     | PulledByFingerprint       | when the keypad sends an unlock request via fingerprint and                                                        |
+| 80     | PulledByFingerprint       | when the keypad sends an unlock request via fingerprint,                                                           |
 |        |                           | the pull spring is enabled while the lock is in an open state, only the pull spring action is performed            |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 81     | PulledAutoByFingerprint   | spring was pulled automatically by fingerprint from keypad                                                         |
