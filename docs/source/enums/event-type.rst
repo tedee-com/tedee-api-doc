@@ -86,10 +86,11 @@ This enum describes possible events in device activity logs
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 78     | ForceUnlockedByFingerprint| unlocked using force unlock option by fingerprint from keypad                                                      |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| 79     | PartiallyOpenByFingerprint| keypad sent unlock request by fingerprint and received lock status changed to partially open                       |
+| 79     | PartiallyOpenByFingerprint| when the keypad sends an unlock request via fingerprint,                                                           |
+|        |                           | it receives a response indicating the lock is partially open                                                       |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| 80     | PulledByFingerprint       | keypad sent unlock request by fingerprint, when pull spring is enabled and lock was open,                          |
-|        |                           | only pull spring was performed                                                                                     |
+| 80     | PulledByFingerprint       | when the keypad sends an unlock request via fingerprint and                                                        |
+|        |                           | the pull spring is enabled while the lock is in an open state, only the pull spring action is performed            |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
 | 81     | PulledAutoByFingerprint   | spring was pulled automatically by fingerprint from keypad                                                         |
 +--------+---------------------------+--------------------------------------------------------------------------------------------------------------------+
