@@ -8,7 +8,7 @@ Results can be filtered by id and/or email of user.
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/deviceshare?deviceId={id}&Filters.UserIdentity={userId}&Filters.Email={email}
+    GET |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access?Filters.UserIdentity={userId}&Filters.Email={email}
 
 **URI Parameters**
 
@@ -28,7 +28,7 @@ Responses
 +------------------------+----------------------------------------------------------------+--------------------------+
 | Name                   | Type                                                           | Description              |
 +========================+================================================================+==========================+
-| 200 OK                 | :doc:`Share details <../../datastructures/share-details>` []   | successful operation     |
+| 200 OK                 | :doc:`Access details <../../datastructures/access-details>` [] | successful operation     |
 +------------------------+----------------------------------------------------------------+--------------------------+
 
 Scopes
@@ -52,7 +52,7 @@ Get shares
 
 .. code-block:: sh
 
-    curl -X GET "|apiUrl|/api/|apiVersion|/my/deviceShare?deviceId=1" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
+    curl -X GET "|apiUrl|/api/|apiVersion|/my/device/1/access" -H "accept: application/json" -H "Authorization: Bearer <<access token>>"
 
 
 **Sample response**
@@ -73,14 +73,11 @@ HTTP status code: ``200``
                     "userEmail": "john.doe@email.com",
                     "isPending": false,
                     "userDisplayName": "John Doe",
-                    "repeatEvent": {
-                        "id": 1,
-                        "weekDays": 10,
-                        "dayStartTime": "2020-12-14T08:09:57.781Z",
-                        "dayEndTime": "2020-12-31T08:10:57.781Z",
-                        "startDate": null,
-                        "endDate": null
-                    },
+                    "weekDays": 10,
+                    "dayStartTime": "2020-12-14T08:09:57.781Z",
+                    "dayEndTime": "2020-12-31T08:10:57.781Z",
+                    "startDate": null,
+                    "endDate": null,
                     "remoteAccessDisabled": true
                 },
                                 {
@@ -93,14 +90,12 @@ HTTP status code: ``200``
                     "userEmail": "john.kowalsky@email.com",
                     "isPending": false,
                     "userDisplayName": "John Doe",
-                    "repeatEvent": {
-                        "id": 1,
-                        "weekDays": 10,
-                        "dayStartTime": "2020-12-14T08:09:57.781Z",
-                        "dayEndTime": "2020-12-31T08:10:57.781Z",
-                        "startDate": null,
-                        "endDate": null
-                    },
+                    "id": 1,
+                    "weekDays": 10,
+                    "dayStartTime": "2020-12-14T08:09:57.781Z",
+                    "dayEndTime": "2020-12-31T08:10:57.781Z",
+                    "startDate": null,
+                    "endDate": null,
                     "remoteAccessDisabled": false
                 }
             ]

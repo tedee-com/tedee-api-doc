@@ -1,10 +1,10 @@
-Device share success
+Device access success
 -----------------------
 
 +------------------------+------------+---------------------------+
 | Name                   | Type       | Description               |
 +========================+============+===========================+
-| id                     | number     | device share id           |
+| id                     | number     | device access id          |
 +------------------------+------------+---------------------------+
 | sharedUserDisplayName  | string     | share user display name   |
 +------------------------+------------+---------------------------+
