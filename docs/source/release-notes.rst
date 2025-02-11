@@ -1,6 +1,10 @@
 Release notes
 =============
 
+**2025-02-10**
+
+* `Lock` extended with new setting: `DoorStateEventLoggingEnabled` - enables/disables the creation of DoorOpened and DoorClosed events from the door sensor in activity logs. The default value is false.
+
 **2025-01-27**
 
 * Added new API version 1.34.
