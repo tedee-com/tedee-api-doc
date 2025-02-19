@@ -13,9 +13,9 @@ To remove access from user you need to be owner or administrator of the device.
 +---------------------------+-----------+--------------------------+
 | Name                      | Type      |    Description           | 
 +===========================+===========+==========================+
-| deviceId                  | number    | id of device             |
-+---------------------------+-----------+--------------------------+
 | accessId                  | number    | id of access to delete   |
++---------------------------+-----------+--------------------------+
+| deviceId                  | number    | id of device             |
 +---------------------------+-----------+--------------------------+
 
 
