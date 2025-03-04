@@ -6,15 +6,15 @@ Device access
 +========================+=============================================+==================================================================+
 | accessLevel            | :doc:`Access level <../enums/access-level>` | access level of the share                                        |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| remoteAccessDisabled   | boolean                                     | is remote access  disabled                                       |
-+------------------------+---------------------------------------------+------------------------------------------------------------------+
-| weekDays               | number                                      | allowed week days when user can access the device                |
-+------------------------+---------------------------------------------+------------------------------------------------------------------+
-| startDate              | datetime                                    | start date of period when user can access the device             |
-+------------------------+---------------------------------------------+------------------------------------------------------------------+
-| endDate                | datetime                                    | end date of period when user can access the device               |
+| dayEndTime             | datetime                                    | end time of the day when user can access the device              |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
 | dayStartTime           | datetime                                    | start time of the day when user can access the device            |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| dayEndTime             | datetime                                    | end time of the day when user can access the device              |
+| endDate                | datetime                                    | end date of period when user can access the device               |
++------------------------+---------------------------------------------+------------------------------------------------------------------+
+| remoteAccessDisabled   | boolean                                     | is remote access  disabled                                       |
++------------------------+---------------------------------------------+------------------------------------------------------------------+
+| startDate              | datetime                                    | start date of period when user can access the device             |
++------------------------+---------------------------------------------+------------------------------------------------------------------+
+| weekDays               | number                                      | allowed week days when user can access the device                |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
