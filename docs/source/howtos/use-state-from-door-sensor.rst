@@ -44,7 +44,7 @@ HTTP status code: ``200``
         "result": {
             "id": 123,
             "isConnected": true,
-            "lockProperties": {
+            "deviceState": {
                 "state": 6,
                 "doorState": 3,
                 "isCharging": false,
@@ -59,7 +59,7 @@ HTTP status code: ``200``
         "statusCode": 200
     }
 
-The state of the door is returned in the :doc:`doorState <../enums/door-state>` property in the :doc:`lockProperties <../datastructures/lock-properties>` object.
+The state of the door is returned in the :doc:`doorState <../enums/door-state>` property in the :doc:`deviceState <../datastructures/lock-properties>` object.
 
 .. _receive-door-state:
 
