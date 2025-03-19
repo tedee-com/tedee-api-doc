@@ -59,7 +59,7 @@ HTTP status code: ``200``
         "statusCode": 200
     }
 
-The state of the door is returned in the :doc:`doorState <../enums/door-state>` property in the :doc:`deviceState <../datastructures/lock-properties>` object.
+The state of the door is returned in the :doc:`doorState <../enums/door-state>` property in the :doc:`deviceState <../datastructures/lock-live-state>` object.
 
 .. _receive-door-state:
 
