@@ -1,6 +1,14 @@
 Release notes
 =============
 
+**2025-03-25**
+
+* Added new API version 1.35.
+* From :doc:`Lock <../../datastructures/lock>` structure the `organizationName` and `organizationSlug` properties were removed. These properties are no longer returned from :doc:`GET Lock <../endpoints/lock/get-single>`, :doc:`GET All Locks <../endpoints/lock/get-all>`, and :doc:`Get devices with details <../endpoints/device/get-all-with-details>` endpoints.
+* Changed property from `lockProperties` to `deviceState` in :doc:`Lock Single Sync <../../endpoints/lock/sync-single>` and :doc:`Lock Sync <../../endpoints/lock/sync>`.
+* Changed property from `lockProperties` to `deviceState` in all organization endpoints.
+
+
 **2025-02-10**
 
 * `Lock` extended with new setting: `DoorStateEventLoggingEnabled` - enables/disables the creation of DoorOpened and DoorClosed events from the door sensor in activity logs. The default value is false.

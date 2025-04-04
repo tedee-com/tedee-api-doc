@@ -61,7 +61,7 @@ HTTP status code: ``200``
         "result": {
             "id": 123,
             "isConnected": true,
-            "lockProperties": {
+            "deviceState": {
                 "state": 6,
                 "doorState": 3,
                 "isCharging": false,
@@ -87,7 +87,7 @@ HTTP status code: ``200``
         "result": {
             "id": 123,
             "isConnected": false,
-            "lockProperties": null,
+            "deviceState": null,
             "revision": 1
         }
         "success": true,
