@@ -96,7 +96,7 @@ Tedee API documentation
    Lock PIN created <datastructures/lock-pin-created>
    Lock PIN details <datastructures/lock-pin-details>
    Lock PIN list <datastructures/lock-pin-list>
-   Lock state <datastructures/lock-live-state>
+   Lock state <datastructures/lock-state>
    Lock sync <datastructures/lock-sync>
    Lock user settings <datastructures/lock-user-settings>
    Mobile identifier <datastructures/mobile-identifier>
