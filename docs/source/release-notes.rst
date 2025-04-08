@@ -1,6 +1,12 @@
 Release notes
 =============
 
+**2025-04-07**
+* Added new API version 1.36.
+* Pairing bridge with device endpoints schema changed:
+     + Endpoint `Bridge > Pair bridge with device <https://api.tedee.com/swagger/index.html#/Bridge/PairDeviceWithBridge>`_ schema updated.
+     + Endpoint `Bridge > Unpair bridge from device <https://api.tedee.com/swagger/index.html#/Bridge/UnpairDeviceFromBridge>`_ schema updated.
+
 **2025-03-25**
 
 * Added new API version 1.35.
