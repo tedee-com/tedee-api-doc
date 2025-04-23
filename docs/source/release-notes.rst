@@ -1,6 +1,12 @@
 Release notes
 =============
 
+**2025-04-22**
+* `Organization Device > Get organization devices <https://api.tedee.com/swagger/index.html#/OrganizationDevice/GetOrganizationDevices>` endpoint schema changed:
+     + Response model extended with `connectedToId` property.
+     + Changes are introduced from API version 1.28.
+
+
 **2025-04-07**
 * Added new API version 1.36.
 * Pairing bridge with device endpoints schema changed:
