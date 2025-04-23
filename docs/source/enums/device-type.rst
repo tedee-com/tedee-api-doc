@@ -18,5 +18,7 @@ This enum describes possible device types
 +--------+--------------+
 | 6      | DryContact   |
 +--------+--------------+
+| 8      | Door Sensor  |
++--------+--------------+
 | 10     | Keypad PRO   |
 +--------+--------------+
