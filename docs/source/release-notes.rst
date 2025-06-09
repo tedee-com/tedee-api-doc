@@ -1,6 +1,11 @@
 Release notes
 =============
 
+**2025-06-09**
+* Added new :doc:`Event type <../enums/event-type>`: `LockPulledByAutoUnlock`.
+* Endpoint `Lock > Get all locks <https://api.tedee.com/swagger/index.html#/Lock/GetAllLocks>`_ extended with new filter `Filters.AccessLevel` to filter locks by access level.
+
+
 **2025-04-22**
 * `Organization Device > Get organization devices <https://api.tedee.com/swagger/index.html#/OrganizationDevice/GetOrganizationDevices>` endpoint schema changed:
      + Response model extended with `connectedToId` property.
