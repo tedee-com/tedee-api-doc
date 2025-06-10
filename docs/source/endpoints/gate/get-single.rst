@@ -79,7 +79,7 @@ HTTP status code: ``200``
             "timeZone": "Europe/Warsaw",
             "isConnected": false,
             "accessLevel": 0,
-            "shareDetails": {
+            "accessDetails": {
             "id": 123,
             "userId": 9541,
             "deviceId": 30586,

@@ -1,7 +1,7 @@
 Get all with details
 ====================================
 
-Get a list of all currently logged user devices with details such as devices specific data as well as their settings and share details.
+Get a list of all currently logged user devices with details such as device specific data as well as their settings and access details.
 
 .. code-block:: sh
 
@@ -78,7 +78,7 @@ HTTP status code: ``200``
                 "targetDeviceRevision": 1,
                 "isConnected": true,
                 "accessLevel": 2,
-                "shareDetails": null,
+                "accessDetails": null,
                 "softwareVersions": [
                 {
                     "softwareType": 0,
@@ -147,7 +147,7 @@ HTTP status code: ``200``
                 "targetDeviceRevision": 2,
                 "isConnected": true,
                 "accessLevel": 2,
-                "shareDetails": null,
+                "accessDetails": null,
                 "softwareVersions": [
                     {
                         "softwareType": 0,
