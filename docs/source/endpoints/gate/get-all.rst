@@ -90,28 +90,15 @@ HTTP status code: ``200``
                     "timeZone":"Europe/Warsaw",
                     "isConnected":false,
                     "accessLevel":0,
-                    "shareDetails":
+                    "accessDetails":
                     {
-                        "id":346363,
-                        "userId":9541,
-                        "deviceId":30586,
-                        "userIdentity":"12345678-1234-1234-1234-1234567890",
                         "accessLevel":0,
-                        "accessType":0,
-                        "userEmail":"test.test@test.test",
-                        "isPending":false,
-                        "userDisplayName":"Test",
-                        "repeatEvent":
-                        {
-                            "id":382010,
-                            "weekDays":null,
-                            "startDate":null,
-                            "endDate":null,
-                            "dayStartTime":null,
-                            "dayEndTime":null
-
-                        },
-                        "remoteAccessDisabled":true
+                        "remoteAccessDisabled":true,
+                        "weekDays":null,
+                        "startDate":null,
+                        "endDate":null,
+                        "dayStartTime":null,
+                        "dayEndTime":null
                     },
                     "softwareVersions":[       
                     ]

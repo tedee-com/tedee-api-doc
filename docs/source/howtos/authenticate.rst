@@ -331,9 +331,9 @@ Below is a list of available scopes that can be requested during the authorizati
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | DeviceCertificate.Operate | Access devices certificates                                                                                                                                               |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| DeviceShare.Read          | View shares for all devices or for specific device                                                                                                                        |
+| DeviceShare.Read         | View accesses for all devices or for specific device                                                                                                                        |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| DeviceShare.ReadWrite     | View shares for all devices or for specific device. Also grants the ability to update or delete existing share or create new one                                          |
+| DeviceShare.ReadWrite    | View accesses for all devices or for specific device. Also grants the ability to update or delete existing access or create new one                                          |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Lock.Operate              | Perform lock, unlock and pull spring operations on lock                                                                                                                   |
 +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

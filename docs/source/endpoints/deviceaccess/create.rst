@@ -28,7 +28,7 @@ This endpoint can be used by owner or administrator of the device.
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
 | startDate                 | string                                                                    | start date of period when user can access the device |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
-| userEmail                 | string                                                                    | user email that device will be shared with           |
+| userEmail                 | string                                                                    | user email that will receive access to the device    |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
 | weekDays                  | string                                                                    | allowed week days when user can access the device    |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
@@ -49,7 +49,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| DeviceShare.ReadWrite  | Grants user possibility to read and write data connected with device access   |
+| DeviceShare.ReadWrite | Grants user possibility to read and write data connected with device access   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples

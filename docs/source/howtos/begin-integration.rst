@@ -22,7 +22,7 @@ Follow these tutorials:
 * :doc:`How to authenticate <authenticate>`
 * :doc:`Get and sync locks <get-and-sync-locks>`
 * :doc:`Operate locks <operate-locks>`
-* :doc:`How to manage device shares <share-device>`
+* :doc:`How to manage device access <manage-device-access>`
 * :doc:`Update locks settings <update-lock-settings>`
 
 Integration via Bridge API

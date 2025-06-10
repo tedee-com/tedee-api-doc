@@ -111,7 +111,7 @@ HTTP status code: ``200``
                 "targetDeviceRevision": 2,
                 "isConnected": true,
                 "accessLevel": 2,
-                "shareDetails": null,
+                "accessDetails": null,
                 "softwareVersions": [
                     {
                         "softwareType": 0,
@@ -176,7 +176,7 @@ HTTP status code: ``200``
                 "targetDeviceRevision": 2,
                 "isConnected": null,
                 "accessLevel": 2,
-                "shareDetails": null,
+                "accessDetails": null,
                 "softwareVersions": [
                     {
                         "softwareType": 0,
