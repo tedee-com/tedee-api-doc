@@ -106,7 +106,7 @@ Pushing changes
 
 Please make your changes in feature branches starting from the master branch, using the naming convention presented below:
 
-* use only lower case
+* use only lowercase
 * do not use whitespaces
 * do not use any special characters except: -/
 * `feature/[feature-description]` - to implement new features, e.g. `feature/authenticate-module`
