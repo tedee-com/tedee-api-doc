@@ -1,8 +1,5 @@
 Terms of Use
-===========
-
-Legal notice
-------------
+============
 
 The following legal terms (“Legal Notice”) apply to all use of Tedee’s API. By accessing or using our API, you agree to these terms in full.
 
@@ -31,3 +28,4 @@ You are solely responsible for ensuring your use of the APIs complies with all a
 **6. MODIFICATIONS; TERMINATION**
 
 Tedee may modify or discontinue, temporarily or permanently, all or part of the API at any time and without notice. You agree that Tedee will not be liable to you or any third party for any modification, suspension, or discontinuation of the API.
+
