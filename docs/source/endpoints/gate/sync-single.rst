@@ -99,7 +99,7 @@ HTTP status code: ``200``
         "timeZone": "Europe/Warsaw",
         "isConnected": true,
         "accessLevel": 2,
-        "shareDetails": null,
+        "accessDetails": null,
         "softwareVersions": [
             {
                 "softwareType": 0,

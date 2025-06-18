@@ -151,7 +151,7 @@ HTTP status code: ``200``
 Update single user setting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Example shows how to update single user setting (as presented below it is auto unlock) of the lock with id = 1. This action can be performed by any user with active share to that device.
+Example shows how to update single user setting (as presented below it is auto unlock) of the lock with id = 1. This action can be performed by any user with active access to that device.
 
 **Sample Request**
 
@@ -193,7 +193,7 @@ HTTP status code: ``200``
 Update location for auto unlock feature
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Example shows how to change location of the lock with id = 1. This action can be performed by any user with active share to that device.
+Example shows how to change location of the lock with id = 1. This action can be performed by any user with active access to that device.
 
 .. note::
     Changing location has sense only if user has enabled auto unlock feature.

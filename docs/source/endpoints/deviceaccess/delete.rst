@@ -6,7 +6,7 @@ To remove access from user you need to be owner or administrator of the device.
 
 .. code-block:: sh
 
-    DELETE |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access/{deviceShareId}
+    DELETE |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access/{accessId}
 
 **URI Parameters**
 
@@ -34,7 +34,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| DeviceShare.ReadWrite  | Grants user possibility to read and write data connected with device access   |
+| DeviceShare.ReadWrite | Grants user possibility to read and write data connected with device access   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples
