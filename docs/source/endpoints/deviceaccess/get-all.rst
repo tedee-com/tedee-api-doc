@@ -37,9 +37,9 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| DeviceShare.Read      | Grants user possibility to read data connected with device access             |
+| DeviceShare.Read      | Grants user possibility to read data connected with device access              |
 +------------------------+-------------------------------------------------------------------------------+
-| DeviceShare.ReadWrite | Grants user possibility to read and write data connected with device access   |
+| DeviceShare.ReadWrite | Grants user possibility to read and write data connected with device access    |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples
