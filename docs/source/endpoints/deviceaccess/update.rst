@@ -1,7 +1,7 @@
 Update
 =========================
 
-Allows to update access details to the device for specific share.
+Allows to update access details to the device for specific access.
 This endpoint can be used by owner or administrator of the device.
 
 .. code-block:: sh
@@ -43,7 +43,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| DeviceShare.ReadWrite  | Grants user possibility to read and write data connected with device shares   |
+| DeviceShare.ReadWrite | Grants user possibility to read and write data connected with device access    |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples

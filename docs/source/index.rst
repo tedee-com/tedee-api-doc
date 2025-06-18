@@ -28,7 +28,7 @@ Tedee API documentation
    Get and sync locks <howtos/get-and-sync-locks>
    Operate locks <howtos/operate-locks>
    Update lock settings <howtos/update-lock-settings>
-   Share device <howtos/share-device>
+   Manage device access <howtos/manage-device-access>
    Manage lock PIN list <howtos/manage-lock-pin-list>
    Manage access links <howtos/manage-access-links>
    Manage and operate gates <howtos/manage-and-operate-gates>

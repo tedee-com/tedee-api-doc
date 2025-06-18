@@ -1,9 +1,9 @@
 Get all
 =========================
 
-Get all access details for specific device. 
-This endpoint can be used by all users that have share to the device but users with access level "Guest" and those users that share are not active
-will get in response only information about owner of device and own access details. Owner and administrators with active share will get all users access details.
+Get all access details for a specific device.
+This endpoint can be used by all users that have access to the device, but users with access level "Guest" and those users whose access is not active
+will get in response only information about owner of device and own access details. Owner and administrators with active access will get all users access details.
 Results can be filtered by id and/or email of user.
 
 .. code-block:: sh
@@ -37,15 +37,15 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| DeviceShare.Read       | Grants user possibility to read data connected with device shares             |
+| DeviceShare.Read      | Grants user possibility to read data connected with device access              |
 +------------------------+-------------------------------------------------------------------------------+
-| DeviceShare.ReadWrite  | Grants user possibility to read and write data connected with device shares   |
+| DeviceShare.ReadWrite | Grants user possibility to read and write data connected with device access    |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples
 -------------
 
-Get shares
+Get accesses
 ^^^^^^^^^^^^^^^
 
 **Sample Request**
