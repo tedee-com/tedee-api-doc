@@ -16,6 +16,7 @@ Tedee API documentation
    api-rate-limiting
    logo-guidance
    release-notes
+   terms-of-use
 
 .. toctree::
    :maxdepth: 1
