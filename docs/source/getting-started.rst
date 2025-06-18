@@ -167,4 +167,4 @@ Here's a list of example actions that you can do using the API:
 Legal notice
 ------------
 
-By using this API, you agree to the :doc:`Terms of Use <terms-of-use>`
+By using this API, you agree to the :doc:`Terms of Use <terms-of-use>`.
