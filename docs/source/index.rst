@@ -16,7 +16,6 @@ Tedee API documentation
    api-rate-limiting
    logo-guidance
    release-notes
-   terms-of-use
 
 .. toctree::
    :maxdepth: 1
@@ -140,6 +139,9 @@ Tedee API documentation
 This site contains a documentation for Tedee REST API (https://api.tedee.com).
 It aims to help users to automate their lock's actions or to intergrate custom solutions with Tedee API.
 You can find here guides and code samples which should help you to work with the API.
+
+.. note::
+   By using this API, you agree to our `Terms of Use <https://tedee.com/terms-of-use-tedee-apis-i-sdks/>`_.
 
 About Tedee
 -----------
