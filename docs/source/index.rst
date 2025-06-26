@@ -141,7 +141,7 @@ It aims to help users to automate their lock's actions or to intergrate custom s
 You can find here guides and code samples which should help you to work with the API.
 
 .. note::
-   By using this API, you agree to our `Terms of Use <https://tedee.com/terms-of-use-tedee-apis-i-sdks/>`_.
+   By using this API, you agree to our `Terms of Use <https://tedee.com/terms-of-use-tedee-apis-and-sdks/>`_.
 
 About Tedee
 -----------
