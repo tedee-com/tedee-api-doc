@@ -163,8 +163,3 @@ Here's a list of example actions that you can do using the API:
 * :doc:`Get and sync your locks <howtos/get-and-sync-locks>`
 * :doc:`Operate your locks <howtos/operate-locks>`
 * :doc:`Update lock settings <howtos/update-lock-settings>`
-
-Legal notice
-------------
-
-By using this API, you agree to the :doc:`Terms of Use <terms-of-use>`.
