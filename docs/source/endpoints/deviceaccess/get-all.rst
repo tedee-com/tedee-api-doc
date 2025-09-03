@@ -8,7 +8,7 @@ Results can be filtered by principal ID, text search, and principal type (User o
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access?filters.principalId={principalId}&filters.text={text}&filters.principalType={principalType}
+    GET |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access?Filters.PrincipalId={principalId}&Filters.Text={text}&Filters.PrincipalType={principalType}
 
 **URI Parameters**
 
@@ -17,11 +17,11 @@ Results can be filtered by principal ID, text search, and principal type (User o
 +========================+===================+========================================+
 | deviceId               | number            | id of device                           |
 +------------------------+-------------------+----------------------------------------+
-| filters.principalId    | UUID (optional)   | User or UserGroup UID                  |
+| Filters.PrincipalId    | UUID (optional)   | User or UserGroup UID                  |
 +------------------------+-------------------+----------------------------------------+
-| filters.principalType  | number (optional) | 0 = User, 1 = UserGroup                |
+| Filters.PrincipalType  | number (optional) | 0 = User, 1 = UserGroup                |
 +------------------------+-------------------+----------------------------------------+
-| filters.text           | string (optional) | Text to search (email, name, etc.)     |
+| Filters.Text           | string (optional) | Text to search (email, name, etc.)     |
 +------------------------+-------------------+----------------------------------------+
 
 Responses 
@@ -66,55 +66,55 @@ HTTP status code: ``200``
         {
             "result": [
                 {
-                    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "accessLevel": 1,
+                    "dayEndTime": "2020-12-31T08:10:57.781Z",
+                    "dayStartTime": "2020-12-14T08:09:57.781Z",
                     "deviceId": 1,
+                    "endDate": null,
+                    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "isPending": false,
+                    "organizationUserId": 11,
                     "principalId": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
                     "principalName": "John Doe",
-                    "organizationUserId": 11,
                     "principalType": 0,
-                    "userEmail": "john.doe@email.com",
-                    "isPending": false,
-                    "accessLevel": 1,
                     "remoteAccessDisabled": true,
-                    "weekDays": 10,
                     "startDate": null,
-                    "endDate": null,
-                    "dayStartTime": "2020-12-14T08:09:57.781Z",
-                    "dayEndTime": "2020-12-31T08:10:57.781Z"
+                    "userEmail": "john.doe@email.com",
+                    "weekDays": 10
                 },
                 {
-                    "id": "4ab96f75-6828-5673-c4gd-3d074g77bgb7",
+                    "accessLevel": 0,
+                    "dayEndTime": "2020-12-31T08:10:57.781Z",
+                    "dayStartTime": "2020-12-14T08:09:57.781Z",
                     "deviceId": 1,
+                    "endDate": null,
+                    "id": "4ab96f75-6828-5673-c4gd-3d074g77bgb7",
+                    "isPending": false,
+                    "organizationUserId": 12,
                     "principalId": "bcc1fdc9-13ee-43b3-a13e-eaba2eaf7333",
                     "principalName": "John Kowalsky",
-                    "organizationUserId": 12,
                     "principalType": 0,
-                    "userEmail": "john.kowalsky@email.com",
-                    "isPending": false,
-                    "accessLevel": 0,
                     "remoteAccessDisabled": false,
-                    "weekDays": 10,
                     "startDate": null,
-                    "endDate": null,
-                    "dayStartTime": "2020-12-14T08:09:57.781Z",
-                    "dayEndTime": "2020-12-31T08:10:57.781Z"
+                    "userEmail": "john.kowalsky@email.com",
+                    "weekDays": 10
                 },
                 {
-                    "id": "5bc07g86-7939-6784-d5he-4e185h88chc8",
+                    "accessLevel": 0,
+                    "dayEndTime": null,
+                    "dayStartTime": null,
                     "deviceId": 1,
+                    "endDate": null,
+                    "id": "5bc07g86-7939-6784-d5he-4e185h88chc8",
+                    "isPending": false,
+                    "organizationUserId": 0,
                     "principalId": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
                     "principalName": "Engineering Team",
-                    "organizationUserId": 0,
                     "principalType": 1,
-                    "userEmail": null,
-                    "isPending": false,
-                    "accessLevel": 0,
                     "remoteAccessDisabled": false,
-                    "weekDays": null,
                     "startDate": null,
-                    "endDate": null,
-                    "dayStartTime": null,
-                    "dayEndTime": null
+                    "userEmail": null,
+                    "weekDays": null
                 }
             ],
             "success": true,
