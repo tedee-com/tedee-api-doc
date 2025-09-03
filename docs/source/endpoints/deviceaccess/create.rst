@@ -1,11 +1,11 @@
 Create
 =========================
 
-Grants access to the device for new user.
+Grants access to the device for a user or user group.
 This endpoint can be used by owner or administrator of the device.
 
 .. note::
-    User can have only one active access to the device at the time.
+    Each principal (user or group) can have only one active access to the device at the time.
 
 .. code-block:: sh
 
@@ -28,7 +28,11 @@ This endpoint can be used by owner or administrator of the device.
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
 | startDate                 | string                                                                    | start date of period when user can access the device |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
-| userEmail                 | string                                                                    | user email that will receive access to the device    |
+| principalId               | UUID                                                                      | principal (user or group) UID to grant access        |
++---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
+| principalType             | number                                                                    | 0 = User, 1 = UserGroup                              |
++---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
+| userEmail                 | string                                                                    | (alternative) user email to grant access             |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
 | weekDays                  | string                                                                    | allowed week days when user can access the device    |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
@@ -55,8 +59,8 @@ Scopes
 Examples
 -------------
 
-Grant permanent administrator access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Grant permanent administrator access to user
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
@@ -69,8 +73,9 @@ Body:
 .. code-block:: js
 
         {
+            "principalId": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+            "principalType": 0,
             "accessLevel": 1,
-            "userEmail": "john.doe@email.com",
             "weekDays": null,
             "dayStartTime": null,
             "dayEndTime": null,
@@ -96,8 +101,8 @@ HTTP status code: ``201``
         }
 
 
-Grant guest time restricted access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Grant guest access to user group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
@@ -110,13 +115,14 @@ Body:
 .. code-block:: js
 
         {
+            "principalId": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
+            "principalType": 1,
             "accessLevel": 0,
-            "userEmail": "john.doe@email.com"
             "weekDays": null,
             "dayStartTime": null,
             "dayEndTime": null,
-            "startDate": "2020-12-14T08:09:57.781Z",
-            "endDate": "2020-12-31T08:10:57.781Z",
+            "startDate": null,
+            "endDate": null,
             "remoteAccessDisabled" : false
         }
 
@@ -136,8 +142,8 @@ HTTP status code: ``201``
             "statusCode": 201
         }
 
-Grant guest custom access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Grant access using email (backward compatibility)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
@@ -150,8 +156,8 @@ Body:
 .. code-block:: js
 
         {
+            "userEmail": "john.doe@email.com",
             "accessLevel": 0,
-            "userEmail": "john.doe@email.com"
             "weekDays": 7,
             "dayStartTime": "2020-12-01T08:00:00.000Z",
             "dayEndTime": "2020-12-31T20:00:00.000Z",

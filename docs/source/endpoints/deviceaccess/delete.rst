@@ -1,8 +1,8 @@
 Delete
 =========================
 
-This endpoint allows to remove access to the device from the user. 
-To remove access from user you need to be owner or administrator of the device.
+This endpoint allows to remove access to the device from a user or user group. 
+To remove access you need to be owner or administrator of the device.
 
 .. code-block:: sh
 
@@ -13,9 +13,9 @@ To remove access from user you need to be owner or administrator of the device.
 +---------------------------+-----------+--------------------------+
 | Name                      | Type      |    Description           | 
 +===========================+===========+==========================+
-| accessId                  | number    | id of access to delete   |
-+---------------------------+-----------+--------------------------+
 | deviceId                  | number    | id of device             |
++---------------------------+-----------+--------------------------+
+| accessId                  | UUID      | id of access to delete   |
 +---------------------------+-----------+--------------------------+
 
 
@@ -40,7 +40,7 @@ Scopes
 Examples
 -------------
 
-Remove access to the device
+Remove access from the device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**

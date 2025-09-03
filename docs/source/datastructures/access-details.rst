@@ -6,30 +6,32 @@ Access details
 +========================+=============================================+==================================================================+
 | accessLevel            | :doc:`Access level <../enums/access-level>` | access level for the granted access                              |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| dayEndTime             | datetime                                    | end time of the day when user can access the device              |
+| dayEndTime             | datetime                                    | end time of the day when principal can access the device         |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| dayStartTime           | datetime                                    | start time of the day when user can access the device            |
+| dayStartTime           | datetime                                    | start time of the day when principal can access the device       |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
 | deviceId               | number                                      | id of the device                                                 |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| endDate                | datetime                                    | end date of period when user can access the device               |
+| endDate                | datetime                                    | end date of period when principal can access the device          |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| id                     | number                                      | id of the access                                                 |
+| id                     | UUID                                        | id of the access                                                 |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
 | isPending              | boolean                                     | if user doesn't have Tedee account the email invitation is sent. |
 |                        |                                             | Until user creates account the access is pending                 |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| remoteAccessDisabled   | boolean                                     | is remote access  disabled                                       |
+| organizationUserId     | number                                      | organization user id                                             |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| startDate              | datetime                                    | start date of period when user can access the device             |
+| principalId            | UUID                                        | principal (user or group) UID that device access is granted for  |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| userDisplayName        | string                                      | user display name that device access is granted for              |
+| principalName          | string                                      | principal display name that device access is granted for         |
++------------------------+---------------------------------------------+------------------------------------------------------------------+
+| principalType          | number                                      | 0 = User, 1 = UserGroup                                          |
++------------------------+---------------------------------------------+------------------------------------------------------------------+
+| remoteAccessDisabled   | boolean                                     | is remote access disabled                                        |
++------------------------+---------------------------------------------+------------------------------------------------------------------+
+| startDate              | datetime                                    | start date of period when principal can access the device        |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
 | userEmail              | string                                      | user email that device access is granted for                     |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+
-| userId                 | number                                      | user id that device access is granted for                        |
-+------------------------+---------------------------------------------+------------------------------------------------------------------+
-| userIdentity           | string                                      | user identity that device access is granted for                  |
-+------------------------+---------------------------------------------+------------------------------------------------------------------+
-| weekDays               | number                                      | allowed week days when user can access the device                |
+| weekDays               | number                                      | allowed week days when principal can access the device           |
 +------------------------+---------------------------------------------+------------------------------------------------------------------+

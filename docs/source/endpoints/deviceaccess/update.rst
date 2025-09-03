@@ -1,31 +1,42 @@
 Update
 =========================
 
-Allows to update access details to the device for specific access.
+Allows to update access details to the device for a specific access.
 This endpoint can be used by owner or administrator of the device.
+This endpoint updates the access parameters for an existing user or user group access.
 
 .. code-block:: sh
 
     PUT |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access/{accessId}
+
+**URI Parameters**
+
++---------------------------+-----------+--------------------------+
+| Name                      | Type      |    Description           | 
++===========================+===========+==========================+
+| deviceId                  | number    | id of device             |
++---------------------------+-----------+--------------------------+
+| accessId                  | UUID      | id of access to update   |
++---------------------------+-----------+--------------------------+
 
 **Body Parameters**
 
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
 | Name                      | Type                                                                      | Description                                          |
 +===========================+===========================================================================+======================================================+
-| accessLevel               | :doc:`Access level <../../enums/access-level>`                            | represents user access level                         |
+| accessLevel               | :doc:`Access level <../../enums/access-level>`                            | represents access level for the principal            |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
-| dayEndTime                | datetime                                                                  | end time of the day when user can access the device  |
+| dayEndTime                | datetime                                                                  | end time of the day when principal can access device |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
-| dayStartTime              | datetime                                                                  | start time of the day when user can access the device|
+| dayStartTime              | datetime                                                                  | start time of the day when principal can access device|
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
-| endDate                   | datetime                                                                  | end date of period when user can access the device   |
+| endDate                   | datetime                                                                  | end date of period when principal can access device  |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
 | remoteAccessDisabled      | boolean                                                                   | represents if remote access is disabled              |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
-| startDate                 | datetime                                                                  | start date of period when user can access the device |
+| startDate                 | datetime                                                                  | start date of period when principal can access device|
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
-| weekDays                  | number                                                                    | allowed week days when user can access the device    |
+| weekDays                  | number                                                                    | allowed week days when principal can access device   |
 +---------------------------+---------------------------------------------------------------------------+------------------------------------------------------+
 
 Responses 
