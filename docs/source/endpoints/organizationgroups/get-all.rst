@@ -25,11 +25,11 @@ This endpoint returns a paginated list of user groups that belong to the specifi
 Responses 
 -------------
 
-+------------------------+----------------------------------------------------------------+--------------------------+
-| Name                   | Type                                                           | Description              |
-+========================+================================================================+==========================+
-| 200 OK                 | Organization user groups response                             | successful operation     |
-+------------------------+----------------------------------------------------------------+--------------------------+
++------------------------+------------------------------------------------------------------------+--------------------------+
+| Name                   | Type                                                                   | Description              |
++========================+========================================================================+==========================+
+| 200 OK                 | :doc:`Organization group <../../datastructures/organization-group>` [] | successful operation     |
++------------------------+------------------------------------------------------------------------+--------------------------+
 
 Scopes
 -------------
@@ -37,7 +37,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| Organization.ReadWrite | Grants user possibility to read and write organization data                  |
+| Organization.ReadWrite | Grants user possibility to read and write organization data                   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples
@@ -60,25 +60,16 @@ HTTP status code: ``200``
 .. code-block:: js
 
         {
-            "result": {
-                "items": [
-                    {
-                        "createdDate": "2025-01-01T10:00:00.000Z",
-                        "id": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
-                        "membersCount": 5,
-                        "name": "Engineering Team",
-                        "organizationId": 1
-                    },
-                    {
-                        "createdDate": "2025-01-15T14:30:00.000Z",
-                        "id": "b5d6e7f8-8c9d-2e3f-4a5b-6c7d8e9f0b1c",
-                        "membersCount": 3,
-                        "name": "Maintenance Team",
-                        "organizationId": 1
-                    }
-                ],
-                "totalCount": 2
-            },
+            "result": [
+                {
+                    "id": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
+                    "name": "Engineering Team"
+                },
+                {
+                    "id": "b5d6e7f8-8c9d-2e3f-4a5b-6c7d8e9f0b1c",
+                    "name": "Maintenance Team"
+                }
+            ],
             "errorMessages": [],
             "statusCode": 200,
             "success": true
@@ -101,18 +92,12 @@ HTTP status code: ``200``
 .. code-block:: js
 
         {
-            "result": {
-                "items": [
-                    {
-                        "createdDate": "2025-01-01T10:00:00.000Z",
-                        "id": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
-                        "membersCount": 5,
-                        "name": "Engineering Team",
-                        "organizationId": 1
-                    }
-                ],
-                "totalCount": 1
-            },
+            "result": [
+                {
+                    "id": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
+                    "name": "Engineering Team"
+                }
+            ],
             "errorMessages": [],
             "statusCode": 200,
             "success": true

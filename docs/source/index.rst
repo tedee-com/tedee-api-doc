@@ -53,6 +53,7 @@ Tedee API documentation
    endpoints/mobile/index
    endpoints/organization/index
    endpoints/organizationaccesslink/index
+   endpoints/organizationgroups/index
    endpoints/personalaccesskey/index
 
 .. toctree::

@@ -10,24 +10,24 @@ This endpoint returns detailed information about a single user group, optionally
 
 **URI Parameters**
 
-+------------------------+-------------------+----------------------------------------+
-| Name                   | Type              | Description                            |
-+========================+===================+========================================+
-| groupId                | UUID              | id of user group                       |
-+------------------------+-------------------+----------------------------------------+
-| includeMembers         | boolean (optional)| Include group members (default: false) |
-+------------------------+-------------------+----------------------------------------+
-| organizationId         | number            | id of organization                     |
-+------------------------+-------------------+----------------------------------------+
++------------------------+--------------------+-----------------------------------------+
+| Name                   | Type               | Description                             |
++========================+====================+=========================================+
+| groupId                | UUID               | id of user group                        |
++------------------------+--------------------+-----------------------------------------+
+| includeMembers         | boolean (optional) | Include group members (default: false)  |
++------------------------+--------------------+-----------------------------------------+
+| organizationId         | number             | id of organization                      |
++------------------------+--------------------+-----------------------------------------+
 
 Responses 
 -------------
 
-+------------------------+----------------------------------------------------------------+--------------------------+
-| Name                   | Type                                                           | Description              |
-+========================+================================================================+==========================+
-| 200 OK                 | Organization user group details                                | successful operation     |
-+------------------------+----------------------------------------------------------------+--------------------------+
++------------------------+--------------------------------------------------------------------------------------+--------------------------+
+| Name                   | Type                                                                                 | Description              |
++========================+======================================================================================+==========================+
+| 200 OK                 | :doc:`Organization group details <../../datastructures/organization-group-details>`  | successful operation     |
++------------------------+--------------------------------------------------------------------------------------+--------------------------+
 
 Scopes
 -------------
@@ -59,12 +59,9 @@ HTTP status code: ``200``
 
         {
             "result": {
-                "createdDate": "2025-01-01T10:00:00.000Z",
                 "id": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
                 "members": null,
-                "membersCount": 5,
-                "name": "Engineering Team",
-                "organizationId": 1
+                "name": "Engineering Team"
             },
             "errorMessages": [],
             "statusCode": 200,
@@ -89,23 +86,20 @@ HTTP status code: ``200``
 
         {
             "result": {
-                "createdDate": "2025-01-01T10:00:00.000Z",
                 "id": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
                 "members": [
                     {
+                        "displayName": "John Doe",
                         "email": "john.doe@company.com",
-                        "name": "John Doe",
                         "organizationUserId": 11
                     },
                     {
+                        "displayName": "Jane Smith",
                         "email": "jane.smith@company.com",
-                        "name": "Jane Smith",
                         "organizationUserId": 12
                     }
                 ],
-                "membersCount": 2,
-                "name": "Engineering Team",
-                "organizationId": 1
+                "name": "Engineering Team"
             },
             "errorMessages": [],
             "statusCode": 200,

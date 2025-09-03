@@ -27,11 +27,11 @@ This endpoint creates a new user group within the specified organization.
 Responses 
 -------------
 
-+------------------------+----------------------------------------------------------------+--------------------------+
-| Name                   | Type                                                           | Description              |
-+========================+================================================================+==========================+
-| 201 Created            | Organization user group details                               | successful operation     |
-+------------------------+----------------------------------------------------------------+--------------------------+
++------------------------+----------------------------------------------------------------------+--------------------------+
+| Name                   | Type                                                                 | Description              |
++========================+======================================================================+==========================+
+| 201 Created            | :doc:`Organization group <../../datastructures/organization-group>` | successful operation      |
++------------------------+----------------------------------------------------------------------+--------------------------+
 
 Scopes
 -------------
@@ -39,7 +39,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| Organization.ReadWrite | Grants user possibility to read and write organization data                  |
+| Organization.ReadWrite | Grants user possibility to read and write organization data                   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples
@@ -70,11 +70,8 @@ HTTP status code: ``201``
 
         {
             "result": {
-                "createdDate": "2025-02-01T10:00:00.000Z",
                 "id": "c6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
-                "membersCount": 0,
-                "name": "Security Team",
-                "organizationId": 1
+                "name": "Security Team"
             },
             "errorMessages": [],
             "statusCode": 201,

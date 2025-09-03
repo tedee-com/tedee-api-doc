@@ -15,7 +15,6 @@ Endpoints used for managing user groups within an organization. User groups allo
    Get members <get-members>
    Add members <add-members>
    Remove members <remove-members>
-   Get access <get-access>
 
 **Operations**
 
@@ -27,4 +26,3 @@ Endpoints used for managing user groups within an organization. User groups allo
 - `Get members <get-members.html>`_ - List members of a user group
 - `Add members <add-members.html>`_ - Add users to a user group
 - `Remove members <remove-members.html>`_ - Remove users from a user group
-- `Get access <get-access.html>`_ - List device accesses for a user group

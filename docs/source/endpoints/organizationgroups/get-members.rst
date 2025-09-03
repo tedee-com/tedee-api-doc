@@ -27,11 +27,11 @@ This endpoint returns a paginated list of users who are members of the specified
 Responses 
 -------------
 
-+------------------------+----------------------------------------------------------------+--------------------------+
-| Name                   | Type                                                           | Description              |
-+========================+================================================================+==========================+
-| 200 OK                 | Group members response                                         | successful operation     |
-+------------------------+----------------------------------------------------------------+--------------------------+
++------------------------+---------------------------------------------------------------------------------------+--------------------------+
+| Name                   | Type                                                                                  | Description              |
++========================+=======================================================================================+==========================+
+| 200 OK                 | :doc:`Organization group member <../../datastructures/organization-group-member>` []  | successful operation      |
++------------------------+---------------------------------------------------------------------------------------+--------------------------+
 
 Scopes
 -------------
@@ -39,7 +39,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| Organization.ReadWrite | Grants user possibility to read and write organization data                  |
+| Organization.ReadWrite | Grants user possibility to read and write organization data                   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples
@@ -65,18 +65,18 @@ HTTP status code: ``200``
             "result": {
                 "items": [
                     {
+                        "displayName": "John Doe",
                         "email": "john.doe@company.com",
-                        "name": "John Doe",
                         "organizationUserId": 11
                     },
                     {
+                        "displayName": "Jane Smith",
                         "email": "jane.smith@company.com",
-                        "name": "Jane Smith",
                         "organizationUserId": 12
                     },
                     {
+                        "displayName": "Bob Wilson",
                         "email": "bob.wilson@company.com",
-                        "name": "Bob Wilson",
                         "organizationUserId": 13
                     }
                 ],
@@ -107,8 +107,8 @@ HTTP status code: ``200``
             "result": {
                 "items": [
                     {
+                        "displayName": "John Doe",
                         "email": "john.doe@company.com",
-                        "name": "John Doe",
                         "organizationUserId": 11
                     }
                 ],
