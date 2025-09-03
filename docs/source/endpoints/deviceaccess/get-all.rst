@@ -19,9 +19,9 @@ Results can be filtered by principal ID, text search, and principal type (User o
 +------------------------+-------------------+----------------------------------------+
 | filters.principalId    | UUID (optional)   | User or UserGroup UID                  |
 +------------------------+-------------------+----------------------------------------+
-| filters.text           | string (optional) | Text to search (email, name, etc.)     |
-+------------------------+-------------------+----------------------------------------+
 | filters.principalType  | number (optional) | 0 = User, 1 = UserGroup                |
++------------------------+-------------------+----------------------------------------+
+| filters.text           | string (optional) | Text to search (email, name, etc.)     |
 +------------------------+-------------------+----------------------------------------+
 
 Responses 

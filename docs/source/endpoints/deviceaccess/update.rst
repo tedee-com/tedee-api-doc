@@ -14,9 +14,9 @@ This endpoint updates the access parameters for an existing user or user group a
 +---------------------------+-----------+--------------------------+
 | Name                      | Type      |    Description           | 
 +===========================+===========+==========================+
-| deviceId                  | number    | id of device             |
-+---------------------------+-----------+--------------------------+
 | accessId                  | UUID      | id of access to update   |
++---------------------------+-----------+--------------------------+
+| deviceId                  | number    | id of device             |
 +---------------------------+-----------+--------------------------+
 
 **Body Parameters**
