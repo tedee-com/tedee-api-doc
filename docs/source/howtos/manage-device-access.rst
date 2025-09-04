@@ -9,9 +9,10 @@ Overview
 The Tedee API supports both individual user and user group access management. This allows organizations to efficiently manage access for teams, departments, or any logical grouping of users.
 
 Key concepts:
-- **Principal**: A generic term for either a user or a user group
-- **Principal Type**: Identifies whether access is for a user (0) or user group (1)
-- **Principal ID**: A UUID that uniquely identifies a user or group
+
+* **Principal**: A generic term for either a user or a user group
+* **Principal Type**: Identifies whether access is for a user (0) or user group (1)
+* **Principal ID**: A UUID that uniquely identifies a user or group
 
 Access Management for Individual Users
 ---------------------------------------
@@ -21,9 +22,12 @@ Granting user access
 
 When hiring a new employee who needs access to your office's main entrance, you can grant them access using the :doc:`Create access <../endpoints/deviceaccess/create>` endpoint.
 
-For individual users:
-- **Required**: userEmail field when principalType is 0
-- The API will return the principalId in the response
+.. important::
+   When granting access to individual users (principalType: 0):
+   
+   * The ``userEmail`` field is **required**
+   * The API will automatically return the user's ``principalId`` in the response
+   * Do NOT provide ``principalId`` for new user access - only the email is needed
 
 **Sample request using email**
 
@@ -47,18 +51,25 @@ Body:
         "weekDays": null
     }
 
-.. note::
-   When creating access for a user (principalType: 0), provide the userEmail. The API will return the principalId in the response.
-
 Access Management for User Groups
 ----------------------------------
 
 You can grant access to entire groups of users, making it easier to manage access for teams or departments.
 
+.. note::
+   For complete documentation on managing organization groups (creating, updating, adding members, etc.), see the :doc:`Organization Groups endpoints <../endpoints/organizationgroups/index>`.
+
 Creating group access
 ^^^^^^^^^^^^^^^^^^^^^
 
 When you want to grant access to an entire team (e.g., Engineering Team, Cleaning Service, Security Team), use the group's principalId with principalType: 1.
+
+.. important::
+   When granting access to user groups (principalType: 1):
+   
+   * The ``principalId`` field is **required**
+   * User groups don't have email addresses - do not provide ``userEmail``
+   * You must obtain the group's UUID from the :doc:`GET Organization groups <../endpoints/organizationgroups/get-all>` endpoint
 
 **Sample request for user group**
 
@@ -81,9 +92,6 @@ Body:
         "startDate": null,
         "weekDays": 31
     }
-
-.. note::
-   For user groups (principalType: 1), you must provide the principalId. User groups don't have email addresses.
 
 Access Types and Time Restrictions
 -----------------------------------
