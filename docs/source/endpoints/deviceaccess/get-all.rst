@@ -2,8 +2,12 @@ Get all
 =========================
 
 Get all access details for a specific device.
-This endpoint can be used by all users that have access to the device, but users with access level "Guest" and those users whose access is not active
-will get in response only information about owner of device and own access details. Owner and administrators with active access will get all users and user groups access details.
+
+This endpoint can be used by all users that have access to the device. The response varies based on access level:
+
+* **Guests and users with inactive access:** Can only see the device owner and their own access details
+* **Owner and administrators with active access:** Can see all users and user groups access details
+
 Results can be filtered by principal ID, text search, and principal type (User or UserGroup).
 
 .. code-block:: sh
