@@ -47,7 +47,7 @@ Remove access from the device
 
 .. code-block:: sh
 
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/device/1/access/15" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/device/1/access/bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
 
 
 

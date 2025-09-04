@@ -17,7 +17,7 @@ Results can be filtered by principal ID, text search, and principal type (User o
 +========================+===================+========================================+
 | deviceId               | number            | id of device                           |
 +------------------------+-------------------+----------------------------------------+
-| Filters.PrincipalId    | UUID (optional)   | User or UserGroup UID                  |
+| Filters.PrincipalId    | UUID (optional)   | User or UserGroup ID                   |
 +------------------------+-------------------+----------------------------------------+
 | Filters.PrincipalType  | number (optional) | 0 = User, 1 = UserGroup                |
 +------------------------+-------------------+----------------------------------------+
