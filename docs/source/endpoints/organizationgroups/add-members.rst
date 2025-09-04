@@ -23,7 +23,7 @@ This endpoint allows you to add one or more organization users to an existing us
 +------------------------+-------------------+----------------------------------------+
 | Name                   | Type              | Description                            |
 +========================+===================+========================================+
-| organizationUserIds    | array of numbers  | List of organization user IDs to add   |
+| organizationUserIds    | numbers []        | List of organization user IDs to add   |
 +------------------------+-------------------+----------------------------------------+
 
 Responses 
@@ -41,7 +41,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| Organization.ReadWrite | Grants user possibility to read and write organization data                  |
+| Organization.ReadWrite | Grants user possibility to read and write organization data                   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples

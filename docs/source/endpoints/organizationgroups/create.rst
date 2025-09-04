@@ -30,7 +30,7 @@ Responses
 +------------------------+----------------------------------------------------------------------+--------------------------+
 | Name                   | Type                                                                 | Description              |
 +========================+======================================================================+==========================+
-| 201 Created            | :doc:`Organization group <../../datastructures/organization-group>` | successful operation      |
+| 200 OK                 | UUID of created group                                                | successful operation     |
 +------------------------+----------------------------------------------------------------------+--------------------------+
 
 Scopes
@@ -64,16 +64,15 @@ Body:
 
 **Sample response**
 
-HTTP status code: ``201``
+HTTP status code: ``200``
 
 .. code-block:: js
 
         {
             "result": {
-                "id": "c6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
-                "name": "Security Team"
+                "id": "c6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
             },
             "errorMessages": [],
-            "statusCode": 201,
+            "statusCode": 200,
             "success": true
         }

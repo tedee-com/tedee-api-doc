@@ -41,7 +41,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| Organization.ReadWrite | Grants user possibility to read and write organization data                  |
+| Organization.ReadWrite | Grants user possibility to read and write organization data                   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples

@@ -23,7 +23,7 @@ This endpoint allows you to remove one or more users from an existing user group
 +------------------------+-------------------+----------------------------------------+
 | Name                   | Type              | Description                            |
 +========================+===================+========================================+
-| organizationUserIds    | array of numbers  | List of organization user IDs to remove|
+| organizationUserIds    | number []         | List of organization user IDs to remove|
 +------------------------+-------------------+----------------------------------------+
 
 Responses 
@@ -32,7 +32,7 @@ Responses
 +------------------------+--------------------------+
 | Name                   | Description              |
 +========================+==========================+
-| 204 No Content         | successful operation     |
+| 207 Multi-Status       | successful operation     |
 +------------------------+--------------------------+
 
 Scopes
@@ -41,7 +41,7 @@ Scopes
 +------------------------+-------------------------------------------------------------------------------+
 | Name                   | Description                                                                   |
 +========================+===============================================================================+
-| Organization.ReadWrite | Grants user possibility to read and write organization data                  |
+| Organization.ReadWrite | Grants user possibility to read and write organization data                   |
 +------------------------+-------------------------------------------------------------------------------+
 
 Examples
@@ -66,9 +66,7 @@ Body:
 
 **Sample response**
 
-HTTP status code: ``204``
-
-No content returned
+HTTP status code: ``207``
 
 
 Remove multiple members
@@ -90,9 +88,7 @@ Body:
 
 **Sample response**
 
-HTTP status code: ``204``
-
-No content returned
+HTTP status code: ``207``
 
 .. note::
    Removing users from a group does not remove their individual device accesses. Only accesses granted through the group membership are affected.
