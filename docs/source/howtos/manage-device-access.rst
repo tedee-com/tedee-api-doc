@@ -14,6 +14,38 @@ Key concepts:
 * **Principal Type**: Identifies whether access is for a user (0) or user group (1)
 * **Principal ID**: A UUID that uniquely identifies a user or group
 
+Access Priority and Calculation Rules
+--------------------------------------
+
+When a user has multiple access paths to a device (direct access and/or through multiple groups), the system determines the effective access based on specific priority rules.
+
+.. important::
+   **Access Priority Order:**
+   
+   1. **Direct user access always takes priority** - If a user has direct access assigned, it overrides ALL group-based accesses
+   2. **Higher access level wins** - Among group accesses, Admin (1) takes priority over Guest (0)
+   3. **Alphabetical group name** - When multiple groups provide the same access level, groups are sorted alphabetically by name and the first one is used
+
+**Example Scenarios:**
+
+**Scenario 1: Direct access overrides groups**
+   * User has direct Guest access to the device
+   * User is member of "Engineering Team" with Admin access
+   * **Result:** User gets Guest access (direct access takes priority)
+
+**Scenario 2: Higher access level from groups**
+   * User is member of "Cleaning Service" with Guest access
+   * User is member of "Management Team" with Admin access
+   * **Result:** User gets Admin access (higher level wins)
+
+**Scenario 3: Same level, alphabetical priority**
+   * User is member of "Engineering Team" with Admin access
+   * User is member of "Development Team" with Admin access
+   * **Result:** User gets Admin access from "Development Team" (alphabetically first)
+
+.. note::
+   This priority system ensures predictable access control. Always review both direct and group-based accesses when troubleshooting access issues.
+
 Access Management for Individual Users
 ---------------------------------------
 
