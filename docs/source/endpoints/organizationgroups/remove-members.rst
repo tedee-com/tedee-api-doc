@@ -29,11 +29,12 @@ This endpoint allows you to remove one or more users from an existing user group
 Responses 
 -------------
 
-+------------------------+--------------------------+
-| Name                   | Description              |
-+========================+==========================+
-| 207 Multi-Status       | successful operation     |
-+------------------------+--------------------------+
++------------------------+--------------------------------------------------------------------------------------------------+----------------------------+
+| Name                   | Type                                                                                             | Description                |
++========================+==================================================================================================+============================+
+| 207 Multi-Status       | :doc:`Organization member operation result                                                       | successful operation       |
+|                        | <../../datastructures/organization-member-operation-result>` []                                  |                            |
++------------------------+--------------------------------------------------------------------------------------------------+----------------------------+
 
 Scopes
 -------------
@@ -68,6 +69,17 @@ Body:
 
 HTTP status code: ``207``
 
+.. code-block:: js
+
+        {
+            "organizationUsers": [
+                {
+                    "organizationUserId": 12,
+                    "success": true,
+                    "error": null
+                }
+            ]
+        }
 
 Remove multiple members
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,6 +101,23 @@ Body:
 **Sample response**
 
 HTTP status code: ``207``
+
+.. code-block:: js
+
+        {
+            "organizationUsers": [
+                {
+                    "organizationUserId": 11,
+                    "success": true,
+                    "error": null
+                },
+                {
+                    "organizationUserId": 12,
+                    "success": true,
+                    "error": null
+                }
+            ]
+        }
 
 .. note::
    Removing users from a group does not remove their individual device accesses. Only accesses granted through the group membership are affected.

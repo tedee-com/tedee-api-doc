@@ -29,11 +29,12 @@ This endpoint allows you to add one or more organization users to an existing us
 Responses 
 -------------
 
-+------------------------+--------------------------+
-| Name                   | Description              |
-+========================+==========================+
-| 204 No Content         | successful operation     |
-+------------------------+--------------------------+
++------------------------+--------------------------------------------------------------------------------------------------+----------------------------+
+| Name                   | Type                                                                                             | Description                |
++========================+==================================================================================================+============================+
+| 207 Multi-Status       | :doc:`Organization member operation result                                                       | successful operation       |
+|                        | <../../datastructures/organization-member-operation-result>` []                                  |                            |
++------------------------+--------------------------------------------------------------------------------------------------+----------------------------+
 
 Scopes
 -------------
@@ -66,10 +67,19 @@ Body:
 
 **Sample response**
 
-HTTP status code: ``204``
+HTTP status code: ``207``
 
-No content returned
+.. code-block:: js
 
+        {
+            "organizationUsers": [
+                {
+                    "organizationUserId": 14,
+                    "success": true,
+                    "error": null
+                }
+            ]
+        }
 
 Add multiple members
 ^^^^^^^^^^^^^^^^^^^^
@@ -90,9 +100,24 @@ Body:
 
 **Sample response**
 
-HTTP status code: ``204``
+HTTP status code: ``207``
 
-No content returned
+.. code-block:: js
+
+        {
+            "organizationUsers": [
+                {
+                    "organizationUserId": 14,
+                    "success": true,
+                    "error": null
+                },
+                {
+                    "organizationUserId": 15,
+                    "success": true,
+                    "error": null
+                }
+            ]
+        }
 
 .. note::
    Users must be members of the organization before they can be added to a group. If a user is already a member of the group, they will be skipped.
