@@ -41,11 +41,11 @@ This endpoint can be used by owner or administrator of the device.
 Responses 
 -------------
 
-+------------------------+----------------------------------------------------------------------------+--------------------------+
-| Name                   | Type                                                                       | Description              |
-+========================+============================================================================+==========================+
-| 201 Created            | :doc:`Device Access Success <../../datastructures/device-access-success>`  | successful operation     |
-+------------------------+----------------------------------------------------------------------------+--------------------------+
++------------------------+--------------------------------------------------------------------------------------+--------------------------+
+| Name                   | Type                                                                                 | Description              |
++========================+======================================================================================+==========================+
+| 201 Created            | :doc:`Device access result <../../datastructures/post-device-access-result>`         | successful operation     |
++------------------------+--------------------------------------------------------------------------------------+--------------------------+
 
 Scopes
 -------------
@@ -91,16 +91,13 @@ HTTP status code: ``201``
 .. code-block:: js
 
         {
-            "accessLevel": 1,
-            "dayEndTime": null,
-            "dayStartTime": null,
-            "endDate": null,
-            "principalId": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "principalType": 0,
-            "remoteAccessDisabled": false,
-            "startDate": null,
+            "principalId": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
             "userEmail": "john.doe@email.com",
-            "weekDays": null
+            "displayName": "John Doe",
+            "success": true,
+            "error": null
         }
 
 
@@ -136,16 +133,13 @@ HTTP status code: ``201``
 .. code-block:: js
 
         {
-            "accessLevel": 0,
-            "dayEndTime": "2025-12-31T18:00:00.000Z",
-            "dayStartTime": "2025-12-01T08:00:00.000Z",
-            "endDate": "2025-12-31T23:59:59.000Z",
-            "principalId": "d5e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+            "id": "4fa85f64-5717-4562-b3fc-2c963f66afa7",
             "principalType": 0,
-            "remoteAccessDisabled": false,
-            "startDate": "2025-01-01T00:00:00.000Z",
+            "principalId": "d5e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
             "userEmail": "jane.smith@email.com",
-            "weekDays": 31
+            "displayName": "Jane Smith",
+            "success": true,
+            "error": null
         }
 
 
@@ -181,16 +175,13 @@ HTTP status code: ``201``
 .. code-block:: js
 
         {
-            "accessLevel": 0,
-            "dayEndTime": null,
-            "dayStartTime": null,
-            "endDate": null,
-            "principalId": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
+            "id": "5fa85f64-5717-4562-b3fc-2c963f66afa8",
             "principalType": 1,
-            "remoteAccessDisabled": false,
-            "startDate": null,
+            "principalId": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
             "userEmail": null,
-            "weekDays": null
+            "displayName": "Engineering Team",
+            "success": true,
+            "error": null
         }
 
 
@@ -226,16 +217,13 @@ HTTP status code: ``201``
 .. code-block:: js
 
         {
-            "accessLevel": 1,
-            "dayEndTime": "2025-12-31T17:00:00.000Z",
-            "dayStartTime": "2025-12-01T09:00:00.000Z",
-            "endDate": "2025-06-30T23:59:59.000Z",
-            "principalId": "b5d6e7f8-8c9d-2e3f-4a5b-6c7d8e9f0b1c",
+            "id": "6fa85f64-5717-4562-b3fc-2c963f66afa9",
             "principalType": 1,
-            "remoteAccessDisabled": true,
-            "startDate": "2025-01-01T00:00:00.000Z",
+            "principalId": "b5d6e7f8-8c9d-2e3f-4a5b-6c7d8e9f0b1c",
             "userEmail": null,
-            "weekDays": 31
+            "displayName": "Support Team",
+            "success": true,
+            "error": null
         }
 
 
@@ -271,14 +259,11 @@ HTTP status code: ``201``
 .. code-block:: js
 
         {
-            "accessLevel": 0,
-            "dayEndTime": "2025-12-31T20:00:00.000Z",
-            "dayStartTime": "2025-12-01T08:00:00.000Z",
-            "endDate": "2025-12-31T23:59:59.000Z",
-            "principalId": "7de29ia8-9b5b-89a6-f7jg-6g3a7jaaeje0",
+            "id": "7fa85f64-5717-4562-b3fc-2c963f66afa0",
             "principalType": 0,
-            "remoteAccessDisabled": false,
-            "startDate": "2025-01-01T00:00:00.000Z",
+            "principalId": "7de29ia8-9b5b-89a6-f7jg-6g3a7jaaeje0",
             "userEmail": "john.doe@email.com",
-            "weekDays": 7
+            "displayName": "John Doe",
+            "success": true,
+            "error": null
         }
