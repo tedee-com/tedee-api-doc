@@ -2,25 +2,31 @@ Get all
 =========================
 
 Get all access details for a specific device.
-This endpoint can be used by all users that have access to the device, but users with access level "Guest" and those users whose access is not active
-will get in response only information about owner of device and own access details. Owner and administrators with active access will get all users access details.
-Results can be filtered by id and/or email of user.
+
+This endpoint can be used by all users that have access to the device. The response varies based on access level:
+
+* **Guests and users with inactive access:** Can only see the device owner and their own access details
+* **Owner and administrators with active access:** Can see all users and user groups access details
+
+Results can be filtered by principal ID, text search, and principal type (User or UserGroup).
 
 .. code-block:: sh
 
-    GET |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access?Filters.UserIdentity={userId}&Filters.Email={email}
+    GET |apiUrl|/api/|apiVersion|/my/device/{deviceId}/access?Filters.PrincipalId={principalId}&Filters.Text={text}&Filters.PrincipalType={principalType}
 
 **URI Parameters**
 
-+----------------------+-------------------+---------------------+
-| Name                 | Type              | Description         |
-+======================+===================+=====================+
-| deviceId             | number            | id of device        |
-+----------------------+-------------------+---------------------+
-| Filters.UserIdentity | string (optional) | id of user          |
-+----------------------+-------------------+---------------------+
-| Filters.Email        | string (optional) | email of user       |
-+----------------------+-------------------+---------------------+
++------------------------+-------------------+----------------------------------------+
+| Name                   | Type              | Description                            |
++========================+===================+========================================+
+| deviceId               | number            | id of device                           |
++------------------------+-------------------+----------------------------------------+
+| Filters.PrincipalId    | UUID (optional)   | User or UserGroup ID                   |
++------------------------+-------------------+----------------------------------------+
+| Filters.PrincipalType  | number (optional) | 0 = User, 1 = UserGroup                |
++------------------------+-------------------+----------------------------------------+
+| Filters.Text           | string (optional) | Text to search (email, name, etc.)     |
++------------------------+-------------------+----------------------------------------+
 
 Responses 
 -------------
@@ -64,41 +70,57 @@ HTTP status code: ``200``
         {
             "result": [
                 {
-                    "id": 15,
-                    "userId": 11,
-                    "deviceId": 1,
-                    "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
                     "accessLevel": 1,
-                    "accessType": 0,
-                    "userEmail": "john.doe@email.com",
-                    "isPending": false,
-                    "userDisplayName": "John Doe",
-                    "weekDays": 10,
-                    "dayStartTime": "2020-12-14T08:09:57.781Z",
                     "dayEndTime": "2020-12-31T08:10:57.781Z",
-                    "startDate": null,
-                    "endDate": null,
-                    "remoteAccessDisabled": true
-                },
-                                {
-                    "id": 16,
-                    "userId": 12,
+                    "dayStartTime": "2020-12-14T08:09:57.781Z",
                     "deviceId": 1,
-                    "userIdentity": "bcc1fdc9-13ee-43b3-a13e-eaba2eaf7333",
-                    "accessLevel": 0,
-                    "accessType": 1,
-                    "userEmail": "john.kowalsky@email.com",
-                    "isPending": false,
-                    "userDisplayName": "John Doe",
-                    "id": 1,
-                    "weekDays": 10,
-                    "dayStartTime": "2020-12-14T08:09:57.781Z",
-                    "dayEndTime": "2020-12-31T08:10:57.781Z",
-                    "startDate": null,
                     "endDate": null,
-                    "remoteAccessDisabled": false
+                    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                    "isPending": false,
+                    "organizationUserId": 11,
+                    "principalId": "bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996",
+                    "principalName": "John Doe",
+                    "principalType": 0,
+                    "remoteAccessDisabled": true,
+                    "startDate": null,
+                    "userEmail": "john.doe@email.com",
+                    "weekDays": 10
+                },
+                {
+                    "accessLevel": 0,
+                    "dayEndTime": "2020-12-31T08:10:57.781Z",
+                    "dayStartTime": "2020-12-14T08:09:57.781Z",
+                    "deviceId": 1,
+                    "endDate": null,
+                    "id": "4ab96f75-6828-5673-c4gd-3d074g77bgb7",
+                    "isPending": false,
+                    "organizationUserId": 12,
+                    "principalId": "bcc1fdc9-13ee-43b3-a13e-eaba2eaf7333",
+                    "principalName": "John Kowalsky",
+                    "principalType": 0,
+                    "remoteAccessDisabled": false,
+                    "startDate": null,
+                    "userEmail": "john.kowalsky@email.com",
+                    "weekDays": 10
+                },
+                {
+                    "accessLevel": 0,
+                    "dayEndTime": null,
+                    "dayStartTime": null,
+                    "deviceId": 1,
+                    "endDate": null,
+                    "id": "5bc07g86-7939-6784-d5he-4e185h88chc8",
+                    "isPending": false,
+                    "organizationUserId": 0,
+                    "principalId": "a4d5e6f7-8b9c-4d2e-9f1a-3b4c5d6e7f8a",
+                    "principalName": "Engineering Team",
+                    "principalType": 1,
+                    "remoteAccessDisabled": false,
+                    "startDate": null,
+                    "userEmail": null,
+                    "weekDays": null
                 }
-            ]
+            ],
             "success": true,
             "errorMessages": [],
             "statusCode": 200

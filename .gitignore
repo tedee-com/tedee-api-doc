@@ -17,3 +17,6 @@ _build
 .gitignore
 
 .fake
+
+### User specific files ###
+/.idea

@@ -53,6 +53,7 @@ Tedee API documentation
    endpoints/mobile/index
    endpoints/organization/index
    endpoints/organizationaccesslink/index
+   endpoints/organizationgroups/index
    endpoints/personalaccesskey/index
 
 .. toctree::
@@ -77,9 +78,9 @@ Tedee API documentation
    Certificate for mobile <datastructures/certificate-for-mobile>
    Device activities <datastructures/device-activity>
    Device access <datastructures/device-access>
+   Device access result <datastructures/post-device-access-result>
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
-   Device access success <datastructures/device-access-success>
    Device updated <datastructures/device-updated>
    Door sensor list <datastructures/door-sensor-list>
    Door sensor state <datastructures/door-sensor-state>

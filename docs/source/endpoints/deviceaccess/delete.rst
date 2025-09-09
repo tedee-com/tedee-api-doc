@@ -1,8 +1,8 @@
 Delete
 =========================
 
-This endpoint allows to remove access to the device from the user. 
-To remove access from user you need to be owner or administrator of the device.
+This endpoint allows to remove access to the device from a user or user group. 
+To remove access you need to be owner or administrator of the device.
 
 .. code-block:: sh
 
@@ -13,7 +13,7 @@ To remove access from user you need to be owner or administrator of the device.
 +---------------------------+-----------+--------------------------+
 | Name                      | Type      |    Description           | 
 +===========================+===========+==========================+
-| accessId                  | number    | id of access to delete   |
+| accessId                  | UUID      | id of access to delete   |
 +---------------------------+-----------+--------------------------+
 | deviceId                  | number    | id of device             |
 +---------------------------+-----------+--------------------------+
@@ -40,14 +40,14 @@ Scopes
 Examples
 -------------
 
-Remove access to the device
+Remove access from the device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Sample request**
 
 .. code-block:: sh
 
-    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/device/1/access/15" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/my/device/1/access/bcc1fdc9-13ee-43b3-a13e-eaba8eaf7996" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -H "Authorization: Bearer <<access token>>"
 
 
 

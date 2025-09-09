@@ -1,6 +1,24 @@
 Release notes
 =============
 
+**2025-08-11**
+
+* Added new API version v37 (breaking change from previous versioning scheme 1.xx).
+* **Device Access Area - Breaking Changes:**
+    + Migrated to principal-based access system supporting both users and user groups.
+    + Added ``principalId``, ``principalType``, and ``principalName`` fields to :doc:`Access details <../datastructures/access-details>`.
+    + ``userEmail`` is now required only when creating access for users (principalType: 0).
+    + ``principalId`` is required when creating access for user groups (principalType: 1).
+    + Added support for filtering by ``principalType`` and ``principalId`` in device access endpoints.
+* **Organization Groups - New Feature:**
+    + Added complete :doc:`Organization Groups <../endpoints/organizationgroups/index>` management endpoints.
+    + Create, update, and delete user groups within organizations.
+    + Manage group members with add/remove operations.
+    + Grant device access to entire groups instead of individual users.
+* **Documentation Improvements:**
+    + Updated :doc:`How to manage device access <../howtos/manage-device-access>` guide with user group support.
+    + Added clear distinction between user and group access requirements.
+
 **2025-06-09**
 * Added new :doc:`Event type <../enums/event-type>`: `LockPulledByAutoUnlock`.
 * Endpoint `Lock > Get all locks <https://api.tedee.com/swagger/index.html#/Lock/GetAllLocks>`_ extended with new :doc:`Access level <../enums/access-level>` filter `Filters.AccessLevel` to filter locks by access level.
