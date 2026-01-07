@@ -79,6 +79,7 @@ Tedee API documentation
    Device activities <datastructures/device-activity>
    Device access <datastructures/device-access>
    Device access result <datastructures/post-device-access-result>
+   Device access copy result <datastructures/post-device-access-copy-result>
    Device operation <datastructures/device-operation>
    Device settings <datastructures/device-settings>
    Device updated <datastructures/device-updated>
