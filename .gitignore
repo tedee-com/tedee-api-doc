@@ -14,9 +14,17 @@ _build
 ### VisualStudio ###
 /.vs
 .DS_Store
-.gitignore
 
 .fake
 
 ### User specific files ###
 /.idea
+
+### Python ###
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python

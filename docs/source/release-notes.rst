@@ -1,6 +1,10 @@
 Release notes
 =============
 
+**2026-01-07**
+
+* Added new endpoint `DeviceAccess > Copy permissions <https://api.tedee.com/swagger/index.html#/DeviceAccess/CopyDeviceAccess>`_ which allows copying device access to other users or groups.
+
 **2025-08-11**
 
 * Added new API version v37 (breaking change from previous versioning scheme 1.xx).

@@ -8,6 +8,7 @@ Endpoints used for listing, creating, updating and removing access to the device
    :hidden:
 
    Create <create>
+   Copy <copy-to>
    Delete <delete>
    Get all <get-all>
    Update <update>
@@ -15,6 +16,7 @@ Endpoints used for listing, creating, updating and removing access to the device
 **Operations**
 
 - `Create <create.html>`_
+- `Copy <copy-to.html>`_
 - `Delete <delete.html>`_
 - `Get all <get-all.html>`_
 - `Update <update.html>`_
