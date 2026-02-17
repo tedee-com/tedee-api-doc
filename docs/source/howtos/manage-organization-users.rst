@@ -1,0 +1,277 @@
+How to manage users in an organization
+======================================
+
+This tutorial shows how to manage organization users with the Tedee API: listing users, checking whether user already exists, inviting a new user, viewing profile details, updating a profile, granting or removing admin role, and removing users from organization.
+
+Overview
+--------
+
+Organization user management is available in the ``OrganizationUser`` area in Swagger v37.
+Use these operations as a reference:
+
+* `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_
+* `Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_
+* `Get organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUserProfile>`_
+* `Edit organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/PutOrganizationUser>`_
+* `Assign admin role to user <https://api.tedee.com/swagger/index.html#/OrganizationUser/AssignAdminRole>`_
+* `Remove admin role from user <https://api.tedee.com/swagger/index.html#/OrganizationUser/RemoveAdminRole>`_
+* `Remove user from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/DeleteOrganizationUser>`_
+
+Prerequisites
+-------------
+
+Before you start, make sure:
+
+* You are authenticated (see :doc:`Authenticate <authenticate>`)
+* Your token includes ``Organization.ReadWrite`` scope
+* You know your ``organizationId`` (you can get it from :doc:`Get organizations <../endpoints/organization/get-all>`)
+
+Step 1: List users in organization
+----------------------------------
+
+Use `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_ to retrieve current members.
+
+Useful query parameters in Swagger v37:
+
+* ``Filters.Text`` (search by display name or email)
+* ``Filters.UserTypes`` (filter by user type)
+* ``Filters.IncludePendingUsers`` (include invited users that have not accepted yet)
+* ``Page`` and ``ItemsPerPage`` (pagination)
+
+``Filters.UserTypes`` values (``OrganizationUserType`` enum):
+
+* ``0`` - Admin
+* ``1`` - Other
+* ``2`` - Owner
+
+Example search patterns:
+
+* Search by email: ``?Filters.Text=new.member@company.com``
+* Search by name: ``?Filters.Text=John%20Doe``
+* Find pending users: ``?Filters.IncludePendingUsers=true``
+* List only admins: ``?Filters.UserTypes=0``
+
+Full curl sample (search by email):
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/organization/1/user?Filters.Text=new.member%40company.com" \
+      -H "accept: application/json" \
+      -H "Authorization: Bearer <<access token>>"
+
+Full curl sample (search by name):
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/organization/1/user?Filters.Text=John%20Doe" \
+      -H "accept: application/json" \
+      -H "Authorization: Bearer <<access token>>"
+
+Full curl sample (find pending users):
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/organization/1/user?Filters.IncludePendingUsers=true" \
+      -H "accept: application/json" \
+      -H "Authorization: Bearer <<access token>>"
+
+Full curl sample (list only admins):
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/organization/1/user?Filters.UserTypes=0" \
+      -H "accept: application/json" \
+      -H "Authorization: Bearer <<access token>>"
+
+This is usually the first call in your sync flow, and helps you map ``organizationUserId`` values for later operations.
+
+Step 2: Check if user already exists
+------------------------------------
+
+Before you invite a user, first call `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_ with ``Filters.Text`` using their email.
+
+Recommended duplicate-check flow:
+
+1. Search by exact email in ``Filters.Text``
+2. Check both active and pending users (set ``Filters.IncludePendingUsers=true``)
+3. If the user already exists (or invitation is pending), skip invitation
+4. If no match is found, proceed with invite
+
+Full curl sample:
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/organization/1/user?Filters.Text=new.member%40company.com&Filters.IncludePendingUsers=true" \
+      -H "accept: application/json" \
+      -H "Authorization: Bearer <<access token>>"
+
+.. note::
+   This prevents duplicate invitations and keeps your onboarding flow clean.
+
+Step 3: Invite a new user
+-------------------------
+
+Use `Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_.
+
+In Swagger v37, ``PostRequest`` requires:
+
+* ``name``
+* ``email``
+
+Optional field:
+
+* ``role`` (enum ``OrganizationRoleType``)
+
+Example body:
+
+.. code-block:: js
+
+    {
+        "name": "John Doe",
+        "email": "new.member@company.com",
+        "role": 2
+    }
+
+Full curl sample:
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/organization/1/user" \
+      -H "accept: application/json" \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer <<access token>>" \
+      -d "{\"name\":\"John Doe\",\"email\":\"new.member@company.com\",\"role\":2}"
+
+``OrganizationRoleType`` values:
+
+* ``0`` - Owner
+* ``1`` - Admin
+* ``2`` - Member
+
+.. important::
+   On success, this operation returns ``organizationUserId``.
+
+Step 4: Get user profile details
+--------------------------------
+
+Use `Get organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUserProfile>`_ when you need full details of a single organization member.
+
+Full curl sample:
+
+.. code-block:: sh
+
+    curl -X GET "|apiUrl|/api/|apiVersion|/organization/1/user/123" \
+      -H "accept: application/json" \
+      -H "Authorization: Bearer <<access token>>"
+
+This endpoint is useful when:
+
+* building admin panels,
+* validating invitation state,
+* reading current role flags before admin role updates.
+
+Step 5: Update user profile
+---------------------------
+
+Use `Edit organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/PutOrganizationUser>`_.
+
+In Swagger v37, ``PutRequest`` requires:
+
+* ``displayName``
+
+Example body:
+
+.. code-block:: js
+
+    {
+        "displayName": "John A. Doe"
+    }
+
+Full curl sample:
+
+.. code-block:: sh
+
+    curl -X PUT "|apiUrl|/api/|apiVersion|/organization/1/user/byorganizationuserid/123" \
+      -H "accept: application/json" \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer <<access token>>" \
+      -d "{\"displayName\":\"John A. Doe\"}"
+
+Step 6: Grant or remove admin role
+----------------------------------
+
+Use dedicated operations for admin role management:
+
+* `Assign admin role <https://api.tedee.com/swagger/index.html#/OrganizationUser/AssignAdminRole>`_
+* `Remove admin role <https://api.tedee.com/swagger/index.html#/OrganizationUser/RemoveAdminRole>`_
+
+Both operations use request body with:
+
+* ``organizationUserId``
+
+Example body:
+
+.. code-block:: js
+
+    {
+        "organizationUserId": 123
+    }
+
+Full curl sample (assign admin):
+
+.. code-block:: sh
+
+    curl -X PUT "|apiUrl|/api/|apiVersion|/organization/1/assignadmin" \
+      -H "accept: application/json" \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer <<access token>>" \
+      -d "{\"organizationUserId\":123}"
+
+Full curl sample (remove admin):
+
+.. code-block:: sh
+
+    curl -X PUT "|apiUrl|/api/|apiVersion|/organization/1/removeadmin" \
+      -H "accept: application/json" \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer <<access token>>" \
+      -d "{\"organizationUserId\":123}"
+
+Recommended approach:
+
+1. Read users list and find target ``organizationUserId``
+2. Call assign/remove admin endpoint
+3. Re-read users list or user profile to verify role change
+
+Step 7: Remove a user from organization
+---------------------------------------
+
+Use `Remove user from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/DeleteOrganizationUser>`_.
+
+.. note::
+   In Swagger v37 the delete endpoint path is:
+   ``/organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``.
+
+Full curl sample:
+
+.. code-block:: sh
+
+    curl -X DELETE "|apiUrl|/api/|apiVersion|/organization/1/user/byorganizationuserid/123" \
+      -H "accept: application/json" \
+      -H "Authorization: Bearer <<access token>>"
+
+Before deleting a member, check whether that user is used in organization groups or device access assignments.
+
+Related operations you may need:
+
+* :doc:`Remove members from user group <../endpoints/organizationgroups/remove-members>`
+* :doc:`Delete access <../endpoints/deviceaccess/delete>`
+
+Best practices
+--------------
+
+* Keep your local model keyed by ``organizationUserId``.
+* Always handle pending invitations in user lists.
+* Always check whether a user already exists before inviting.
+* Use dedicated assign/remove admin role operations for permission updates.
+* Reconcile organization users before bulk device access updates.
