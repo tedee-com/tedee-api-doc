@@ -6,7 +6,7 @@ This tutorial shows how to manage organization users with the Tedee API: listing
 Overview
 --------
 
-Organization user management is available in the ``OrganizationUser`` area in Swagger v37.
+Organization user management is available in the ``OrganizationUser`` area.
 Use these operations as a reference:
 
 * `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_
@@ -31,7 +31,7 @@ Step 1: List users in organization
 
 Use `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_ to retrieve current members.
 
-Useful query parameters in Swagger v37:
+Useful query parameters:
 
 * ``Filters.Text`` (search by display name or email)
 * ``Filters.UserTypes`` (filter by user type)
@@ -113,7 +113,7 @@ Step 3: Invite a new user
 
 Use `Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_.
 
-In Swagger v37, ``PostRequest`` requires:
+``PostRequest`` requires:
 
 * ``name``
 * ``email``
@@ -151,6 +151,9 @@ Full curl sample:
 .. important::
    On success, this operation returns ``organizationUserId``.
 
+.. note::
+   After invitation, the new user is marked as ``Pending`` until they create a Tedee account and accept the invitation.
+
 Step 4: Get user profile details
 --------------------------------
 
@@ -175,7 +178,7 @@ Step 5: Update user profile
 
 Use `Edit organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/PutOrganizationUser>`_.
 
-In Swagger v37, ``PutRequest`` requires:
+``PutRequest`` requires:
 
 * ``displayName``
 
@@ -249,7 +252,7 @@ Step 7: Remove a user from organization
 Use `Remove user from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/DeleteOrganizationUser>`_.
 
 .. note::
-   In Swagger v37 the delete endpoint path is:
+   The delete endpoint path is:
    ``/organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``.
 
 Full curl sample:
