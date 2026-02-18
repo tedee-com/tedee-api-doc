@@ -251,10 +251,6 @@ Step 7: Remove a user from organization
 
 Use `Remove user from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/DeleteOrganizationUser>`_.
 
-.. note::
-   The delete endpoint path is:
-   ``/organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``.
-
 Full curl sample:
 
 .. code-block:: sh
@@ -265,16 +261,9 @@ Full curl sample:
 
 Before deleting a member, check whether that user is used in organization groups or device access assignments.
 
+After the user is removed from the organization, they lose access to all organization devices.
+
 Related operations you may need:
 
 * :doc:`Remove members from user group <../endpoints/organizationgroups/remove-members>`
 * :doc:`Delete access <../endpoints/deviceaccess/delete>`
-
-Best practices
---------------
-
-* Keep your local model keyed by ``organizationUserId``.
-* Always handle pending invitations in user lists.
-* Always check whether a user already exists before inviting.
-* Use dedicated assign/remove admin role operations for permission updates.
-* Reconcile organization users before bulk device access updates.
