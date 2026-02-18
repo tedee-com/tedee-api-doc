@@ -31,6 +31,9 @@ Step 1: List users in organization
 
 Use `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_ to retrieve current members.
 
+Endpoint schema:
+``/organization/{organizationId}/user``
+
 Useful query parameters:
 
 * ``Filters.Text`` (search by display name or email)
@@ -51,7 +54,7 @@ Example search patterns:
 * Find pending users: ``?Filters.IncludePendingUsers=true``
 * List only admins: ``?Filters.UserTypes=0``
 
-Full curl sample (search by email):
+Search organization users by email (new.member@company.com):
 
 .. code-block:: sh
 
@@ -59,7 +62,7 @@ Full curl sample (search by email):
       -H "accept: application/json" \
       -H "Authorization: Bearer <<access token>>"
 
-Full curl sample (search by name):
+Search organization users by display name (John Doe):
 
 .. code-block:: sh
 
@@ -67,7 +70,7 @@ Full curl sample (search by name):
       -H "accept: application/json" \
       -H "Authorization: Bearer <<access token>>"
 
-Full curl sample (find pending users):
+List pending invited users in organization with id 1:
 
 .. code-block:: sh
 
@@ -75,7 +78,7 @@ Full curl sample (find pending users):
       -H "accept: application/json" \
       -H "Authorization: Bearer <<access token>>"
 
-Full curl sample (list only admins):
+List only organization admins (Filters.UserTypes=0):
 
 .. code-block:: sh
 
@@ -90,6 +93,9 @@ Step 2: Check if user already exists
 
 Before you invite a user, first call `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_ with ``Filters.Text`` using their email.
 
+Endpoint schema:
+``/organization/{organizationId}/user``
+
 Recommended duplicate-check flow:
 
 1. Search by exact email in ``Filters.Text``
@@ -97,7 +103,7 @@ Recommended duplicate-check flow:
 3. If the user already exists (or invitation is pending), skip invitation
 4. If no match is found, proceed with invite
 
-Full curl sample:
+Check whether new.member@company.com already exists in organization with id 1:
 
 .. code-block:: sh
 
@@ -112,6 +118,9 @@ Step 3: Invite a new user
 -------------------------
 
 Use `Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_.
+
+Endpoint schema:
+``/organization/{organizationId}/user``
 
 ``PostRequest`` requires:
 
@@ -132,7 +141,7 @@ Example body:
         "role": 2
     }
 
-Full curl sample:
+Invite John Doe (new.member@company.com) to organization with id 1:
 
 .. code-block:: sh
 
@@ -159,7 +168,10 @@ Step 4: Get user profile details
 
 Use `Get organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUserProfile>`_ when you need full details of a single organization member.
 
-Full curl sample:
+Endpoint schema:
+``/organization/{organizationId}/user/{organizationUserId}``
+
+Get profile details for user with id 123 from organization with id 1:
 
 .. code-block:: sh
 
@@ -178,6 +190,9 @@ Step 5: Update user profile
 
 Use `Edit organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/PutOrganizationUser>`_.
 
+Endpoint schema:
+``/organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``
+
 ``PutRequest`` requires:
 
 * ``displayName``
@@ -190,7 +205,7 @@ Example body:
         "displayName": "John A. Doe"
     }
 
-Full curl sample:
+Update display name for organization user with id 123:
 
 .. code-block:: sh
 
@@ -208,6 +223,12 @@ Use dedicated operations for admin role management:
 * `Assign admin role <https://api.tedee.com/swagger/index.html#/OrganizationUser/AssignAdminRole>`_
 * `Remove admin role <https://api.tedee.com/swagger/index.html#/OrganizationUser/RemoveAdminRole>`_
 
+Endpoint schema (assign admin):
+``/organization/{organizationId}/assignadmin``
+
+Endpoint schema (remove admin):
+``/organization/{organizationId}/removeadmin``
+
 Both operations use request body with:
 
 * ``organizationUserId``
@@ -220,7 +241,7 @@ Example body:
         "organizationUserId": 123
     }
 
-Full curl sample (assign admin):
+Assign admin role to organization user with id 123 in organization with id 1:
 
 .. code-block:: sh
 
@@ -230,7 +251,7 @@ Full curl sample (assign admin):
       -H "Authorization: Bearer <<access token>>" \
       -d "{\"organizationUserId\":123}"
 
-Full curl sample (remove admin):
+Remove admin role from organization user with id 123 in organization with id 1:
 
 .. code-block:: sh
 
@@ -251,7 +272,10 @@ Step 7: Remove a user from organization
 
 Use `Remove user from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/DeleteOrganizationUser>`_.
 
-Full curl sample:
+Endpoint schema:
+``/organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``
+
+Remove user with id 123 from organization with id 1:
 
 .. code-block:: sh
 
