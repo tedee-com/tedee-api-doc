@@ -25,6 +25,19 @@ Update profile details of an organization user.
 | displayName            | string             | New user display name       |
 +------------------------+--------------------+-----------------------------+
 
+Responses
+---------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Description
+   * - 200 OK
+     - object
+     - successful operation
+
 Scopes
 ------
 

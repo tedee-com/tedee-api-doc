@@ -27,6 +27,19 @@ Invite a new user to organization.
 | role                   | number (optional)  | Role (0 Owner, 1 Admin, 2 Member)            |
 +------------------------+--------------------+----------------------------------------------+
 
+Responses
+---------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Description
+   * - 200 OK
+     - number
+     - Returns created organizationUserId
+
 Scopes
 ------
 

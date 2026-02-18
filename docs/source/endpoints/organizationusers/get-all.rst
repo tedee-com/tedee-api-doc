@@ -21,6 +21,19 @@ Get all users in an organization.
 | Filters.IncludePendingUsers | bool (optional)    | Include invited users that are still pending                 |
 +-----------------------------+--------------------+--------------------------------------------------------------+
 
+Responses
+---------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Description
+   * - 200 OK
+     - array
+     - successful operation
+
 Scopes
 ------
 

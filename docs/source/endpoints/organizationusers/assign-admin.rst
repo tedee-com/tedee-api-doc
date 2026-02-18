@@ -23,6 +23,19 @@ Assign admin role to an organization user.
 | organizationUserId     | number             | id of organization user     |
 +------------------------+--------------------+-----------------------------+
 
+Responses
+---------
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Description
+   * - 200 OK
+     - object
+     - successful operation
+
 Scopes
 ------
 
