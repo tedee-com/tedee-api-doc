@@ -1,0 +1,51 @@
+Invite user
+===========
+
+Invite a new user to organization.
+
+.. code-block:: sh
+
+    POST |apiUrl|/api/|apiVersion|/organization/{organizationId}/user
+
+**URI Parameters**
+
++------------------------+--------------------+------------------------+
+| Name                   | Type               | Description            |
++========================+====================+========================+
+| organizationId         | number             | id of organization     |
++------------------------+--------------------+------------------------+
+
+**Body Parameters**
+
++------------------------+--------------------+----------------------------------------------+
+| Name                   | Type               | Description                                  |
++========================+====================+==============================================+
+| name                   | string             | User display name                            |
++------------------------+--------------------+----------------------------------------------+
+| email                  | string             | User email                                   |
++------------------------+--------------------+----------------------------------------------+
+| role                   | number (optional)  | Role (0 Owner, 1 Admin, 2 Member)            |
++------------------------+--------------------+----------------------------------------------+
+
+Scopes
+------
+
++------------------------+--------------------------------------------------------------+
+| Name                   | Description                                                  |
++========================+==============================================================+
+| Organization.ReadWrite | Grants user possibility to read and write organization data  |
++------------------------+--------------------------------------------------------------+
+
+Examples
+--------
+
+Invite John Doe to organization with id 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    curl -X POST "|apiUrl|/api/|apiVersion|/organization/1/user" \
+      -H "accept: application/json" \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer <<access token>>" \
+      -d "{\"name\":\"John Doe\",\"email\":\"new.member@company.com\",\"role\":2}"

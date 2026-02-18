@@ -55,6 +55,7 @@ Tedee API documentation
    endpoints/organization/index
    endpoints/organizationaccesslink/index
    endpoints/organizationgroups/index
+   endpoints/organizationusers/index
    endpoints/personalaccesskey/index
 
 .. toctree::
