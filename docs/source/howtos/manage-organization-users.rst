@@ -286,8 +286,3 @@ Remove user with id 123 from organization with id 1:
 Before deleting a member, check whether that user is used in organization groups or device access assignments.
 
 After the user is removed from the organization, they lose access to all organization devices.
-
-Related operations you may need:
-
-* :doc:`Remove members from user group <../endpoints/organizationgroups/remove-members>`
-* :doc:`Delete access <../endpoints/deviceaccess/delete>`
