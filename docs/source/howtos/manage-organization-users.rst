@@ -32,7 +32,7 @@ Step 1: List users in organization
 Use `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_ to retrieve current members.
 
 Endpoint schema:
-``/organization/{organizationId}/user``
+``GET /organization/{organizationId}/user``
 
 Useful query parameters:
 
@@ -94,7 +94,7 @@ Step 2: Check if user already exists
 Before you invite a user, first call `Get all users from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUsers>`_ with ``Filters.Text`` using their email.
 
 Endpoint schema:
-``/organization/{organizationId}/user``
+``GET /organization/{organizationId}/user``
 
 Recommended duplicate-check flow:
 
@@ -120,7 +120,7 @@ Step 3: Invite a new user
 Use `Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_.
 
 Endpoint schema:
-``/organization/{organizationId}/user``
+``POST /organization/{organizationId}/user``
 
 ``PostRequest`` requires:
 
@@ -169,7 +169,7 @@ Step 4: Get user profile details
 Use `Get organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/GetOrganizationUserProfile>`_ when you need full details of a single organization member.
 
 Endpoint schema:
-``/organization/{organizationId}/user/{organizationUserId}``
+``GET /organization/{organizationId}/user/{organizationUserId}``
 
 Get profile details for user with id 123 from organization with id 1:
 
@@ -191,7 +191,7 @@ Step 5: Update user profile
 Use `Edit organization user profile <https://api.tedee.com/swagger/index.html#/OrganizationUser/PutOrganizationUser>`_.
 
 Endpoint schema:
-``/organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``
+``PUT /organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``
 
 ``PutRequest`` requires:
 
@@ -224,10 +224,10 @@ Use dedicated operations for admin role management:
 * `Remove admin role <https://api.tedee.com/swagger/index.html#/OrganizationUser/RemoveAdminRole>`_
 
 Endpoint schema (assign admin):
-``/organization/{organizationId}/assignadmin``
+``PUT /organization/{organizationId}/assignadmin``
 
 Endpoint schema (remove admin):
-``/organization/{organizationId}/removeadmin``
+``PUT /organization/{organizationId}/removeadmin``
 
 Both operations use request body with:
 
@@ -273,7 +273,7 @@ Step 7: Remove a user from organization
 Use `Remove user from organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/DeleteOrganizationUser>`_.
 
 Endpoint schema:
-``/organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``
+``DELETE /organization/{organizationId}/user/byorganizationuserid/{organizationUserId}``
 
 Remove user with id 123 from organization with id 1:
 
