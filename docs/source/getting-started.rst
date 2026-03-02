@@ -41,7 +41,7 @@ All Tedee REST API requests use the following URL format:
 
 ``|apiUrl|/{version}/{resource}``
 
-* **version** - we use :doc:`API versioning <api-versioning>` to deliver new functionalities more easily, keeping backwards compatibility
+* **version** - we use :doc:`API versioning and support <api-versioning-and-support>` to deliver new functionalities more easily, keeping backwards compatibility. Integrators must keep their API version up to date — older versions are subject to reduced rate limits and will eventually be removed.
 * **resource** - path to the resource you want to manipulate
 
 Request message headers

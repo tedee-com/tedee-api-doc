@@ -1,4 +1,4 @@
-How do you feesphinx-autobuild
+sphinx-autobuild>=2024.2.7
 sphinx_rtd_theme
 sphinx-copybutton
 docutils<0.18

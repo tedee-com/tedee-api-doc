@@ -11,7 +11,7 @@ Release notes
 2025-08-11
 ----------
 
-**API v37 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V37>`_
+**API v37 – BREAKING CHANGE** ·
 
 Migration note: Integrations using device access endpoints must adopt ``principalId`` and ``principalType``; ``userEmail`` is now conditional on principal type.
 
@@ -47,7 +47,7 @@ Migration note: Integrations using device access endpoints must adopt ``principa
 2025-04-07
 ----------
 
-**API v1.36 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.36>`_
+**API v1.36 – BREAKING CHANGE** ·
 
 Migration note: Integrations using bridge pairing or unpairing endpoints must update their request and response handling.
 
@@ -59,7 +59,7 @@ Migration note: Integrations using bridge pairing or unpairing endpoints must up
 2025-03-25
 ----------
 
-**API v1.35 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.35>`_
+**API v1.35 – BREAKING CHANGE** ·
 
 Migration note: Integrations reading ``organizationName`` or ``organizationSlug`` from lock responses, or using ``lockProperties``, must update before adopting v1.35.
 
@@ -78,7 +78,7 @@ Migration note: Integrations reading ``organizationName`` or ``organizationSlug`
 2025-01-27
 ----------
 
-**API v1.34 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.34>`_
+**API v1.34 – BREAKING CHANGE** ·
 
 Migration note: Integrations using the Device Share area must migrate to the `Device Access area <https://api.tedee.com/swagger/index.html#/DeviceAccess>`_; access data is now returned in ``accessDetails`` instead of ``shareDetails``.
 
@@ -142,7 +142,7 @@ Migration note: Integrations using the Device Share area must migrate to the `De
 2024-09-23
 ----------
 
-**API v1.33 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.33>`_
+**API v1.33 – BREAKING CHANGE** ·
 
 Migration note: Integrations accessing accessories via direct lock fields or the old dedicated pair/unpair endpoints must switch to the ``accessories`` array and the new unified endpoints.
 
@@ -239,7 +239,7 @@ Migration note: Integrations accessing accessories via direct lock fields or the
 2023-10-02
 ----------
 
-**API v1.32 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.32>`_
+**API v1.32 – BREAKING CHANGE** ·
 
 Migration note: Integrations using the old lock calibration endpoints must switch to the new ``Calibrate Lock`` and ``Calibrate Pull Spring`` endpoints.
 
@@ -255,7 +255,7 @@ Migration note: Integrations using the old lock calibration endpoints must switc
 2023-09-18
 ----------
 
-**API v1.31 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.31>`_
+**API v1.31 – BREAKING CHANGE** ·
 
 Migration note: Integrations passing ``UserId`` to organization endpoints must switch to ``OrganizationUserId``.
 
@@ -309,7 +309,7 @@ Migration note: Integrations passing ``UserId`` to organization endpoints must s
 * Added `Gate > Delete Gate device <https://api.tedee.com/swagger/index.html#/Gate/DeleteGate>`_ endpoint.
 * ``Gate`` extended with ``Location`` property and remote unlock setting.
 * `Gate > Unlock Gate <https://api.tedee.com/swagger/index.html#/Gate/UnlockGate>`_ updated: success now returns ``204 No Content`` instead of ``200 OK`` with no response body.
-* `Integration > Update linked BleBox account connection <https://api.tedee.com/swagger/index.html#/Integration/PatchLinkedBleBoxAccount/>`_ now supports personal access key authentication.
+* `Integration > Update linked BleBox account connection <https://api.tedee.com/swagger/index.html#/Integration/PatchLinkedBleBoxAccount/>`__ now supports personal access key authentication.
 * ``OrganizationAccessLink`` description limit extended to 1000 characters.
 * `Device > Clone device data <https://api.tedee.com/swagger/index.html#/Device/Clone>`_ extended with ``userSettings`` cloning (``DataToClone`` value: ``4``).
 
@@ -350,8 +350,7 @@ Migration note: Integrations passing ``UserId`` to organization endpoints must s
 2023-03-27
 ----------
 
-**API v1.30 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.30>`_
-
+**API v1.30 – BREAKING CHANGE** ·
 **New Features:**
 
 * Added organization access links management endpoints.
@@ -359,7 +358,7 @@ Migration note: Integrations passing ``UserId`` to organization endpoints must s
 2022-12-05
 ----------
 
-**API v1.29 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.29>`_
+**API v1.29 – BREAKING CHANGE** ·
 
 Migration note: Integrations reading ``HoldToUnlock`` as a boolean must update to handle it as an enum value.
 
@@ -370,7 +369,7 @@ Migration note: Integrations reading ``HoldToUnlock`` as a boolean must update t
 2022-08-16
 ----------
 
-**API v1.28 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.28>`_
+**API v1.28 – BREAKING CHANGE** ·
 
 Migration note: Integrations using the old organization endpoints must migrate to the unified organization/device area schema before adopting v1.28.
 
@@ -382,7 +381,7 @@ Migration note: Integrations using the old organization endpoints must migrate t
 2022-07-18
 ----------
 
-**API v1.27 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.27>`_
+**API v1.27 – BREAKING CHANGE** ·
 
 Migration note: Integrations reading the unlocked notification from global user settings must remove this field before adopting v1.27.
 
@@ -393,7 +392,7 @@ Migration note: Integrations reading the unlocked notification from global user 
 2022-06-20
 ----------
 
-**API v1.26 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.26>`_
+**API v1.26 – BREAKING CHANGE** ·
 
 Migration note: Integrations consuming the ``my/lock`` endpoint must update to handle paged responses.
 
@@ -435,7 +434,7 @@ Migration note: Integrations consuming the ``my/lock`` endpoint must update to h
 2021-12-20
 ----------
 
-**API v1.25 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.25>`_
+**API v1.25 – BREAKING CHANGE** ·
 
 **Breaking Changes:**
 
@@ -448,7 +447,7 @@ Migration note: Integrations consuming the ``my/lock`` endpoint must update to h
 2021-11-22
 ----------
 
-**API v1.24 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.24>`_
+**API v1.24 – BREAKING CHANGE** ·
 
 **New Features:**
 
@@ -457,7 +456,7 @@ Migration note: Integrations consuming the ``my/lock`` endpoint must update to h
 2021-11-08
 ----------
 
-**API v1.23 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.23>`_
+**API v1.23 – BREAKING CHANGE** ·
 
 Migration note: Integrations using mobile device identifiers must update from ``integer`` to UUID format.
 
@@ -486,7 +485,7 @@ Migration note: Integrations using mobile device identifiers must update from ``
 2021-09-27
 ----------
 
-**API v1.22 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.22>`_
+**API v1.22 – BREAKING CHANGE** ·
 
 Migration note: Integrations creating device shares must remove ``accessType`` from requests; integrations using the unlock endpoint must update to the new default mode (no auto-pull) and explicitly use the new ``unlock or pull spring`` mode when pull spring behavior is needed.
 
@@ -510,7 +509,7 @@ Migration note: Integrations creating device shares must remove ``accessType`` f
 2021-08-30
 ----------
 
-**API v1.21 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.21>`_
+**API v1.21 – BREAKING CHANGE** ·
 
 **Bug Fixes:**
 
@@ -519,7 +518,7 @@ Migration note: Integrations creating device shares must remove ``accessType`` f
 2021-08-16
 ----------
 
-**API v1.20 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.20>`_
+**API v1.20 – BREAKING CHANGE** ·
 
 Migration note: Integrations using lock, unlock, or pull spring operations must update to pass all parameters in the path instead of the request body.
 
@@ -561,7 +560,7 @@ Migration note: Integrations using lock, unlock, or pull spring operations must 
 2021-05-24
 ----------
 
-**API v1.19 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.19>`_
+**API v1.19 – BREAKING CHANGE** ·
 
 Migration note: Integrations using the Bridge update endpoint must switch from ``PUT`` to ``PATCH``.
 
@@ -576,7 +575,7 @@ Migration note: Integrations using the Bridge update endpoint must switch from `
 2021-05-10
 ----------
 
-**API v1.18 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.18>`_
+**API v1.18 – BREAKING CHANGE** ·
 
 Migration note: Integrations calling the ``unregister`` endpoint on ``StandardNotificationHub`` must remove this call.
 
@@ -587,7 +586,7 @@ Migration note: Integrations calling the ``unregister`` endpoint on ``StandardNo
 2021-04-26
 ----------
 
-**API v1.17 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.17>`_
+**API v1.17 – BREAKING CHANGE** ·
 
 Migration note: Integrations handling close/open/pull responses must update to ``202 Accepted`` and poll the new status endpoint for operation results.
 
@@ -603,7 +602,7 @@ Migration note: Integrations handling close/open/pull responses must update to `
 2021-01-18
 ----------
 
-**API v1.16 – BREAKING CHANGE** · `View in Swagger <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.16>`_
+**API v1.16 – BREAKING CHANGE** ·
 
 Migration note: Integrations reading user settings directly from lock properties, or relying on ``bridgeId``, ``connectedToId``, ``iotDeviceName``, or ``voipNumber``, must update before adopting v1.16.
 

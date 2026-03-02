@@ -12,7 +12,7 @@ Tedee API documentation
    :hidden:
 
    getting-started
-   api-versioning
+   api-versioning-and-support
    api-rate-limiting
    logo-guidance
    release-notes
@@ -111,6 +111,10 @@ Tedee API documentation
    Organization access link device <datastructures/organization-access-link-device>
    Organization access link assignable device list <datastructures/organization-access-link-assignable-devices-list>
    Organization access link assignable device <datastructures/organization-access-link-assignable-device>
+   Organization group <datastructures/organization-group>
+   Organization group details <datastructures/organization-group-details>
+   Organization group member <datastructures/organization-group-member>
+   Organization member operation result <datastructures/organization-member-operation-result>
    Personal access key <datastructures/personal-access-key>
    Personal access key created <datastructures/personal-access-key-created>
    Repeat event <datastructures/repeat-event>
@@ -118,6 +122,7 @@ Tedee API documentation
    Revoked certificate list <datastructures/revoked-certificate-list>
    Signed time <datastructures/signed-time>
    Software versions <datastructures/software-versions>
+   Validation error <datastructures/validation-error>
 
 .. toctree::
    :maxdepth: 1
