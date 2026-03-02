@@ -29,6 +29,10 @@ Migration note: Integrations using device access endpoints must adopt ``principa
 
 * Updated :doc:`How to manage device access <../howtos/manage-device-access>` guide with user group support.
 
+**Deprecations:**
+
+* API version v1.36 will be deprecated on 2026-08-11 and retired on 2027-02-11.
+
 2025-06-09
 ----------
 
@@ -56,6 +60,11 @@ Migration note: Integrations using bridge pairing or unpairing endpoints must up
 * ``[CHANGED]`` Schema of `Bridge > Pair bridge with device <https://api.tedee.com/swagger/index.html#/Bridge/PairDeviceWithBridge>`_ endpoint updated.
 * ``[CHANGED]`` Schema of `Bridge > Unpair bridge from device <https://api.tedee.com/swagger/index.html#/Bridge/UnpairDeviceFromBridge>`_ endpoint updated.
 
+**Deprecations:**
+
+* API version v1.35 will be deprecated on 2026-04-07 and retired on 2026-10-07.
+* The version v1.31 is retired.
+
 2025-03-25
 ----------
 
@@ -67,6 +76,11 @@ Migration note: Integrations reading ``organizationName`` or ``organizationSlug`
 
 * ``[REMOVED]`` ``organizationName`` and ``organizationSlug`` from :doc:`Lock <../../datastructures/lock>` – no longer returned from :doc:`GET Lock <../endpoints/lock/get-single>`, :doc:`GET All Locks <../endpoints/lock/get-all>`, or :doc:`Get devices with details <../endpoints/device/get-all-with-details>`.
 * ``[RENAMED]`` ``lockProperties`` → ``deviceState`` in :doc:`Lock Single Sync <../../endpoints/lock/sync-single>`, :doc:`Lock Sync <../../endpoints/lock/sync>`, and all organization endpoints.
+
+**Deprecations:**
+
+* API version v1.34 will be deprecated on 2026-03-25 and retired on 2026-09-25.
+* The version v1.30 is retired.
 
 2025-02-10
 ----------
@@ -88,6 +102,11 @@ Migration note: Integrations using the Device Share area must migrate to the `De
 * ``[RENAMED]`` ``shareDetails`` → ``accessDetails`` in device access responses.
 * ``[RENAMED]`` ``lockProperties`` → ``deviceState`` in the :doc:`Lock <../../datastructures/lock>` model.
 * ``[CHANGED]`` Access restrictions moved to :doc:`access details <../../datastructures/access-details>`.
+
+**Deprecations:**
+
+* API version v1.33 will be deprecated on 2026-01-27 and retired on 2026-07-27.
+* The version v1.29 is retired.
 
 2025-01-13
 ----------
@@ -159,6 +178,14 @@ Migration note: Integrations accessing accessories via direct lock fields or the
 * Added `Lock > Pair Accessory <https://api.tedee.com/swagger/index.html?urls.primaryName=Tedee%20API%20V1.33#/Lock/PairLockWithAccessory>`_ endpoint – pairs any accessory type to a lock.
 * Added ``revision`` field to :doc:`Lock > Sync <../../endpoints/lock/sync>` and :doc:`Lock > Sync single <../../endpoints/lock/sync-single>` endpoints.
 * `DeviceShare > Post Bulk <https://api.tedee.com/swagger/index.html#/DeviceShare/PostBulkDeviceShare>`_ response extended with user display name.
+
+**Deprecations:**
+
+* API version v1.32 will be deprecated on 2025-09-23 and retired on 2026-03-23.
+* The version v1.25 is retired.
+* The version v1.26 is retired.
+* The version v1.27 is retired.
+* The version v1.28 is retired.
 
 2024-08-12
 ----------
@@ -252,6 +279,10 @@ Migration note: Integrations using the old lock calibration endpoints must switc
 * Lock device setting added: ``autoUnlockCancelOtherAutoUnlock`` – cancels other auto-unlocks when one triggers.
 * User profile setting added: ``dynamicFirstLock`` – dynamically changes the first lock on the device list based on user location.
 
+**Deprecations:**
+
+* API version v1.31 will be deprecated on 2024-10-02 and retired on 2025-04-02.
+
 2023-09-18
 ----------
 
@@ -269,6 +300,13 @@ Migration note: Integrations passing ``UserId`` to organization endpoints must s
 
 * `Organization User > Add user to organization <https://api.tedee.com/swagger/index.html#/OrganizationUser/PostOrganizationUser>`_ returns ``organizationUserId`` in the response body.
 * Added `Organization Device > Return all shares for specific device <https://api.tedee.com/swagger/index.html#/OrganizationDevice/GetSpecificDeviceShareDetails>`_ endpoint.
+
+**Deprecations:**
+
+* API version v1.30 will be deprecated on 2024-09-18 and retired on 2025-03-18.
+* The version v1.22 is retired.
+* The version v1.23 is retired.
+* The version v1.24 is retired.
 
 2023-08-07
 ----------
@@ -351,9 +389,17 @@ Migration note: Integrations passing ``UserId`` to organization endpoints must s
 ----------
 
 **API v1.30 – BREAKING CHANGE** ·
+
 **New Features:**
 
 * Added organization access links management endpoints.
+
+**Deprecations:**
+
+* API version v1.29 will be deprecated on 2024-03-27 and retired on 2024-09-27.
+* The version v1.19 is retired.
+* The version v1.20 is retired.
+* The version v1.21 is retired.
 
 2022-12-05
 ----------
@@ -365,6 +411,13 @@ Migration note: Integrations reading ``HoldToUnlock`` as a boolean must update t
 **Breaking Changes:**
 
 * ``[CHANGED]`` ``HoldToUnlock`` user setting type changed from boolean to enum.
+
+**Deprecations:**
+
+* API version v1.28 will be deprecated on 2023-12-05 and retired on 2024-06-05.
+* The version v1.16 is retired.
+* The version v1.17 is retired.
+* The version v1.18 is retired.
 
 2022-08-16
 ----------
@@ -378,6 +431,10 @@ Migration note: Integrations using the old organization endpoints must migrate t
 * ``[REMOVED]`` Old organization endpoints.
 * ``[CHANGED]`` Organization/device area schema unified.
 
+**Deprecations:**
+
+* API version v1.27 will be deprecated on 2023-08-16 and retired on 2024-02-16.
+
 2022-07-18
 ----------
 
@@ -388,6 +445,10 @@ Migration note: Integrations reading the unlocked notification from global user 
 **Breaking Changes:**
 
 * ``[REMOVED]`` Unlocked notification from global user settings.
+
+**Deprecations:**
+
+* API version v1.26 will be deprecated on 2023-07-18 and retired on 2024-01-18.
 
 2022-06-20
 ----------
@@ -404,6 +465,10 @@ Migration note: Integrations consuming the ``my/lock`` endpoint must update to h
 
 * Added support for device notification settings.
 * ``my/lock`` endpoint extended with ``IncludeOrganization`` parameter.
+
+**Deprecations:**
+
+* API version v1.25 will be deprecated on 2023-06-20 and retired on 2023-12-20.
 
 2022-02-28
 ----------
@@ -444,6 +509,10 @@ Migration note: Integrations consuming the ``my/lock`` endpoint must update to h
 
 * ``Keypad`` extended with ``batteryType`` setting.
 
+**Deprecations:**
+
+* API version v1.24 will be deprecated on 2022-12-20 and retired on 2023-06-20.
+
 2021-11-22
 ----------
 
@@ -452,6 +521,10 @@ Migration note: Integrations consuming the ``my/lock`` endpoint must update to h
 **New Features:**
 
 * ``Keypad`` extended with setting to enable or disable the bell button.
+
+**Deprecations:**
+
+* API version v1.23 will be deprecated on 2022-11-22 and retired on 2023-05-22.
 
 2021-11-08
 ----------
@@ -463,6 +536,10 @@ Migration note: Integrations using mobile device identifiers must update from ``
 **Breaking Changes:**
 
 * ``[CHANGED]`` Mobile device identifier type changed from ``integer`` to UUID.
+
+**Deprecations:**
+
+* API version v1.22 will be deprecated on 2022-11-08 and retired on 2023-05-08.
 
 2021-10-25
 ----------
@@ -498,6 +575,10 @@ Migration note: Integrations creating device shares must remove ``accessType`` f
 
 * Personal access key maximum expiration extended to 5 years.
 
+**Deprecations:**
+
+* API version v1.21 will be deprecated on 2022-09-27 and retired on 2023-03-27.
+
 2021-09-13
 ----------
 
@@ -515,6 +596,10 @@ Migration note: Integrations creating device shares must remove ``accessType`` f
 
 * Fixed: issue with deleting a bridge.
 
+**Deprecations:**
+
+* API version v1.20 will be deprecated on 2022-08-30 and retired on 2023-02-28.
+
 2021-08-16
 ----------
 
@@ -529,6 +614,10 @@ Migration note: Integrations using lock, unlock, or pull spring operations must 
 **New Features:**
 
 * Unlock operation extended with ``without auto pull spring`` mode.
+
+**Deprecations:**
+
+* API version v1.19 will be deprecated on 2022-08-16 and retired on 2023-02-16.
 
 2021-08-02
 ----------
@@ -572,6 +661,10 @@ Migration note: Integrations using the Bridge update endpoint must switch from `
 
 * Lock and bridge devices extended with timezone.
 
+**Deprecations:**
+
+* API version v1.18 will be deprecated on 2022-05-24 and retired on 2022-11-24.
+
 2021-05-10
 ----------
 
@@ -582,6 +675,10 @@ Migration note: Integrations calling the ``unregister`` endpoint on ``StandardNo
 **Breaking Changes:**
 
 * ``[REMOVED]`` ``unregister`` endpoint from ``StandardNotificationHub``.
+
+**Deprecations:**
+
+* API version v1.17 will be deprecated on 2022-05-10 and retired on 2022-11-10.
 
 2021-04-26
 ----------
@@ -598,6 +695,10 @@ Migration note: Integrations handling close/open/pull responses must update to `
 
 * Added endpoint to check close/open/pull operation status.
 * ``lastStateChangedDate`` and ``stateChangeResult`` added to all endpoints returning lock state.
+
+**Deprecations:**
+
+* API version v1.16 will be deprecated on 2022-04-26 and retired on 2022-10-26.
 
 2021-01-18
 ----------
