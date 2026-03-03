@@ -30,6 +30,7 @@ Tedee API documentation
    Manage device access <howtos/manage-device-access>
    Manage lock PIN list <howtos/manage-lock-pin-list>
    Manage access links <howtos/manage-access-links>
+   Manage users in organization <howtos/manage-organization-users>
    Manage and operate gates <howtos/manage-and-operate-gates>
    Use state from door sensor <howtos/use-state-from-door-sensor>
    Connect to device via Bluetooth <howtos/connect-device-via-ble>
@@ -54,6 +55,7 @@ Tedee API documentation
    endpoints/organization/index
    endpoints/organizationaccesslink/index
    endpoints/organizationgroups/index
+   endpoints/organizationusers/index
    endpoints/personalaccesskey/index
 
 .. toctree::
