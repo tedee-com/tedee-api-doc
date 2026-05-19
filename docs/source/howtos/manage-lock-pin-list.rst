@@ -42,13 +42,24 @@ HTTP status code: ``200``
         "statusCode": 200
     }
 
-Along with the pins, the version of the list is also returned. 
-After each pin operation, such as creating, updating or deleting, the version of the pin list is incremented.
+.. _using-list-version:
 
-When getting the pins, you can optionally provide the last received version of the pin list.
-If there is a newer version of the list on the device, all pins will be returned, otherwise the response code 304 Not Modified will be returned. 
+Using the ``listVersion`` parameter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Sample request with a list version parameter for lock with id = 123**
+Every response includes a ``listVersion`` number. This version is incremented after each change to the pin list
+(create, update, or delete). You can use it to avoid fetching the full list unnecessarily:
+
+1. On the first call, omit ``listVersion`` — you will receive the full list together with the current ``listVersion``.
+2. Store the returned ``listVersion`` value on your side.
+3. On subsequent calls, pass the stored value as ``?listVersion=<value>``.
+
+   - If the list has **not changed** since your last fetch, the API returns ``304 Not Modified`` — no data transfer needed.
+   - If the list **has changed**, the API returns ``200 OK`` with the full updated list and a new ``listVersion`` to store.
+
+Always update your stored ``listVersion`` to the value returned in the latest ``200 OK`` response.
+
+**Sample request passing the last known list version for lock with id = 123**
 
 .. code-block:: sh
 
@@ -135,6 +146,15 @@ Create a new pin
 
 If you want to add a new pin for the given lock, you will need deviceId and use :doc:`Create pin <../endpoints/lockpin/create>` endpoint.
 
+.. note::
+    The pin value must meet the following requirements:
+
+    - pin cannot be null, empty, or whitespace
+    - pin length must be between 5 and 8 digits
+    - pin can contain only numeric characters (0–9)
+    - pin must contain at least 3 different digits
+    - pin cannot be a strictly ascending or descending sequence (e.g. ``12345`` or ``54321``)
+
 **Sample request for lock with id = 123**
 
 .. code-block:: sh
@@ -219,6 +239,15 @@ Update selected pin
 If you want to update the selected pin for the given lock, you will need deviceId and pinId. 
 Before making any changes you should read the pin details to have complete information about the pin. To do that use :doc:`Get single pin <../endpoints/lockpin/get-single>` endpoint.
 Once you have all, you can send the updated information to the endpoint :doc:`Update pin <../endpoints/lockpin/update>` to update the pin.
+
+.. note::
+    The pin value must meet the following requirements:
+
+    - pin cannot be null, empty, or whitespace
+    - pin length must be between 5 and 8 digits
+    - pin can contain only numeric characters (0–9)
+    - pin must contain at least 3 different digits
+    - pin cannot be a strictly ascending or descending sequence (e.g. ``12345`` or ``54321``)
 
 **Sample request for lock with id = 123 and pin with id = 2**
 

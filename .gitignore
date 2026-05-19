@@ -19,6 +19,7 @@ _build
 
 ### User specific files ###
 /.idea
+.copilot/mcp-config.json
 
 ### Python ###
 venv/
