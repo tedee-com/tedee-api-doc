@@ -7,6 +7,11 @@ Deletes selected pin for the given lock.
 
     DELETE |apiUrl|/api/|apiVersion|/my/lock/{id}/pin/{pinId}
 
+.. note::
+    Pins created with an ``endDate`` are automatically removed from the system once they expire.
+    You do not need to call this endpoint to clean up time-restricted pins — deletion is only necessary
+    when you want to remove a pin before its expiration date, or when removing a permanent pin.
+
 **URI Parameters**
 
 +------------------------+-------------------+------------------------------------------+

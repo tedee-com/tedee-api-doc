@@ -275,6 +275,10 @@ Delete pin
 
 If you want to delete selected pin for the given lock, you will need deviceId along with pinId and use :doc:`Delete pin <../endpoints/lockpin/delete>` endpoint.
 
+.. note::
+    Pins created with an ``endDate`` are automatically removed from the system once they expire.
+    Manual deletion is only necessary when you want to revoke a pin before its expiration date, or when removing a permanent pin.
+
 **Sample request for lock with id = 123 and pin with id = 2**
 
 .. code-block:: sh

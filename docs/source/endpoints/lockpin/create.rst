@@ -6,6 +6,16 @@ Creates a new pin for the given lock.
 .. code-block:: sh
 
     POST |apiUrl|/api/|apiVersion|/my/lock/{id}/pin
+    
+.. note::
+    The pin value must meet the following requirements:
+
+    - pin cannot be null, empty, or whitespace
+    - pin length must be between 5 and 8 digits
+    - pin can contain only numeric characters (0–9)
+    - pin must contain at least 3 different digits
+    - pin cannot be a strictly ascending or descending sequence (e.g. ``12345`` or ``54321``)
+
 
 **URI Parameters**
 
@@ -43,6 +53,8 @@ Responses
 +=============================+=================================================================+================================================================+
 | 201 Created                 | :doc:`Pin created <../../datastructures/lock-pin-created>`      | successful operation                                           |
 +-----------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+| 400 Bad Request             |                                                                 | pin value does not meet validation requirements                |
++-----------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
 | 403 Forbidden               |                                                                 | user doesn't have permission to the lock                       |
 +-----------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
 | 406 Not Acceptable          |                                                                 | pin already exists                                             |
@@ -64,16 +76,6 @@ Scopes
 +====================+===============================================================================+
 | Device.ReadWrite   | Grants user possibility to read and write data connected with devices         |
 +--------------------+-------------------------------------------------------------------------------+
-
-.. note::
-    Pin value must meet the following requirements:
-
-    - pin cannot be null, empty, or whitespace
-    - pin length must be in range 5-8
-    - pin can contain only numeric values (0-9)
-    - pin must contain at least 3 different digits
-    - pin cannot be built as ascending or descending sequence
-
 
 Examples
 -------------
