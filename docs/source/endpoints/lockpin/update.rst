@@ -6,6 +6,16 @@ Updates selected pin for the given lock.
 .. code-block:: sh
 
     PUT |apiUrl|/api/|apiVersion|/my/lock/{id}/pin/{pinId}
+    
+.. note::
+    The pin value must meet the following requirements:
+
+    - pin cannot be null, empty, or whitespace
+    - pin length must be between 5 and 8 digits
+    - pin can contain only numeric characters (0–9)
+    - pin must contain at least 3 different digits
+    - pin cannot be a strictly ascending or descending sequence (e.g. ``12345`` or ``54321``)
+
 
 **URI Parameters**
 
@@ -40,21 +50,25 @@ Updates selected pin for the given lock.
 Responses 
 -------------
 
-+-------------------------+----------------------------------------------+
-| Name                    | Description                                  |
-+=========================+==============================================+
-| 204 No Content          | successful operation                         |
-+-------------------------+----------------------------------------------+
-| 403 Forbidden           | user doesn't have permission to the lock     |
-+-------------------------+----------------------------------------------+
-| 404 Not Found           | pin not found                                |
-+-------------------------+----------------------------------------------+
-| 406 Not Acceptable      | pin already exists                           |
-+-------------------------+----------------------------------------------+
-| 408 Request Timeout     | timeout while sending data to the device     |
-+-------------------------+----------------------------------------------+
-| 409 Conflict            | other request is currently processing        |
-+-------------------------+----------------------------------------------+
++-----------------------------+----------------------------------------------------------------+
+| Name                        | Description                                                    |
++=============================+================================================================+
+| 204 No Content              | successful operation                                           |
++-----------------------------+----------------------------------------------------------------+
+| 400 Bad Request             | pin value does not meet validation requirements                |
++-----------------------------+----------------------------------------------------------------+
+| 403 Forbidden               | user doesn't have permission to the lock                       |
++-----------------------------+----------------------------------------------------------------+
+| 404 Not Found               | pin not found                                                  |
++-----------------------------+----------------------------------------------------------------+
+| 406 Not Acceptable          | pin already exists                                             |
++-----------------------------+----------------------------------------------------------------+
+| 408 Request Timeout         | timeout while sending data to the device                       |
++-----------------------------+----------------------------------------------------------------+
+| 409 Conflict                | another request is currently being processed for this device   |
++-----------------------------+----------------------------------------------------------------+
+| 428 Precondition Required   | lock is disconnected or device setup is incorrect              |
++-----------------------------+----------------------------------------------------------------+
 
 Scopes
 -------------
@@ -64,16 +78,6 @@ Scopes
 +====================+===============================================================================+
 | Device.ReadWrite   | Grants user possibility to read and write data connected with devices         |
 +--------------------+-------------------------------------------------------------------------------+
-
-.. note::
-    Pin value must meet the following requirements:
-
-    - pin cannot be null, empty, or whitespace
-    - pin length must be in range 5-8
-    - pin can contain only numeric values (0-9)
-    - pin must contain at least 3 different digits
-    - pin cannot be built as ascending or descending sequence
-
 
 Examples
 -------------

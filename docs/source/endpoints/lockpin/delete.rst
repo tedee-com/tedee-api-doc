@@ -7,6 +7,11 @@ Deletes selected pin for the given lock.
 
     DELETE |apiUrl|/api/|apiVersion|/my/lock/{id}/pin/{pinId}
 
+.. note::
+    Pins created with an ``endDate`` are automatically removed from the system once they expire.
+    You do not need to call this endpoint to clean up time-restricted pins — deletion is only necessary
+    when you want to remove a pin before its expiration date, or when removing a permanent pin.
+
 **URI Parameters**
 
 +------------------------+-------------------+------------------------------------------+
@@ -20,19 +25,21 @@ Deletes selected pin for the given lock.
 Responses 
 -------------
 
-+-------------------------+----------------------------------------------+
-| Name                    | Description                                  |
-+=========================+==============================================+
-| 204 No Content          | successful operation                         |
-+-------------------------+----------------------------------------------+
-| 403 Forbidden           | user doesn't have permission to the lock     |
-+-------------------------+----------------------------------------------+
-| 404 Not Found           | pin not found                                |
-+-------------------------+----------------------------------------------+
-| 408 Request Timeout     | timeout while sending data to the device     |
-+-------------------------+----------------------------------------------+
-| 409 Conflict            | other request is currently processing        |
-+-------------------------+----------------------------------------------+
++-----------------------------+----------------------------------------------------------------+
+| Name                        | Description                                                    |
++=============================+================================================================+
+| 204 No Content              | successful operation                                           |
++-----------------------------+----------------------------------------------------------------+
+| 403 Forbidden               | user doesn't have permission to the lock                       |
++-----------------------------+----------------------------------------------------------------+
+| 404 Not Found               | pin not found                                                  |
++-----------------------------+----------------------------------------------------------------+
+| 408 Request Timeout         | timeout while sending data to the device                       |
++-----------------------------+----------------------------------------------------------------+
+| 409 Conflict                | another request is currently being processed for this device   |
++-----------------------------+----------------------------------------------------------------+
+| 428 Precondition Required   | lock is disconnected or device setup is incorrect              |
++-----------------------------+----------------------------------------------------------------+
 
 Scopes
 -------------
