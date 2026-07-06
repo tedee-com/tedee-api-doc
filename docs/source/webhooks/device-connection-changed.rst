@@ -14,6 +14,8 @@ Body
 +------------------------+------------------------------------------------+-----------------------------------------------------------+
 | event                  | string                                         | event name: "device-connection-changed"                   |
 +------------------------+------------------------------------------------+-----------------------------------------------------------+
+| id                     | string                                         | unique id of the webhook, used for deduplication          |
++------------------------+------------------------------------------------+-----------------------------------------------------------+
 | timestamp              | datetime                                       | exact time when the webhook was sent to the receiver      |
 +------------------------+------------------------------------------------+-----------------------------------------------------------+
 | userIdentity           | string                                         | receiver of the webhook (user identity)                   |
@@ -43,8 +45,9 @@ Examples
 
 .. code-block:: js
 
-    {   
+    {
         "event": "device-connection-changed",
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "timestamp": "2022-11-09T14:15:30.244Z",
         "userIdentity": "<user-identity>",
         "data": {
