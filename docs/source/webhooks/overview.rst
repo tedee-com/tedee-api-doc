@@ -15,8 +15,14 @@ Once the webhook URL for your integration is registered, the Tedee system will s
 
 We send webhooks for all connected users separately, which allows you to receive device changes for each user independently.
 
-**Example**: Imagine there is the Tedee lock that has been opened. Suppose the Tedee lock has more than one user - for example, an owner and admin, where both of them are connected to your integration. 
+**Example**: Imagine there is the Tedee lock that has been opened. Suppose the Tedee lock has more than one user - for example, an owner and admin, where both of them are connected to your integration.
 In that case, two webhook notifications will be received on your webhook URL. The 'Data' object in the webhook notifications is identical, but user identities differ.
+
+**Deduplication**
+
+Every webhook payload contains a unique ``id`` field. The same value is also sent as the ``Idempotency-Key`` HTTP request header on the POST request.
+If a delivery is retried (for example after a network issue or a non-2xx response from your endpoint), the retry carries the same ``id`` and the same ``Idempotency-Key`` header value as the original attempt.
+Use either of these to detect and discard duplicate deliveries on your side.
 
 **Available webhooks**
 
