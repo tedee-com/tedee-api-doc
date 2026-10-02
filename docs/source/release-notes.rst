@@ -1,17 +1,6 @@
 Release notes
 =============
 
-2026-10-02
-----------
-
-**Documentation:**
-
-* Reworked :doc:`Event type <../enums/event-type>` enum documentation. Event names are documentation labels only, numeric values are unchanged:
-
-  * Renamed events to the consistent ``<Action>By<Source>`` pattern: ``UnlockedByAutoUnlock`` (37, was ``UnlockedAuto``), ``LockedByAutoLock`` (36, was ``LockedAuto``), ``PartiallyOpenByAutoLock`` (49, was ``PartiallyOpenAuto``), ``PulledButton`` (52, was ``PulledAuto``), ``UnlockedByPin`` (61, was ``UnlockByPin``), ``PulledByPin`` (63, was ``PullSpringByPin``), ``LockedByPin`` (65, was ``LockedByKeypadWithPin``), ``LockedByKeypadButton`` (66, was ``LockedByKeypadWithoutPin``), ``ForceUnlocked`` (67, was ``LockForceUnlocked``), ``ForceUnlockedByPin`` (68, was ``LockForceUnlockedByPin``), ``PulledByAutoUnlock`` (87, was ``LockPulledByAutoUnlock``), ``UnlockedByMatter`` (88), ``PartiallyOpenByMatter`` (89), ``LockedByMatter`` (90), ``PulledByMatter`` (91), ``PulledAutoByMatter`` (92) and ``ForceUnlockedByMatter`` (93) (dropped the ``Lock`` prefix).
-  * Corrected descriptions of ``PulledButton`` (52) and ``PulledAutoByRemote`` (55), which previously described a different behavior.
-  * Unified lock terminology in descriptions: ``locked`` / ``unlocked`` / ``partially locked`` instead of ``open`` / ``close`` / ``semi-locked``.
-
 2026-01-07
 ----------
 
