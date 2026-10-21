@@ -8,13 +8,16 @@ We will introduce you to organization access links and how to use them.
 Organization access links
 --------------------------
 
-Organization access links allows sharing access to Tedee Lock or Gate with a guest by simple Url. A guest with an access link can open locks or gates without having a Tedee account.
+Organization access links allows sharing access to Tedee Lock, Gate or Switch with a guest by simple Url. A guest with an access link can open locks, gates or switches without having a Tedee account.
 
 Access link can be created only from organization and only for devices which are assigned to organization. If you don't have an organization, you can create it using Tedee Portal.
 
 
 .. warning::
-   Be careful with who you share the access link with. Anyone with the link can open the Tedee smart lock or gate.
+   Be careful with who you share the access link with. Anyone with the link can open the Tedee smart lock, gate or switch.
+
+.. note::
+   A switch in ``DryContact`` :doc:`mode <../enums/switch-mode>` cannot be added to an access link (``400 Bad Request``). If the mode of a switch that is already in an access link is changed to ``DryContact``, opening it through the link returns ``409 Conflict``.
 
 When you should use access links?
 ---------------------------------
@@ -89,10 +92,10 @@ After you send the POST request, you will receive the access link id and the acc
             "url": "https://portal.tedee.com/link/10df36b5-a06e-4bec-9398-786b0231453a"
         }
 
-Received access link URL you can share with your friends or guests. They can open the Tedee smart lock or gate using the access link URL.
+Received access link URL you can share with your friends or guests. They can open the Tedee smart lock, gate or switch using the access link URL.
 
 .. note::
-    Tedee smart locks or gate activities will contains unlocks triggered from the access link. You can check them using both the Tedee mobile app and the Tedee Portal.
+    Tedee smart locks, gates and switches activities will contain openings triggered from the access link. You can check them using both the Tedee mobile app and the Tedee Portal.
 
 Update an access link
 ---------------------

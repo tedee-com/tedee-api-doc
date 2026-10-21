@@ -32,6 +32,7 @@ Tedee API documentation
    Manage access links <howtos/manage-access-links>
    Manage users in organization <howtos/manage-organization-users>
    Manage and operate gates <howtos/manage-and-operate-gates>
+   Manage and operate switches <howtos/manage-and-operate-switches>
    Use state from door sensor <howtos/use-state-from-door-sensor>
    Connect to device via Bluetooth <howtos/connect-device-via-ble>
    Example integrations <howtos/example-integrations>
@@ -57,6 +58,7 @@ Tedee API documentation
    endpoints/organizationgroups/index
    endpoints/organizationusers/index
    endpoints/personalaccesskey/index
+   endpoints/switch/index
 
 .. toctree::
    :maxdepth: 1
@@ -124,6 +126,11 @@ Tedee API documentation
    Revoked certificate list <datastructures/revoked-certificate-list>
    Signed time <datastructures/signed-time>
    Software versions <datastructures/software-versions>
+   Switch <datastructures/switch>
+   Switch device settings <datastructures/switch-device-settings>
+   Switch list <datastructures/switch-list>
+   Switch state <datastructures/switch-state>
+   Switch user settings <datastructures/switch-user-settings>
    Validation error <datastructures/validation-error>
 
 .. toctree::
@@ -142,6 +149,8 @@ Tedee API documentation
    Lock state <enums/lock-state>
    Operating System type <enums/operating-system>
    Software type <enums/software-type>
+   Switch mode <enums/switch-mode>
+   Switch output <enums/switch-output>
    Unlock mode <enums/unlock-mode>
    Week days <enums/week-days>
 

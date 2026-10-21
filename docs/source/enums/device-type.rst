@@ -22,3 +22,5 @@ This enum describes possible device types
 +--------+--------------+
 | 10     | Keypad PRO   |
 +--------+--------------+
+| 14     | Switch       |
++--------+--------------+

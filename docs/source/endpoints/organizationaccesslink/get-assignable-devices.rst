@@ -3,6 +3,8 @@ Get access link assignable devices
 
 Get devices which can be assigned to an organization access link.
 
+Locks, gates and switches can be assigned. Switches in ``DryContact`` :doc:`mode <../../enums/switch-mode>` are not returned.
+
 .. code-block:: sh
 
     GET |apiUrl|/api/|apiVersion|/organization/{organizationId}/accesslink/device/assignable
